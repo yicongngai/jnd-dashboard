@@ -1,0 +1,45 @@
+name: Refresh & Deploy JND Dashboard
+
+# Runs daily at 07:00 SGT (23:00 UTC) and on-demand. Re-fetches every baked data
+# source, re-bakes them into index-live-auto.html, and deploys to Netlify.
+# Live sources (HDB resale comps, HDB/URA price indices) need no refresh — they
+# fetch fresh in the browser.
+on:
+  schedule:
+    - cron: '0 23 * * *'      # 07:00 Singapore time, every day
+  workflow_dispatch: {}        # manual "Run workflow" button
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install deps
+        run: pip install requests
+
+      - name: Refresh baked data (keep last-good on any failure)
+        env:
+          URA_ACCESS_KEY: ${{ secrets.URA_ACCESS_KEY }}
+        run: |
+          set -u
+          ( cd market-tab && python3 sora_verify.py )  || echo "SORA scrape failed — keeping last-good rates.json"
+          ( cd market-tab && python3 era_scrape.py )  || echo "ERA scrape failed — keeping last-good launches.json"
+          python3 ura_build_comps.py                  || echo "URA build failed — keeping last-good ura-comps.json"
+          python3 build_hdb_blocks.py                 || echo "HDB block build failed — keeping last-good hdb-blocks.json"
+          python3 inject_data_all.py
+          mkdir -p publish
+          cp index-live-auto.html publish/index.html
+          echo "Baked deploy file: $(du -h publish/index.html | cut -f1)"
+
+      - name: Deploy to Netlify
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          npm install -g netlify-cli@17
+          netlify deploy --prod --dir=publish --message "auto-refresh $(date -u +%F)"

@@ -1,0 +1,876 @@
+{
+  "_meta": {
+    "metric": "avail = units available",
+    "scope": "SG residential condos (Justin-picked)",
+    "as_of": "2026-06-13",
+    "avail_source": "ERA /units"
+  },
+  "in_market": [
+    {
+      "name": "W Residences Marina View Singapore",
+      "district": "D01",
+      "region": "CCR",
+      "avail": 665,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Lentor Gardens Residences",
+      "district": "D26",
+      "region": "OCR",
+      "avail": 499,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Narra Residences",
+      "district": "D23",
+      "region": "OCR",
+      "avail": 339,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Tmw Maxwell",
+      "district": "D02",
+      "region": "CCR",
+      "avail": 319,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "One Marina Gardens",
+      "district": "D01",
+      "region": "CCR",
+      "avail": 298,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "The Collective at One Sophia",
+      "district": "D09",
+      "region": "CCR",
+      "avail": 269,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Sora",
+      "district": "D22",
+      "region": "OCR",
+      "avail": 218,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "The Sen",
+      "district": "D21",
+      "region": "OCR",
+      "avail": 211,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Union Square Residences",
+      "district": "D01",
+      "region": "CCR",
+      "avail": 195,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Promenade Peak",
+      "district": "D03",
+      "region": "RCR",
+      "avail": 162,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "The Robertson Opus",
+      "district": "D09",
+      "region": "CCR",
+      "avail": 143,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Vela Bay",
+      "district": "D16",
+      "region": "OCR",
+      "avail": 143,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Cape Royale",
+      "district": "D04",
+      "region": "RCR",
+      "avail": 132,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Coastal Cabana",
+      "district": "D17",
+      "region": "OCR",
+      "avail": 131,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Aurea",
+      "district": "D07",
+      "region": "RCR",
+      "avail": 120,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Hudson Place Residences",
+      "district": "D05",
+      "region": "RCR",
+      "avail": 113,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Elta",
+      "district": "D05",
+      "region": "RCR",
+      "avail": 93,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Grand Dunman",
+      "district": "D15",
+      "region": "RCR",
+      "avail": 86,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "One Sophia",
+      "district": "D09",
+      "region": "CCR",
+      "avail": 84,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "The Residences at W Singapore Sentosa Cove",
+      "district": "D04",
+      "region": "RCR",
+      "avail": 76,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Zyon Grand",
+      "district": "D03",
+      "region": "RCR",
+      "avail": 74,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Terra Hill",
+      "district": "D05",
+      "region": "RCR",
+      "avail": 72,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Midtown Bay",
+      "district": "D07",
+      "region": "RCR",
+      "avail": 70,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "The Arcady at Boon Keng",
+      "district": "D12",
+      "region": "RCR",
+      "avail": 70,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Upperhouse",
+      "district": "D10",
+      "region": "CCR",
+      "avail": 62,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Seascape",
+      "district": "D04",
+      "region": "RCR",
+      "avail": 60,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Meyer Blue",
+      "district": "D15",
+      "region": "RCR",
+      "avail": 50,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Newport Residences",
+      "district": "D02",
+      "region": "CCR",
+      "avail": 50,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Kassia",
+      "district": "D17",
+      "region": "OCR",
+      "avail": 49,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "8 at BT",
+      "district": "D21",
+      "region": "OCR",
+      "avail": 48,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "The Hillshore",
+      "district": "D05",
+      "region": "RCR",
+      "avail": 48,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "The Continuum",
+      "district": "D15",
+      "region": "RCR",
+      "avail": 39,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Canberra Crescent Residences",
+      "district": "D27",
+      "region": "OCR",
+      "avail": 38,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Chuan Park",
+      "district": "D19",
+      "region": "OCR",
+      "avail": 38,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Sanctuarynewton",
+      "district": "D11",
+      "region": "CCR",
+      "avail": 38,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Sophia Regency",
+      "district": "D09",
+      "region": "CCR",
+      "avail": 38,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Pinery Residences",
+      "district": "D16",
+      "region": "OCR",
+      "avail": 37,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "The Orie",
+      "district": "D12",
+      "region": "RCR",
+      "avail": 36,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Norwood Grand",
+      "district": "D25",
+      "region": "OCR",
+      "avail": 34,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "River Green",
+      "district": "D09",
+      "region": "CCR",
+      "avail": 33,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "River Modern",
+      "district": "D09",
+      "region": "CCR",
+      "avail": 32,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Parktown Residence",
+      "district": "D18",
+      "region": "OCR",
+      "avail": 28,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Jervois Priv",
+      "district": "D10",
+      "region": "CCR",
+      "avail": 26,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Lentoria",
+      "district": "D26",
+      "region": "OCR",
+      "avail": 22,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Springleaf Residence",
+      "district": "D26",
+      "region": "OCR",
+      "avail": 22,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Arina East Residences",
+      "district": "D15",
+      "region": "RCR",
+      "avail": 21,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "The Lumos",
+      "district": "D09",
+      "region": "CCR",
+      "avail": 21,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "The Myst",
+      "district": "D23",
+      "region": "OCR",
+      "avail": 20,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Artisan 8",
+      "district": "D20",
+      "region": "RCR",
+      "avail": 19,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Ocho",
+      "district": "D14",
+      "region": "RCR",
+      "avail": 19,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Concourse Skyline",
+      "district": "D07",
+      "region": "RCR",
+      "avail": 18,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Faber Residence",
+      "district": "D05",
+      "region": "RCR",
+      "avail": 17,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Jden",
+      "district": "D22",
+      "region": "OCR",
+      "avail": 13,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Canninghill Piers",
+      "district": "D06",
+      "region": "CCR",
+      "avail": 11,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Gems Ville",
+      "district": "D14",
+      "region": "RCR",
+      "avail": 11,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "The Shorefront",
+      "district": "D17",
+      "region": "OCR",
+      "avail": 11,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Penrith",
+      "district": "D03",
+      "region": "RCR",
+      "avail": 10,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Bagnall Haus",
+      "district": "D16",
+      "region": "OCR",
+      "avail": 9,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Claydence",
+      "district": "D15",
+      "region": "RCR",
+      "avail": 8,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Reignwood Hamilton Scotts",
+      "district": "D09",
+      "region": "CCR",
+      "avail": 8,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "The Line Tanjong Rhu",
+      "district": "D15",
+      "region": "RCR",
+      "avail": 8,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Tembusu Grand",
+      "district": "D15",
+      "region": "RCR",
+      "avail": 7,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "The Ranz",
+      "district": "D08",
+      "region": "RCR",
+      "avail": 7,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Uptown Farrer",
+      "district": "D08",
+      "region": "RCR",
+      "avail": 7,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "19 Nassim",
+      "district": "D10",
+      "region": "CCR",
+      "avail": 6,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "26 Newton",
+      "district": "D11",
+      "region": "CCR",
+      "avail": 6,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Ardor Residence",
+      "district": "D15",
+      "region": "RCR",
+      "avail": 5,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Greenwood Mews",
+      "district": "D11",
+      "region": "CCR",
+      "avail": 5,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "The Ritzcarlton Residences",
+      "district": "D09",
+      "region": "CCR",
+      "avail": 5,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Scotts Square",
+      "district": "D09",
+      "region": "CCR",
+      "avail": 4,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Hillock Green",
+      "district": "D26",
+      "region": "OCR",
+      "avail": 3,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Skies Miltonia",
+      "district": "D27",
+      "region": "OCR",
+      "avail": 3,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Tengah Garden Residences",
+      "district": "D24",
+      "region": "OCR",
+      "avail": 3,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Atlassia",
+      "district": "D15",
+      "region": "RCR",
+      "avail": 2,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Blossoms by The Park",
+      "district": "D05",
+      "region": "RCR",
+      "avail": 2,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Eden Residences Capitol",
+      "district": "D06",
+      "region": "CCR",
+      "avail": 2,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Grange 1866",
+      "district": "D10",
+      "region": "CCR",
+      "avail": 2,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "K Suites",
+      "district": "D15",
+      "region": "RCR",
+      "avail": 2,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "The Giverny Residences",
+      "district": "D10",
+      "region": "CCR",
+      "avail": 2,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "The Lakegarden Residences",
+      "district": "D22",
+      "region": "OCR",
+      "avail": 2,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Twin Vew",
+      "district": "D05",
+      "region": "RCR",
+      "avail": 2,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "21 Anderson",
+      "district": "D10",
+      "region": "CCR",
+      "avail": 1,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Alana",
+      "district": "D28",
+      "region": "OCR",
+      "avail": 1,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Boulevard 88",
+      "district": "D10",
+      "region": "CCR",
+      "avail": 1,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Klimt Cairnhill",
+      "district": "D09",
+      "region": "CCR",
+      "avail": 1,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Lyndenwoods",
+      "district": "D05",
+      "region": "RCR",
+      "avail": 1,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Nava Grove",
+      "district": "D21",
+      "region": "OCR",
+      "avail": 1,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "One Meyer",
+      "district": "D15",
+      "region": "RCR",
+      "avail": 1,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Phoenix Residences",
+      "district": "D23",
+      "region": "OCR",
+      "avail": 1,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Pinetree Hill",
+      "district": "D21",
+      "region": "OCR",
+      "avail": 1,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "The Oceanfront Sentosa Cove",
+      "district": "D04",
+      "region": "RCR",
+      "avail": 1,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Turquoise",
+      "district": "D04",
+      "region": "RCR",
+      "avail": 1,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Dalvey Haus",
+      "district": "D10",
+      "region": "CCR",
+      "avail": 0,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Jadescape",
+      "district": "D20",
+      "region": "RCR",
+      "avail": 0,
+      "developer": "",
+      "launched": "selling"
+    },
+    {
+      "name": "Reflections at Keppel Bay",
+      "district": "D04",
+      "region": "RCR",
+      "avail": 0,
+      "developer": "",
+      "launched": "selling"
+    }
+  ],
+  "rest_of_2026": [
+    {
+      "name": "Former Thomson View",
+      "district": "D20",
+      "region": "RCR",
+      "avail": 1240,
+      "developer": "",
+      "launch": "upcoming"
+    },
+    {
+      "name": "Chuan Grove GLS",
+      "district": "D19",
+      "region": "OCR",
+      "avail": 1055,
+      "developer": "",
+      "launch": "upcoming"
+    },
+    {
+      "name": "Chencharu Close GLS",
+      "district": "D27",
+      "region": "OCR",
+      "avail": 875,
+      "developer": "",
+      "launch": "upcoming"
+    },
+    {
+      "name": "Lucerne Grand",
+      "district": "D22",
+      "region": "OCR",
+      "avail": 570,
+      "developer": "",
+      "launch": "upcoming"
+    },
+    {
+      "name": "Woodlands Drive 17 PB",
+      "district": "D25",
+      "region": "OCR",
+      "avail": 560,
+      "developer": "",
+      "launch": "upcoming"
+    },
+    {
+      "name": "Miltonia Close",
+      "district": "D27",
+      "region": "OCR",
+      "avail": 430,
+      "developer": "",
+      "launch": "upcoming"
+    },
+    {
+      "name": "Woodland Drive 17 GLS",
+      "district": "D25",
+      "region": "OCR",
+      "avail": 420,
+      "developer": "",
+      "launch": "upcoming"
+    },
+    {
+      "name": "Dunearn House",
+      "district": "D11",
+      "region": "CCR",
+      "avail": 380,
+      "developer": "",
+      "launch": "upcoming"
+    },
+    {
+      "name": "Senja Close GLS",
+      "district": "D23",
+      "region": "OCR",
+      "avail": 295,
+      "developer": "",
+      "launch": "upcoming"
+    },
+    {
+      "name": "Sembawang Road GLS",
+      "district": "D27",
+      "region": "OCR",
+      "avail": 265,
+      "developer": "",
+      "launch": "upcoming"
+    },
+    {
+      "name": "Amberwood at Holland",
+      "district": "D10",
+      "region": "CCR",
+      "avail": 230,
+      "developer": "",
+      "launch": "upcoming"
+    },
+    {
+      "name": "Former Pastoral View",
+      "district": "D11",
+      "region": "CCR",
+      "avail": 133,
+      "developer": "",
+      "launch": "upcoming"
+    },
+    {
+      "name": "Keppel Bay Plot 6",
+      "district": "D04",
+      "region": "RCR",
+      "avail": 86,
+      "developer": "",
+      "launch": "upcoming"
+    }
+  ]
+}

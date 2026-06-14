@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JND Market — Prices & Supply (prototype)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#f1f4f8;color:#1a2332;padding:20px;}
+  .wrap{max-width:760px;margin:0 auto;}
+  .block-head{display:flex;align-items:baseline;gap:8px;}
+  .block-head h2{font-size:18px;color:#0f2746;font-weight:700;}.block-head h2 span{color:#c8102e;}
+  .sub{font-size:11px;color:#6b7280;margin:4px 0 14px;}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  @media(max-width:640px){.grid{grid-template-columns:1fr;}}
+  .card{background:#fff;border:1px solid #d8dde7;border-radius:10px;padding:14px;}
+  .card .lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#0f2746;}
+  .card .lbl small{display:block;font-weight:400;text-transform:none;letter-spacing:0;color:#9aa3b2;font-size:10px;margin-top:1px;}
+  .card .idx{font-size:30px;font-weight:800;color:#0f2746;margin:8px 0 2px;font-variant-numeric:tabular-nums;}
+  .deltas{display:flex;gap:14px;margin-top:4px;}
+  .delta{font-size:12px;}
+  .delta .k{color:#9aa3b2;font-size:10px;display:block;}
+  .delta .v{font-weight:700;font-variant-numeric:tabular-nums;}
+  .up{color:#0f7a3d;}.down{color:#c8102e;}.flat{color:#6b7280;}
+  .supply{margin-top:12px;background:#0f2746;color:#fff;border-radius:10px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+  .supply .lbl{font-size:12px;letter-spacing:.5px;text-transform:uppercase;opacity:.85;}
+  .supply .lbl small{display:block;opacity:.7;text-transform:none;letter-spacing:0;font-size:10px;margin-top:2px;}
+  .supply .big{font-size:26px;font-weight:800;font-variant-numeric:tabular-nums;}
+  .supply .split{font-size:11px;opacity:.8;text-align:right;}
+  .asof{font-size:10px;color:#9aa3b2;margin-top:10px;}
+  .err{color:#c8102e;font-size:12px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="block-head"><h2>Prices &amp; <span>Supply</span></h2></div>
+  <div class="sub">URA & HDB quarterly indices + pipeline · live from data.gov.sg · part of the JND Market tab</div>
+
+  <div class="grid">
+    <div class="card"><div class="lbl">HDB Resale<small>RPI · 1Q2009=100</small></div><div class="idx" id="hdb-idx">—</div><div class="deltas" id="hdb-d"></div></div>
+    <div class="card"><div class="lbl">Private Non-Landed<small>URA PPI · condos/apts</small></div><div class="idx" id="nl-idx">—</div><div class="deltas" id="nl-d"></div></div>
+    <div class="card"><div class="lbl">Private Landed<small>URA PPI</small></div><div class="idx" id="ld-idx">—</div><div class="deltas" id="ld-d"></div></div>
+  </div>
+
+  <div class="supply">
+    <div class="lbl">Units approaching completion<small>private residential under construction</small></div>
+    <div class="big" id="uc-total">—</div>
+    <div class="split" id="uc-split"></div>
+  </div>
+
+  <div class="asof" id="asof">Loading live data…</div>
+</div>
+
+<script>
+var API="https://data.gov.sg/api/action/datastore_search?resource_id=";
+function get(rid){return fetch(API+rid+"&limit=6000").then(function(r){return r.json();}).then(function(j){return j.result.records;});}
+function pct(a,b){return (a/b-1)*100;}
+function cls(v){return v>0.05?"up":v<-0.05?"down":"flat";}
+function arrow(v){return v>0.05?"▲":v<-0.05?"▼":"▬";}
+function deltaHTML(qoq,yoy){
+  return '<div class="delta"><span class="k">QoQ</span><span class="v '+cls(qoq)+'">'+arrow(qoq)+' '+qoq.toFixed(1)+'%</span></div>'
+        +'<div class="delta"><span class="k">YoY</span><span class="v '+cls(yoy)+'">'+arrow(yoy)+' '+yoy.toFixed(1)+'%</span></div>';
+}
+function latest3(recs,key){ // recs sorted asc by quarter
+  var n=recs.length, last=+recs[n-1][key], prev=+recs[n-2][key], yoy=+recs[n-5][key];
+  return {q:recs[n-1].quarter, val:last, qoq:pct(last,prev), yoy:pct(last,yoy)};
+}
+var asofQ="";
+
+// HDB RPI
+get("d_14f63e595975691e7c24a27ae4c07c79").then(function(r){
+  r.sort(function(a,b){return a.quarter<b.quarter?-1:1;});
+  var d=latest3(r,"index"); asofQ=d.q;
+  document.getElementById("hdb-idx").textContent=d.val.toFixed(1);
+  document.getElementById("hdb-d").innerHTML=deltaHTML(d.qoq,d.yoy);
+  stamp();
+}).catch(function(){document.getElementById("hdb-idx").innerHTML='<span class="err">n/a</span>';});
+
+// URA PPI (landed + non-landed)
+get("d_97f8a2e995022d311c6c68cfda6d034c").then(function(r){
+  [["Non-Landed","nl"],["Landed","ld"]].forEach(function(t){
+    var rs=r.filter(function(x){return x.property_type===t[0];}).sort(function(a,b){return a.quarter<b.quarter?-1:1;});
+    var d=latest3(rs,"index"); asofQ=d.q;
+    document.getElementById(t[1]+"-idx").textContent=d.val.toFixed(1);
+    document.getElementById(t[1]+"-d").innerHTML=deltaHTML(d.qoq,d.yoy);
+  });
+  stamp();
+}).catch(function(){});
+
+// Pipeline supply (wide format: columns like 20261Q) — Under Construction
+get("d_055b6549444dedb341c50805d9682a41").then(function(recs){
+  // find latest quarter column
+  var cols=Object.keys(recs[0]).filter(function(k){return /^\d{5}Q$/.test(k);});
+  cols.sort(function(a,b){return (+a.slice(0,4)*4 + +a[4]) - (+b.slice(0,4)*4 + +b[4]);});
+  var lc=cols[cols.length-1];
+  var year=lc.slice(0,4), q=lc[4];
+  var cat="", nlUC=0, ldUC=0;
+  recs.forEach(function(r){
+    var s=(r.DataSeries||"").trim();
+    if(/Non-Landed/i.test(s)) cat="NL"; else if(/Landed/i.test(s)) cat="LD";
+    if(/^Under Construction/i.test(s)){ var v=parseInt(r[lc])||0; if(cat==="NL")nlUC=v; else if(cat==="LD")ldUC=v; }
+  });
+  document.getElementById("uc-total").textContent=(nlUC+ldUC).toLocaleString();
+  document.getElementById("uc-split").innerHTML="Non-landed "+nlUC.toLocaleString()+"<br>Landed "+ldUC.toLocaleString()+"<br>as of "+year+"-Q"+q;
+}).catch(function(){document.getElementById("uc-total").innerHTML='<span class="err">n/a</span>';});
+
+function stamp(){ if(asofQ) document.getElementById("asof").textContent="Live · indices as of "+asofQ+" · source: URA & HDB via data.gov.sg · pulled just now"; }
+</script>
+</body>
+</html>

@@ -1,0 +1,1550 @@
+[
+ {
+  "slug": "19-nassim",
+  "status": "in_market",
+  "total": 102,
+  "sold": 96,
+  "reserved": 0,
+  "avail": 6,
+  "type_hint": "landed",
+  "district": "D10"
+ },
+ {
+  "slug": "21-anderson",
+  "status": "in_market",
+  "total": 18,
+  "sold": 16,
+  "reserved": 1,
+  "avail": 1,
+  "type_hint": "condo",
+  "district": "D10"
+ },
+ {
+  "slug": "21-new-industrial-road",
+  "status": "pre_launch",
+  "total": 47,
+  "avail": 47,
+  "type_hint": "exclude?(21-new-industrial-road)",
+  "district": "D19"
+ },
+ {
+  "slug": "26-newton",
+  "status": "in_market",
+  "total": 180,
+  "sold": 174,
+  "reserved": 0,
+  "avail": 6,
+  "type_hint": "?",
+  "district": "D11"
+ },
+ {
+  "slug": "8-at-bt",
+  "status": "in_market",
+  "total": 158,
+  "sold": 110,
+  "reserved": 0,
+  "avail": 48,
+  "type_hint": "?",
+  "district": "D21"
+ },
+ {
+  "slug": "alana",
+  "status": "in_market",
+  "total": 1,
+  "sold": 0,
+  "reserved": 0,
+  "avail": 1,
+  "type_hint": "?",
+  "district": "D28"
+ },
+ {
+  "slug": "amberwood-at-holland",
+  "status": "pre_launch",
+  "total": 230,
+  "avail": 230,
+  "type_hint": "?",
+  "district": "D10"
+ },
+ {
+  "slug": "apex-foodworks",
+  "status": "in_market",
+  "total": 25,
+  "sold": 22,
+  "reserved": 1,
+  "avail": 2,
+  "type_hint": "exclude?(apex-foodworks)",
+  "district": "D19"
+ },
+ {
+  "slug": "arc-380",
+  "status": "in_market",
+  "total": 147,
+  "sold": 21,
+  "reserved": 0,
+  "avail": 126,
+  "type_hint": "commercial",
+  "district": "D08"
+ },
+ {
+  "slug": "ardor-residence",
+  "status": "in_market",
+  "total": 36,
+  "sold": 31,
+  "reserved": 0,
+  "avail": 5,
+  "type_hint": "?",
+  "district": "D15"
+ },
+ {
+  "slug": "arina-east-residences",
+  "status": "in_market",
+  "total": 107,
+  "sold": 86,
+  "reserved": 0,
+  "avail": 21,
+  "type_hint": "?",
+  "district": "D15"
+ },
+ {
+  "slug": "artisan-8",
+  "status": "in_market",
+  "total": 43,
+  "sold": 24,
+  "reserved": 0,
+  "avail": 19,
+  "type_hint": "commercial/industrial",
+  "district": "D20"
+ },
+ {
+  "slug": "atlassia",
+  "status": "in_market",
+  "total": 32,
+  "sold": 29,
+  "reserved": 1,
+  "avail": 2,
+  "type_hint": "?",
+  "district": "D15"
+ },
+ {
+  "slug": "aurea",
+  "status": "in_market",
+  "total": 188,
+  "sold": 67,
+  "reserved": 1,
+  "avail": 120,
+  "type_hint": "?",
+  "district": "D07"
+ },
+ {
+  "slug": "bagnall-haus",
+  "status": "in_market",
+  "total": 115,
+  "sold": 106,
+  "reserved": 0,
+  "avail": 9,
+  "type_hint": "?",
+  "district": "D16"
+ },
+ {
+  "slug": "blossoms-by-the-park",
+  "status": "in_market",
+  "total": 277,
+  "sold": 275,
+  "reserved": 0,
+  "avail": 2,
+  "type_hint": "landed/commercial",
+  "district": "D05"
+ },
+ {
+  "slug": "boulevard-88",
+  "status": "in_market",
+  "total": 154,
+  "sold": 153,
+  "reserved": 0,
+  "avail": 1,
+  "type_hint": "condo",
+  "district": "D10"
+ },
+ {
+  "slug": "canberra-crescent-residences",
+  "status": "in_market",
+  "total": 376,
+  "sold": 338,
+  "reserved": 0,
+  "avail": 38,
+  "type_hint": "?",
+  "district": "D27"
+ },
+ {
+  "slug": "canninghill-piers",
+  "status": "in_market",
+  "total": 697,
+  "sold": 686,
+  "reserved": 0,
+  "avail": 11,
+  "type_hint": "commercial/condo",
+  "district": "D06"
+ },
+ {
+  "slug": "cape-royale",
+  "status": "in_market",
+  "total": 255,
+  "sold": 123,
+  "reserved": 0,
+  "avail": 132,
+  "type_hint": "commercial/condo",
+  "district": "D04"
+ },
+ {
+  "slug": "cecil-place",
+  "status": "in_market",
+  "total": 18,
+  "sold": 6,
+  "reserved": 0,
+  "avail": 12,
+  "type_hint": "commercial",
+  "district": "D01"
+ },
+ {
+  "slug": "centrium-square",
+  "status": "in_market",
+  "total": 143,
+  "sold": 117,
+  "reserved": 26,
+  "avail": 0,
+  "type_hint": "commercial",
+  "district": "D08"
+ },
+ {
+  "slug": "chencharu-close-gls",
+  "status": "pre_launch",
+  "total": 875,
+  "avail": 875,
+  "type_hint": "?",
+  "district": "D27"
+ },
+ {
+  "slug": "chuan-grove-gls",
+  "status": "pre_launch",
+  "total": 1055,
+  "avail": 1055,
+  "type_hint": "?",
+  "district": "D19"
+ },
+ {
+  "slug": "chuan-park",
+  "status": "in_market",
+  "total": 916,
+  "sold": 878,
+  "reserved": 0,
+  "avail": 38,
+  "type_hint": "commercial/industrial",
+  "district": "D19"
+ },
+ {
+  "slug": "claydence",
+  "status": "in_market",
+  "total": 28,
+  "sold": 20,
+  "reserved": 0,
+  "avail": 8,
+  "type_hint": "?",
+  "district": "D15"
+ },
+ {
+  "slug": "coastal-cabana",
+  "status": "in_market",
+  "total": 748,
+  "sold": 617,
+  "reserved": 0,
+  "avail": 131,
+  "type_hint": "condo",
+  "district": "D17"
+ },
+ {
+  "slug": "concourse-skyline",
+  "status": "in_market",
+  "total": 360,
+  "sold": 342,
+  "reserved": 0,
+  "avail": 18,
+  "type_hint": "?",
+  "district": "D07"
+ },
+ {
+  "slug": "ct-foodnex",
+  "status": "in_market",
+  "total": 111,
+  "sold": 95,
+  "reserved": 0,
+  "avail": 16,
+  "type_hint": "exclude?(ct-foodnex)",
+  "district": "D26"
+ },
+ {
+  "slug": "dalvey-haus",
+  "status": "in_market",
+  "total": 17,
+  "sold": 16,
+  "reserved": 1,
+  "avail": 0,
+  "type_hint": "condo",
+  "district": "D10"
+ },
+ {
+  "slug": "dorsett-residences",
+  "status": "in_market",
+  "total": 10,
+  "sold": 6,
+  "reserved": 0,
+  "avail": 4,
+  "type_hint": "commercial",
+  "district": "D02"
+ },
+ {
+  "slug": "draycott-8",
+  "status": "pre_launch",
+  "total": null,
+  "avail": null,
+  "type_hint": "?",
+  "district": ""
+ },
+ {
+  "slug": "dunearn-house",
+  "status": "pre_launch",
+  "total": 380,
+  "avail": 380,
+  "type_hint": "condo",
+  "district": "D11"
+ },
+ {
+  "slug": "ecofood-mandai",
+  "status": "in_market",
+  "total": 70,
+  "sold": 16,
+  "reserved": 0,
+  "avail": 54,
+  "type_hint": "exclude?(ecofood-mandai)",
+  "district": "D25"
+ },
+ {
+  "slug": "eden-residences-capitol",
+  "status": "in_market",
+  "total": 39,
+  "sold": 37,
+  "reserved": 0,
+  "avail": 2,
+  "type_hint": "?",
+  "district": "D06"
+ },
+ {
+  "slug": "elta",
+  "status": "in_market",
+  "total": 502,
+  "sold": 409,
+  "reserved": 0,
+  "avail": 93,
+  "type_hint": "?",
+  "district": "D05"
+ },
+ {
+  "slug": "enterprise-one",
+  "status": "in_market",
+  "total": 14,
+  "sold": 3,
+  "reserved": 0,
+  "avail": 11,
+  "type_hint": "exclude?(enterprise-one)",
+  "district": "D14"
+ },
+ {
+  "slug": "eunos-technolink",
+  "status": "in_market",
+  "total": 5,
+  "sold": 1,
+  "reserved": 0,
+  "avail": 4,
+  "type_hint": "exclude?(eunos-technolink)",
+  "district": "D14"
+ },
+ {
+  "slug": "eunos-techpark-2",
+  "status": "in_market",
+  "total": 7,
+  "sold": 1,
+  "reserved": 0,
+  "avail": 6,
+  "type_hint": "exclude?(eunos-techpark-2)",
+  "district": "D14"
+ },
+ {
+  "slug": "faber-residence",
+  "status": "in_market",
+  "total": 399,
+  "sold": 382,
+  "reserved": 0,
+  "avail": 17,
+  "type_hint": "?",
+  "district": "D05"
+ },
+ {
+  "slug": "former-pastoral-view",
+  "status": "pre_launch",
+  "total": 133,
+  "avail": 133,
+  "type_hint": "?",
+  "district": "D11"
+ },
+ {
+  "slug": "former-thomson-view",
+  "status": "pre_launch",
+  "total": 1240,
+  "avail": 1240,
+  "type_hint": "?",
+  "district": "D20"
+ },
+ {
+  "slug": "fortune-centre",
+  "status": "in_market",
+  "total": 27,
+  "sold": 25,
+  "reserved": 0,
+  "avail": 2,
+  "type_hint": "commercial",
+  "district": "D07"
+ },
+ {
+  "slug": "gate",
+  "status": "in_market",
+  "total": 269,
+  "sold": 154,
+  "reserved": 0,
+  "avail": 115,
+  "type_hint": "industrial",
+  "district": "D22"
+ },
+ {
+  "slug": "gems-ville",
+  "status": "in_market",
+  "total": 24,
+  "sold": 13,
+  "reserved": 0,
+  "avail": 11,
+  "type_hint": "?",
+  "district": "D14"
+ },
+ {
+  "slug": "generations-tannery",
+  "status": "in_market",
+  "total": 54,
+  "sold": 0,
+  "reserved": 0,
+  "avail": 54,
+  "type_hint": "commercial/industrial",
+  "district": "D13"
+ },
+ {
+  "slug": "gourmet-xchange",
+  "status": "in_market",
+  "total": 268,
+  "sold": 8,
+  "reserved": 0,
+  "avail": 260,
+  "type_hint": "exclude?(gourmet-xchange)",
+  "district": "D13"
+ },
+ {
+  "slug": "grand-dunman",
+  "status": "in_market",
+  "total": 1008,
+  "sold": 922,
+  "reserved": 0,
+  "avail": 86,
+  "type_hint": "?",
+  "district": "D15"
+ },
+ {
+  "slug": "grange-1866",
+  "status": "in_market",
+  "total": 60,
+  "sold": 58,
+  "reserved": 0,
+  "avail": 2,
+  "type_hint": "?",
+  "district": "D10"
+ },
+ {
+  "slug": "greenwood-mews",
+  "status": "in_market",
+  "total": 5,
+  "sold": 0,
+  "reserved": 0,
+  "avail": 5,
+  "type_hint": "?",
+  "district": "D11"
+ },
+ {
+  "slug": "harrison-food-factory",
+  "status": "in_market",
+  "total": 44,
+  "sold": 17,
+  "reserved": 0,
+  "avail": 27,
+  "type_hint": "exclude?(harrison-food-factory)",
+  "district": "D13"
+ },
+ {
+  "slug": "hillion-residences",
+  "status": "in_market",
+  "total": 546,
+  "sold": 533,
+  "reserved": 0,
+  "avail": 13,
+  "type_hint": "commercial",
+  "district": "D23"
+ },
+ {
+  "slug": "hillock-green",
+  "status": "in_market",
+  "total": 474,
+  "sold": 471,
+  "reserved": 0,
+  "avail": 3,
+  "type_hint": "?",
+  "district": "D26"
+ },
+ {
+  "slug": "hudson-place-residences",
+  "status": "in_market",
+  "total": 327,
+  "sold": 214,
+  "reserved": 0,
+  "avail": 113,
+  "type_hint": "?",
+  "district": "D05"
+ },
+ {
+  "slug": "jadescape",
+  "status": "in_market",
+  "total": 1212,
+  "sold": 1197,
+  "reserved": 15,
+  "avail": 0,
+  "type_hint": "condo",
+  "district": "D20"
+ },
+ {
+  "slug": "jden",
+  "status": "in_market",
+  "total": 368,
+  "sold": 355,
+  "reserved": 0,
+  "avail": 13,
+  "type_hint": "commercial/industrial/condo",
+  "district": "D22"
+ },
+ {
+  "slug": "jervois-priv",
+  "status": "in_market",
+  "total": 43,
+  "sold": 17,
+  "reserved": 0,
+  "avail": 26,
+  "type_hint": "?",
+  "district": "D10"
+ },
+ {
+  "slug": "jui-residences",
+  "status": "pre_launch",
+  "total": null,
+  "avail": null,
+  "type_hint": "?",
+  "district": ""
+ },
+ {
+  "slug": "k-suites",
+  "status": "in_market",
+  "total": 19,
+  "sold": 17,
+  "reserved": 0,
+  "avail": 2,
+  "type_hint": "?",
+  "district": "D15"
+ },
+ {
+  "slug": "kassia",
+  "status": "in_market",
+  "total": 276,
+  "sold": 227,
+  "reserved": 0,
+  "avail": 49,
+  "type_hint": "?",
+  "district": "D17"
+ },
+ {
+  "slug": "keppel-bay-plot-6",
+  "status": "pre_launch",
+  "total": 86,
+  "avail": 86,
+  "type_hint": "?",
+  "district": "D04"
+ },
+ {
+  "slug": "klimt-cairnhill",
+  "status": "in_market",
+  "total": 138,
+  "sold": 137,
+  "reserved": 0,
+  "avail": 1,
+  "type_hint": "?",
+  "district": "D09"
+ },
+ {
+  "slug": "le-cond-bkk1x",
+  "status": "in_market",
+  "total": 1037,
+  "sold": 318,
+  "reserved": 0,
+  "avail": 719,
+  "type_hint": "?",
+  "district": "D01"
+ },
+ {
+  "slug": "lentor-gardens-residences",
+  "status": "in_market",
+  "total": 499,
+  "sold": 0,
+  "reserved": 0,
+  "avail": 499,
+  "type_hint": "?",
+  "district": "D26"
+ },
+ {
+  "slug": "lentoria",
+  "status": "in_market",
+  "total": 268,
+  "sold": 246,
+  "reserved": 0,
+  "avail": 22,
+  "type_hint": "?",
+  "district": "D26"
+ },
+ {
+  "slug": "les-maisons-nassim",
+  "status": "pre_launch",
+  "total": 14,
+  "avail": 14,
+  "type_hint": "?",
+  "district": "D10"
+ },
+ {
+  "slug": "lucerne-grand",
+  "status": "pre_launch",
+  "total": 570,
+  "avail": 570,
+  "type_hint": "?",
+  "district": "D22"
+ },
+ {
+  "slug": "lucky-plaza",
+  "status": "in_market",
+  "total": 10,
+  "sold": 1,
+  "reserved": 0,
+  "avail": 9,
+  "type_hint": "commercial",
+  "district": "D09"
+ },
+ {
+  "slug": "lyndenwoods",
+  "status": "in_market",
+  "total": 343,
+  "sold": 342,
+  "reserved": 0,
+  "avail": 1,
+  "type_hint": "?",
+  "district": "D05"
+ },
+ {
+  "slug": "meyer-blue",
+  "status": "in_market",
+  "total": 227,
+  "sold": 177,
+  "reserved": 0,
+  "avail": 50,
+  "type_hint": "?",
+  "district": "D15"
+ },
+ {
+  "slug": "midtown-bay",
+  "status": "in_market",
+  "total": 219,
+  "sold": 149,
+  "reserved": 0,
+  "avail": 70,
+  "type_hint": "commercial",
+  "district": "D07"
+ },
+ {
+  "slug": "miltonia-close",
+  "status": "pre_launch",
+  "total": 430,
+  "avail": 430,
+  "type_hint": "EC",
+  "district": "D27"
+ },
+ {
+  "slug": "narra-residences",
+  "status": "in_market",
+  "total": 544,
+  "sold": 203,
+  "reserved": 2,
+  "avail": 339,
+  "type_hint": "?",
+  "district": "D23"
+ },
+ {
+  "slug": "nava-grove",
+  "status": "in_market",
+  "total": 552,
+  "sold": 551,
+  "reserved": 0,
+  "avail": 1,
+  "type_hint": "landed/condo",
+  "district": "D21"
+ },
+ {
+  "slug": "newport-residences",
+  "status": "in_market",
+  "total": 246,
+  "sold": 196,
+  "reserved": 0,
+  "avail": 50,
+  "type_hint": "commercial/condo",
+  "district": "D02"
+ },
+ {
+  "slug": "nordcom-1",
+  "status": "in_market",
+  "total": 55,
+  "sold": 6,
+  "reserved": 0,
+  "avail": 49,
+  "type_hint": "commercial/industrial",
+  "district": "D27"
+ },
+ {
+  "slug": "nordcom-2",
+  "status": "in_market",
+  "total": 28,
+  "sold": 0,
+  "reserved": 0,
+  "avail": 28,
+  "type_hint": "commercial/industrial",
+  "district": "D27"
+ },
+ {
+  "slug": "norwood-grand",
+  "status": "in_market",
+  "total": 348,
+  "sold": 314,
+  "reserved": 0,
+  "avail": 34,
+  "type_hint": "?",
+  "district": "D25"
+ },
+ {
+  "slug": "novelty-techpoint",
+  "status": "pre_launch",
+  "total": null,
+  "avail": null,
+  "type_hint": "?",
+  "district": ""
+ },
+ {
+  "slug": "ocho",
+  "status": "in_market",
+  "total": 21,
+  "sold": 2,
+  "reserved": 0,
+  "avail": 19,
+  "type_hint": "?",
+  "district": "D14"
+ },
+ {
+  "slug": "one-marina-gardens",
+  "status": "in_market",
+  "total": 937,
+  "sold": 637,
+  "reserved": 2,
+  "avail": 298,
+  "type_hint": "?",
+  "district": "D01"
+ },
+ {
+  "slug": "one-meyer",
+  "status": "in_market",
+  "total": 67,
+  "sold": 65,
+  "reserved": 1,
+  "avail": 1,
+  "type_hint": "?",
+  "district": "D15"
+ },
+ {
+  "slug": "one-sophia",
+  "status": "in_market",
+  "total": 123,
+  "sold": 39,
+  "reserved": 0,
+  "avail": 84,
+  "type_hint": "commercial",
+  "district": "D09"
+ },
+ {
+  "slug": "parktown-residence",
+  "status": "in_market",
+  "total": 1193,
+  "sold": 1165,
+  "reserved": 0,
+  "avail": 28,
+  "type_hint": "?",
+  "district": "D18"
+ },
+ {
+  "slug": "peak-residence",
+  "status": "in_market",
+  "total": 90,
+  "sold": 89,
+  "reserved": 1,
+  "avail": 0,
+  "type_hint": "industrial",
+  "district": "D11"
+ },
+ {
+  "slug": "penrith",
+  "status": "in_market",
+  "total": 462,
+  "sold": 452,
+  "reserved": 0,
+  "avail": 10,
+  "type_hint": "?",
+  "district": "D03"
+ },
+ {
+  "slug": "phoenix-residences",
+  "status": "in_market",
+  "total": 74,
+  "sold": 73,
+  "reserved": 0,
+  "avail": 1,
+  "type_hint": "?",
+  "district": "D23"
+ },
+ {
+  "slug": "pinery-residences",
+  "status": "in_market",
+  "total": 588,
+  "sold": 551,
+  "reserved": 0,
+  "avail": 37,
+  "type_hint": "?",
+  "district": "D16"
+ },
+ {
+  "slug": "pinetree-hill",
+  "status": "in_market",
+  "total": 520,
+  "sold": 519,
+  "reserved": 0,
+  "avail": 1,
+  "type_hint": "?",
+  "district": "D21"
+ },
+ {
+  "slug": "premier-tower",
+  "status": "in_market",
+  "total": 780,
+  "sold": 28,
+  "reserved": 0,
+  "avail": 752,
+  "type_hint": "?",
+  "district": ""
+ },
+ {
+  "slug": "promenade-peak",
+  "status": "in_market",
+  "total": 596,
+  "sold": 430,
+  "reserved": 4,
+  "avail": 162,
+  "type_hint": "?",
+  "district": "D03"
+ },
+ {
+  "slug": "queens-peak",
+  "status": "pre_launch",
+  "total": null,
+  "avail": null,
+  "type_hint": "?",
+  "district": ""
+ },
+ {
+  "slug": "reflections-at-keppel-bay",
+  "status": "in_market",
+  "total": 46,
+  "sold": 45,
+  "reserved": 1,
+  "avail": 0,
+  "type_hint": "condo",
+  "district": "D04"
+ },
+ {
+  "slug": "reignwood-hamilton-scotts",
+  "status": "in_market",
+  "total": 56,
+  "sold": 2,
+  "reserved": 46,
+  "avail": 8,
+  "type_hint": "?",
+  "district": "D09"
+ },
+ {
+  "slug": "rf-princess-cove",
+  "status": "in_market",
+  "total": 959,
+  "sold": 0,
+  "reserved": 0,
+  "avail": 959,
+  "type_hint": "condo",
+  "district": "D01"
+ },
+ {
+  "slug": "richfield-industrial-cente",
+  "status": "in_market",
+  "total": 61,
+  "sold": 0,
+  "reserved": 0,
+  "avail": 61,
+  "type_hint": "exclude?(richfield-industrial-cente)",
+  "district": "D14"
+ },
+ {
+  "slug": "river-green",
+  "status": "in_market",
+  "total": 525,
+  "sold": 492,
+  "reserved": 0,
+  "avail": 33,
+  "type_hint": "?",
+  "district": "D09"
+ },
+ {
+  "slug": "river-modern",
+  "status": "in_market",
+  "total": 455,
+  "sold": 423,
+  "reserved": 0,
+  "avail": 32,
+  "type_hint": "?",
+  "district": "D09"
+ },
+ {
+  "slug": "royal-platinum",
+  "status": "in_market",
+  "total": 917,
+  "sold": 104,
+  "reserved": 103,
+  "avail": 710,
+  "type_hint": "?",
+  "district": ""
+ },
+ {
+  "slug": "sanctuarynewton",
+  "status": "in_market",
+  "total": 38,
+  "sold": 0,
+  "reserved": 0,
+  "avail": 38,
+  "type_hint": "condo",
+  "district": "D11"
+ },
+ {
+  "slug": "scotts-square",
+  "status": "in_market",
+  "total": 338,
+  "sold": 334,
+  "reserved": 0,
+  "avail": 4,
+  "type_hint": "?",
+  "district": "D09"
+ },
+ {
+  "slug": "seascape",
+  "status": "in_market",
+  "total": 151,
+  "sold": 91,
+  "reserved": 0,
+  "avail": 60,
+  "type_hint": "condo",
+  "district": "D04"
+ },
+ {
+  "slug": "sembawang-road-gls",
+  "status": "pre_launch",
+  "total": 265,
+  "avail": 265,
+  "type_hint": "?",
+  "district": "D27"
+ },
+ {
+  "slug": "senja-close-gls",
+  "status": "pre_launch",
+  "total": 295,
+  "avail": 295,
+  "type_hint": "?",
+  "district": "D23"
+ },
+ {
+  "slug": "shoppes-ascent-456",
+  "status": "in_market",
+  "total": 17,
+  "sold": 11,
+  "reserved": 0,
+  "avail": 6,
+  "type_hint": "commercial",
+  "district": "D12"
+ },
+ {
+  "slug": "shoppes-sky-eden",
+  "status": "in_market",
+  "total": 12,
+  "sold": 2,
+  "reserved": 0,
+  "avail": 10,
+  "type_hint": "commercial",
+  "district": "D16"
+ },
+ {
+  "slug": "skies-miltonia",
+  "status": "in_market",
+  "total": 411,
+  "sold": 408,
+  "reserved": 0,
+  "avail": 3,
+  "type_hint": "?",
+  "district": "D27"
+ },
+ {
+  "slug": "sophia-regency",
+  "status": "in_market",
+  "total": 38,
+  "sold": 0,
+  "reserved": 0,
+  "avail": 38,
+  "type_hint": "condo",
+  "district": "D09"
+ },
+ {
+  "slug": "sora",
+  "status": "in_market",
+  "total": 441,
+  "sold": 223,
+  "reserved": 0,
+  "avail": 218,
+  "type_hint": "?",
+  "district": "D22"
+ },
+ {
+  "slug": "space-18",
+  "status": "in_market",
+  "total": 48,
+  "sold": 37,
+  "reserved": 5,
+  "avail": 6,
+  "type_hint": "industrial",
+  "district": "D12"
+ },
+ {
+  "slug": "springleaf-collection",
+  "status": "in_market",
+  "total": 10,
+  "sold": 8,
+  "reserved": 0,
+  "avail": 2,
+  "type_hint": "landed",
+  "district": "D26"
+ },
+ {
+  "slug": "springleaf-residence",
+  "status": "in_market",
+  "total": 941,
+  "sold": 919,
+  "reserved": 0,
+  "avail": 22,
+  "type_hint": "?",
+  "district": "D26"
+ },
+ {
+  "slug": "tembusu-grand",
+  "status": "in_market",
+  "total": 638,
+  "sold": 631,
+  "reserved": 0,
+  "avail": 7,
+  "type_hint": "?",
+  "district": "D15"
+ },
+ {
+  "slug": "tengah-garden-residences",
+  "status": "in_market",
+  "total": 863,
+  "sold": 860,
+  "reserved": 0,
+  "avail": 3,
+  "type_hint": "?",
+  "district": "D24"
+ },
+ {
+  "slug": "terra-hill",
+  "status": "in_market",
+  "total": 270,
+  "sold": 198,
+  "reserved": 0,
+  "avail": 72,
+  "type_hint": "condo",
+  "district": "D05"
+ },
+ {
+  "slug": "the-arcady-at-boon-keng",
+  "status": "in_market",
+  "total": 172,
+  "sold": 99,
+  "reserved": 3,
+  "avail": 70,
+  "type_hint": "condo",
+  "district": "D12"
+ },
+ {
+  "slug": "the-canopy-on-normanby",
+  "status": "in_market",
+  "total": 15,
+  "sold": 0,
+  "reserved": 0,
+  "avail": 15,
+  "type_hint": "condo",
+  "district": ""
+ },
+ {
+  "slug": "the-collective-at-one-sophia",
+  "status": "in_market",
+  "total": 367,
+  "sold": 98,
+  "reserved": 0,
+  "avail": 269,
+  "type_hint": "industrial",
+  "district": "D09"
+ },
+ {
+  "slug": "the-continuum",
+  "status": "in_market",
+  "total": 817,
+  "sold": 778,
+  "reserved": 0,
+  "avail": 39,
+  "type_hint": "condo",
+  "district": "D15"
+ },
+ {
+  "slug": "the-flow",
+  "status": "in_market",
+  "total": 57,
+  "sold": 51,
+  "reserved": 0,
+  "avail": 6,
+  "type_hint": "commercial",
+  "district": "D15"
+ },
+ {
+  "slug": "the-giverny-residences",
+  "status": "in_market",
+  "total": 3,
+  "sold": 1,
+  "reserved": 0,
+  "avail": 2,
+  "type_hint": "?",
+  "district": "D10"
+ },
+ {
+  "slug": "the-golden-mile",
+  "status": "in_market",
+  "total": 154,
+  "sold": 19,
+  "reserved": 0,
+  "avail": 135,
+  "type_hint": "commercial",
+  "district": "D07"
+ },
+ {
+  "slug": "the-green-collection",
+  "status": "in_market",
+  "total": 20,
+  "sold": 0,
+  "reserved": 0,
+  "avail": 20,
+  "type_hint": "landed",
+  "district": "D04"
+ },
+ {
+  "slug": "the-hillshore",
+  "status": "in_market",
+  "total": 60,
+  "sold": 11,
+  "reserved": 1,
+  "avail": 48,
+  "type_hint": "?",
+  "district": "D05"
+ },
+ {
+  "slug": "the-index",
+  "status": "in_market",
+  "total": 23,
+  "sold": 0,
+  "reserved": 0,
+  "avail": 23,
+  "type_hint": "commercial/industrial",
+  "district": "D22"
+ },
+ {
+  "slug": "the-lakegarden-residences",
+  "status": "in_market",
+  "total": 306,
+  "sold": 304,
+  "reserved": 0,
+  "avail": 2,
+  "type_hint": "condo",
+  "district": "D22"
+ },
+ {
+  "slug": "the-line-tanjong-rhu",
+  "status": "in_market",
+  "total": 130,
+  "sold": 122,
+  "reserved": 0,
+  "avail": 8,
+  "type_hint": "?",
+  "district": "D15"
+ },
+ {
+  "slug": "the-lumos",
+  "status": "in_market",
+  "total": 54,
+  "sold": 33,
+  "reserved": 0,
+  "avail": 21,
+  "type_hint": "?",
+  "district": "D09"
+ },
+ {
+  "slug": "the-myst",
+  "status": "in_market",
+  "total": 408,
+  "sold": 388,
+  "reserved": 0,
+  "avail": 20,
+  "type_hint": "?",
+  "district": "D23"
+ },
+ {
+  "slug": "the-oceanfront-sentosa-cove",
+  "status": "in_market",
+  "total": 1,
+  "sold": 0,
+  "reserved": 0,
+  "avail": 1,
+  "type_hint": "condo",
+  "district": "D04"
+ },
+ {
+  "slug": "the-orie",
+  "status": "in_market",
+  "total": 777,
+  "sold": 741,
+  "reserved": 0,
+  "avail": 36,
+  "type_hint": "?",
+  "district": "D12"
+ },
+ {
+  "slug": "the-ranz",
+  "status": "in_market",
+  "total": 18,
+  "sold": 11,
+  "reserved": 0,
+  "avail": 7,
+  "type_hint": "?",
+  "district": "D08"
+ },
+ {
+  "slug": "the-residences-at-w-singapore-sentosa-cove",
+  "status": "in_market",
+  "total": 228,
+  "sold": 152,
+  "reserved": 0,
+  "avail": 76,
+  "type_hint": "condo",
+  "district": "D04"
+ },
+ {
+  "slug": "the-ritzcarlton-residences",
+  "status": "in_market",
+  "total": 58,
+  "sold": 53,
+  "reserved": 0,
+  "avail": 5,
+  "type_hint": "?",
+  "district": "D09"
+ },
+ {
+  "slug": "the-robertson-opus",
+  "status": "in_market",
+  "total": 348,
+  "sold": 205,
+  "reserved": 0,
+  "avail": 143,
+  "type_hint": "commercial",
+  "district": "D09"
+ },
+ {
+  "slug": "the-sen",
+  "status": "in_market",
+  "total": 348,
+  "sold": 137,
+  "reserved": 0,
+  "avail": 211,
+  "type_hint": "?",
+  "district": "D21"
+ },
+ {
+  "slug": "the-shorefront",
+  "status": "in_market",
+  "total": 24,
+  "sold": 13,
+  "reserved": 0,
+  "avail": 11,
+  "type_hint": "condo",
+  "district": "D17"
+ },
+ {
+  "slug": "the-venue-shoppes",
+  "status": "in_market",
+  "total": 11,
+  "sold": 1,
+  "reserved": 0,
+  "avail": 10,
+  "type_hint": "commercial",
+  "district": "D13"
+ },
+ {
+  "slug": "the-westcom",
+  "status": "in_market",
+  "total": 10,
+  "sold": 0,
+  "reserved": 0,
+  "avail": 10,
+  "type_hint": "commercial/industrial",
+  "district": "D22"
+ },
+ {
+  "slug": "tmw-maxwell",
+  "status": "in_market",
+  "total": 324,
+  "sold": 5,
+  "reserved": 0,
+  "avail": 319,
+  "type_hint": "commercial",
+  "district": "D02"
+ },
+ {
+  "slug": "tripleone-somerset",
+  "status": "in_market",
+  "total": 302,
+  "sold": 233,
+  "reserved": 0,
+  "avail": 69,
+  "type_hint": "commercial",
+  "district": "D09"
+ },
+ {
+  "slug": "turquoise",
+  "status": "in_market",
+  "total": 91,
+  "sold": 90,
+  "reserved": 0,
+  "avail": 1,
+  "type_hint": "condo",
+  "district": "D04"
+ },
+ {
+  "slug": "twin-vew",
+  "status": "in_market",
+  "total": 522,
+  "sold": 520,
+  "reserved": 0,
+  "avail": 2,
+  "type_hint": "condo",
+  "district": "D05"
+ },
+ {
+  "slug": "union-square-residences",
+  "status": "in_market",
+  "total": 366,
+  "sold": 171,
+  "reserved": 0,
+  "avail": 195,
+  "type_hint": "?",
+  "district": "D01"
+ },
+ {
+  "slug": "upperhouse",
+  "status": "in_market",
+  "total": 302,
+  "sold": 240,
+  "reserved": 0,
+  "avail": 62,
+  "type_hint": "?",
+  "district": "D10"
+ },
+ {
+  "slug": "uptown-farrer",
+  "status": "in_market",
+  "total": 123,
+  "sold": 116,
+  "reserved": 0,
+  "avail": 7,
+  "type_hint": "commercial/condo",
+  "district": "D08"
+ },
+ {
+  "slug": "urban-village",
+  "status": "in_market",
+  "total": 117,
+  "sold": 0,
+  "reserved": 17,
+  "avail": 100,
+  "type_hint": "landed",
+  "district": ""
+ },
+ {
+  "slug": "vela-bay",
+  "status": "in_market",
+  "total": 515,
+  "sold": 372,
+  "reserved": 0,
+  "avail": 143,
+  "type_hint": "?",
+  "district": "D16"
+ },
+ {
+  "slug": "vila-nature",
+  "status": "pre_launch",
+  "total": 11,
+  "avail": 11,
+  "type_hint": "landed",
+  "district": "D27"
+ },
+ {
+  "slug": "villas-greenbank-park",
+  "status": "in_market",
+  "total": 3,
+  "sold": 0,
+  "reserved": 0,
+  "avail": 3,
+  "type_hint": "exclude?(villas-greenbank-park)",
+  "district": "D21"
+ },
+ {
+  "slug": "villas-old-tampines-road",
+  "status": "in_market",
+  "total": 3,
+  "sold": 0,
+  "reserved": 0,
+  "avail": 3,
+  "type_hint": "exclude?(villas-old-tampines-road)",
+  "district": "D17"
+ },
+ {
+  "slug": "visioncrest-orchard",
+  "status": "in_market",
+  "total": 27,
+  "sold": 14,
+  "reserved": 12,
+  "avail": 1,
+  "type_hint": "commercial",
+  "district": "D09"
+ },
+ {
+  "slug": "vue-aston-cambodia",
+  "status": "pre_launch",
+  "total": 895,
+  "avail": 895,
+  "type_hint": "?",
+  "district": ""
+ },
+ {
+  "slug": "w-residences-marina-view-singapore",
+  "status": "in_market",
+  "total": 682,
+  "sold": 15,
+  "reserved": 2,
+  "avail": 665,
+  "type_hint": "?",
+  "district": "D01"
+ },
+ {
+  "slug": "wealth-mansion",
+  "status": "in_market",
+  "total": 350,
+  "sold": 0,
+  "reserved": 0,
+  "avail": 350,
+  "type_hint": "landed",
+  "district": ""
+ },
+ {
+  "slug": "woodland-drive-17-gls",
+  "status": "pre_launch",
+  "total": 420,
+  "avail": 420,
+  "type_hint": "?",
+  "district": "D25"
+ },
+ {
+  "slug": "woodlands-drive-17-pb",
+  "status": "pre_launch",
+  "total": 560,
+  "avail": 560,
+  "type_hint": "EC",
+  "district": "D25"
+ },
+ {
+  "slug": "woods-square",
+  "status": "in_market",
+  "total": 128,
+  "sold": 16,
+  "reserved": 16,
+  "avail": 96,
+  "type_hint": "commercial",
+  "district": "D25"
+ },
+ {
+  "slug": "zyon-grand",
+  "status": "in_market",
+  "total": 706,
+  "sold": 632,
+  "reserved": 0,
+  "avail": 74,
+  "type_hint": "?",
+  "district": "D03"
+ }
+]

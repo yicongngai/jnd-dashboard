@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JND Market — New Launches (prototype)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#f1f4f8;color:#1a2332;padding:20px;}
+  .wrap{max-width:920px;margin:0 auto;}
+  .block-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;}
+  .block-head h2{font-size:18px;color:#0f2746;font-weight:700;}
+  .block-head h2 span{color:#c8102e;}
+  .draft{font-size:9px;font-weight:700;letter-spacing:.5px;background:#ed6c02;color:#fff;padding:2px 7px;border-radius:3px;}
+  .sub{font-size:11px;color:#6b7280;margin:4px 0 16px;}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(max-width:760px){.cols{grid-template-columns:1fr;}}
+  .col{background:#fff;border:1px solid #d8dde7;border-radius:10px;padding:14px 16px;}
+  .col-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid #0f2746;padding-bottom:8px;margin-bottom:6px;}
+  .col-head .t{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#0f2746;}
+  .col-head .c{font-size:11px;color:#6b7280;text-align:right;}
+  .col-head .c b{color:#c8102e;font-size:18px;}
+  .item{display:flex;align-items:center;gap:8px;padding:9px 0;border-bottom:1px solid #eef1f6;font-size:13px;}
+  .item:last-child{border-bottom:0;}
+  .item .nm{font-weight:700;color:#0f2746;flex:1;}
+  .item .nm small{display:block;font-weight:400;color:#9aa3b2;font-size:10px;}
+  .chip{font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;color:#fff;white-space:nowrap;}
+  .chip.CCR{background:#c8102e;} .chip.RCR{background:#ed6c02;} .chip.OCR{background:#0f2746;} .chip.NA{background:#9aa3b2;}
+  .avail{font-size:13px;font-weight:700;color:#0f2746;white-space:nowrap;min-width:74px;text-align:right;}
+  .avail small{display:block;font-weight:400;color:#9aa3b2;font-size:9px;}
+  .avail.tbc{color:#b6c0cf;}
+  .row-btns{display:flex;gap:4px;}
+  .row-btns button{border:0;background:#eef1f6;color:#5a6577;border-radius:4px;width:22px;height:22px;cursor:pointer;font-size:11px;line-height:1;}
+  .row-btns button:hover{background:#dde3ec;}
+  .addbtn{margin-top:8px;width:100%;background:#fff;border:1px dashed #b6c0cf;color:#0f2746;border-radius:6px;padding:7px;font-size:12px;font-weight:600;cursor:pointer;}
+  .addbtn:hover{background:#f7f9fc;}
+  .total-bar{background:#0f2746;color:#fff;border-radius:8px;padding:11px 16px;display:flex;justify-content:space-between;align-items:center;margin:14px 0 4px;}
+  .total-bar .k{font-size:12px;letter-spacing:.5px;text-transform:uppercase;opacity:.85;}
+  .total-bar .v{font-size:20px;font-weight:800;font-variant-numeric:tabular-nums;}
+  .toolbar{display:flex;gap:8px;align-items:center;margin:10px 0 4px;flex-wrap:wrap;}
+  .toolbar button{background:#fff;border:1px solid #cbd5e1;color:#0f2746;border-radius:6px;padding:7px 13px;font-size:12px;font-weight:600;cursor:pointer;}
+  .toolbar .msg{font-size:11px;color:#0f7a3d;font-weight:600;}
+  .editform{background:#f7f9fc;border:1px solid #d8dde7;border-radius:7px;padding:10px;margin-top:8px;display:none;}
+  .editform.open{display:block;}
+  .editform .grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+  .editform input,.editform select{font-size:12px;padding:5px 6px;border:1px solid #cbd5e1;border-radius:5px;width:100%;}
+  .editform .full{grid-column:1/3;}
+  .editform .acts{display:flex;gap:6px;margin-top:8px;}
+  .editform .acts button{font-size:12px;padding:6px 12px;border-radius:5px;border:0;cursor:pointer;}
+  .editform .acts .save{background:#0f7a3d;color:#fff;} .editform .acts .cancel{background:#eef1f6;color:#5a6577;}
+  .disclaimer{font-size:11px;color:#6b7280;background:#fff7ed;border:1px solid #fed7aa;border-radius:7px;padding:9px 12px;line-height:1.5;margin-top:8px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="block-head"><h2>New <span>Launches</span> — units available</h2> <span class="draft">DRAFT — CONFIRM</span></div>
+  <div class="sub">Residential condos · Singapore — excludes EC, landed, commercial, industrial, overseas. <b>Available units</b> = unsold (in-market) or full size (not yet launched).</div>
+
+  <div class="cols">
+    <div class="col">
+      <div class="col-head"><span class="t">Currently in Market</span><span class="c"><b id="c-market">0</b> projects<br><span id="u-market">0</span> units available</span></div>
+      <div id="list-market"></div>
+      <button class="addbtn" onclick="openAdd('in_market')">+ Add launch</button>
+      <div class="editform" id="form-in_market"></div>
+    </div>
+    <div class="col">
+      <div class="col-head"><span class="t">Launching — Rest of 2026</span><span class="c"><b id="c-rest">0</b> projects<br><span id="u-rest">0</span> units available</span></div>
+      <div id="list-rest"></div>
+      <button class="addbtn" onclick="openAdd('rest_of_2026')">+ Add launch</button>
+      <div class="editform" id="form-rest_of_2026"></div>
+    </div>
+  </div>
+
+  <div class="total-bar"><span class="k">Total new-launch units available</span><span class="v" id="grand-total">—</span></div>
+
+  <div class="toolbar">
+    <button onclick="exportJSON()">⤓ Export launches.json</button>
+    <button onclick="resetSeed()">↺ Reset to seed</button>
+    <span class="msg" id="msg"></span>
+  </div>
+
+  <div class="disclaimer">
+    <strong>Available units</strong> = what a buyer can still purchase. Not-yet-launched projects count their full size (100% available);
+    in-market projects count only <em>unsold</em> units. In-market figures move weekly — seed them from your numbers or
+    URA's monthly developer-sales (unsold units). "TBC" rows aren't in the tally yet. Curated draft — confirm before client use.
+  </div>
+</div>
+
+<script>
+/* inline seed — overridden by launches.json or your saved edits. avail = units AVAILABLE. */
+var SEED = {
+  in_market: [
+    { name:"The Orie", district:"D12", region:"RCR", avail:36, developer:"CDL/Frasers/Sekisui", launched:"Jan 2026" },
+    { name:"River Green", district:"D9", region:"CCR", avail:32, developer:"Wing Tai", launched:"2026" },
+    { name:"Lyndenwoods", district:"D5", region:"RCR", avail:1, developer:"CapitaLand", launched:"2026" },
+    { name:"Tengah Garden Residences", district:"D24", region:"OCR", avail:3, developer:"GuocoLand/Hong Leong/CSC", launched:"Apr 2026" },
+    { name:"Hudson Place Residences", district:"", region:"", avail:113, developer:"Qingjian/Forsea", launched:"Q2 2026" },
+    { name:"Vela Bay", district:"D16", region:"OCR", avail:143, developer:"SingHaiyi", launched:"Q2 2026" },
+    { name:"Narra Residences", district:"D10", region:"CCR", avail:339, developer:"", launched:"2026" }
+  ],
+  rest_of_2026: [
+    { name:"Bukit Timah Turf City (Ph1)", district:"D11", region:"CCR", avail:230, developer:"Sim Lian", launch:"Jul 2026" },
+    { name:"Chuan Grove Residences", district:"D19", region:"OCR", avail:1055, developer:"Sing Holdings/Sunway", launch:"Q3 2026" },
+    { name:"Lentor Gardens Residences", district:"D26", region:"OCR", avail:null, developer:"Kingsford", launch:"Q3 2026" },
+    { name:"The Serra Residences", district:"", region:"", avail:133, developer:"Far East", launch:"Q3 2026" },
+    { name:"Lakeside Drive (GLS)", district:"D22", region:"OCR", avail:null, developer:"CDL", launch:"Q3 2026" },
+    { name:"Holland Plain", district:"D10", region:"CCR", avail:380, developer:"Allgreen", launch:"Nov 2026" },
+    { name:"Upper Thomson Residences", district:"D20", region:"RCR", avail:null, developer:"Wee Hur", launch:"Q4 2026" },
+    { name:"Former Thomson View", district:"D20", region:"RCR", avail:null, developer:"UOL/CapitaLand/SingLand", launch:"Q4 2026" },
+    { name:"Dunearn House", district:"", region:"", avail:380, developer:"CSC/Frasers/Sekisui", launch:"2026" },
+    { name:"Amberwood at Holland", district:"D10", region:"CCR", avail:null, developer:"", launch:"2026" },
+    { name:"Lucerne Grand", district:"D9", region:"CCR", avail:570, developer:"", launch:"2026" }
+  ]
+};
+var LS = "jnd-launches";
+var DATA = JSON.parse(JSON.stringify(SEED));
+
+function load(){
+  var saved=null; try{ saved=JSON.parse(localStorage.getItem(LS)); }catch(e){}
+  if(saved && saved.in_market){ DATA=saved; render(); return; }
+  fetch("launches.json",{cache:"no-store"}).then(function(r){return r.ok?r.json():null;}).then(function(j){
+    if(j && j.in_market){ DATA={in_market:j.in_market, rest_of_2026:j.rest_of_2026||[]}; }
+    render();
+  }).catch(render);
+}
+function regionOf(d){ d=(d||"").toUpperCase(); var n=parseInt(d.replace("D",""),10);
+  if([1,2,6,9,10,11].indexOf(n)>=0)return"CCR"; if([3,4,5,7,8,12,13,14,15,20].indexOf(n)>=0)return"RCR"; return n?"OCR":"NA"; }
+function esc(s){ return (s==null?"":String(s)).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];}); }
+
+function render(){
+  var grand=0, anyTBC=false;
+  ["in_market","rest_of_2026"].forEach(function(key){
+    var inMarket = key==="in_market";
+    var el=document.getElementById(inMarket?"list-market":"list-rest"); el.innerHTML="";
+    var sum=0, tbc=0;
+    DATA[key].forEach(function(p,i){
+      var reg=p.region||regionOf(p.district);
+      var timing=p.launched||p.launch||"";
+      var hasAvail = (p.avail!=null && p.avail!=="");
+      if(hasAvail) sum+=Number(p.avail); else { tbc++; anyTBC=true; }
+      var availHTML = hasAvail
+        ? '<span class="avail">'+Number(p.avail).toLocaleString()+'<small>'+(inMarket?'unsold':'full / new')+'</small></span>'
+        : '<span class="avail tbc">TBC<small>'+esc(timing)+'</small></span>';
+      var row=document.createElement("div"); row.className="item";
+      row.innerHTML='<span class="chip '+reg+'">'+reg+'</span>'
+        +'<span class="nm">'+esc(p.name)+'<small>'+(p.district||"")+(p.developer?(" · "+esc(p.developer)):"")+(hasAvail&&inMarket?(" · "+esc(timing)):"")+'</small></span>'
+        +availHTML
+        +'<span class="row-btns"><button title="Edit" onclick="openEdit(\''+key+'\','+i+')">&#9998;</button>'
+        +'<button title="Remove" onclick="del(\''+key+'\','+i+')">&#10005;</button></span>';
+      el.appendChild(row);
+    });
+    grand+=sum;
+    document.getElementById(inMarket?"c-market":"c-rest").textContent=DATA[key].length;
+    document.getElementById(inMarket?"u-market":"u-rest").textContent=sum.toLocaleString()+(tbc?(" (+"+tbc+" TBC)"):"");
+  });
+  document.getElementById("grand-total").textContent=grand.toLocaleString()+(anyTBC?"+ (some TBC)":"");
+}
+
+function formHTML(key,p,idx){
+  p=p||{};
+  return '<div class="grid">'
+    +'<input class="full" id="f-name" placeholder="Project name" value="'+esc(p.name||"")+'">'
+    +'<input id="f-district" placeholder="District e.g. D10" value="'+esc(p.district||"")+'">'
+    +'<select id="f-region"><option value="">Region (auto)</option>'
+      +["CCR","RCR","OCR"].map(function(r){return '<option'+(p.region===r?" selected":"")+'>'+r+'</option>';}).join("")+'</select>'
+    +'<input id="f-avail" type="number" placeholder="'+(key==="in_market"?"Units available (unsold)":"Units available (full size)")+'" value="'+(p.avail!=null?p.avail:"")+'">'
+    +'<input id="f-dev" placeholder="Developer" value="'+esc(p.developer||"")+'">'
+    +'<input class="full" id="f-timing" placeholder="'+(key==="in_market"?"Launched e.g. Jan 2026":"Launch e.g. Nov 2026 / Q4 2026")+'" value="'+esc(p.launched||p.launch||"")+'">'
+    +'</div><div class="acts"><button class="save" onclick="saveForm(\''+key+'\','+(idx==null?"null":idx)+')">Save</button>'
+    +'<button class="cancel" onclick="closeForm(\''+key+'\')">Cancel</button></div>';
+}
+function openAdd(key){ var f=document.getElementById("form-"+key); f.innerHTML=formHTML(key,null,null); f.classList.add("open"); }
+function openEdit(key,idx){ var f=document.getElementById("form-"+key); f.innerHTML=formHTML(key,DATA[key][idx],idx); f.classList.add("open"); }
+function closeForm(key){ var f=document.getElementById("form-"+key); f.classList.remove("open"); f.innerHTML=""; }
+function saveForm(key,idx){
+  var v=function(id){var e=document.getElementById(id);return e?e.value.trim():"";};
+  var obj={ name:v("f-name"), district:v("f-district"), region:v("f-region")||regionOf(v("f-district")),
+            avail:v("f-avail")?parseInt(v("f-avail"),10):null, developer:v("f-dev") };
+  var timing=v("f-timing"); if(key==="in_market")obj.launched=timing; else obj.launch=timing;
+  if(!obj.name) return;
+  if(idx===null) DATA[key].push(obj); else DATA[key][idx]=obj;
+  persist(); closeForm(key); render();
+}
+function del(key,idx){ DATA[key].splice(idx,1); persist(); render(); }
+function persist(){ localStorage.setItem(LS, JSON.stringify(DATA)); flash("Saved on this device"); }
+function flash(t){ var m=document.getElementById("msg"); m.textContent="✓ "+t; setTimeout(function(){m.textContent="";},2200); }
+function exportJSON(){
+  var out={ _meta:{ metric:"avail = units currently available", as_of:new Date().toISOString().slice(0,10) },
+            in_market:DATA.in_market, rest_of_2026:DATA.rest_of_2026 };
+  var blob=new Blob([JSON.stringify(out,null,2)],{type:"application/json"});
+  var a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download="launches.json"; a.click(); flash("Exported launches.json");
+}
+function resetSeed(){ if(confirm("Reset to the seed list? Your edits on this device will be lost.")){ localStorage.removeItem(LS); DATA=JSON.parse(JSON.stringify(SEED)); render(); flash("Reset to seed"); } }
+
+load();
+</script>
+</body>
+</html>

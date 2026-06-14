@@ -1,0 +1,27 @@
+{
+  "sora_3m": {
+    "value": 1.08,
+    "as_of": "2026-06-14",
+    "sources": [
+      "MAS",
+      "MortgageWise",
+      "housingloansg",
+      "loansaver"
+    ],
+    "n_sources": 4,
+    "range": [
+      1.069,
+      1.08
+    ],
+    "source": "consensus of 4 sources",
+    "status": "verified"
+  },
+  "maintained": {
+    "spread": 0.75,
+    "fixed_low": 1.3,
+    "fixed_high": 1.7,
+    "fixed_lock": "2–3yr",
+    "as_of": "2026-06-14",
+    "note": "Fixed range from broker boards (MortgageWise ~1.26–1.70%, Mortgage Master). Spread +0.75% standard. Justin-maintained."
+  }
+}

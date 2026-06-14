@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JND — Market Pulse</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#f1f4f8;color:#1a2332;}
+  .mp{max-width:960px;margin:0 auto;padding:18px;}
+  .mp-bar{background:#0f2746;color:#fff;border-bottom:3px solid #c8102e;border-radius:10px;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+  .mp-bar h1{font-size:19px;font-weight:700;}.mp-bar h1 span{color:#ff5a6e;}
+  .mp-bar .asof{font-size:10px;color:rgba(255,255,255,.6);letter-spacing:.3px;}
+  .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0;}
+  @media(max-width:680px){.kpis{grid-template-columns:1fr;}}
+  .kpi{background:#fff;border:1px solid #d8dde7;border-radius:9px;padding:11px 12px;}
+  .kpi .k{font-size:10px;text-transform:uppercase;letter-spacing:.4px;color:#9aa3b2;font-weight:700;}
+  .kpi .v{font-size:21px;font-weight:800;color:#0f2746;font-variant-numeric:tabular-nums;margin-top:3px;}
+  .up{color:#0f7a3d;}.down{color:#c8102e;}.flat{color:#6b7280;}
+  .sec{margin-top:18px;}
+  .sec>h2{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#0f2746;border-left:3px solid #c8102e;padding-left:8px;margin-bottom:10px;}
+  .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  @media(max-width:680px){.cards3{grid-template-columns:1fr;}}
+  .card{background:#fff;border:1px solid #d8dde7;border-radius:10px;padding:13px 14px;}
+  .card .lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:#0f2746;}
+  .card .lbl small{display:block;font-weight:400;text-transform:none;letter-spacing:0;color:#9aa3b2;font-size:10px;}
+  .card .idx{font-size:28px;font-weight:800;margin:7px 0 2px;font-variant-numeric:tabular-nums;}
+  .card .sub2{font-size:11px;color:#6b7280;font-variant-numeric:tabular-nums;}
+  .rates{display:grid;grid-template-columns:1fr 1fr;gap:12px;}@media(max-width:680px){.rates{grid-template-columns:1fr;}}
+  .rrow{display:flex;justify-content:space-between;align-items:center;padding:6px 0;font-size:13px;border-bottom:1px solid #eef1f6;}
+  .rrow:last-child{border-bottom:0;}.rrow .v{font-weight:700;font-variant-numeric:tabular-nums;}
+  .eff{background:#0f2746;color:#fff;border-radius:8px;padding:9px 12px;display:flex;justify-content:space-between;align-items:center;margin-top:6px;}
+  .eff .vv{font-size:20px;font-weight:800;}
+  .note{font-size:10px;color:#9aa3b2;margin-top:6px;line-height:1.5;}
+  .tag{font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;color:#fff;}.tag.auto{background:#0f7a3d;}.tag.man{background:#ed6c02;}.tag.pend{background:#9aa3b2;}
+  .lwrap{display:grid;grid-template-columns:1fr 1fr;gap:12px;}@media(max-width:680px){.lwrap{grid-template-columns:1fr;}}
+  .lcol{background:#fff;border:1px solid #d8dde7;border-radius:10px;padding:12px 14px;}
+  .lcol .h{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid #0f2746;padding-bottom:7px;margin-bottom:4px;}
+  .lcol .h .t{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:#0f2746;}
+  .lcol .h .c{font-size:11px;color:#6b7280;text-align:right;}.lcol .h .c b{color:#c8102e;font-size:16px;}
+  .lcol .h .c .sp{font-size:9px;color:#9aa3b2;}
+  .llist{max-height:320px;overflow:auto;}
+  .li{display:flex;align-items:center;gap:7px;padding:6px 0;border-bottom:1px solid #f1f4f8;font-size:12px;}
+  .li:last-child{border-bottom:0;}.li .nm{flex:1;font-weight:600;color:#0f2746;}.li .nm small{font-weight:400;color:#9aa3b2;font-size:10px;}
+  .li.stale{opacity:.5;}.li.stale .nm small b{color:#c8102e;font-weight:700;}
+  .chip{font-size:8px;font-weight:700;padding:1px 5px;border-radius:3px;color:#fff;}.chip.CCR{background:#c8102e;}.chip.RCR{background:#ed6c02;}.chip.OCR{background:#0f2746;}.chip.NA{background:#9aa3b2;}
+  .li .av{font-weight:700;font-variant-numeric:tabular-nums;min-width:42px;text-align:right;}
+  .legend{font-size:10px;color:#6b7280;margin-top:6px;}
+  .disc{font-size:10px;color:#6b7280;background:#fff7ed;border:1px solid #fed7aa;border-radius:7px;padding:8px 11px;margin-top:14px;line-height:1.5;}
+  .src{font-size:10px;color:#9aa3b2;text-align:center;margin:14px 0 4px;}
+</style>
+</head>
+<body>
+<div class="mp">
+
+  <div class="mp-bar">
+    <h1>Market <span>Pulse</span></h1>
+    <div class="asof" id="asof">Loading live market data…</div>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="k">Private PPI (QoQ)</div><div class="v" id="k-ppi">—</div></div>
+    <div class="kpi"><div class="k">Effective floating rate</div><div class="v" id="k-float">—</div></div>
+    <div class="kpi"><div class="k">New-launch units available</div><div class="v" id="k-launch">—</div></div>
+  </div>
+
+  <!-- 1. PRICE INDICES -->
+  <div class="sec">
+    <h2>Price Indices · URA / HDB quarterly</h2>
+    <div class="cards3">
+      <div class="card"><div class="lbl">HDB Resale<small>RPI · QoQ change</small></div><div class="idx" id="hdb-idx">—</div><div class="sub2" id="hdb-d"></div></div>
+      <div class="card"><div class="lbl">Private Non-Landed<small>URA PPI · QoQ change</small></div><div class="idx" id="nl-idx">—</div><div class="sub2" id="nl-d"></div></div>
+      <div class="card"><div class="lbl">Private Landed<small>URA PPI · QoQ change</small></div><div class="idx" id="ld-idx">—</div><div class="sub2" id="ld-d"></div></div>
+    </div>
+  </div>
+
+  <!-- 2. INTEREST RATES -->
+  <div class="sec">
+    <h2>Interest Rates · indicative</h2>
+    <div class="rates">
+      <div class="card">
+        <div class="lbl" style="margin-bottom:6px;">Floating <span class="tag auto" id="sora-tag">AUTO·MAS</span></div>
+        <div class="rrow"><span>3M-SORA <small id="sora-asof" style="color:#9aa3b2;"></small></span><span class="v" id="sora-val">—</span></div>
+        <div class="rrow"><span>+ Typical spread</span><span class="v" id="spread-val">—</span></div>
+        <div class="eff"><span style="font-size:11px;text-transform:uppercase;opacity:.8;">Effective floating</span><span class="vv" id="eff-float">—</span></div>
+        <div class="note">Spread benchmarked vs <b>Mortgage Master</b> &amp; <b>MortgageWise</b>: brokers quote ~+0.20% (promo) to +0.75% (standard package). +0.75% shown as the standard. Confirm with a banker.</div>
+      </div>
+      <div class="card">
+        <div class="lbl" style="margin-bottom:6px;">Fixed <span class="tag man">INDICATIVE</span></div>
+        <div class="rrow"><span>Current fixed range</span><span class="v" id="fixed-val">—</span></div>
+        <div class="rrow"><span>Lock-in</span><span class="v" id="fixed-lock">—</span></div>
+        <div class="note" id="fixed-asof"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. NEW LAUNCHES -->
+  <div class="sec">
+    <h2>New Launches · residential condos (auto)</h2>
+    <div class="lwrap">
+      <div class="lcol">
+        <div class="h"><span class="t">Currently in Market</span><span class="c"><b id="lm-c">0</b> proj · <span id="lm-u">0</span> units<br><span class="sp" id="lm-split"></span></span></div>
+        <div class="llist" id="lm-list"></div>
+        <div class="legend">Sorted newest first (by TOP). <span style="opacity:.5;">Greyed = <b style="color:#c8102e;">stale</b></span> (completed project, leftover stock).</div>
+      </div>
+      <div class="lcol">
+        <div class="h"><span class="t">Launching — Upcoming</span><span class="c"><b id="lp-c">0</b> proj · <span id="lp-u">0</span> units</span></div>
+        <div class="llist" id="lp-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="disc"><strong>Indicative dashboard.</strong> Prices & SORA are live official data (URA, HDB, MAS via data.gov.sg). Mortgage spread/fixed are maintained, benchmarked to brokers — confirm with a banker. New-launch list is auto-classified from ERA; available = unsold (in-market) or full size (upcoming). "Stale" = completed project still carrying unsold stock.</div>
+  <div class="src" id="src">—</div>
+</div>
+
+<script>
+var API="https://data.gov.sg/api/action/datastore_search?resource_id=";
+function get(rid){return fetch(API+rid+"&limit=6000").then(function(r){return r.json();}).then(function(j){return j.result.records;});}
+function pct(a,b){return (a/b-1)*100;}
+function cls(v){return v>0.05?"up":v<-0.05?"down":"flat";}
+function arrow(v){return v>0.05?"▲":v<-0.05?"▼":"▬";}
+function l3(r,k){var n=r.length;return {q:r[n-1].quarter,val:+r[n-1][k],qoq:pct(+r[n-1][k],+r[n-2][k]),yoy:pct(+r[n-1][k],+r[n-5][k])};}
+function num(n){return (n==null?"—":Number(n).toLocaleString());}
+
+/* (2) price cards LEAD with QoQ; index + YoY shown small */
+function setPrice(p,d){
+  document.getElementById(p+"-idx").innerHTML='<span class="'+cls(d.qoq)+'">'+arrow(d.qoq)+" "+d.qoq.toFixed(1)+"%</span>";
+  document.getElementById(p+"-d").innerHTML="Index "+d.val.toFixed(1)+" &middot; YoY <span class='"+cls(d.yoy)+"'>"+arrow(d.yoy)+d.yoy.toFixed(1)+"%</span>";
+}
+get("d_14f63e595975691e7c24a27ae4c07c79").then(function(r){
+  r.sort(function(a,b){return a.quarter<b.quarter?-1:1;});var d=l3(r,"index");setPrice("hdb",d);
+  document.getElementById("asof").textContent="Live · indices "+d.q+" · pulled just now";
+  document.getElementById("src").textContent="Sources: URA, HDB, MAS via data.gov.sg · ERA gallery (launches) · "+d.q;
+}).catch(function(){});
+get("d_97f8a2e995022d311c6c68cfda6d034c").then(function(r){
+  [["Non-Landed","nl"],["Landed","ld"]].forEach(function(t){
+    var rs=r.filter(function(x){return x.property_type===t[0];}).sort(function(a,b){return a.quarter<b.quarter?-1:1;});var d=l3(rs,"index");
+    setPrice(t[1],d);
+  });
+  var all=r.filter(function(x){return x.property_type==="All Residential";}).sort(function(a,b){return a.quarter<b.quarter?-1:1;});
+  var ad=l3(all,"index");
+  document.getElementById("k-ppi").innerHTML='<span class="'+cls(ad.qoq)+'">'+arrow(ad.qoq)+" "+ad.qoq.toFixed(1)+"%</span>";
+}).catch(function(){});
+
+/* (3) interest rates */
+fetch("rates.json",{cache:"no-store"}).then(function(r){return r.json();}).then(function(j){
+  var s=j.sora_3m||{},m=j.maintained||{};var sora=s.value;
+  document.getElementById("sora-val").textContent=sora==null?"—":sora.toFixed(2)+"%";
+  var ver=s.n_sources?(" · verified across "+s.n_sources+" sources"):"";
+  document.getElementById("sora-asof").textContent=s.as_of?("as of "+s.as_of+ver):"";
+  if(s.sources&&s.range){var sv=document.getElementById("sora-val");sv.title="Consensus of "+s.sources.join(", ")+" (range "+s.range[0]+"–"+s.range[1]+"%)";}
+  var tg=document.getElementById("sora-tag");
+  if(sora==null){tg.className="tag pend";tg.textContent="PENDING";}
+  else if(s.status==="verified"){tg.className="tag auto";tg.textContent="VERIFIED ✓";}
+  else{tg.className="tag auto";tg.textContent="LIVE";}
+  document.getElementById("spread-val").textContent="+"+(m.spread!=null?m.spread.toFixed(2):"—")+"%";
+  var eff=(sora!=null&&m.spread!=null)?(sora+m.spread):null;
+  document.getElementById("eff-float").textContent=eff==null?("SORA + "+(m.spread!=null?m.spread.toFixed(2)+"%":"—")):eff.toFixed(2)+"%";
+  document.getElementById("k-float").textContent=eff==null?"SORA + "+(m.spread||"")+"%":eff.toFixed(2)+"%";
+  document.getElementById("fixed-val").textContent=(m.fixed_low!=null?m.fixed_low.toFixed(2):"—")+"–"+(m.fixed_high!=null?m.fixed_high.toFixed(2):"—")+"%";
+  document.getElementById("fixed-lock").textContent=m.fixed_lock||"—";
+  document.getElementById("fixed-asof").textContent="Indicative · as of "+(m.as_of||"—")+" · confirm with banker";
+}).catch(function(){});
+
+/* new launches (auto) with (5) stale differentiation */
+function regionOf(d){var m=(d||"").match(/D0?(\d+)/);var n=m?+m[1]:0;return [1,2,6,9,10,11].indexOf(n)>=0?"CCR":[3,4,5,7,8,12,13,14,15,20].indexOf(n)>=0?"RCR":n?"OCR":"NA";}
+fetch("launches.json",{cache:"no-store"}).then(function(r){return r.json();}).then(function(j){
+  // in-market with stale split
+  var im=j.in_market||[],L=document.getElementById("lm-list");L.innerHTML="";
+  var fN=0,fU=0,sN=0,sU=0,tot=0;
+  im.forEach(function(p){var reg=p.region||regionOf(p.district),a=p.avail||0;tot+=a;
+    if(p.stale){sN++;sU+=a;}else{fN++;fU+=a;}
+    var row=document.createElement("div");row.className="li"+(p.stale?" stale":"");
+    var meta=(p.district||"")+(p.top?(" · "+p.top):"")+(p.stale?' · <b>stale</b>':'');
+    row.innerHTML='<span class="chip '+reg+'">'+reg+'</span><span class="nm">'+p.name+' <small>'+meta+'</small></span><span class="av">'+(p.avail!=null?p.avail:"—")+'</span>';
+    L.appendChild(row);});
+  document.getElementById("lm-c").textContent=im.length;document.getElementById("lm-u").textContent=num(tot);
+  document.getElementById("lm-split").innerHTML="fresh "+fN+" ("+num(fU)+"u) · stale "+sN+" ("+num(sU)+"u)";
+  // upcoming
+  var pl=j.rest_of_2026||[],P=document.getElementById("lp-list");P.innerHTML="";var pu=0;
+  pl.forEach(function(p){var reg=p.region||regionOf(p.district);pu+=(p.avail||0);
+    var row=document.createElement("div");row.className="li";
+    row.innerHTML='<span class="chip '+reg+'">'+reg+'</span><span class="nm">'+p.name+' <small>'+(p.district||"")+'</small></span><span class="av">'+(p.avail!=null?p.avail:"—")+'</span>';
+    P.appendChild(row);});
+  document.getElementById("lp-c").textContent=pl.length;document.getElementById("lp-u").textContent=num(pu);
+  document.getElementById("k-launch").textContent=num(tot+pu);
+}).catch(function(){});
+</script>
+</body>
+</html>
