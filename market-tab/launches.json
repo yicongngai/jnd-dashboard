@@ -14,7 +14,7 @@
       "name": "Zyon Grand",
       "district": "D03",
       "region": "RCR",
-      "avail": 74,
+      "avail": 75,
       "developer": "",
       "top": "TOP 2032",
       "stale": false
@@ -50,7 +50,7 @@
       "name": "Union Square Residences",
       "district": "D01",
       "region": "CCR",
-      "avail": 195,
+      "avail": 192,
       "developer": "",
       "top": "TOP 2031",
       "stale": false
@@ -122,7 +122,7 @@
       "name": "Coastal Cabana",
       "district": "D17",
       "region": "OCR",
-      "avail": 131,
+      "avail": 130,
       "developer": "",
       "top": "TOP 2029",
       "stale": false
@@ -140,7 +140,7 @@
       "name": "Hudson Place Residences",
       "district": "D05",
       "region": "RCR",
-      "avail": 113,
+      "avail": 112,
       "developer": "",
       "top": "TOP 2029",
       "stale": false
@@ -158,7 +158,7 @@
       "name": "Narra Residences",
       "district": "D23",
       "region": "OCR",
-      "avail": 339,
+      "avail": 338,
       "developer": "",
       "top": "TOP 2029",
       "stale": false
@@ -167,7 +167,7 @@
       "name": "One Marina Gardens",
       "district": "D01",
       "region": "CCR",
-      "avail": 298,
+      "avail": 296,
       "developer": "",
       "top": "TOP 2029",
       "stale": false
@@ -221,7 +221,7 @@
       "name": "Canberra Crescent Residences",
       "district": "D27",
       "region": "OCR",
-      "avail": 38,
+      "avail": 37,
       "developer": "",
       "top": "TOP 2028",
       "stale": false
@@ -284,7 +284,7 @@
       "name": "Upperhouse",
       "district": "D10",
       "region": "CCR",
-      "avail": 62,
+      "avail": 60,
       "developer": "",
       "top": "TOP 2028",
       "stale": false
@@ -338,7 +338,7 @@
       "name": "Chuan Park",
       "district": "D19",
       "region": "OCR",
-      "avail": 38,
+      "avail": 37,
       "developer": "",
       "top": "TOP 2027",
       "stale": false
@@ -347,7 +347,7 @@
       "name": "Elta",
       "district": "D05",
       "region": "RCR",
-      "avail": 93,
+      "avail": 92,
       "developer": "",
       "top": "TOP 2027",
       "stale": false
@@ -365,7 +365,7 @@
       "name": "Newport Residences",
       "district": "D02",
       "region": "CCR",
-      "avail": 50,
+      "avail": 49,
       "developer": "",
       "top": "TOP 2027",
       "stale": false
@@ -383,7 +383,7 @@
       "name": "The Continuum",
       "district": "D15",
       "region": "RCR",
-      "avail": 39,
+      "avail": 38,
       "developer": "",
       "top": "TOP 2027",
       "stale": false
@@ -761,7 +761,7 @@
       "name": "Kassia",
       "district": "D17",
       "region": "OCR",
-      "avail": 49,
+      "avail": 48,
       "developer": "",
       "top": "TOP n/a",
       "stale": true

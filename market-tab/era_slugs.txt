@@ -27,6 +27,7 @@ claydence
 coastal-cabana
 concourse-skyline
 ct-foodnex
+ct-gold-macpherson
 dalvey-haus
 dorsett-residences
 draycott-8
