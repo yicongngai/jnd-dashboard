@@ -1,12 +1,13 @@
 name: Refresh & Deploy JND Dashboard
 
-# Runs daily at 07:00 SGT (23:00 UTC) and on-demand. Re-fetches every baked data
-# source, re-bakes them into index-live-auto.html, and deploys to Netlify.
-# Live sources (HDB resale comps, HDB/URA price indices) need no refresh — they
-# fetch fresh in the browser.
+# Runs weekly (Mon 07:00 SGT / Sun 23:00 UTC) and on-demand. Re-fetches every baked
+# data source, re-bakes them into index-live-auto.html, and deploys to Netlify.
+# Weekly (not daily) keeps Netlify deploy-credit usage low — the data (URA/HDB price
+# indices are quarterly) doesn't change daily. Live sources (HDB resale comps, price
+# indices) fetch fresh in the browser regardless.
 on:
   schedule:
-    - cron: '0 23 * * *'      # 07:00 Singapore time, every day
+    - cron: '0 23 * * 0'      # 07:00 Singapore time every Monday (weekly)
   workflow_dispatch: {}        # manual "Run workflow" button
 
 jobs:
@@ -34,7 +35,8 @@ jobs:
           python3 inject_data_all.py
           mkdir -p publish
           cp index-live-auto.html publish/index.html
-          echo "Baked deploy file: $(du -h publish/index.html | cut -f1)"
+          cp playbook.pdf publish/playbook.pdf   # PDF now loads on demand, not embedded
+          echo "Baked deploy file: $(du -h publish/index.html | cut -f1) (+ playbook.pdf $(du -h playbook.pdf | cut -f1))"
 
       - name: Deploy to Netlify
         env:
