@@ -1,13 +1,13 @@
 name: Refresh & Deploy JND Dashboard
 
-# Runs weekly (Mon 07:00 SGT / Sun 23:00 UTC) and on-demand. Re-fetches every baked
-# data source, re-bakes them into index-live-auto.html, and deploys to GitHub Pages
-# (free — no bandwidth credits). Live sources (HDB resale comps, price indices) fetch
-# fresh in the browser regardless. Requires: repo is public (or GitHub Pro), and
-# Settings -> Pages -> Source = "GitHub Actions".
+# Runs DAILY at 07:00 SGT (23:00 UTC) and on-demand. Re-fetches every baked data
+# source, re-bakes them into index-live-auto.html, and deploys to GitHub Pages
+# (free — public repo = unlimited Actions minutes). Live sources (HDB resale comps,
+# price indices) fetch fresh in the browser regardless. Requires: repo is public
+# (or GitHub Pro), and Settings -> Pages -> Source = "GitHub Actions".
 on:
   schedule:
-    - cron: '0 23 * * 0'      # 07:00 Singapore time every Monday (weekly)
+    - cron: '0 23 * * *'      # 07:00 Singapore time, every day (daily)
   workflow_dispatch: {}        # manual "Run workflow" button
 
 permissions:
