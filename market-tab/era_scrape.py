@@ -22,6 +22,8 @@ Classification (validated signals):
 Output: launches.json (board) + era_classified.json (audit) + summary.
 """
 import re, json, urllib.request, concurrent.futures
+from datetime import datetime, timezone, timedelta
+_SCRAPE_DATE = (datetime.now(timezone.utc) + timedelta(hours=8)).strftime("%Y-%m-%d")  # SGT run date
 UA={"User-Agent":"Mozilla/5.0 (JND-Tools)"}; TIMEOUT=30; THIS_YEAR=2026
 
 OVERSEAS=re.compile(r"cambodia|phnom|malaysia|johor|bangkok|thailand|vietnam|hanoi|\blondon\b|australia|indonesia|batam|bintan|forest city",re.I)
@@ -125,7 +127,7 @@ def main():
         return o
     launches={"_meta":{"metric":"avail = units available (in-market unsold / upcoming full size)",
               "scope":"SG residential condos — FULLY AUTO-CLASSIFIED from ERA gallery, no manual list",
-              "as_of":"2026-06-14","auto":True,"counts":{"in_market":len(im),"rest_of_2026":len(pl)}},
+              "as_of":_SCRAPE_DATE,"auto":True,"counts":{"in_market":len(im),"rest_of_2026":len(pl)}},
               "in_market":[ent(r,"in") for r in im],"rest_of_2026":[ent(r,"up") for r in pl]}
     json.dump(launches,open("launches.json","w"),indent=2)
     from collections import Counter
