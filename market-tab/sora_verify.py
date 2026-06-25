@@ -90,8 +90,18 @@ def main():
     agree = {k: v for k, v in reads.items() if abs(v - med) <= TOL}
     outliers = {k: v for k, v in reads.items() if k not in agree}
     if outliers: print("  OUTLIERS (excluded):", outliers)
+    mas_only = False
     if len(agree) < MIN_AGREE:
-        print(f"Only {len(agree)} source(s) agree — below MIN_AGREE={MIN_AGREE}. rates.json unchanged."); return 1
+        # MAS is the authoritative SORA publisher. If it's reachable, trust it ON ITS OWN
+        # rather than discarding a valid rate just because the corroborating sites
+        # (housingloansg / loansaver — routinely geo-blocked from GitHub's US cloud runners)
+        # were down. Without this, a single live source froze SORA at the last consensus
+        # day — it sat 7 days stale (18 Jun) while MAS was returning a fresh number daily.
+        if "MAS" in reads:
+            agree, mas_only = {"MAS": reads["MAS"]}, True
+            print("  consensus short, but MAS (authoritative) is live — accepting MAS alone")
+        else:
+            print(f"Only {len(agree)} source(s) agree and MAS unavailable — below MIN_AGREE={MIN_AGREE}. rates.json unchanged."); return 1
 
     value = round(statistics.median(agree.values()), 2)
     sgt = datetime.now(timezone.utc) + timedelta(hours=8)
@@ -102,8 +112,8 @@ def main():
         "sources": sorted(agree.keys()),
         "n_sources": len(agree),
         "range": [min(agree.values()), max(agree.values())],
-        "source": "consensus of " + str(len(agree)) + " sources",
-        "status": "verified",
+        "source": ("MAS (authoritative, sole source)" if mas_only else "consensus of " + str(len(agree)) + " sources"),
+        "status": "mas-only" if mas_only else "verified",
     }
     json.dump(cur, open(RATES, "w"), indent=2, ensure_ascii=False)
     print(f"VERIFIED 3M-SORA = {value}%  (median of {len(agree)}: {sorted(agree.keys())}, "
