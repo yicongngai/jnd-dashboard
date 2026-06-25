@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Inline all baked data (HDB blocks, URA comps, rates, launches) into the dashboard
 as <script type=application/json> blocks, inside re-runnable <!--JND-DATA--> fences."""
-import json, os
+import json, os, shutil
 F = "index-live-auto.html"
 html = open(F, encoding="utf-8").read()
 
@@ -31,3 +31,10 @@ else:
 open(F, "w", encoding="utf-8").write(html)
 print(f"inlined {len(parts)} data blocks; file {os.path.getsize(F)/1e6:.2f} MB")
 print("ids present:", all(f'id="{i}"' in html for i, _ in parts))
+
+# Stage the embedded Decoupling Toolkit alongside the dashboard for the Pages deploy.
+# (Done here, not in refresh.yml, so the deploy token doesn't need `workflow` scope.)
+if os.path.exists("decoupling.html"):
+    os.makedirs("publish", exist_ok=True)
+    shutil.copy("decoupling.html", "publish/decoupling.html")
+    print("staged decoupling.html -> publish/")
