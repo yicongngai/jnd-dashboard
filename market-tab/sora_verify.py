@@ -91,6 +91,8 @@ def main():
     outliers = {k: v for k, v in reads.items() if k not in agree}
     if outliers: print("  OUTLIERS (excluded):", outliers)
     mas_only = False
+    fallback = None
+    last_good = (json.load(open(RATES)).get("sora_3m") or {}).get("value")
     if len(agree) < MIN_AGREE:
         # MAS is the authoritative SORA publisher. If it's reachable, trust it ON ITS OWN
         # rather than discarding a valid rate just because the corroborating sites
@@ -100,8 +102,16 @@ def main():
         if "MAS" in reads:
             agree, mas_only = {"MAS": reads["MAS"]}, True
             print("  consensus short, but MAS (authoritative) is live — accepting MAS alone")
+        # MAS down (e.g. its portal goes into SCHEDULED MAINTENANCE for days at a time —
+        # seen 2026-06-28). Fall back to loansaver, which reliably republishes MAS, BUT only
+        # if its read is within a sane band (±0.25) of the last-good value, so one glitchy
+        # source can never push a wrong rate. SORA moves in basis points/day; a >0.25 jump
+        # is a bad read, not a real move. MortgageWise is never trusted (chronic ~0.998 outlier).
+        elif (lv := reads.get("loansaver")) is not None and last_good is not None and abs(lv - last_good) <= 0.25:
+            agree, fallback = {"loansaver": lv}, "loansaver"
+            print(f"  MAS unavailable — accepting loansaver {lv} (within 0.25 of last-good {last_good})")
         else:
-            print(f"Only {len(agree)} source(s) agree and MAS unavailable — below MIN_AGREE={MIN_AGREE}. rates.json unchanged."); return 1
+            print(f"Only {len(agree)} agree, MAS unavailable, no trusted in-band fallback — rates.json unchanged."); return 1
 
     value = round(statistics.median(agree.values()), 2)
     sgt = datetime.now(timezone.utc) + timedelta(hours=8)
@@ -112,8 +122,10 @@ def main():
         "sources": sorted(agree.keys()),
         "n_sources": len(agree),
         "range": [min(agree.values()), max(agree.values())],
-        "source": ("MAS (authoritative, sole source)" if mas_only else "consensus of " + str(len(agree)) + " sources"),
-        "status": "mas-only" if mas_only else "verified",
+        "source": ("MAS (authoritative, sole source)" if mas_only else
+                   "loansaver (MAS republisher; MAS portal in maintenance)" if fallback else
+                   "consensus of " + str(len(agree)) + " sources"),
+        "status": "mas-only" if mas_only else ("fallback-loansaver" if fallback else "verified"),
     }
     json.dump(cur, open(RATES, "w"), indent=2, ensure_ascii=False)
     print(f"VERIFIED 3M-SORA = {value}%  (median of {len(agree)}: {sorted(agree.keys())}, "
