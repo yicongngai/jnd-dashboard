@@ -1,139 +1,177 @@
 #!/usr/bin/env python3
 """
-era_scrape.py v3 — FULLY AUTOMATED ERA new-launch board. No manual list, no ticking.
+era_scrape.py v4 — ERA new-launch board from the ERA Property Portal API.
 
-Pipeline (re-run anytime / on a schedule):
-  1. refresh slug list from the gallery (catches NEW launches)
-  2. for each slug: GET /units (stack) + /fact-sheet (server meta/body)
-  3. classify deterministically and WRITE launches.json (the board's data file)
+SOURCE MIGRATED (2026-07-02): eraprojects.sg (per-project subdomains, HTML unit
+stacks) now 301-redirects — replaced by propertyportal.era.com.sg, whose
+`POST /api/salesplus/new-launches/search` returns the whole board as JSON
+(headless-friendly: no cookies/auth; verified from plain curl).
 
-Classification (validated signals):
-  overseas  : fact-sheet text names a foreign country         -> exclude
-  EC        : 'executive condominium' in fact-sheet           -> exclude
-  slug type : industrial/food/tech/plot/shoppes/xchange       -> commercial (exclude)
-              villa/collection/cluster/greenbank              -> landed     (exclude)
-  LAUNCHED (has /units stack):
-      house-type cells & no bedrooms -> landed (exclude)
-      bedroom cells                  -> residential IN-MARKET (avail = unsold)
-      cells but no bedrooms          -> commercial (exclude)
-  PRE-LAUNCH (no stack):
-      completion year < this year    -> completed/old (exclude)
-      else                           -> residential UPCOMING (avail = full size)
-Output: launches.json (board) + era_classified.json (audit) + summary.
+Classification (from validated API semantics):
+  country != SG                                   -> overseas   (exclude)
+  propertyType != Condo                           -> commercial/landed/industrial (exclude)
+  unitSummary.propertySubTypes has EC/landed/comm -> exclude    (ECs hide under Condo)
+  name looks commercial/landed (shoppes/villa…)   -> exclude    (no-summary strays)
+  UPCOMING  : launchDate in the future OR no unitSummary (= no live sales stack;
+              e.g. Thomson Reserve carries a placeholder launchDate but no stack).
+              Old completed strays (TOP year < this year) excluded.
+              avail = full project size (numberOfUnits).
+  IN-MARKET : live stack with numberOfAvailableUnits > 0. avail = unsold count.
+              stale flag = TOP year already past.
+
+Output: launches.json (board — SCHEMA UNCHANGED from v3) + era_classified.json
+(audit) + summary line. On a short/failed API read it exits non-zero WITHOUT
+writing, so the workflow's keep-last-good fallback + the command centre's
+freshness monitor do their jobs.
 """
-import re, json, urllib.request, concurrent.futures
-from datetime import datetime, timezone, timedelta
+import json, re, sys, urllib.request
+from datetime import datetime, timezone, timedelta, date
+
 _SCRAPE_DATE = (datetime.now(timezone.utc) + timedelta(hours=8)).strftime("%Y-%m-%d")  # SGT run date
-UA={"User-Agent":"Mozilla/5.0 (JND-Tools)"}; TIMEOUT=30; THIS_YEAR=2026
+THIS_YEAR = int(_SCRAPE_DATE[:4])
+API = "https://propertyportal.era.com.sg/api/salesplus/new-launches/search"
+UA = {"User-Agent": "Mozilla/5.0 (JND-Tools)", "Content-Type": "application/json"}
+TIMEOUT = 40
+MIN_SANE = 50          # fewer SG condos than this = broken read -> keep last-good
 
-OVERSEAS=re.compile(r"cambodia|phnom|malaysia|johor|bangkok|thailand|vietnam|hanoi|\blondon\b|australia|indonesia|batam|bintan|forest city",re.I)
-SLUG_COMM=re.compile(r"industrial|factory|foodworks|foodnex|gourmet|ecofood|technolink|techpark|techpoint|enterprise|warehouse|shoppes|xchange|\bplot\b",re.I)
-SLUG_LANDED=re.compile(r"villa|collection|cluster|greenbank|bungalow",re.I)
-HOUSE=re.compile(r"terrace|semi-?d\b|bungalow|strata house|cluster house",re.I)
-BR=re.compile(r"[0-9]\s?br\b|bedroom",re.I)
-EC=re.compile(r"executive condominium",re.I)
-SLUG_DROP=re.compile(r"space-18|visioncrest",re.I)   # user-excluded edge cases
-MONTHS={'jan':1,'feb':2,'mar':3,'apr':4,'may':5,'jun':6,'jul':7,'aug':8,'sep':9,'oct':10,'nov':11,'dec':12}
-STATUS_OVERRIDE={"lentor-gardens-residences":"pre_launch"}   # known preview-only projects
-FRESH_CUTOFF=202412   # launched on/after Dec 2024 counts as "fresh" (~18 months)
-MON3=["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+EXCLUDE_SUBTYPES = {"Executive Condominium", "Semi-Detached House", "Terrace House",
+                    "Office", "Multiple-user Factory", "Retail"}
+NAME_COMM = re.compile(r"shoppes|xchange|industrial|factory|foodworks|warehouse|\bplot\b|gourmet", re.I)
+NAME_LANDED = re.compile(r"villa|bungalow|cluster house", re.I)
+SMALL = {"gls": "GLS", "at": "at", "by": "by", "the": "The", "of": "of", "on": "on",
+         "d'leedon": "d'Leedon", "ii": "II", "iii": "III"}
 
-def fetch(url):
-    try:
-        with urllib.request.urlopen(urllib.request.Request(url,headers=UA),timeout=TIMEOUT) as r:
-            return r.read().decode("utf-8","replace")
-    except Exception: return ""
 
-def refresh_slugs():
-    h=fetch("https://www.eraprojects.sg/")
-    slugs=sorted(set(re.findall(r"https?://([a-z0-9-]+)\.eraprojects\.sg",h)))
-    slugs=[s for s in slugs if s!="www"]
-    if slugs: open("era_slugs.txt","w").write("\n".join(slugs))
-    return slugs or open("era_slugs.txt").read().split()
+def fetch_board():
+    body = json.dumps({"page": 1, "pageSize": 500}).encode()
+    req = urllib.request.Request(API, data=body, headers=UA, method="POST")
+    with urllib.request.urlopen(req, timeout=TIMEOUT) as r:
+        d = json.loads(r.read().decode("utf-8", "replace"))
+    rows = d.get("data") or []
+    total = d.get("totalCount") or 0
+    if total > len(rows):   # paginate if the board ever outgrows one page
+        page = 2
+        while len(rows) < total and page < 20:
+            body = json.dumps({"page": page, "pageSize": 500}).encode()
+            req = urllib.request.Request(API, data=body, headers=UA, method="POST")
+            with urllib.request.urlopen(req, timeout=TIMEOUT) as r:
+                more = (json.loads(r.read().decode("utf-8", "replace")).get("data")) or []
+            if not more:
+                break
+            rows += more
+            page += 1
+    return rows
 
-def parse_units(html):
-    tot=sold=resv=avail=br=house=0; dates=[]
-    for c in re.split(r"<td\b",html):
-        t=re.sub(r"\s+"," ",re.sub(r"<[^>]+>"," ",c)).strip().lower()
-        if "sqft" not in t: continue
-        tot+=1
-        if "sold" in t: sold+=1
-        elif re.search(r"reserv|hold|book",t): resv+=1
-        else: avail+=1
-        if BR.search(t): br+=1
-        if HOUSE.search(t): house+=1
-        dm=re.search(r"(\d{1,2})\s+(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\s+(\d{4})",t)
-        if dm: dates.append(int(dm.group(3))*10000+MONTHS[dm.group(2)]*100+int(dm.group(1)))
-    return dict(cells=tot,sold=sold,avail=avail,br=br,house=house,launch=(min(dates) if dates else None))
 
-def factsheet(html):
-    m=re.search(r"<meta[^>]+(?:description|og:description)[^>]+content=\"([^\"]+)\"",html,re.I)
-    desc=(m.group(1) if m else "")+" "+re.sub(r"<[^>]+>"," ",html)[:6000]
-    country="overseas" if OVERSEAS.search(desc) else ("SG" if re.search(r"singapore",desc,re.I) else "?")
-    dm=re.search(r"\bD([0-2]?\d)\b\s*[-–]",desc)
-    tot=re.search(r"total of ([0-9][0-9,]{1,5})\s*units?",desc,re.I)
-    yr=re.search(r"completed in[^\d]*(?:\d{1,2}/\d{1,2}/)?(\d{4})",desc,re.I)
-    return dict(country=country, district=("D%02d"%int(dm.group(1)) if dm else ""),
-                total=(int(tot.group(1).replace(",","")) if tot else None),
-                top_year=(int(yr.group(1)) if yr else None), ec=bool(EC.search(html)))
+def titlecase(name):
+    out = []
+    for w in (name or "").strip().lower().split():
+        out.append(SMALL.get(w, w.capitalize()))
+    return " ".join(out)
 
-def classify(slug):
-    base=f"https://{slug}.eraprojects.sg"
-    u=parse_units(fetch(base+"/units")); fs=factsheet(fetch(base+"/fact-sheet"))
-    launched=u["cells"]>0
-    status="in_market" if launched else "pre_launch"
-    keep=False
-    if SLUG_DROP.search(slug):               typ="excluded"
-    elif fs["country"]=="overseas":          typ="overseas"
-    elif fs["ec"]:                           typ="EC"
-    elif SLUG_LANDED.search(slug):           typ="landed"
-    elif SLUG_COMM.search(slug):             typ="commercial"
-    elif launched and u["house"]>0 and u["br"]==0: typ="landed"
-    elif launched and u["br"]>0:             typ="residential"; keep=True
-    elif launched and u["cells"]>0:          typ="commercial"
-    elif fs["top_year"] and fs["top_year"]<THIS_YEAR: typ="completed"
-    else:                                    typ="residential"; keep=True   # pre-launch residential
-    avail=u["avail"] if launched else fs["total"]
-    ov=STATUS_OVERRIDE.get(slug)
-    if ov=="pre_launch" and keep: status="pre_launch"; avail=fs["total"] or u["cells"] or avail
-    elif ov=="in_market" and keep: status="in_market"
-    return dict(slug=slug,status=status,type=typ,keep=keep,district=fs["district"],
-                country=fs["country"],top_year=fs["top_year"],avail=avail,
-                br=u["br"],house=u["house"],cells=u["cells"],launch=u["launch"])
 
-def titlecase(s):
-    f={"gls":"GLS","ec":"EC","bt":"BT","w":"W","at":"at","by":"by","the":"The","on":"on","of":"of"}
-    return " ".join(f.get(w,w.capitalize()) for w in s.split("-"))
 def region_of(d):
-    m=re.match(r"D0?(\d+)",d or ""); n=int(m.group(1)) if m else 0
-    return "CCR" if n in (1,2,6,9,10,11) else "RCR" if n in (3,4,5,7,8,12,13,14,15,20) else ("OCR" if n else "")
+    m = re.match(r"D0?(\d+)", d or "")
+    n = int(m.group(1)) if m else 0
+    return "CCR" if n in (1, 2, 6, 9, 10, 11) else \
+           "RCR" if n in (3, 4, 5, 7, 8, 12, 13, 14, 15, 20) else ("OCR" if n else "")
+
+
+def year_of(s):
+    m = re.match(r"(\d{4})", str(s or ""))
+    return int(m.group(1)) if m else None
+
+
+def classify(r):
+    """-> dict(status, type, keep, ...) mirroring the v3 audit shape."""
+    us = r.get("unitSummary") or {}
+    subs = set(us.get("propertySubTypes") or [])
+    name = r.get("name") or ""
+    top_year = year_of(r.get("top"))
+    try:
+        ldate = date.fromisoformat((r.get("launchDate") or "")[:10])
+    except ValueError:
+        ldate = None
+    today = date.fromisoformat(_SCRAPE_DATE)
+
+    keep, typ = False, "residential"
+    if r.get("country") != "SG":
+        typ = "overseas"
+    elif (r.get("propertyType") or "") != "Condo":
+        typ = (r.get("propertyType") or "?").lower() or "unknown"
+    elif "Executive Condominium" in subs:
+        typ = "EC"
+    elif subs & {"Semi-Detached House", "Terrace House"} or NAME_LANDED.search(name):
+        typ = "landed"
+    elif subs & {"Office", "Multiple-user Factory", "Retail"} or NAME_COMM.search(name):
+        typ = "commercial"
+    elif r.get("isSoldOut"):
+        typ = "sold_out"
+    else:
+        keep = True
+
+    upcoming = (ldate and ldate > today) or not us
+    if keep and upcoming and not (ldate and ldate > today):
+        # no live stack AND no future launch date: drop old completed strays
+        if top_year and top_year < THIS_YEAR:
+            keep, typ = False, "completed"
+    avail = (r.get("numberOfUnits") if upcoming else us.get("numberOfAvailableUnits")) or 0
+    if keep and not upcoming and avail <= 0:
+        keep, typ = False, "sold_out"
+
+    return {"name": name, "status": "pre_launch" if upcoming else "in_market",
+            "type": typ, "keep": keep, "district": (r.get("district") or "").upper(),
+            "country": r.get("country"), "top_year": top_year, "avail": avail,
+            "launch_date": (r.get("launchDate") or "")[:10],
+            "developer": re.sub(r"\s+", " ", (r.get("developer") or "")).strip(),
+            "total_units": r.get("numberOfUnits")}
+
 
 def main():
-    slugs=refresh_slugs(); print(f"{len(slugs)} projects from gallery")
-    out=[]
-    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as ex:
-        for r in ex.map(classify,slugs): out.append(r)
-    json.dump(out,open("era_classified.json","w"),indent=1)
-    keep=[r for r in out if r["keep"]]
-    im=sorted([r for r in keep if r["status"]=="in_market" and (r["avail"] or 0)>0],key=lambda x:(x.get("top_year") or 0),reverse=True)
-    pl=sorted([r for r in keep if r["status"]=="pre_launch" and r["avail"]],key=lambda x:-(x["avail"] or 0))
-    def fmtlaunch(v): return (MON3[(v//100)%100]+" "+str(v//10000)) if v else ""
-    def ent(r,k):
-        o={"name":titlecase(r["slug"]),"district":r["district"],"region":region_of(r["district"]),"avail":r["avail"],"developer":""}
-        if k=="in":
-            o["top"]=("TOP "+str(r["top_year"])) if r.get("top_year") else "TOP n/a"
-            o["stale"]=not (r.get("top_year") and r["top_year"]>=THIS_YEAR)
-        else: o["launch"]="upcoming"
-        return o
-    launches={"_meta":{"metric":"avail = units available (in-market unsold / upcoming full size)",
-              "scope":"SG residential condos — FULLY AUTO-CLASSIFIED from ERA gallery, no manual list",
-              "as_of":_SCRAPE_DATE,"auto":True,"counts":{"in_market":len(im),"rest_of_2026":len(pl)}},
-              "in_market":[ent(r,"in") for r in im],"rest_of_2026":[ent(r,"up") for r in pl]}
-    json.dump(launches,open("launches.json","w"),indent=2)
-    from collections import Counter
-    print("types:",dict(Counter(r["type"] for r in out)))
-    print(f"BOARD -> in-market {len(im)} ({sum(r['avail'] or 0 for r in im):,} units) | upcoming {len(pl)} ({sum(r['avail'] or 0 for r in pl):,} units)")
-    nullav=[r["slug"] for r in keep if not r["avail"]]
-    if nullav: print(f"  ({len(nullav)} kept with no unit count: {nullav[:10]})")
+    try:
+        rows = fetch_board()
+    except Exception as e:  # noqa: BLE001
+        print(f"ERA portal API unreadable ({e}) — keeping last-good launches.json", file=sys.stderr)
+        return 1
+    out = [classify(r) for r in rows]
+    json.dump(out, open("era_classified.json", "w"), indent=1)
 
-if __name__=="__main__": main()
+    keep = [r for r in out if r["keep"]]
+    if len(keep) < MIN_SANE:
+        print(f"Only {len(keep)} keepable SG condos (< {MIN_SANE}) — suspicious read, "
+              "keeping last-good launches.json", file=sys.stderr)
+        return 1
+
+    im = sorted([r for r in keep if r["status"] == "in_market"],
+                key=lambda x: (x.get("top_year") or 0), reverse=True)
+    pl = sorted([r for r in keep if r["status"] == "pre_launch" and r["avail"]],
+                key=lambda x: -(x["avail"] or 0))
+
+    def ent(r, k):
+        o = {"name": titlecase(r["name"]), "district": r["district"],
+             "region": region_of(r["district"]), "avail": r["avail"],
+             "developer": r["developer"]}
+        if k == "in":
+            o["top"] = ("TOP " + str(r["top_year"])) if r.get("top_year") else "TOP n/a"
+            o["stale"] = not (r.get("top_year") and r["top_year"] >= THIS_YEAR)
+        else:
+            o["launch"] = "upcoming"
+        return o
+
+    launches = {"_meta": {"metric": "avail = units available (in-market unsold / upcoming full size)",
+                "scope": "SG residential condos — AUTO from ERA Property Portal API (propertyportal.era.com.sg)",
+                "as_of": _SCRAPE_DATE, "auto": True,
+                "counts": {"in_market": len(im), "rest_of_2026": len(pl)}},
+                "in_market": [ent(r, "in") for r in im],
+                "rest_of_2026": [ent(r, "up") for r in pl]}
+    json.dump(launches, open("launches.json", "w"), indent=2)
+
+    from collections import Counter
+    print("types:", dict(Counter(r["type"] for r in out)))
+    print(f"BOARD -> in-market {len(im)} ({sum(r['avail'] or 0 for r in im):,} units) | "
+          f"upcoming {len(pl)} ({sum(r['avail'] or 0 for r in pl):,} units)")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

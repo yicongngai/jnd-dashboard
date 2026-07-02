@@ -1,12 +1,12 @@
 {
   "_meta": {
     "metric": "avail = units available (in-market unsold / upcoming full size)",
-    "scope": "SG residential condos \u2014 FULLY AUTO-CLASSIFIED from ERA gallery, no manual list",
-    "as_of": "2026-06-14",
+    "scope": "SG residential condos \u2014 AUTO from ERA Property Portal API (propertyportal.era.com.sg)",
+    "as_of": "2026-07-02",
     "auto": true,
     "counts": {
-      "in_market": 91,
-      "rest_of_2026": 14
+      "in_market": 83,
+      "rest_of_2026": 12
     }
   },
   "in_market": [
@@ -14,44 +14,17 @@
       "name": "Zyon Grand",
       "district": "D03",
       "region": "RCR",
-      "avail": 75,
-      "developer": "",
+      "avail": 72,
+      "developer": "CDL-MFA Altair Property Pte Ltd",
       "top": "TOP 2032",
-      "stale": false
-    },
-    {
-      "name": "Penrith",
-      "district": "D03",
-      "region": "RCR",
-      "avail": 10,
-      "developer": "",
-      "top": "TOP 2031",
-      "stale": false
-    },
-    {
-      "name": "Promenade Peak",
-      "district": "D03",
-      "region": "RCR",
-      "avail": 162,
-      "developer": "",
-      "top": "TOP 2031",
       "stale": false
     },
     {
       "name": "Tengah Garden Residences",
       "district": "D24",
       "region": "OCR",
-      "avail": 3,
-      "developer": "",
-      "top": "TOP 2031",
-      "stale": false
-    },
-    {
-      "name": "Union Square Residences",
-      "district": "D01",
-      "region": "CCR",
-      "avail": 192,
-      "developer": "",
+      "avail": 2,
+      "developer": "HONG LEONG/ GUOCOLAND/ CSC LAND",
       "top": "TOP 2031",
       "stale": false
     },
@@ -59,26 +32,44 @@
       "name": "Vela Bay",
       "district": "D16",
       "region": "OCR",
-      "avail": 143,
-      "developer": "",
+      "avail": 141,
+      "developer": "SingHaiyi Group / Haiyi Holdings",
       "top": "TOP 2031",
       "stale": false
     },
     {
-      "name": "Parktown Residence",
-      "district": "D18",
-      "region": "OCR",
-      "avail": 28,
-      "developer": "",
-      "top": "TOP 2030",
+      "name": "Penrith",
+      "district": "D03",
+      "region": "RCR",
+      "avail": 10,
+      "developer": "GuocoLand / Hong Leong Holdings / Hong Realty",
+      "top": "TOP 2031",
+      "stale": false
+    },
+    {
+      "name": "Promenade Peak",
+      "district": "D03",
+      "region": "RCR",
+      "avail": 163,
+      "developer": "Valerian Residential Pte. Ltd",
+      "top": "TOP 2031",
+      "stale": false
+    },
+    {
+      "name": "Union Square Residences",
+      "district": "D01",
+      "region": "CCR",
+      "avail": 185,
+      "developer": "CDL",
+      "top": "TOP 2031",
       "stale": false
     },
     {
       "name": "Pinery Residences",
       "district": "D16",
       "region": "OCR",
-      "avail": 37,
-      "developer": "",
+      "avail": 36,
+      "developer": "Hoi Hup Realty /Sunway Developments",
       "top": "TOP 2030",
       "stale": false
     },
@@ -86,17 +77,8 @@
       "name": "River Modern",
       "district": "D09",
       "region": "CCR",
-      "avail": 32,
-      "developer": "",
-      "top": "TOP 2030",
-      "stale": false
-    },
-    {
-      "name": "The Robertson Opus",
-      "district": "D09",
-      "region": "CCR",
-      "avail": 143,
-      "developer": "",
+      "avail": 29,
+      "developer": "Guocoland",
       "top": "TOP 2030",
       "stale": false
     },
@@ -104,26 +86,44 @@
       "name": "The Sen",
       "district": "D21",
       "region": "OCR",
-      "avail": 211,
-      "developer": "",
+      "avail": 209,
+      "developer": "SL Capital (8) Pte Ltd",
       "top": "TOP 2030",
       "stale": false
     },
     {
-      "name": "Aurea",
-      "district": "D07",
+      "name": "The Robertson Opus",
+      "district": "D09",
+      "region": "CCR",
+      "avail": 142,
+      "developer": "RIVERSIDE PROPERTY PTE. LTD",
+      "top": "TOP 2030",
+      "stale": false
+    },
+    {
+      "name": "Parktown Residence",
+      "district": "D18",
+      "region": "OCR",
+      "avail": 28,
+      "developer": "UOL/ SINGAPORE LAND/ CAPITALAND",
+      "top": "TOP 2030",
+      "stale": false
+    },
+    {
+      "name": "Hudson Place Residences",
+      "district": "D05",
       "region": "RCR",
-      "avail": 120,
-      "developer": "",
+      "avail": 105,
+      "developer": "Guocoland",
       "top": "TOP 2029",
       "stale": false
     },
     {
-      "name": "Coastal Cabana",
-      "district": "D17",
+      "name": "Narra Residences",
+      "district": "D23",
       "region": "OCR",
-      "avail": 130,
-      "developer": "",
+      "avail": 337,
+      "developer": "Santarli / Apex Asia Alpha",
       "top": "TOP 2029",
       "stale": false
     },
@@ -131,17 +131,26 @@
       "name": "Faber Residence",
       "district": "D05",
       "region": "RCR",
-      "avail": 17,
-      "developer": "",
+      "avail": 16,
+      "developer": "GuocoLand",
       "top": "TOP 2029",
       "stale": false
     },
     {
-      "name": "Hudson Place Residences",
-      "district": "D05",
-      "region": "RCR",
-      "avail": 112,
-      "developer": "",
+      "name": "Springleaf Residence",
+      "district": "D26",
+      "region": "OCR",
+      "avail": 21,
+      "developer": "GuocoLand / Hong Leong Holdings",
+      "top": "TOP 2029",
+      "stale": false
+    },
+    {
+      "name": "River Green",
+      "district": "D09",
+      "region": "CCR",
+      "avail": 32,
+      "developer": "WINCHAMP INVESTMENT PTE LTD",
       "top": "TOP 2029",
       "stale": false
     },
@@ -150,16 +159,7 @@
       "district": "D05",
       "region": "RCR",
       "avail": 1,
-      "developer": "",
-      "top": "TOP 2029",
-      "stale": false
-    },
-    {
-      "name": "Narra Residences",
-      "district": "D23",
-      "region": "OCR",
-      "avail": 338,
-      "developer": "",
+      "developer": "CapitaLand",
       "top": "TOP 2029",
       "stale": false
     },
@@ -167,26 +167,17 @@
       "name": "One Marina Gardens",
       "district": "D01",
       "region": "CCR",
-      "avail": 296,
-      "developer": "",
+      "avail": 293,
+      "developer": "KINGSFORD DEVELOPMENT LED CONSORTIUM",
       "top": "TOP 2029",
       "stale": false
     },
     {
-      "name": "River Green",
-      "district": "D09",
-      "region": "CCR",
-      "avail": 33,
-      "developer": "",
-      "top": "TOP 2029",
-      "stale": false
-    },
-    {
-      "name": "Springleaf Residence",
-      "district": "D26",
-      "region": "OCR",
-      "avail": 22,
-      "developer": "",
+      "name": "Aurea",
+      "district": "D07",
+      "region": "RCR",
+      "avail": 119,
+      "developer": "FAR EAST ORGANIZATION / PERENNIAL HOLDINGS / SINO LAND",
       "top": "TOP 2029",
       "stale": false
     },
@@ -194,27 +185,9 @@
       "name": "The Collective at One Sophia",
       "district": "D09",
       "region": "CCR",
-      "avail": 269,
-      "developer": "",
+      "avail": 268,
+      "developer": "Sophia Residential Pte. Ltd.",
       "top": "TOP 2029",
-      "stale": false
-    },
-    {
-      "name": "Bagnall Haus",
-      "district": "D16",
-      "region": "OCR",
-      "avail": 9,
-      "developer": "",
-      "top": "TOP 2028",
-      "stale": false
-    },
-    {
-      "name": "Blossoms by The Park",
-      "district": "D05",
-      "region": "RCR",
-      "avail": 2,
-      "developer": "",
-      "top": "TOP 2028",
       "stale": false
     },
     {
@@ -222,34 +195,25 @@
       "district": "D27",
       "region": "OCR",
       "avail": 37,
-      "developer": "",
+      "developer": "Peak Crescent Pte Ltd",
       "top": "TOP 2028",
       "stale": false
     },
     {
-      "name": "Jden",
-      "district": "D22",
-      "region": "OCR",
-      "avail": 13,
-      "developer": "",
+      "name": "Upperhouse at Orchard Boulevard",
+      "district": "D10",
+      "region": "CCR",
+      "avail": 56,
+      "developer": "United Venture Development (No.7) Pte, Ltd,",
       "top": "TOP 2028",
       "stale": false
     },
     {
-      "name": "Meyer Blue",
-      "district": "D15",
-      "region": "RCR",
-      "avail": 50,
-      "developer": "",
-      "top": "TOP 2028",
-      "stale": false
-    },
-    {
-      "name": "Nava Grove",
-      "district": "D21",
-      "region": "OCR",
-      "avail": 1,
-      "developer": "",
+      "name": "W Residences Marina View - Singapore",
+      "district": "D01",
+      "region": "CCR",
+      "avail": 667,
+      "developer": "Boulevard Development Pte Ltd (IOI Properties Singapore)",
       "top": "TOP 2028",
       "stale": false
     },
@@ -257,17 +221,17 @@
       "name": "Ocho",
       "district": "D14",
       "region": "RCR",
-      "avail": 19,
-      "developer": "",
+      "avail": 18,
+      "developer": "Primest Land V1 Pte Ltd",
       "top": "TOP 2028",
       "stale": false
     },
     {
-      "name": "The Arcady at Boon Keng",
-      "district": "D12",
-      "region": "RCR",
-      "avail": 70,
-      "developer": "",
+      "name": "Bagnall Haus",
+      "district": "D16",
+      "region": "OCR",
+      "avail": 9,
+      "developer": "ROXY PACIFIC HOLDINGS",
       "top": "TOP 2028",
       "stale": false
     },
@@ -276,43 +240,70 @@
       "district": "D12",
       "region": "RCR",
       "avail": 36,
-      "developer": "",
+      "developer": "CDL/ FRASERS PROPERTY/ SEKISUI HOUSE",
       "top": "TOP 2028",
       "stale": false
     },
     {
-      "name": "Upperhouse",
-      "district": "D10",
-      "region": "CCR",
-      "avail": 60,
-      "developer": "",
-      "top": "TOP 2028",
-      "stale": false
-    },
-    {
-      "name": "W Residences Marina View Singapore",
-      "district": "D01",
-      "region": "CCR",
-      "avail": 665,
-      "developer": "",
-      "top": "TOP 2028",
-      "stale": false
-    },
-    {
-      "name": "8 at BT",
+      "name": "Nava Grove",
       "district": "D21",
       "region": "OCR",
+      "avail": 2,
+      "developer": "MCL LAND/ SINARMAS LAND",
+      "top": "TOP 2028",
+      "stale": false
+    },
+    {
+      "name": "Meyer Blue",
+      "district": "D15",
+      "region": "RCR",
+      "avail": 49,
+      "developer": "UOL Group Limited Singapore Land Group",
+      "top": "TOP 2028",
+      "stale": false
+    },
+    {
+      "name": "The Arcady at Boon Keng",
+      "district": "D12",
+      "region": "RCR",
+      "avail": 68,
+      "developer": "KSH Holdings Ultra Unity(JV)",
+      "top": "TOP 2028",
+      "stale": false
+    },
+    {
+      "name": "J'den",
+      "district": "D22",
+      "region": "OCR",
+      "avail": 13,
+      "developer": "Tanglin R.E Holdings Pte Ltd",
+      "top": "TOP 2028",
+      "stale": false
+    },
+    {
+      "name": "Terra Hill",
+      "district": "D05",
+      "region": "RCR",
+      "avail": 67,
+      "developer": "Hoi Hup Sunway Kent Ridge Pte Ltd",
+      "top": "TOP 2028",
+      "stale": false
+    },
+    {
+      "name": "Newport Residences",
+      "district": "D02",
+      "region": "CCR",
       "avail": 48,
-      "developer": "",
+      "developer": "City Developments Limited",
       "top": "TOP 2027",
       "stale": false
     },
     {
-      "name": "Ardor Residence",
-      "district": "D15",
+      "name": "Artisan 8",
+      "district": "D20",
       "region": "RCR",
-      "avail": 5,
-      "developer": "",
+      "avail": 17,
+      "developer": "Apex Asia (2) Pte Ltd",
       "top": "TOP 2027",
       "stale": false
     },
@@ -321,25 +312,7 @@
       "district": "D15",
       "region": "RCR",
       "avail": 21,
-      "developer": "",
-      "top": "TOP 2027",
-      "stale": false
-    },
-    {
-      "name": "Artisan 8",
-      "district": "D20",
-      "region": "RCR",
-      "avail": 19,
-      "developer": "",
-      "top": "TOP 2027",
-      "stale": false
-    },
-    {
-      "name": "Chuan Park",
-      "district": "D19",
-      "region": "OCR",
-      "avail": 37,
-      "developer": "",
+      "developer": "ZACD GROUP",
       "top": "TOP 2027",
       "stale": false
     },
@@ -347,26 +320,35 @@
       "name": "Elta",
       "district": "D05",
       "region": "RCR",
-      "avail": 92,
-      "developer": "",
+      "avail": 89,
+      "developer": "MCL LAND/ CSC LAND",
       "top": "TOP 2027",
       "stale": false
     },
     {
-      "name": "Lentoria",
-      "district": "D26",
+      "name": "Chuan Park",
+      "district": "D19",
       "region": "OCR",
-      "avail": 22,
-      "developer": "",
+      "avail": 33,
+      "developer": "Kingsford Property Development Pte Ltd",
       "top": "TOP 2027",
       "stale": false
     },
     {
-      "name": "Newport Residences",
-      "district": "D02",
-      "region": "CCR",
-      "avail": 49,
-      "developer": "",
+      "name": "8@bt",
+      "district": "D21",
+      "region": "OCR",
+      "avail": 48,
+      "developer": "Bukit One Pte Ltd",
+      "top": "TOP 2027",
+      "stale": false
+    },
+    {
+      "name": "Kassia",
+      "district": "D17",
+      "region": "OCR",
+      "avail": 48,
+      "developer": "Tripartite Developers Pte. Limited",
       "top": "TOP 2027",
       "stale": false
     },
@@ -374,17 +356,8 @@
       "name": "Sora",
       "district": "D22",
       "region": "OCR",
-      "avail": 218,
-      "developer": "",
-      "top": "TOP 2027",
-      "stale": false
-    },
-    {
-      "name": "The Continuum",
-      "district": "D15",
-      "region": "RCR",
-      "avail": 38,
-      "developer": "",
+      "avail": 213,
+      "developer": "Lakeside Residential Pte Ltd",
       "top": "TOP 2027",
       "stale": false
     },
@@ -392,17 +365,26 @@
       "name": "The Hillshore",
       "district": "D05",
       "region": "RCR",
-      "avail": 48,
-      "developer": "",
+      "avail": 47,
+      "developer": "Hillside View Development Pte Ltd",
       "top": "TOP 2027",
       "stale": false
     },
     {
-      "name": "The Myst",
-      "district": "D23",
+      "name": "Ardor Residence",
+      "district": "D15",
+      "region": "RCR",
+      "avail": 3,
+      "developer": "Nanshan Group",
+      "top": "TOP 2027",
+      "stale": false
+    },
+    {
+      "name": "Lentoria",
+      "district": "D26",
       "region": "OCR",
-      "avail": 20,
-      "developer": "",
+      "avail": 19,
+      "developer": "TID Residential Pte.Ltd",
       "top": "TOP 2027",
       "stale": false
     },
@@ -411,25 +393,43 @@
       "district": "D02",
       "region": "CCR",
       "avail": 319,
-      "developer": "",
+      "developer": "Maxwell Residential Pte Ltd and Maxwell Commercial Pte Ltd",
       "top": "TOP 2027",
       "stale": false
     },
     {
-      "name": "Canninghill Piers",
-      "district": "D06",
+      "name": "The Myst",
+      "district": "D23",
+      "region": "OCR",
+      "avail": 18,
+      "developer": "CDL Aries Pte. Ltd.",
+      "top": "TOP 2027",
+      "stale": false
+    },
+    {
+      "name": "The Continuum",
+      "district": "D15",
+      "region": "RCR",
+      "avail": 35,
+      "developer": "Hoi Hup Sunway Katong Pte Ltd",
+      "top": "TOP 2027",
+      "stale": false
+    },
+    {
+      "name": "The Giverny Residences",
+      "district": "D10",
       "region": "CCR",
-      "avail": 11,
-      "developer": "",
+      "avail": 3,
+      "developer": "Robin Development Pte.Ltd",
       "top": "TOP 2026",
       "stale": false
     },
     {
-      "name": "Grand Dunman",
-      "district": "D15",
-      "region": "RCR",
-      "avail": 86,
-      "developer": "",
+      "name": "Norwood Grand",
+      "district": "D25",
+      "region": "OCR",
+      "avail": 33,
+      "developer": "CDL",
       "top": "TOP 2026",
       "stale": false
     },
@@ -438,34 +438,16 @@
       "district": "D26",
       "region": "OCR",
       "avail": 3,
-      "developer": "",
+      "developer": "Lentor Central Development",
       "top": "TOP 2026",
       "stale": false
     },
     {
-      "name": "Norwood Grand",
-      "district": "D25",
+      "name": "The Shorefront",
+      "district": "D17",
       "region": "OCR",
-      "avail": 34,
-      "developer": "",
-      "top": "TOP 2026",
-      "stale": false
-    },
-    {
-      "name": "Pinetree Hill",
-      "district": "D21",
-      "region": "OCR",
-      "avail": 1,
-      "developer": "",
-      "top": "TOP 2026",
-      "stale": false
-    },
-    {
-      "name": "The Giverny Residences",
-      "district": "D10",
-      "region": "CCR",
-      "avail": 2,
-      "developer": "",
+      "avail": 8,
+      "developer": "163@Loyang Pte Ltd",
       "top": "TOP 2026",
       "stale": false
     },
@@ -474,16 +456,34 @@
       "district": "D22",
       "region": "OCR",
       "avail": 2,
-      "developer": "",
+      "developer": "WingTai Asia",
       "top": "TOP 2026",
       "stale": false
     },
     {
-      "name": "The Shorefront",
-      "district": "D17",
+      "name": "Grand Dunman",
+      "district": "D15",
+      "region": "RCR",
+      "avail": 85,
+      "developer": "SingHaiyi Group Ltd",
+      "top": "TOP 2026",
+      "stale": false
+    },
+    {
+      "name": "Pinetree Hill",
+      "district": "D21",
       "region": "OCR",
-      "avail": 11,
-      "developer": "",
+      "avail": 1,
+      "developer": "United Venture Development(No.5)Pte Ltd",
+      "top": "TOP 2026",
+      "stale": false
+    },
+    {
+      "name": "Canninghill Piers",
+      "district": "D06",
+      "region": "CCR",
+      "avail": 7,
+      "developer": "DBS TRUSTEE LIMITED/LEGEND COMMERCIAL TRUSTEE PTE LTD/LEGEND QUAY PTE LTD",
       "top": "TOP 2026",
       "stale": false
     },
@@ -492,79 +492,16 @@
       "district": "D10",
       "region": "CCR",
       "avail": 1,
-      "developer": "",
+      "developer": "KHENG LEONG",
       "top": "TOP 2025",
       "stale": true
     },
     {
-      "name": "Atlassia",
-      "district": "D15",
+      "name": "The Ranz",
+      "district": "D08",
       "region": "RCR",
-      "avail": 2,
-      "developer": "",
-      "top": "TOP 2025",
-      "stale": true
-    },
-    {
-      "name": "Claydence",
-      "district": "D15",
-      "region": "RCR",
-      "avail": 8,
-      "developer": "",
-      "top": "TOP 2025",
-      "stale": true
-    },
-    {
-      "name": "Gems Ville",
-      "district": "D14",
-      "region": "RCR",
-      "avail": 11,
-      "developer": "",
-      "top": "TOP 2025",
-      "stale": true
-    },
-    {
-      "name": "Grange 1866",
-      "district": "D10",
-      "region": "CCR",
-      "avail": 2,
-      "developer": "",
-      "top": "TOP 2025",
-      "stale": true
-    },
-    {
-      "name": "K Suites",
-      "district": "D15",
-      "region": "RCR",
-      "avail": 2,
-      "developer": "",
-      "top": "TOP 2025",
-      "stale": true
-    },
-    {
-      "name": "Klimt Cairnhill",
-      "district": "D09",
-      "region": "CCR",
-      "avail": 1,
-      "developer": "",
-      "top": "TOP 2025",
-      "stale": true
-    },
-    {
-      "name": "Sanctuarynewton",
-      "district": "D11",
-      "region": "CCR",
-      "avail": 38,
-      "developer": "",
-      "top": "TOP 2025",
-      "stale": true
-    },
-    {
-      "name": "Sophia Regency",
-      "district": "D09",
-      "region": "CCR",
-      "avail": 38,
-      "developer": "",
+      "avail": 6,
+      "developer": "Kefi Development Pte. Ltd.",
       "top": "TOP 2025",
       "stale": true
     },
@@ -573,26 +510,53 @@
       "district": "D15",
       "region": "RCR",
       "avail": 7,
-      "developer": "",
+      "developer": "CDL Triton Pte. Ltd ((City Developments Ltd)",
       "top": "TOP 2025",
       "stale": true
     },
     {
-      "name": "The Ranz",
-      "district": "D08",
+      "name": "Claydence",
+      "district": "D15",
       "region": "RCR",
-      "avail": 7,
-      "developer": "",
+      "avail": 8,
+      "developer": "HONG HOW LAND PTE LTD",
       "top": "TOP 2025",
       "stale": true
     },
     {
-      "name": "Midtown Bay",
-      "district": "D07",
+      "name": "Gems Ville",
+      "district": "D14",
       "region": "RCR",
-      "avail": 70,
-      "developer": "",
-      "top": "TOP 2024",
+      "avail": 11,
+      "developer": "EAST ASIA GEYLANG DEVELOPMENT PTE LTD",
+      "top": "TOP 2025",
+      "stale": true
+    },
+    {
+      "name": "Sophia Regency",
+      "district": "D09",
+      "region": "CCR",
+      "avail": 38,
+      "developer": "East Asia Sophia Development",
+      "top": "TOP 2025",
+      "stale": true
+    },
+    {
+      "name": "Atlassia",
+      "district": "D15",
+      "region": "RCR",
+      "avail": 2,
+      "developer": "K16 PLACE PTE LTD",
+      "top": "TOP 2025",
+      "stale": true
+    },
+    {
+      "name": "Grange 1866",
+      "district": "D10",
+      "region": "CCR",
+      "avail": 2,
+      "developer": "GRANGE 1866 PTE LTD",
+      "top": "TOP 2025",
       "stale": true
     },
     {
@@ -600,7 +564,25 @@
       "district": "D23",
       "region": "OCR",
       "avail": 1,
-      "developer": "",
+      "developer": "USB (PHOENIX) PTE LTD",
+      "top": "TOP 2024",
+      "stale": true
+    },
+    {
+      "name": "Midtown Bay",
+      "district": "D07",
+      "region": "RCR",
+      "avail": 70,
+      "developer": "GUOCO MIDTOWN PTE LTD/MIDTOWN BAY PTE LTD",
+      "top": "TOP 2024",
+      "stale": true
+    },
+    {
+      "name": "Boulevard 88",
+      "district": "D10",
+      "region": "CCR",
+      "avail": 1,
+      "developer": "GRANMIL HOLDINGS PTE LTD",
       "top": "TOP 2024",
       "stale": true
     },
@@ -608,17 +590,35 @@
       "name": "19 Nassim",
       "district": "D10",
       "region": "CCR",
-      "avail": 6,
-      "developer": "",
+      "avail": 2,
+      "developer": "PARKSVILLE DEVELOPMENT PTE LTD",
       "top": "TOP 2023",
       "stale": true
     },
     {
-      "name": "Jervois Priv",
+      "name": "Jervois Prive",
       "district": "D10",
       "region": "CCR",
-      "avail": 26,
-      "developer": "",
+      "avail": 20,
+      "developer": "JERVOIS MIDAS PTE LTD",
+      "top": "TOP 2022",
+      "stale": true
+    },
+    {
+      "name": "10 Evelyn",
+      "district": "D11",
+      "region": "CCR",
+      "avail": 3,
+      "developer": "CREATIVE INVESTMENTS PTE LTD",
+      "top": "TOP 2022",
+      "stale": true
+    },
+    {
+      "name": "Jui Residences",
+      "district": "D12",
+      "region": "RCR",
+      "avail": 1,
+      "developer": "TIARA LAND PTE LTD",
       "top": "TOP 2022",
       "stale": true
     },
@@ -626,26 +626,35 @@
       "name": "The Lumos",
       "district": "D09",
       "region": "CCR",
-      "avail": 21,
-      "developer": "",
+      "avail": 20,
+      "developer": "BUILDHOME PTE LTD",
       "top": "TOP 2019",
       "stale": true
     },
     {
-      "name": "Alana",
-      "district": "D28",
+      "name": "Hillion Residences",
+      "district": "D23",
       "region": "OCR",
-      "avail": 1,
-      "developer": "",
+      "avail": 12,
+      "developer": "SIM LIAN JV (BP RETAIL) PTE LTD/SIM LIAN JV (BP) PTE LTD",
       "top": "TOP 2018",
       "stale": true
     },
     {
-      "name": "The Line Tanjong Rhu",
+      "name": "Eden Residences Capitol",
+      "district": "D06",
+      "region": "CCR",
+      "avail": 2,
+      "developer": "CAPITOL HOTEL MANAGEMENT PTE LTD/CAPITOL RESIDENTIAL DEVELOPMENT PTE LTD/CAPITOL RETAIL MANAGEMENT PTE LTD",
+      "top": "TOP 2018",
+      "stale": true
+    },
+    {
+      "name": "The Line @ Tanjong Rhu",
       "district": "D15",
       "region": "RCR",
       "avail": 8,
-      "developer": "",
+      "developer": "LAKEVIEW INVESTMENTS PTE LTD",
       "top": "TOP 2017",
       "stale": true
     },
@@ -654,16 +663,7 @@
       "district": "D11",
       "region": "CCR",
       "avail": 6,
-      "developer": "",
-      "top": "TOP 2016",
-      "stale": true
-    },
-    {
-      "name": "Greenwood Mews",
-      "district": "D11",
-      "region": "CCR",
-      "avail": 5,
-      "developer": "",
+      "developer": "NOVELTY CORP PTE LTD",
       "top": "TOP 2016",
       "stale": true
     },
@@ -671,35 +671,26 @@
       "name": "Skies Miltonia",
       "district": "D27",
       "region": "OCR",
-      "avail": 3,
-      "developer": "",
-      "top": "TOP 2016",
-      "stale": true
-    },
-    {
-      "name": "Cape Royale",
-      "district": "",
-      "region": "",
-      "avail": 132,
-      "developer": "",
-      "top": "TOP 2013",
+      "avail": 2,
+      "developer": "TG MASTER PTE LTD",
+      "top": "TOP 2015",
       "stale": true
     },
     {
       "name": "Concourse Skyline",
       "district": "D07",
       "region": "RCR",
-      "avail": 18,
-      "developer": "",
-      "top": "TOP 2013",
+      "avail": 13,
+      "developer": "HONG FOK LAND LTD",
+      "top": "TOP 2014",
       "stale": true
     },
     {
-      "name": "Dorsett Residences",
-      "district": "D02",
-      "region": "CCR",
-      "avail": 4,
-      "developer": "",
+      "name": "Cape Royale",
+      "district": "D04",
+      "region": "RCR",
+      "avail": 99,
+      "developer": "PINNACLE (SENTOSA) PTE LTD",
       "top": "TOP 2013",
       "stale": true
     },
@@ -707,99 +698,27 @@
       "name": "Reignwood Hamilton Scotts",
       "district": "D09",
       "region": "CCR",
-      "avail": 8,
-      "developer": "",
+      "avail": 5,
+      "developer": "SARDINIA PROPERTIES PTE LTD",
       "top": "TOP 2012",
-      "stale": true
-    },
-    {
-      "name": "Scotts Square",
-      "district": "D09",
-      "region": "CCR",
-      "avail": 4,
-      "developer": "",
-      "top": "TOP 2011",
       "stale": true
     },
     {
       "name": "The Residences at W Singapore Sentosa Cove",
       "district": "D04",
       "region": "RCR",
-      "avail": 76,
-      "developer": "",
+      "avail": 68,
+      "developer": "CITYVIEW PLACE HOLDINGS PTE LTD",
       "top": "TOP 2011",
-      "stale": true
-    },
-    {
-      "name": "The Oceanfront Sentosa Cove",
-      "district": "D04",
-      "region": "RCR",
-      "avail": 1,
-      "developer": "",
-      "top": "TOP 2010",
-      "stale": true
-    },
-    {
-      "name": "Boulevard 88",
-      "district": "D10",
-      "region": "CCR",
-      "avail": 1,
-      "developer": "",
-      "top": "TOP n/a",
-      "stale": true
-    },
-    {
-      "name": "Hillion Residences",
-      "district": "D23",
-      "region": "OCR",
-      "avail": 13,
-      "developer": "",
-      "top": "TOP n/a",
-      "stale": true
-    },
-    {
-      "name": "Kassia",
-      "district": "D17",
-      "region": "OCR",
-      "avail": 48,
-      "developer": "",
-      "top": "TOP n/a",
-      "stale": true
-    },
-    {
-      "name": "One Meyer",
-      "district": "D15",
-      "region": "RCR",
-      "avail": 1,
-      "developer": "",
-      "top": "TOP n/a",
       "stale": true
     },
     {
       "name": "Seascape",
       "district": "D04",
       "region": "RCR",
-      "avail": 60,
-      "developer": "",
-      "top": "TOP n/a",
-      "stale": true
-    },
-    {
-      "name": "Terra Hill",
-      "district": "D05",
-      "region": "RCR",
-      "avail": 72,
-      "developer": "",
-      "top": "TOP n/a",
-      "stale": true
-    },
-    {
-      "name": "The Ritzcarlton Residences",
-      "district": "D09",
-      "region": "CCR",
-      "avail": 5,
-      "developer": "",
-      "top": "TOP n/a",
+      "avail": 44,
+      "developer": "SEAVIEW (SENTOSA) PTE LTD",
+      "top": "TOP 2011",
       "stale": true
     },
     {
@@ -807,36 +726,45 @@
       "district": "D04",
       "region": "RCR",
       "avail": 1,
-      "developer": "",
-      "top": "TOP n/a",
+      "developer": "HO BEE COVE PTE LTD",
+      "top": "TOP 2010",
       "stale": true
     },
     {
-      "name": "Twin Vew",
-      "district": "D05",
+      "name": "The Oceanfront @ Sentosa Cove",
+      "district": "D04",
       "region": "RCR",
-      "avail": 2,
-      "developer": "",
-      "top": "TOP n/a",
+      "avail": 1,
+      "developer": "TC DEVELOPMENT PTE LTD",
+      "top": "TOP 2010",
       "stale": true
     },
     {
-      "name": "Uptown Farrer",
-      "district": "D08",
-      "region": "RCR",
-      "avail": 7,
-      "developer": "",
-      "top": "TOP n/a",
+      "name": "Draycott Eight",
+      "district": "D10",
+      "region": "CCR",
+      "avail": 21,
+      "developer": "WINWORTH INVESTMENT PTE LTD",
+      "top": "TOP 2006",
+      "stale": true
+    },
+    {
+      "name": "The Draycott",
+      "district": "D10",
+      "region": "CCR",
+      "avail": 27,
+      "developer": "Tan Chwee Boon Pte Ltd",
+      "top": "TOP 1980",
       "stale": true
     }
   ],
   "rest_of_2026": [
     {
-      "name": "Former Thomson View",
+      "name": "Thomson Reserve",
       "district": "D20",
       "region": "RCR",
       "avail": 1240,
-      "developer": "",
+      "developer": "UOL/ CapitaLand",
       "launch": "upcoming"
     },
     {
@@ -844,7 +772,7 @@
       "district": "D19",
       "region": "OCR",
       "avail": 1055,
-      "developer": "",
+      "developer": "Sing Holdings / Sunway Development",
       "launch": "upcoming"
     },
     {
@@ -852,31 +780,23 @@
       "district": "D27",
       "region": "OCR",
       "avail": 875,
-      "developer": "",
+      "developer": "Evia Real Estate / Gamuda Land / Ho Lee Group",
       "launch": "upcoming"
     },
     {
       "name": "Lucerne Grand",
       "district": "D22",
       "region": "OCR",
-      "avail": 570,
-      "developer": "",
-      "launch": "upcoming"
-    },
-    {
-      "name": "Woodlands Drive 17 Pb",
-      "district": "D25",
-      "region": "OCR",
-      "avail": 560,
-      "developer": "",
+      "avail": 575,
+      "developer": "CDL",
       "launch": "upcoming"
     },
     {
       "name": "Lentor Gardens Residences",
       "district": "D26",
       "region": "OCR",
-      "avail": 499,
-      "developer": "",
+      "avail": 500,
+      "developer": "Kingsford Development",
       "launch": "upcoming"
     },
     {
@@ -884,7 +804,7 @@
       "district": "D27",
       "region": "OCR",
       "avail": 430,
-      "developer": "",
+      "developer": "Hoi Hup Realty",
       "launch": "upcoming"
     },
     {
@@ -892,15 +812,15 @@
       "district": "D25",
       "region": "OCR",
       "avail": 420,
-      "developer": "",
+      "developer": "CDL",
       "launch": "upcoming"
     },
     {
       "name": "Dunearn House",
       "district": "D11",
       "region": "CCR",
-      "avail": 380,
-      "developer": "",
+      "avail": 360,
+      "developer": "Frasers Property / Sekisui House / CSC Land",
       "launch": "upcoming"
     },
     {
@@ -908,7 +828,7 @@
       "district": "D23",
       "region": "OCR",
       "avail": 295,
-      "developer": "",
+      "developer": "CDL",
       "launch": "upcoming"
     },
     {
@@ -916,7 +836,7 @@
       "district": "D27",
       "region": "OCR",
       "avail": 265,
-      "developer": "",
+      "developer": "JBE Holdings",
       "launch": "upcoming"
     },
     {
@@ -924,23 +844,15 @@
       "district": "D10",
       "region": "CCR",
       "avail": 230,
-      "developer": "",
+      "developer": "Sim Lian Group",
       "launch": "upcoming"
     },
     {
-      "name": "Former Pastoral View",
+      "name": "The Serra Residences",
       "district": "D11",
       "region": "CCR",
       "avail": 133,
-      "developer": "",
-      "launch": "upcoming"
-    },
-    {
-      "name": "Vila Nature",
-      "district": "D27",
-      "region": "OCR",
-      "avail": 11,
-      "developer": "",
+      "developer": "Far East Organization",
       "launch": "upcoming"
     }
   ]
