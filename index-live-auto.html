@@ -4111,6 +4111,11 @@ body.client-view #tool-advisory .scenario-card.not-viable { display: none; }
 <div class="mp">
   <div class="sec">📍 Recent Transactions — near a location</div>
   <div class="card" style="padding:14px 16px">
+    <div style="display:flex;gap:6px;margin-bottom:10px" id="nm-ptype">
+      <button data-pt="all" style="cursor:pointer;font:600 12px/1 inherit;border:1px solid #0f766e;border-radius:7px;padding:7px 12px;background:#0f766e;color:#fff">All</button>
+      <button data-pt="condo" style="cursor:pointer;font:600 12px/1 inherit;border:1px solid #d1d5db;border-radius:7px;padding:7px 12px;background:#fff;color:#374151">Condo / Apt</button>
+      <button data-pt="landed" style="cursor:pointer;font:600 12px/1 inherit;border:1px solid #d1d5db;border-radius:7px;padding:7px 12px;background:#fff;color:#374151">Landed</button>
+    </div>
     <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
       <button id="nm-btn" style="cursor:pointer;font:600 13px/1 inherit;color:#fff;background:#0f766e;border:none;border-radius:8px;padding:10px 16px">📍 Use my current location</button>
       <span style="font-size:12px;color:#9ca3af">or</span>
@@ -4119,7 +4124,7 @@ body.client-view #tool-advisory .scenario-card.not-viable { display: none; }
     </div>
     <div id="nm-status" style="font-size:12px;color:#6b7280;margin-top:8px"></div>
     <div id="nm-out" style="margin-top:6px"></div>
-    <div style="font-size:10.5px;color:#9ca3af;margin-top:8px">Private condo sales caveats (URA, ~3yr). Rings measured to each project\u2019s nearest block. Location is used on this device only; search via OneMap (SLA).</div>
+    <div style="font-size:10.5px;color:#9ca3af;margin-top:8px">Private sales caveats (URA, ~3yr) — condos, apartments &amp; landed. Rings measured to each project\u2019s nearest block. Location is used on this device only; search via OneMap (SLA).</div>
   </div>
 </div>
 <script>
@@ -4144,6 +4149,15 @@ body.client-view #tool-advisory .scenario-card.not-viable { display: none; }
   function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
   function title(s){ return String(s||'').toLowerCase().replace(/(^|[^a-z0-9])([a-z])/g,function(m,p,c){return p+c.toUpperCase();}); }
   var SALE={1:'New',2:'Sub',3:'Resale'};
+  var LTYPES=['T','SD','D','ST','SSD','SD2'], PTMODE='all', lastCentre=null;
+  function isLandedBucket(p){ return p.p==='LANDED HOUSING DEVELOPMENT'; }
+  function dispName(p){ return isLandedBucket(p) ? ('Landed — '+title(p.st||'')) : title(p.p); }
+  function txFor(p){
+    var t=p.t||[];
+    if(PTMODE==='condo') return isLandedBucket(p)?[]:t.filter(function(x){return LTYPES.indexOf(x[4])<0;});
+    if(PTMODE==='landed') return isLandedBucket(p)?t:t.filter(function(x){return LTYPES.indexOf(x[4])>=0;});
+    return t;
+  }
   function distTo(p,me){
     var dx=+p.x-me.E, dy=+p.y-me.N, d2=dx*dx+dy*dy;
     (p.b||[]).forEach(function(bl){ var bx=bl[0]-me.E, by=bl[1]-me.N, bd=bx*bx+by*by; if(bd<d2) d2=bd; });
@@ -4154,12 +4168,12 @@ body.client-view #tool-advisory .scenario-card.not-viable { display: none; }
     var n12=recent.filter(function(t){return ago(t[2])<=12;}).length;
     var rows=recent.slice(0,8).map(function(t){
       var psf=Math.round(t[1]/t[0]);
-      return '<tr><td style="padding:3px 8px 3px 0;white-space:nowrap">'+mon(t[2])+'</td><td style="padding:3px 8px;text-align:right">'+t[0].toLocaleString()+' sf</td><td style="padding:3px 8px;text-align:right;font-weight:600">'+money(t[1])+'</td><td style="padding:3px 8px;text-align:right">$'+psf.toLocaleString()+' psf</td><td style="padding:3px 0 3px 8px;color:#6b7280">'+(SALE[t[5]]||'')+'</td></tr>';
+      return '<tr><td style="padding:3px 8px 3px 0;white-space:nowrap">'+mon(t[2])+'</td><td style="padding:3px 8px;text-align:right">'+t[0].toLocaleString()+' sf</td><td style="padding:3px 8px;text-align:right;font-weight:600">'+money(t[1])+'</td><td style="padding:3px 8px;text-align:right">$'+psf.toLocaleString()+' psf</td><td style="padding:3px 0 3px 8px;color:#6b7280">'+(SALE[t[5]]||'')+(LTYPES.indexOf(t[4])>=0?' · '+({T:'Terrace',SD:'Semi-D',D:'Detached',ST:'Strata Terr',SSD:'Strata Semi-D',SD2:'Strata Det'}[t[4]]||'Landed'):'')+'</td></tr>';
     }).join('');
     var more=recent.length>8?('<div style="font-size:10.5px;color:#9ca3af;padding:2px 0 4px">+'+(recent.length-8)+' older in ~3yr</div>'):'';
     return '<div style="border-top:1px solid #eef0f2">'
       +'<div style="display:flex;align-items:center;gap:8px;padding:9px 0;cursor:pointer" onclick="var e=this.nextElementSibling;e.style.display=e.style.display===\'none\'?\'block\':\'none\'">'
-      +'<span style="font-weight:600;font-size:13.5px;flex:1">'+esc(title(r.p.p))+'</span>'
+      +'<span style="font-weight:600;font-size:13.5px;flex:1">'+esc(dispName(r.p))+'</span>'
       +'<span style="font-size:11px;color:#6b7280">'+(r.p.seg||'')+'</span>'
       +'<span style="font-size:12px;color:#0f766e;font-weight:600;white-space:nowrap">'+(r.d<1000?Math.round(r.d)+'m':(r.d/1000).toFixed(1)+'km')+'</span>'
       +'<span style="font-size:11px;color:#9ca3af;white-space:nowrap">'+n12+' txn/12mo</span>'
@@ -4168,18 +4182,19 @@ body.client-view #tool-advisory .scenario-card.not-viable { display: none; }
       +'</div>';
   }
   function render(lat,lon,acc,label){
+    lastCentre={lat:lat,lon:lon,acc:acc,label:label};
     var me=toSVY21(lat,lon), out=document.getElementById('nm-out');
     var ranked=[];
     comps().forEach(function(p){
       if(!p.x||!p.y) return;
       var d=distTo(p,me);
       if(d>2500) return;
-      var tx=(p.t||[]).filter(function(t){return ['T','SD','DT'].indexOf(t[4])<0;});
+      var tx=txFor(p);
       if(!tx.length) return;
       ranked.push({p:p,d:d,tx:tx});
     });
     ranked.sort(function(a,b){return a.d-b.d;});
-    if(!ranked.length){ out.innerHTML='<div style="font-size:13px;color:#6b7280;padding:6px 0">No condo projects with caveats within 2.5km of this spot.</div>'; return; }
+    if(!ranked.length){ out.innerHTML='<div style="font-size:13px;color:#6b7280;padding:6px 0">No matching projects with caveats within 2.5km of this spot.</div>'; return; }
     var here=ranked[0].d<=180?ranked[0]:null;
     var html='';
     if(here) html+='<div style="font-size:13px;margin:4px 0 8px">You appear to be at/near <b>'+esc(title(here.p.p))+'</b> (~'+Math.round(here.d)+'m)</div>';
@@ -4248,7 +4263,7 @@ body.client-view #tool-advisory .scenario-card.not-viable { display: none; }
       if(!p.x||!p.y) return;
       var d=distTo(p,me);
       if(d>2500) return;
-      var tx=(p.t||[]).filter(function(t){return ['T','SD','DT'].indexOf(t[4])<0;});
+      var tx=txFor(p);
       if(!tx.length) return;
       ranked.push({p:p,d:d,tx:tx});
     });
@@ -4261,6 +4276,17 @@ body.client-view #tool-advisory .scenario-card.not-viable { display: none; }
     if(!b) return;
     b.addEventListener('click',locate);
     g.addEventListener('click',doSearch);
+    [].forEach.call(document.querySelectorAll('#nm-ptype button'),function(btn){
+      btn.addEventListener('click',function(){
+        PTMODE=btn.getAttribute('data-pt');
+        [].forEach.call(document.querySelectorAll('#nm-ptype button'),function(o){
+          var on=o===btn;
+          o.style.background=on?'#0f766e':'#fff'; o.style.color=on?'#fff':'#374151';
+          o.style.borderColor=on?'#0f766e':'#d1d5db';
+        });
+        if(lastCentre) render(lastCentre.lat,lastCentre.lon,lastCentre.acc,lastCentre.label);
+      });
+    });
     q.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); doSearch(); } });
   }
   if(document.readyState!=='loading')boot();else document.addEventListener('DOMContentLoaded',boot);

@@ -61,6 +61,12 @@ def main():
         for p in res:
             name = p.get("project","?")
             key = name + "|" + (p.get("marketSegment") or "")
+            # URA sends landed caveats as ONE record PER STREET (own street/x/y),
+            # all named "LANDED HOUSING DEVELOPMENT". Keying by name collapsed
+            # ~5.4k landed txns into 3 island-wide buckets — key landed by street
+            # so "around me" distances work in landed enclaves.
+            if name == "LANDED HOUSING DEVELOPMENT":
+                key = name + "|" + (p.get("street") or "") + "|" + (p.get("marketSegment") or "")
             entry = projects.setdefault(key, {
                 "p": name, "st": p.get("street",""), "seg": p.get("marketSegment",""),
                 "x": p.get("x"), "y": p.get("y"), "t": []
