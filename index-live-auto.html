@@ -4106,6 +4106,95 @@ body.client-view #tool-advisory .scenario-card.not-viable { display: none; }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',renderInlined);else renderInlined();
 })();
 </script>
+
+<!-- NEAR ME — geolocated recent transactions (all client-side; location never leaves the device) -->
+<div class="mp">
+  <div class="sec">📍 Near Me — recent transactions</div>
+  <div class="card" style="padding:14px 16px">
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+      <button id="nm-btn" style="cursor:pointer;font:600 13px/1 inherit;color:#fff;background:#0f766e;border:none;border-radius:8px;padding:10px 16px">Use my location</button>
+      <span id="nm-status" style="font-size:12px;color:#6b7280"></span>
+    </div>
+    <div id="nm-out" style="margin-top:10px"></div>
+    <div style="font-size:10.5px;color:#9ca3af;margin-top:8px">URA private caveats (~3yr). Distances from your GPS position to each project's URA survey point. Location is used on this device only.</div>
+  </div>
+</div>
+<script>
+(function(){
+  var U=null;
+  function comps(){ if(U)return U; try{U=JSON.parse(document.getElementById('jnd-ura-comps').textContent).projects||[];}catch(e){U=[];} return U; }
+  // WGS84 -> SVY21 (Transverse Mercator; standard SVY21 params). Sub-metre over SG extent.
+  function toSVY21(lat,lon){
+    var a=6378137,f=1/298.257223563,oLat=1.366666,oLon=103.833333,No=38744.572,Eo=28001.642,k=1;
+    var e2=2*f-f*f,e4=e2*e2,e6=e4*e2;
+    var A0=1-e2/4-3*e4/64-5*e6/256,A2=0.375*(e2+e4/4+15*e6/128),A4=15/256*(e4+3*e6/4),A6=35*e6/3072;
+    function M(la){var r=la*Math.PI/180;return a*(A0*r-A2*Math.sin(2*r)+A4*Math.sin(4*r)-A6*Math.sin(6*r));}
+    var latR=lat*Math.PI/180,s=Math.sin(latR),c=Math.cos(latR),T=Math.tan(latR)*Math.tan(latR);
+    var v=a/Math.sqrt(1-e2*s*s),rho=a*(1-e2)/Math.pow(1-e2*s*s,1.5),psi=v/rho;
+    var w=(lon-oLon)*Math.PI/180,w2=w*w;
+    var N=No+k*(M(lat)-M(oLat)+v*s*(w2/2*c+w2*w2/24*Math.pow(c,3)*(4*psi*psi+psi-T)));
+    var E=Eo+k*v*(w*c+w*w2/6*Math.pow(c,3)*(psi-T)+w*w2*w2/120*Math.pow(c,5)*(4*psi*psi*psi*(1-6*T)+psi*psi*(1+8*T)-psi*2*T+T*T));
+    return {E:E,N:N};
+  }
+  function money(n){ return n>=1e6?('$'+(n/1e6).toFixed(2)+'M'):('$'+Math.round(n/1000)+'k'); }
+  function mon(mmyy){ var M=['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']; return M[+mmyy.slice(0,2)]+" '"+mmyy.slice(2); }
+  function ago(mmyy){ var d=new Date(); return (d.getFullYear()*12+d.getMonth()+1)-((2000+ +mmyy.slice(2))*12+ +mmyy.slice(0,2)); }
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+  function title(s){ return String(s||'').toLowerCase().replace(/\b[a-z]/g,function(ch){return ch.toUpperCase();}); }
+  var SALE={1:'New',2:'Sub',3:'Resale'};
+  function render(lat,lon,acc){
+    var me=toSVY21(lat,lon), out=document.getElementById('nm-out');
+    var ranked=[];
+    comps().forEach(function(p){
+      if(!p.x||!p.y) return;
+      var dx=+p.x-me.E, dy=+p.y-me.N, d=Math.sqrt(dx*dx+dy*dy);
+      if(d>2500) return;
+      var tx=(p.t||[]).filter(function(t){return ['T','SD','DT'].indexOf(t[4])<0;});
+      if(!tx.length) return;
+      ranked.push({p:p,d:d,tx:tx});
+    });
+    ranked.sort(function(a,b){return a.d-b.d;});
+    var show=ranked.slice(0,12);
+    if(!show.length){ out.innerHTML='<div style="font-size:13px;color:#6b7280;padding:6px 0">No condo projects with caveats within 2.5km of this spot.</div>'; return; }
+    var here=show[0].d<=180?show[0]:null;
+    var html='';
+    if(here) html+='<div style="font-size:13px;margin:4px 0 8px">You appear to be at/near <b>'+esc(title(here.p.p))+'</b> (~'+Math.round(here.d)+'m)</div>';
+    html+=show.map(function(r,i){
+      var recent=r.tx.slice().sort(function(a,b){return ago(a[2])-ago(b[2]);});
+      var n6=recent.filter(function(t){return ago(t[2])<=6;}).length;
+      var rows=recent.slice(0,8).map(function(t){
+        var psf=Math.round(t[1]/t[0]);
+        return '<tr><td style="padding:3px 8px 3px 0;white-space:nowrap">'+mon(t[2])+'</td><td style="padding:3px 8px;text-align:right">'+t[0].toLocaleString()+' sf</td><td style="padding:3px 8px;text-align:right;font-weight:600">'+money(t[1])+'</td><td style="padding:3px 8px;text-align:right">$'+psf.toLocaleString()+' psf</td><td style="padding:3px 0 3px 8px;color:#6b7280">'+(SALE[t[5]]||'')+'</td></tr>';
+      }).join('');
+      var more=recent.length>8?('<div style="font-size:10.5px;color:#9ca3af;padding:2px 0 4px">+'+(recent.length-8)+' older in ~3yr</div>'):'';
+      return '<div style="border-top:1px solid #eef0f2">'
+        +'<div style="display:flex;align-items:center;gap:8px;padding:9px 0;cursor:pointer" onclick="var e=this.nextElementSibling;e.style.display=e.style.display===\'none\'?\'block\':\'none\'">'
+        +'<span style="font-weight:600;font-size:13.5px;flex:1">'+esc(title(r.p.p))+'</span>'
+        +'<span style="font-size:11px;color:#6b7280">'+(r.p.seg||'')+'</span>'
+        +'<span style="font-size:12px;color:#0f766e;font-weight:600;white-space:nowrap">'+(r.d<1000?Math.round(r.d)+'m':(r.d/1000).toFixed(1)+'km')+'</span>'
+        +'<span style="font-size:11px;color:#9ca3af;white-space:nowrap">'+n6+' txn/6mo</span>'
+        +'</div>'
+        +'<div style="display:'+(i===0?'block':'none')+';padding:0 0 8px"><div style="overflow-x:auto"><table style="border-collapse:collapse;font-size:12px;width:100%">'+rows+'</table></div>'+more+'</div>'
+        +'</div>';
+    }).join('');
+    out.innerHTML=html;
+    document.getElementById('nm-status').textContent='±'+Math.round(acc||0)+'m accuracy · '+show.length+' projects within '+(show[show.length-1].d<1000?Math.round(show[show.length-1].d)+'m':(show[show.length-1].d/1000).toFixed(1)+'km');
+  }
+  window.__nearme=render;   // test hook
+  function locate(){
+    var st=document.getElementById('nm-status');
+    if(!navigator.geolocation){ st.textContent='Geolocation not supported on this browser.'; return; }
+    st.textContent='Locating…';
+    navigator.geolocation.getCurrentPosition(function(pos){
+      render(pos.coords.latitude,pos.coords.longitude,pos.coords.accuracy);
+    },function(err){
+      st.textContent=(err.code===1?'Location permission denied — allow it in your browser settings.':'Could not get a location fix ('+err.message+').');
+    },{enableHighAccuracy:true,timeout:12000,maximumAge:60000});
+  }
+  function boot(){ var b=document.getElementById('nm-btn'); if(b) b.addEventListener('click',locate); }
+  if(document.readyState!=='loading')boot();else document.addEventListener('DOMContentLoaded',boot);
+})();
+</script>
 </section>
 <script>
 window.pbLoaded = false;
