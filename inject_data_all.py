@@ -16,6 +16,10 @@ parts = [
     ("jnd-rates",       load("market-tab/rates.json")),
     ("jnd-launches",    load("market-tab/launches.json")),
 ]
+# HDB resale txns for Recent Transactions — optional until the first geocode
+# backfill produces the file; page JS degrades gracefully without the block.
+if os.path.exists("hdb-txns.json"):
+    parts.append(("jnd-hdb-txns", load("hdb-txns.json")))
 block = "<!--JND-DATA-->\n" + "".join(
     f'<script type="application/json" id="{i}">{c}</script>\n' for i, c in parts
 ) + "<!--/JND-DATA-->"

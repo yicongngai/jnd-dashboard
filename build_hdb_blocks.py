@@ -40,3 +40,9 @@ def main():
 
 if __name__ == "__main__":
     main()
+    # Daily HDB resale txns for Market Pulse Recent Transactions (top-up geocodes).
+    try:
+        import hdb_txns
+        hdb_txns.run(geocode_cap=600)
+    except Exception as e:
+        print("hdb_txns skipped:", e)
