@@ -8982,11 +8982,22 @@ vrRecalc();
     if(use.length<8){ use=rows.filter(function(t){return monthsAgo(t[2])<=6;}); win=6; }
     if(!use.length){ note.textContent='no resale caveats in the last 6 months for that project'; return; }
     setVal('p4_resale_psf', med(use.map(function(t){return Math.round(t[1]/t[0]);})));
+    // Quantum per bedroom band. A hard "≥3 txns in the window" gate left 72% of
+    // projects with NO quantum fills (few projects trade 3+ of one size per
+    // quarter). Per-band ladder instead — freshest window that has data:
+    // 3mo ≥3 → 6mo ≥3 → 6mo any (marked thin). Never beyond 6mo.
     var bands={ '2br':[550,850], '3br':[850,1250], '4br':[1250,1800] };
+    var r6=rows.filter(function(t){return monthsAgo(t[2])<=6;});
     var got=[];
     Object.keys(bands).forEach(function(b){
-      var px=use.filter(function(t){return t[0]>=bands[b][0]&&t[0]<bands[b][1];}).map(function(t){return t[1];});
-      if(px.length>=3){ var m=med(px); setVal('p5_resale_'+b, m); got.push(b.toUpperCase()+' '+money(m)+' ('+px.length+')'); }
+      function inBand(t){ return t[0]>=bands[b][0] && t[0]<bands[b][1]; }
+      var p3=use.filter(inBand).map(function(t){return t[1];});
+      var p6=r6.filter(inBand).map(function(t){return t[1];});
+      var px=null, tag='';
+      if(p3.length>=3){ px=p3; tag='('+p3.length+', '+win+'mo)'; }
+      else if(p6.length>=3){ px=p6; tag='('+p6.length+', 6mo)'; }
+      else if(p6.length>=1){ px=p6; tag='('+p6.length+' txn'+(p6.length>1?'s':'')+', 6mo — thin)'; }
+      if(px){ var m=med(px); setVal('p5_resale_'+b, m); got.push(b.toUpperCase()+' '+money(m)+' '+tag); }
     });
     var leases=use.map(function(t){return t[3];}).filter(function(v){return v>0&&v<=99;});
     if(leases.length>=3){ setVal('p4_resale_age', Math.max(0, 99-med(leases))); }
