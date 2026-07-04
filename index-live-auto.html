@@ -3766,17 +3766,11 @@ body.client-view #tool-advisory .scenario-card.not-viable { display: none; }
     <div class="card-header">
       <div class="card-title-block">
         <div class="pillar-tag">Auto-fill</div>
-        <h2>Pillars 4 &amp; 5 — from live data</h2>
-        <p class="pillar-desc">Key in the new launch and a resale comparable — PSF and per-bedroom quantum below fill in automatically (ERA live pricing · URA caveats, recent resale). Values are indicative starting points; edit freely after.</p>
+        <h2>Resale comparable — from URA caveats</h2>
+        <p class="pillar-desc">Key in a resale comparable project — its resale PSF, per-bedroom quantum and age fill into Pillars 4 &amp; 5 automatically (URA caveats, last 3 months). Values are indicative starting points; edit freely after.</p>
       </div>
     </div>
     <div class="input-grid cols-2">
-      <div class="field">
-        <label>New launch project</label>
-        <input type="text" id="nlaf_new" list="nlaf_new_list" placeholder="start typing… e.g. Zyon Grand" autocomplete="off" />
-        <datalist id="nlaf_new_list"></datalist>
-        <div id="nlaf_new_note" style="font-size:11.5px;color:#6b7280;margin-top:4px;"></div>
-      </div>
       <div class="field">
         <label>Resale comparable project</label>
         <input type="text" id="nlaf_resale" list="nlaf_resale_list" placeholder="start typing… e.g. The Trilinq" autocomplete="off" />
@@ -8916,17 +8910,14 @@ vrRecalc();
 <!--/JND-LIVE-CD-JS-->
 
 <script>
-/* NL Selection auto-fill (Pillars 4 & 5): new-launch PSF/quantum from the ERA
-   portal pricing baked into jnd-launches; resale comparables computed from the
-   URA caveats in jnd-ura-comps. Values are starting points — fields stay editable. */
+/* NL Selection auto-fill (Pillars 4 & 5): resale comparable computed from the
+   URA caveats in jnd-ura-comps — tight 3-month window so prices stay current
+   (widens to 6mo ONLY if <8 caveats, and says so). Values are starting points —
+   fields stay editable. (New-launch auto-fill removed 2026-07-04 per Justin —
+   he keys new-launch pricing himself; era_scrape still bakes psf/q2-q4 into
+   launches.json if it's ever wanted back.) */
 (function(){
-  var L=null, U=null;   // lazy-parsed data
-  function launches(){
-    if(L) return L;
-    try{ L=(JSON.parse(document.getElementById('jnd-launches').textContent).in_market||[]).filter(function(e){return e.psf;}); }
-    catch(e){ L=[]; }
-    return L;
-  }
+  var U=null;   // lazy-parsed data
   function comps(){
     if(U) return U;
     try{ U=JSON.parse(document.getElementById('jnd-ura-comps').textContent).projects||[]; }
@@ -8944,24 +8935,11 @@ vrRecalc();
   }
   function title(s){ return String(s||'').toLowerCase().replace(/\b[a-z]/g,function(c){return c.toUpperCase();}); }
   function initLists(){
-    fillDatalist('nlaf_new_list', launches().map(function(e){return e.name;}).sort());
     var seen={}; var names=[];
     comps().forEach(function(p){ var n=title(p.p); if(!seen[n]){seen[n]=1; names.push(n);} });
     fillDatalist('nlaf_resale_list', names.sort());
   }
 
-  function pickNew(){
-    var q=(document.getElementById('nlaf_new').value||'').trim().toLowerCase();
-    var e=launches().find(function(x){return x.name.toLowerCase()===q;});
-    var note=document.getElementById('nlaf_new_note');
-    if(!e){ if(q) note.textContent='no live pricing found for that launch'; return; }
-    setVal('p4_new_psf', e.psf);
-    setVal('p5_new_2br', e.q2); setVal('p5_new_3br', e.q3); setVal('p5_new_4br', e.q4);
-    var pn=document.getElementById('projectName');
-    if(pn && !pn.value){ pn.value=e.name; pn.dispatchEvent(new Event('input',{bubbles:true})); }
-    note.textContent='filled: PSF $'+e.psf.toLocaleString()+' · 2BR '+money(e.q2)+' · 3BR '+money(e.q3)+' · 4BR '+money(e.q4)+' (ERA live, entry prices)';
-    recalc();
-  }
   function pickResale(){
     var q=(document.getElementById('nlaf_resale').value||'').trim().toLowerCase();
     var note=document.getElementById('nlaf_resale_note');
@@ -8971,9 +8949,11 @@ vrRecalc();
     var now=new Date(); var nowM=now.getFullYear()*12+now.getMonth()+1;
     function monthsAgo(mmyy){ var mm=+String(mmyy).slice(0,2), yy=+String(mmyy).slice(2); return nowM-((2000+yy)*12+mm); }
     var rows=(p.t||[]).filter(function(t){ return t[5]===3 && ['T','SD','DT'].indexOf(t[4])<0; });
-    var win=12, use=rows.filter(function(t){return monthsAgo(t[2])<=12;});
-    if(use.length<8){ use=rows.filter(function(t){return monthsAgo(t[2])<=24;}); win=24; }
-    if(!use.length){ note.textContent='no recent resale caveats for that project'; return; }
+    // 3-month window so the comp reflects CURRENT prices; widen to 6mo only when
+    // thin (<8 caveats) — never further, stale prices defeat the comparison.
+    var win=3, use=rows.filter(function(t){return monthsAgo(t[2])<=3;});
+    if(use.length<8){ use=rows.filter(function(t){return monthsAgo(t[2])<=6;}); win=6; }
+    if(!use.length){ note.textContent='no resale caveats in the last 6 months for that project'; return; }
     setVal('p4_resale_psf', med(use.map(function(t){return Math.round(t[1]/t[0]);})));
     var bands={ '2br':[550,850], '3br':[850,1250], '4br':[1250,1800] };
     var got=[];
@@ -8988,10 +8968,10 @@ vrRecalc();
   }
 
   function boot(){
-    var a=document.getElementById('nlaf_new'), b=document.getElementById('nlaf_resale');
-    if(!a||!b) return;
-    a.addEventListener('focus', initLists); b.addEventListener('focus', initLists);
-    a.addEventListener('change', pickNew);  b.addEventListener('change', pickResale);
+    var b=document.getElementById('nlaf_resale');
+    if(!b) return;
+    b.addEventListener('focus', initLists);
+    b.addEventListener('change', pickResale);
     setTimeout(initLists, 1500);   // populate suggestions shortly after load, not only on focus
   }
   if(document.readyState!=='loading') boot(); else document.addEventListener('DOMContentLoaded', boot);
