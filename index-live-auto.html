@@ -3771,10 +3771,10 @@ body.client-view #tool-advisory .scenario-card.not-viable { display: none; }
       </div>
     </div>
     <div class="input-grid cols-2">
-      <div class="field">
+      <div class="field" style="position:relative">
         <label>Resale comparable project</label>
-        <input type="text" id="nlaf_resale" list="nlaf_resale_list" placeholder="start typing… e.g. The Trilinq" autocomplete="off" />
-        <datalist id="nlaf_resale_list"></datalist>
+        <input type="text" id="nlaf_resale" placeholder="start typing… e.g. The Trilinq" autocomplete="off" spellcheck="false" />
+        <div id="nlaf_sugg" style="display:none;position:absolute;left:0;right:0;top:100%;z-index:50;background:#fff;border:1px solid #d1d5db;border-radius:8px;box-shadow:0 8px 22px rgba(0,0,0,.12);max-height:260px;overflow-y:auto;"></div>
         <div id="nlaf_resale_note" style="font-size:11.5px;color:#6b7280;margin-top:4px;"></div>
       </div>
     </div>
@@ -8929,16 +8929,43 @@ vrRecalc();
   function setVal(id,v){ var el=document.getElementById(id); if(el&&v!=null){ el.value=v; el.dispatchEvent(new Event('input',{bubbles:true})); } }
   function recalc(){ try{ if(typeof window.__init_nl==='function') window.__init_nl(); }catch(e){} }
 
-  function fillDatalist(id, names){
-    var dl=document.getElementById(id);
-    if(dl && !dl.childElementCount) dl.innerHTML=names.map(function(n){return '<option value="'+n.replace(/"/g,'&quot;')+'">';}).join('');
-  }
   function title(s){ return String(s||'').toLowerCase().replace(/\b[a-z]/g,function(c){return c.toUpperCase();}); }
-  function initLists(){
-    var seen={}; var names=[];
-    comps().forEach(function(p){ var n=title(p.p); if(!seen[n]){seen[n]=1; names.push(n);} });
-    fillDatalist('nlaf_resale_list', names.sort());
+  // Custom typeahead — the native <datalist> with ~3k options flickered while
+  // typing on this heavy page ("words appear then disappear"); suggestions are
+  // now rendered by us, fully controlled, max 12 at a time.
+  var NAMES=null;
+  function names(){
+    if(NAMES) return NAMES;
+    var seen={}; NAMES=[];
+    comps().forEach(function(p){ var n=title(p.p); if(n&&!seen[n]){seen[n]=1; NAMES.push(n);} });
+    NAMES.sort();
+    return NAMES;
   }
+  function escq(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+  function hideSugg(){ var d=document.getElementById('nlaf_sugg'); if(d){ d.style.display='none'; d.innerHTML=''; } }
+  function showSugg(){
+    var el=document.getElementById('nlaf_resale'), d=document.getElementById('nlaf_sugg');
+    var q=(el.value||'').trim().toLowerCase();
+    if(q.length<2){ hideSugg(); return; }
+    var starts=[], contains=[], all=names();
+    for(var i=0;i<all.length && (starts.length+contains.length)<60;i++){
+      var lo=all[i].toLowerCase();
+      if(lo.indexOf(q)===0) starts.push(all[i]);
+      else if(lo.indexOf(q)>0) contains.push(all[i]);
+    }
+    var top=starts.concat(contains).slice(0,12);
+    if(!top.length){ hideSugg(); return; }
+    d.innerHTML=top.map(function(n){
+      return '<div data-v="'+escq(n)+'" style="padding:8px 12px;font-size:13px;cursor:pointer;border-bottom:1px solid #f3f4f6" '+
+             'onmousedown="event.preventDefault();window.__nlafPick(this.getAttribute(\'data-v\'))" '+
+             'onmouseover="this.style.background=\'#f6f6f7\'" onmouseout="this.style.background=\'\'">'+escq(n)+'</div>';
+    }).join('');
+    d.style.display='block';
+  }
+  window.__nlafPick=function(v){
+    var el=document.getElementById('nlaf_resale');
+    el.value=v; hideSugg(); pickResale();
+  };
 
   function pickResale(){
     var q=(document.getElementById('nlaf_resale').value||'').trim().toLowerCase();
@@ -8970,9 +8997,19 @@ vrRecalc();
   function boot(){
     var b=document.getElementById('nlaf_resale');
     if(!b) return;
-    b.addEventListener('focus', initLists);
-    b.addEventListener('change', pickResale);
-    setTimeout(initLists, 1500);   // populate suggestions shortly after load, not only on focus
+    var deb=null;
+    b.addEventListener('input', function(){ clearTimeout(deb); deb=setTimeout(showSugg, 120); });
+    b.addEventListener('keydown', function(e){
+      if(e.key==='Enter'){
+        e.preventDefault();
+        var d=document.getElementById('nlaf_sugg');
+        var first=d && d.firstElementChild ? d.firstElementChild.getAttribute('data-v') : null;
+        var q=(b.value||'').trim().toLowerCase();
+        var exact=names().find(function(n){return n.toLowerCase()===q;});
+        window.__nlafPick(exact || first || b.value);
+      } else if(e.key==='Escape'){ hideSugg(); }
+    });
+    b.addEventListener('blur', function(){ setTimeout(hideSugg, 150); });
   }
   if(document.readyState!=='loading') boot(); else document.addEventListener('DOMContentLoaded', boot);
 })();
