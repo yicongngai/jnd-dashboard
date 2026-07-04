@@ -94,6 +94,13 @@ def main():
     for v in out["projects"]:
         segs[v["seg"]] = segs.get(v["seg"],0)+1
     print("segments:", segs)
+    # OneMap block footprints for Near Me (keyless; incremental top-up for new
+    # projects, then embeds "b" into ura-comps.json). Never breaks the comps build.
+    try:
+        import onemap_blocks
+        onemap_blocks.run(cap=120)
+    except Exception as e:
+        print("onemap blocks skipped:", e)
 
 if __name__ == "__main__":
     main()
