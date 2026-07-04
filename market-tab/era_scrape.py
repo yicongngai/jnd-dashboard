@@ -119,32 +119,12 @@ def classify(r):
     if keep and not upcoming and avail <= 0:
         keep, typ = False, "sold_out"
 
-    # Live pricing from the unit mix (launched projects only): units-weighted mid
-    # PSF, and the entry ("from") quantum per bedroom count — feeds the NL Selection
-    # tab's Pillar 4 (PSF) / Pillar 5 (Quantum) auto-fill.
-    psf = None
-    q = {}
-    num = den = 0
-    for u in (r.get("unitMix") or []):
-        mb = re.match(r"\s*(\d)", str(u.get("unitType") or ""))
-        b = int(mb.group(1)) if mb else None
-        lo, hi, n = u.get("minPsf"), u.get("maxPsf"), u.get("numberOfUnits") or 0
-        if lo and hi and n:
-            num += (lo + hi) / 2 * n
-            den += n
-        mn = u.get("minPrice")
-        if b and mn:
-            q[b] = min(q.get(b, mn), mn)
-    if den:
-        psf = round(num / den)
-
     return {"name": name, "status": "pre_launch" if upcoming else "in_market",
             "type": typ, "keep": keep, "district": (r.get("district") or "").upper(),
             "country": r.get("country"), "top_year": top_year, "avail": avail,
             "launch_date": (r.get("launchDate") or "")[:10],
             "developer": re.sub(r"\s+", " ", (r.get("developer") or "")).strip(),
-            "total_units": r.get("numberOfUnits"),
-            "psf": psf, "q2": q.get(2), "q3": q.get(3), "q4": q.get(4)}
+            "total_units": r.get("numberOfUnits")}
 
 
 def main():
@@ -174,7 +154,6 @@ def main():
         if k == "in":
             o["top"] = ("TOP " + str(r["top_year"])) if r.get("top_year") else "TOP n/a"
             o["stale"] = not (r.get("top_year") and r["top_year"] >= THIS_YEAR)
-            o["psf"], o["q2"], o["q3"], o["q4"] = r.get("psf"), r.get("q2"), r.get("q3"), r.get("q4")
         else:
             o["launch"] = "upcoming"
         return o
