@@ -10,7 +10,11 @@
   "avail": 875,
   "launch_date": "2026-12-30",
   "developer": "Evia Real Estate / Gamuda Land / Ho Lee Group",
-  "total_units": 875
+  "total_units": 875,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "AMBERWOOD AT HOLLAND",
@@ -23,7 +27,11 @@
   "avail": 230,
   "launch_date": "2026-09-30",
   "developer": "Sim Lian Group",
-  "total_units": 230
+  "total_units": 230,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "CHUAN GROVE GLS",
@@ -36,7 +44,11 @@
   "avail": 1055,
   "launch_date": "2026-09-30",
   "developer": "Sing Holdings / Sunway Development",
-  "total_units": 1055
+  "total_units": 1055,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "LUCERNE GRAND",
@@ -49,7 +61,11 @@
   "avail": 575,
   "launch_date": "2026-09-30",
   "developer": "CDL",
-  "total_units": 575
+  "total_units": 575,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "THE SERRA RESIDENCES",
@@ -62,7 +78,11 @@
   "avail": 133,
   "launch_date": "2026-09-30",
   "developer": "Far East Organization",
-  "total_units": 133
+  "total_units": 133,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "KEPPEL BAY PLOT 6",
@@ -75,7 +95,11 @@
   "avail": 86,
   "launch_date": "2026-08-15",
   "developer": "KEPPEL LAND",
-  "total_units": 86
+  "total_units": 86,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "SEMBAWANG ROAD GLS",
@@ -88,7 +112,11 @@
   "avail": 265,
   "launch_date": "2026-08-15",
   "developer": "JBE Holdings",
-  "total_units": 265
+  "total_units": 265,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "SENJA CLOSE GLS",
@@ -101,7 +129,11 @@
   "avail": 295,
   "launch_date": "2026-08-15",
   "developer": "CDL",
-  "total_units": 295
+  "total_units": 295,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "WOODLAND DRIVE 17 GLS",
@@ -114,7 +146,11 @@
   "avail": 420,
   "launch_date": "2026-08-15",
   "developer": "CDL",
-  "total_units": 420
+  "total_units": 420,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "DUNEARN HOUSE",
@@ -127,7 +163,11 @@
   "avail": 360,
   "launch_date": "2026-07-25",
   "developer": "Frasers Property / Sekisui House / CSC Land",
-  "total_units": 360
+  "total_units": 360,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "MILTONIA CLOSE",
@@ -140,7 +180,11 @@
   "avail": 430,
   "launch_date": "2026-07-25",
   "developer": "Hoi Hup Realty",
-  "total_units": 430
+  "total_units": 430,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "LENTOR GARDENS RESIDENCES",
@@ -153,7 +197,28 @@
   "avail": 500,
   "launch_date": "2026-07-18",
   "developer": "Kingsford Development",
-  "total_units": 500
+  "total_units": 500,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
+ },
+ {
+  "name": "GENERATIONS @ TANNERY",
+  "status": "pre_launch",
+  "type": "industrial",
+  "keep": false,
+  "district": "D13",
+  "country": "SG",
+  "top_year": 2029,
+  "avail": 0,
+  "launch_date": "2026-07-17",
+  "developer": "Providence Estates(Tannery)Pte Ltd",
+  "total_units": 0,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "BELGRAVIA ACE",
@@ -166,11 +231,15 @@
   "avail": 0,
   "launch_date": "2026-07-11",
   "developer": "FAIRVIEW DEVELOPMENTS PTE LTD",
-  "total_units": 0
+  "total_units": 0,
+  "psf": 1071,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "SPACE NOVA",
-  "status": "pre_launch",
+  "status": "in_market",
   "type": "industrial",
   "keep": false,
   "district": "D19",
@@ -179,7 +248,11 @@
   "avail": 0,
   "launch_date": "2026-07-04",
   "developer": "JVA NIR PTE LTD",
-  "total_units": 0
+  "total_units": 0,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "GATE+",
@@ -189,10 +262,14 @@
   "district": "D22",
   "country": "SG",
   "top_year": 2029,
-  "avail": 107,
+  "avail": 108,
   "launch_date": "2026-05-22",
   "developer": "TUKANG PROJECT PTE. LTD. (SLB Development + Boustead)",
-  "total_units": 268
+  "total_units": 268,
+  "psf": 587,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "HUDSON PLACE RESIDENCES",
@@ -205,7 +282,11 @@
   "avail": 105,
   "launch_date": "2026-05-16",
   "developer": "Guocoland",
-  "total_units": 325
+  "total_units": 325,
+  "psf": 2511,
+  "q2": 1455000,
+  "q3": 2050000,
+  "q4": 2715000
  },
  {
   "name": "CT GOLD @ MACPHERSON",
@@ -218,7 +299,11 @@
   "avail": 1,
   "launch_date": "2026-05-01",
   "developer": "CT Macpherson Pte Ltd (CHIU TENG)",
-  "total_units": 0
+  "total_units": 0,
+  "psf": 2920,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "TENGAH GARDEN RESIDENCES",
@@ -231,7 +316,11 @@
   "avail": 2,
   "launch_date": "2026-04-25",
   "developer": "HONG LEONG/ GUOCOLAND/ CSC LAND",
-  "total_units": 863
+  "total_units": 863,
+  "psf": 2108,
+  "q2": 1110000,
+  "q3": 1588000,
+  "q4": 2288000
  },
  {
   "name": "VELA BAY",
@@ -244,7 +333,11 @@
   "avail": 141,
   "launch_date": "2026-04-25",
   "developer": "SingHaiyi Group / Haiyi Holdings",
-  "total_units": 515
+  "total_units": 515,
+  "psf": 2910,
+  "q2": 1500000,
+  "q3": 2287000,
+  "q4": 3192000
  },
  {
   "name": "PINERY RESIDENCES",
@@ -257,7 +350,11 @@
   "avail": 36,
   "launch_date": "2026-03-28",
   "developer": "Hoi Hup Realty /Sunway Developments",
-  "total_units": 588
+  "total_units": 588,
+  "psf": 2540,
+  "q2": 1486000,
+  "q3": 1930000,
+  "q4": 2722000
  },
  {
   "name": "GOURMET XCHANGE",
@@ -270,7 +367,11 @@
   "avail": 255,
   "launch_date": "2026-03-13",
   "developer": "Capitaland Development",
-  "total_units": 0
+  "total_units": 0,
+  "psf": 950,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "RIVER MODERN",
@@ -283,7 +384,11 @@
   "avail": 29,
   "launch_date": "2026-03-07",
   "developer": "Guocoland",
-  "total_units": 455
+  "total_units": 455,
+  "psf": 3345,
+  "q2": 1548000,
+  "q3": 2298000,
+  "q4": 4588000
  },
  {
   "name": "NARRA RESIDENCES",
@@ -296,7 +401,11 @@
   "avail": 337,
   "launch_date": "2026-01-31",
   "developer": "Santarli / Apex Asia Alpha",
-  "total_units": 540
+  "total_units": 540,
+  "psf": 2234,
+  "q2": 1176000,
+  "q3": 1630000,
+  "q4": 2448000
  },
  {
   "name": "NEWPORT RESIDENCES",
@@ -309,7 +418,11 @@
   "avail": 48,
   "launch_date": "2026-01-31",
   "developer": "City Developments Limited",
-  "total_units": 246
+  "total_units": 246,
+  "psf": 3265,
+  "q2": 1968000,
+  "q3": 3238000,
+  "q4": 8280000
  },
  {
   "name": "COASTAL CABANA",
@@ -322,7 +435,11 @@
   "avail": 126,
   "launch_date": "2026-01-17",
   "developer": "Qingjian Realty / China Communications Construction Co / ZACD",
-  "total_units": 748
+  "total_units": 748,
+  "psf": 1751,
+  "q2": null,
+  "q3": 1438000,
+  "q4": 1630000
  },
  {
   "name": "THOMSON RESERVE",
@@ -335,7 +452,11 @@
   "avail": 1240,
   "launch_date": "2025-12-31",
   "developer": "UOL/ CapitaLand",
-  "total_units": 1240
+  "total_units": 1240,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "THE GIVERNY RESIDENCES",
@@ -348,7 +469,11 @@
   "avail": 3,
   "launch_date": "2025-12-22",
   "developer": "Robin Development Pte.Ltd",
-  "total_units": 6
+  "total_units": 6,
+  "psf": 3551,
+  "q2": null,
+  "q3": 5497000,
+  "q4": 9566000
  },
  {
   "name": "THE SEN",
@@ -361,7 +486,11 @@
   "avail": 209,
   "launch_date": "2025-11-08",
   "developer": "SL Capital (8) Pte Ltd",
-  "total_units": 347
+  "total_units": 347,
+  "psf": 2464,
+  "q2": 1515000,
+  "q3": 1956000,
+  "q4": 3450000
  },
  {
   "name": "ZYON GRAND",
@@ -374,7 +503,11 @@
   "avail": 72,
   "launch_date": "2025-10-25",
   "developer": "CDL-MFA Altair Property Pte Ltd",
-  "total_units": 706
+  "total_units": 706,
+  "psf": 3083,
+  "q2": 1477000,
+  "q3": 2200000,
+  "q4": 4388000
  },
  {
   "name": "FABER RESIDENCE",
@@ -387,7 +520,11 @@
   "avail": 16,
   "launch_date": "2025-10-18",
   "developer": "GuocoLand",
-  "total_units": 399
+  "total_units": 399,
+  "psf": 2167,
+  "q2": 1277000,
+  "q3": 1574000,
+  "q4": 2336000
  },
  {
   "name": "PENRITH",
@@ -400,7 +537,11 @@
   "avail": 10,
   "launch_date": "2025-10-18",
   "developer": "GuocoLand / Hong Leong Holdings / Hong Realty",
-  "total_units": 462
+  "total_units": 462,
+  "psf": 2808,
+  "q2": 1501000,
+  "q3": 1983000,
+  "q4": 3542000
  },
  {
   "name": "ARTISAN 8",
@@ -413,7 +554,11 @@
   "avail": 17,
   "launch_date": "2025-08-21",
   "developer": "Apex Asia (2) Pte Ltd",
-  "total_units": 34
+  "total_units": 34,
+  "psf": 2683,
+  "q2": 1598000,
+  "q3": 2029000,
+  "q4": 2628000
  },
  {
   "name": "SPRINGLEAF COLLECTION",
@@ -426,7 +571,11 @@
   "avail": 0,
   "launch_date": "2025-08-15",
   "developer": "Springleaf Collection Pte Ltd",
-  "total_units": 0
+  "total_units": 0,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "SPRINGLEAF RESIDENCE",
@@ -439,7 +588,11 @@
   "avail": 21,
   "launch_date": "2025-08-09",
   "developer": "GuocoLand / Hong Leong Holdings",
-  "total_units": 940
+  "total_units": 940,
+  "psf": 2193,
+  "q2": 1057000,
+  "q3": 1609000,
+  "q4": 2496000
  },
  {
   "name": "CANBERRA CRESCENT RESIDENCES",
@@ -452,7 +605,11 @@
   "avail": 37,
   "launch_date": "2025-08-02",
   "developer": "Peak Crescent Pte Ltd",
-  "total_units": 376
+  "total_units": 376,
+  "psf": 2000,
+  "q2": 1090000,
+  "q3": 1515000,
+  "q4": 2151700
  },
  {
   "name": "PROMENADE PEAK",
@@ -465,7 +622,11 @@
   "avail": 163,
   "launch_date": "2025-08-02",
   "developer": "Valerian Residential Pte. Ltd",
-  "total_units": 596
+  "total_units": 596,
+  "psf": 3037,
+  "q2": 1806800,
+  "q3": 2799400,
+  "q4": 4494600
  },
  {
   "name": "RIVER GREEN",
@@ -478,7 +639,11 @@
   "avail": 32,
   "launch_date": "2025-08-02",
   "developer": "WINCHAMP INVESTMENT PTE LTD",
-  "total_units": 524
+  "total_units": 524,
+  "psf": 3211,
+  "q2": 1455000,
+  "q3": 2188000,
+  "q4": 3180000
  },
  {
   "name": "THE ROBERTSON OPUS",
@@ -491,7 +656,11 @@
   "avail": 142,
   "launch_date": "2025-07-19",
   "developer": "RIVERSIDE PROPERTY PTE. LTD",
-  "total_units": 348
+  "total_units": 348,
+  "psf": 3360,
+  "q2": 2170000,
+  "q3": 3169000,
+  "q4": 5120000
  },
  {
   "name": "UPPERHOUSE AT ORCHARD BOULEVARD",
@@ -504,7 +673,11 @@
   "avail": 56,
   "launch_date": "2025-07-19",
   "developer": "United Venture Development (No.7) Pte, Ltd,",
-  "total_units": 301
+  "total_units": 301,
+  "psf": 3488,
+  "q2": 2171000,
+  "q3": 3874000,
+  "q4": 7111000
  },
  {
   "name": "LYNDENWOODS",
@@ -517,7 +690,11 @@
   "avail": 1,
   "launch_date": "2025-07-12",
   "developer": "CapitaLand",
-  "total_units": 343
+  "total_units": 343,
+  "psf": 2528,
+  "q2": 2319000,
+  "q3": 2469000,
+  "q4": 3663000
  },
  {
   "name": "W RESIDENCES MARINA VIEW - SINGAPORE",
@@ -530,7 +707,11 @@
   "avail": 667,
   "launch_date": "2025-07-12",
   "developer": "Boulevard Development Pte Ltd (IOI Properties Singapore)",
-  "total_units": 683
+  "total_units": 683,
+  "psf": 3666,
+  "q2": 1880000,
+  "q3": 3358000,
+  "q4": 8740000
  },
  {
   "name": "OCHO",
@@ -543,7 +724,11 @@
   "avail": 18,
   "launch_date": "2025-06-30",
   "developer": "Primest Land V1 Pte Ltd",
-  "total_units": 20
+  "total_units": 20,
+  "psf": 2046,
+  "q2": 1483762,
+  "q3": 1861100,
+  "q4": 2245299
  },
  {
   "name": "ARINA EAST RESIDENCES",
@@ -556,7 +741,28 @@
   "avail": 21,
   "launch_date": "2025-06-07",
   "developer": "ZACD GROUP",
-  "total_units": 107
+  "total_units": 107,
+  "psf": 2897,
+  "q2": 1888000,
+  "q3": 2588000,
+  "q4": 3850000
+ },
+ {
+  "name": "KEYSTONE @ MANDAI",
+  "status": "in_market",
+  "type": "industrial",
+  "keep": false,
+  "district": "D25",
+  "country": "SG",
+  "top_year": 2028,
+  "avail": 51,
+  "launch_date": "2025-05-16",
+  "developer": "Bayswood Pte Ltd",
+  "total_units": 0,
+  "psf": 1538,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "ONE MARINA GARDENS",
@@ -569,7 +775,11 @@
   "avail": 293,
   "launch_date": "2025-04-12",
   "developer": "KINGSFORD DEVELOPMENT LED CONSORTIUM",
-  "total_units": 937
+  "total_units": 937,
+  "psf": 2987,
+  "q2": 1799999,
+  "q3": 2551440,
+  "q4": 4773400
  },
  {
   "name": "21 ANDERSON",
@@ -582,7 +792,11 @@
   "avail": 1,
   "launch_date": "2025-04-02",
   "developer": "KHENG LEONG",
-  "total_units": 18
+  "total_units": 18,
+  "psf": 5126,
+  "q2": 10000000,
+  "q3": null,
+  "q4": 22554000
  },
  {
   "name": "AUREA",
@@ -595,7 +809,11 @@
   "avail": 119,
   "launch_date": "2025-03-08",
   "developer": "FAR EAST ORGANIZATION / PERENNIAL HOLDINGS / SINO LAND",
-  "total_units": 188
+  "total_units": 188,
+  "psf": 3000,
+  "q2": 1771000,
+  "q3": 2666600,
+  "q4": 4080510
  },
  {
   "name": "THE GOLDEN MILE",
@@ -608,7 +826,11 @@
   "avail": 0,
   "launch_date": "2025-02-28",
   "developer": "GMC Property Private Limited",
-  "total_units": 175
+  "total_units": 175,
+  "psf": 3325,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "ELTA",
@@ -617,11 +839,15 @@
   "keep": true,
   "district": "D05",
   "country": "SG",
-  "top_year": 2027,
+  "top_year": 2028,
   "avail": 89,
   "launch_date": "2025-02-22",
   "developer": "MCL LAND/ CSC LAND",
-  "total_units": 501
+  "total_units": 501,
+  "psf": 2567,
+  "q2": 1388000,
+  "q3": 2198000,
+  "q4": 2842000
  },
  {
   "name": "PARKTOWN RESIDENCE",
@@ -634,7 +860,11 @@
   "avail": 28,
   "launch_date": "2025-02-22",
   "developer": "UOL/ SINGAPORE LAND/ CAPITALAND",
-  "total_units": 1193
+  "total_units": 1193,
+  "psf": 2434,
+  "q2": 1394000,
+  "q3": 2266000,
+  "q4": 2879000
  },
  {
   "name": "BAGNALL HAUS",
@@ -647,7 +877,11 @@
   "avail": 9,
   "launch_date": "2025-01-18",
   "developer": "ROXY PACIFIC HOLDINGS",
-  "total_units": 113
+  "total_units": 113,
+  "psf": 2543,
+  "q2": 1777000,
+  "q3": 2306000,
+  "q4": 3019000
  },
  {
   "name": "THE COLLECTIVE AT ONE SOPHIA",
@@ -660,7 +894,11 @@
   "avail": 268,
   "launch_date": "2025-01-18",
   "developer": "Sophia Residential Pte. Ltd.",
-  "total_units": 367
+  "total_units": 367,
+  "psf": 2890,
+  "q2": 1828000,
+  "q3": 2892000,
+  "q4": null
  },
  {
   "name": "THE ORIE",
@@ -673,7 +911,11 @@
   "avail": 36,
   "launch_date": "2025-01-18",
   "developer": "CDL/ FRASERS PROPERTY/ SEKISUI HOUSE",
-  "total_units": 777
+  "total_units": 777,
+  "psf": 2706,
+  "q2": 1480000,
+  "q3": 2090000,
+  "q4": 2920000
  },
  {
   "name": "THE RANZ",
@@ -686,7 +928,11 @@
   "avail": 6,
   "launch_date": "2024-12-31",
   "developer": "Kefi Development Pte. Ltd.",
-  "total_units": 14
+  "total_units": 14,
+  "psf": 2177,
+  "q2": 1541000,
+  "q3": null,
+  "q4": 3796000
  },
  {
   "name": "NAVA GROVE",
@@ -699,7 +945,11 @@
   "avail": 2,
   "launch_date": "2024-11-16",
   "developer": "MCL LAND/ SINARMAS LAND",
-  "total_units": 552
+  "total_units": 552,
+  "psf": 2500,
+  "q2": 1388000,
+  "q3": 2188000,
+  "q4": 3103500
  },
  {
   "name": "UNION SQUARE RESIDENCES",
@@ -709,10 +959,14 @@
   "district": "D01",
   "country": "SG",
   "top_year": 2031,
-  "avail": 185,
+  "avail": 182,
   "launch_date": "2024-11-16",
   "developer": "CDL",
-  "total_units": 366
+  "total_units": 366,
+  "psf": 3106,
+  "q2": 1880000,
+  "q3": 2600000,
+  "q4": 4158000
  },
  {
   "name": "CHUAN PARK",
@@ -725,7 +979,11 @@
   "avail": 33,
   "launch_date": "2024-11-10",
   "developer": "Kingsford Property Development Pte Ltd",
-  "total_units": 916
+  "total_units": 916,
+  "psf": 2564,
+  "q2": 1648276,
+  "q3": 2266457,
+  "q4": 3231798
  },
  {
   "name": "NORWOOD GRAND",
@@ -738,7 +996,11 @@
   "avail": 33,
   "launch_date": "2024-10-19",
   "developer": "CDL",
-  "total_units": 348
+  "total_units": 348,
+  "psf": 2052,
+  "q2": null,
+  "q3": 2142000,
+  "q4": 2616000
  },
  {
   "name": "ONE SOPHIA",
@@ -751,7 +1013,11 @@
   "avail": 83,
   "launch_date": "2024-10-19",
   "developer": "Sophia Commercial Pte. Ltd. and Sophia Residential Pte. Ltd.",
-  "total_units": 370
+  "total_units": 370,
+  "psf": 3223,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "THE DRAYCOTT",
@@ -764,7 +1030,11 @@
   "avail": 27,
   "launch_date": "2024-10-08",
   "developer": "Tan Chwee Boon Pte Ltd",
-  "total_units": 132
+  "total_units": 132,
+  "psf": 2461,
+  "q2": null,
+  "q3": null,
+  "q4": 5935000
  },
  {
   "name": "MEYER BLUE",
@@ -777,7 +1047,11 @@
   "avail": 49,
   "launch_date": "2024-10-05",
   "developer": "UOL Group Limited Singapore Land Group",
-  "total_units": 226
+  "total_units": 226,
+  "psf": 3178,
+  "q2": 2014000,
+  "q3": 3001000,
+  "q4": 4528000
  },
  {
   "name": "8@BT",
@@ -790,7 +1064,11 @@
   "avail": 48,
   "launch_date": "2024-09-21",
   "developer": "Bukit One Pte Ltd",
-  "total_units": 160
+  "total_units": 160,
+  "psf": 2798,
+  "q2": 1892000,
+  "q3": 2617000,
+  "q4": 3646000
  },
  {
   "name": "HARRISON FOOD FACTORY",
@@ -803,7 +1081,11 @@
   "avail": 26,
   "launch_date": "2024-08-31",
   "developer": "Powermatics Data Systems Ltd",
-  "total_units": 0
+  "total_units": 0,
+  "psf": 1921,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "KASSIA",
@@ -816,7 +1098,11 @@
   "avail": 48,
   "launch_date": "2024-07-06",
   "developer": "Tripartite Developers Pte. Limited",
-  "total_units": 276
+  "total_units": 276,
+  "psf": 1999,
+  "q2": 1198000,
+  "q3": 1661000,
+  "q4": 2490000
  },
  {
   "name": "SORA",
@@ -829,7 +1115,11 @@
   "avail": 213,
   "launch_date": "2024-07-06",
   "developer": "Lakeside Residential Pte Ltd",
-  "total_units": 440
+  "total_units": 440,
+  "psf": 2314,
+  "q2": 1305000,
+  "q3": 2105000,
+  "q4": 3258000
  },
  {
   "name": "SPACE 18",
@@ -842,7 +1132,11 @@
   "avail": 0,
   "launch_date": "2024-07-04",
   "developer": "JVA WHAMPOA PTE LTD",
-  "total_units": 47
+  "total_units": 47,
+  "psf": 1583,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "32 GILSTEAD",
@@ -855,7 +1149,11 @@
   "avail": 0,
   "launch_date": "2024-05-07",
   "developer": "Peak Vista Pte Ltd",
-  "total_units": 14
+  "total_units": 14,
+  "psf": 3582,
+  "q2": null,
+  "q3": null,
+  "q4": 13965000
  },
  {
   "name": "THE RESIDENCES AT W SINGAPORE SENTOSA COVE",
@@ -868,7 +1166,11 @@
   "avail": 68,
   "launch_date": "2024-04-24",
   "developer": "CITYVIEW PLACE HOLDINGS PTE LTD",
-  "total_units": 228
+  "total_units": 228,
+  "psf": 1796,
+  "q2": 2162000,
+  "q3": 2787600,
+  "q4": 3560400
  },
  {
   "name": "THE HILLSHORE",
@@ -881,7 +1183,11 @@
   "avail": 47,
   "launch_date": "2024-04-20",
   "developer": "Hillside View Development Pte Ltd",
-  "total_units": 59
+  "total_units": 59,
+  "psf": 2512,
+  "q2": 1600000,
+  "q3": 2488000,
+  "q4": 3919000
  },
  {
   "name": "ARDOR RESIDENCE",
@@ -894,7 +1200,11 @@
   "avail": 3,
   "launch_date": "2024-03-06",
   "developer": "Nanshan Group",
-  "total_units": 35
+  "total_units": 35,
+  "psf": 2486,
+  "q2": 2158000,
+  "q3": 2415000,
+  "q4": 3267000
  },
  {
   "name": "LENTORIA",
@@ -907,7 +1217,11 @@
   "avail": 19,
   "launch_date": "2024-03-02",
   "developer": "TID Residential Pte.Ltd",
-  "total_units": 267
+  "total_units": 267,
+  "psf": 2387,
+  "q2": 1491000,
+  "q3": 1873000,
+  "q4": 2577000
  },
  {
   "name": "LUMINA GRAND",
@@ -920,7 +1234,11 @@
   "avail": 0,
   "launch_date": "2024-01-27",
   "developer": "CDL",
-  "total_units": 512
+  "total_units": 512,
+  "psf": 1471,
+  "q2": null,
+  "q3": 1349000,
+  "q4": 1650000
  },
  {
   "name": "THE ARCADY AT BOON KENG",
@@ -930,10 +1248,14 @@
   "district": "D12",
   "country": "SG",
   "top_year": 2028,
-  "avail": 68,
+  "avail": 67,
   "launch_date": "2024-01-20",
   "developer": "KSH Holdings Ultra Unity(JV)",
-  "total_units": 172
+  "total_units": 172,
+  "psf": 2682,
+  "q2": 1721000,
+  "q3": 2446000,
+  "q4": 3794000
  },
  {
   "name": "HILLOCK GREEN",
@@ -946,7 +1268,11 @@
   "avail": 3,
   "launch_date": "2023-11-11",
   "developer": "Lentor Central Development",
-  "total_units": 474
+  "total_units": 474,
+  "psf": 2169,
+  "q2": 1289000,
+  "q3": 1819000,
+  "q4": 2384000
  },
  {
   "name": "J'DEN",
@@ -959,7 +1285,11 @@
   "avail": 13,
   "launch_date": "2023-11-11",
   "developer": "Tanglin R.E Holdings Pte Ltd",
-  "total_units": 368
+  "total_units": 368,
+  "psf": 2573,
+  "q2": 1820000,
+  "q3": 2619000,
+  "q4": 3371000
  },
  {
   "name": "THE SHOREFRONT",
@@ -972,7 +1302,11 @@
   "avail": 8,
   "launch_date": "2023-09-30",
   "developer": "163@Loyang Pte Ltd",
-  "total_units": 23
+  "total_units": 23,
+  "psf": 1933,
+  "q2": 1494000,
+  "q3": 1780000,
+  "q4": 2880000
  },
  {
   "name": "ALTURA",
@@ -985,7 +1319,11 @@
   "avail": 0,
   "launch_date": "2023-08-05",
   "developer": "Qingjian Realty and Santarli Construction",
-  "total_units": 360
+  "total_units": 360,
+  "psf": 1439,
+  "q2": null,
+  "q3": 1385000,
+  "q4": 1702000
  },
  {
   "name": "THE LAKEGARDEN RESIDENCES",
@@ -998,7 +1336,11 @@
   "avail": 2,
   "launch_date": "2023-08-05",
   "developer": "WingTai Asia",
-  "total_units": 306
+  "total_units": 306,
+  "psf": 2186,
+  "q2": 1259400,
+  "q3": 1878300,
+  "q4": 2535100
  },
  {
   "name": "TMW MAXWELL",
@@ -1011,7 +1353,11 @@
   "avail": 319,
   "launch_date": "2023-08-01",
   "developer": "Maxwell Residential Pte Ltd and Maxwell Commercial Pte Ltd",
-  "total_units": 324
+  "total_units": 324,
+  "psf": 3147,
+  "q2": 2227000,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "GRAND DUNMAN",
@@ -1021,10 +1367,14 @@
   "district": "D15",
   "country": "SG",
   "top_year": 2026,
-  "avail": 85,
+  "avail": 86,
   "launch_date": "2023-07-15",
   "developer": "SingHaiyi Group Ltd",
-  "total_units": 1008
+  "total_units": 1008,
+  "psf": 2578,
+  "q2": 1925000,
+  "q3": 2458000,
+  "q4": 3256000
  },
  {
   "name": "PINETREE HILL",
@@ -1037,7 +1387,11 @@
   "avail": 1,
   "launch_date": "2023-07-08",
   "developer": "United Venture Development(No.5)Pte Ltd",
-  "total_units": 520
+  "total_units": 520,
+  "psf": 2489,
+  "q2": 1705000,
+  "q3": 2489000,
+  "q4": 3213000
  },
  {
   "name": "THE MYST",
@@ -1050,7 +1404,11 @@
   "avail": 18,
   "launch_date": "2023-07-08",
   "developer": "CDL Aries Pte. Ltd.",
-  "total_units": 408
+  "total_units": 408,
+  "psf": 2097,
+  "q2": 1344000,
+  "q3": 1708000,
+  "q4": 2746000
  },
  {
   "name": "THE CONTINUUM",
@@ -1063,7 +1421,11 @@
   "avail": 35,
   "launch_date": "2023-05-06",
   "developer": "Hoi Hup Sunway Katong Pte Ltd",
-  "total_units": 816
+  "total_units": 816,
+  "psf": 2856,
+  "q2": 1696000,
+  "q3": 2342000,
+  "q4": 3321000
  },
  {
   "name": "BLOSSOMS BY THE PARK",
@@ -1076,7 +1438,11 @@
   "avail": 0,
   "launch_date": "2023-03-31",
   "developer": "EL Development (Buona Vista) Pte Ltd/EL Development (One-North) Pte Ltd",
-  "total_units": 275
+  "total_units": 275,
+  "psf": 2477,
+  "q2": 1556000,
+  "q3": 2244000,
+  "q4": 3156000
  },
  {
   "name": "TEMBUSU GRAND",
@@ -1089,7 +1455,11 @@
   "avail": 7,
   "launch_date": "2023-03-31",
   "developer": "CDL Triton Pte. Ltd ((City Developments Ltd)",
-  "total_units": 638
+  "total_units": 638,
+  "psf": 2462,
+  "q2": 1564000,
+  "q3": 2302000,
+  "q4": 3288000
  },
  {
   "name": "THE SKY RESIDENCES (LONDON) AT ONE BISHOPSGATE PLAZA",
@@ -1102,7 +1472,11 @@
   "avail": 121,
   "launch_date": "2023-02-28",
   "developer": "UOL",
-  "total_units": 160
+  "total_units": 160,
+  "psf": 2035,
+  "q2": 1692800,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "VUE ASTON (CAMBODIA)",
@@ -1115,7 +1489,11 @@
   "avail": 895,
   "launch_date": "2023-02-28",
   "developer": "Vue Aston",
-  "total_units": 895
+  "total_units": 895,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "TERRA HILL",
@@ -1125,10 +1503,14 @@
   "district": "D05",
   "country": "SG",
   "top_year": 2028,
-  "avail": 67,
+  "avail": 66,
   "launch_date": "2023-02-25",
   "developer": "Hoi Hup Sunway Kent Ridge Pte Ltd",
-  "total_units": 270
+  "total_units": 270,
+  "psf": 2615,
+  "q2": 1563000,
+  "q3": 2292000,
+  "q4": 3503000
  },
  {
   "name": "CLAYDENCE",
@@ -1141,7 +1523,11 @@
   "avail": 8,
   "launch_date": "2023-02-18",
   "developer": "HONG HOW LAND PTE LTD",
-  "total_units": 28
+  "total_units": 28,
+  "psf": 2571,
+  "q2": 1807800,
+  "q3": 2582400,
+  "q4": 5626400
  },
  {
   "name": "GEMS VILLE",
@@ -1154,7 +1540,11 @@
   "avail": 11,
   "launch_date": "2023-01-31",
   "developer": "EAST ASIA GEYLANG DEVELOPMENT PTE LTD",
-  "total_units": 24
+  "total_units": 24,
+  "psf": 2002,
+  "q2": 1488000,
+  "q3": 2138000,
+  "q4": null
  },
  {
   "name": "THE CANOPY ON NORMANBY",
@@ -1167,7 +1557,11 @@
   "avail": 14,
   "launch_date": "2023-01-30",
   "developer": "Gamuda Land",
-  "total_units": 213
+  "total_units": 213,
+  "psf": 8407,
+  "q2": 672000,
+  "q3": 1180000,
+  "q4": null
  },
  {
   "name": "SOPHIA REGENCY",
@@ -1180,7 +1574,11 @@
   "avail": 38,
   "launch_date": "2022-11-05",
   "developer": "East Asia Sophia Development",
-  "total_units": 38
+  "total_units": 38,
+  "psf": 3066,
+  "q2": 2199000,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "SANCTUARY@NEWTON",
@@ -1193,7 +1591,11 @@
   "avail": 0,
   "launch_date": "2022-11-02",
   "developer": "ASK Development Pte Ltd",
-  "total_units": 38
+  "total_units": 38,
+  "psf": 2676,
+  "q2": 2050000,
+  "q3": 2500000,
+  "q4": 3420000
  },
  {
   "name": "COPEN GRAND",
@@ -1206,7 +1608,11 @@
   "avail": 0,
   "launch_date": "2022-10-15",
   "developer": "TAURUS PROPERTIES SG PTE LTD",
-  "total_units": 639
+  "total_units": 639,
+  "psf": 1427,
+  "q2": 1090000,
+  "q3": 1180000,
+  "q4": 1600000
  },
  {
   "name": "FOOD VISION @ MANDAI",
@@ -1219,7 +1625,11 @@
   "avail": 2,
   "launch_date": "2022-10-11",
   "developer": "",
-  "total_units": 0
+  "total_units": 0,
+  "psf": 1414,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "SHOPPES @ SKY EDEN",
@@ -1232,7 +1642,11 @@
   "avail": 10,
   "launch_date": "2022-09-07",
   "developer": "The Assembly Place",
-  "total_units": 0
+  "total_units": 0,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "K SUITES",
@@ -1245,7 +1659,11 @@
   "avail": 0,
   "launch_date": "2022-08-31",
   "developer": "EG PROPERTIES PTE LTD",
-  "total_units": 19
+  "total_units": 19,
+  "psf": 2473,
+  "q2": null,
+  "q3": 1875000,
+  "q4": 2625000
  },
  {
   "name": "LE CONDE BKK1 CAMBODIA",
@@ -1258,7 +1676,11 @@
   "avail": 841,
   "launch_date": "2022-06-01",
   "developer": "Wangfu International Real Estate Development Co., Ltd",
-  "total_units": 1080
+  "total_units": 1080,
+  "psf": 5691,
+  "q2": 144589,
+  "q3": 248207,
+  "q4": null
  },
  {
   "name": "CAPE ROYALE",
@@ -1271,7 +1693,11 @@
   "avail": 99,
   "launch_date": "2022-05-28",
   "developer": "PINNACLE (SENTOSA) PTE LTD",
-  "total_units": 302
+  "total_units": 302,
+  "psf": 2158,
+  "q2": null,
+  "q3": 3520000,
+  "q4": 5348000
  },
  {
   "name": "ATLASSIA",
@@ -1284,7 +1710,11 @@
   "avail": 2,
   "launch_date": "2022-03-31",
   "developer": "K16 PLACE PTE LTD",
-  "total_units": 31
+  "total_units": 31,
+  "psf": 2316,
+  "q2": 3059028,
+  "q3": 2402424,
+  "q4": 2602794
  },
  {
   "name": "EVE TOWER",
@@ -1297,7 +1727,11 @@
   "avail": 220,
   "launch_date": "2022-02-28",
   "developer": "KPG Capital",
-  "total_units": 220
+  "total_units": 220,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "LEISURE FARM",
@@ -1310,7 +1744,11 @@
   "avail": 635,
   "launch_date": "2022-02-28",
   "developer": "Mulpha",
-  "total_units": 635
+  "total_units": 635,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "POPLAR RIVERSIDE",
@@ -1323,7 +1761,11 @@
   "avail": 48,
   "launch_date": "2022-02-28",
   "developer": "Berkeley Group",
-  "total_units": 156
+  "total_units": 156,
+  "psf": 848,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "NORTH GAIA",
@@ -1336,7 +1778,11 @@
   "avail": 0,
   "launch_date": "2022-02-15",
   "developer": "SING HOLDINGS (YISHUN) PTE LTD",
-  "total_units": 616
+  "total_units": 616,
+  "psf": 1351,
+  "q2": null,
+  "q3": 1172000,
+  "q4": 1663000
  },
  {
   "name": "CANNINGHILL PIERS",
@@ -1349,7 +1795,11 @@
   "avail": 7,
   "launch_date": "2021-11-20",
   "developer": "DBS TRUSTEE LIMITED/LEGEND COMMERCIAL TRUSTEE PTE LTD/LEGEND QUAY PTE LTD",
-  "total_units": 696
+  "total_units": 696,
+  "psf": 3064,
+  "q2": 2352000,
+  "q3": 3503000,
+  "q4": 4880000
  },
  {
   "name": "GRANGE 1866",
@@ -1362,7 +1812,11 @@
   "avail": 2,
   "launch_date": "2021-04-16",
   "developer": "GRANGE 1866 PTE LTD",
-  "total_units": 60
+  "total_units": 60,
+  "psf": 3118,
+  "q2": 1986000,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "PROVENCE RESIDENCE",
@@ -1375,7 +1829,11 @@
   "avail": 0,
   "launch_date": "2021-04-02",
   "developer": "MCC LAND (CANBERRA) PTE LTD",
-  "total_units": 413
+  "total_units": 413,
+  "psf": 1328,
+  "q2": null,
+  "q3": 890000,
+  "q4": 1594000
  },
  {
   "name": "R&F PRINCESS COVE",
@@ -1388,7 +1846,11 @@
   "avail": 3458,
   "launch_date": "2021-02-28",
   "developer": "R&F Development Sdn Bhd",
-  "total_units": 3458
+  "total_units": 3458,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "PHOENIX RESIDENCES",
@@ -1401,7 +1863,11 @@
   "avail": 1,
   "launch_date": "2020-12-12",
   "developer": "USB (PHOENIX) PTE LTD",
-  "total_units": 74
+  "total_units": 74,
+  "psf": 1649,
+  "q2": 1141384,
+  "q3": 1630636,
+  "q4": null
  },
  {
   "name": "URBAN VILLAGE",
@@ -1414,7 +1880,11 @@
   "avail": 99,
   "launch_date": "2020-07-31",
   "developer": "Urban Hub Development",
-  "total_units": 1600
+  "total_units": 1600,
+  "psf": 2611,
+  "q2": 111389,
+  "q3": 209313,
+  "q4": null
  },
  {
   "name": "19 NASSIM",
@@ -1424,10 +1894,14 @@
   "district": "D10",
   "country": "SG",
   "top_year": 2023,
-  "avail": 2,
+  "avail": 1,
   "launch_date": "2020-03-20",
   "developer": "PARKSVILLE DEVELOPMENT PTE LTD",
-  "total_units": 101
+  "total_units": 101,
+  "psf": 3511,
+  "q2": 2524288,
+  "q3": 4939050,
+  "q4": null
  },
  {
   "name": "LONDON DOCK",
@@ -1440,7 +1914,11 @@
   "avail": 162,
   "launch_date": "2020-02-29",
   "developer": "Berkeley Group",
-  "total_units": 162
+  "total_units": 162,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "SOUTH QUAY PLAZA",
@@ -1453,7 +1931,11 @@
   "avail": 547,
   "launch_date": "2020-02-29",
   "developer": "Berkeley Group",
-  "total_units": 551
+  "total_units": 551,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "WHITE CITY LIVING",
@@ -1466,7 +1948,11 @@
   "avail": 31,
   "launch_date": "2020-02-29",
   "developer": "St James",
-  "total_units": 325
+  "total_units": 325,
+  "psf": 1531,
+  "q2": 1220000,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "SNOW HILL WHARF",
@@ -1479,7 +1965,11 @@
   "avail": 29,
   "launch_date": "2020-02-28",
   "developer": "Berkeley Homes",
-  "total_units": 420
+  "total_units": 420,
+  "psf": 511,
+  "q2": 370000,
+  "q3": 645000,
+  "q4": null
  },
  {
   "name": "MIDTOWN BAY",
@@ -1492,7 +1982,11 @@
   "avail": 70,
   "launch_date": "2019-10-05",
   "developer": "GUOCO MIDTOWN PTE LTD/MIDTOWN BAY PTE LTD",
-  "total_units": 219
+  "total_units": 219,
+  "psf": 3611,
+  "q2": 2183200,
+  "q3": 4691000,
+  "q4": null
  },
  {
   "name": "JERVOIS PRIVE",
@@ -1505,7 +1999,11 @@
   "avail": 20,
   "launch_date": "2019-04-20",
   "developer": "JERVOIS MIDAS PTE LTD",
-  "total_units": 43
+  "total_units": 43,
+  "psf": 3022,
+  "q2": 1956000,
+  "q3": 3431000,
+  "q4": 4685000
  },
  {
   "name": "BOULEVARD 88",
@@ -1518,7 +2016,11 @@
   "avail": 1,
   "launch_date": "2019-03-08",
   "developer": "GRANMIL HOLDINGS PTE LTD",
-  "total_units": 154
+  "total_units": 154,
+  "psf": 4012,
+  "q2": 4785000,
+  "q3": 7061000,
+  "q4": null
  },
  {
   "name": "ROYAL WHARF (LONDON)",
@@ -1531,7 +2033,11 @@
   "avail": 46,
   "launch_date": "2019-02-28",
   "developer": "Oxley Int'l Holdings & Ballymore",
-  "total_units": 157
+  "total_units": 157,
+  "psf": 422,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "WEALTH MANSION",
@@ -1544,7 +2050,11 @@
   "avail": 257,
   "launch_date": "2019-02-16",
   "developer": "Everhealth International Investment and Development Co., Ltd.",
-  "total_units": 1184
+  "total_units": 1184,
+  "psf": 2751,
+  "q2": 214155,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "OVAL VILLAGE",
@@ -1557,7 +2067,11 @@
   "avail": 18,
   "launch_date": "2019-02-09",
   "developer": "Berkeley Group",
-  "total_units": 100
+  "total_units": 100,
+  "psf": 1238,
+  "q2": 895000,
+  "q3": 776730,
+  "q4": null
  },
  {
   "name": "ROYAL PLATINUM",
@@ -1570,7 +2084,11 @@
   "avail": 664,
   "launch_date": "2018-11-30",
   "developer": "Royal Hong Lai Huat One Co. ltd",
-  "total_units": 901
+  "total_units": 901,
+  "psf": 250,
+  "q2": 269992.28125,
+  "q3": 330560.25,
+  "q4": 1000002.75
  },
  {
   "name": "WOODS SQUARE",
@@ -1583,7 +2101,11 @@
   "avail": 197,
   "launch_date": "2018-11-24",
   "developer": "Far East Orchard Ltd & Far East Organization",
-  "total_units": 466
+  "total_units": 466,
+  "psf": 2175,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "10 EVELYN",
@@ -1596,7 +2118,11 @@
   "avail": 3,
   "launch_date": "2018-10-12",
   "developer": "CREATIVE INVESTMENTS PTE LTD",
-  "total_units": 56
+  "total_units": 56,
+  "psf": 2460,
+  "q2": 2057000,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "JUI RESIDENCES",
@@ -1609,7 +2135,11 @@
   "avail": 1,
   "launch_date": "2018-09-22",
   "developer": "TIARA LAND PTE LTD",
-  "total_units": 117
+  "total_units": 117,
+  "psf": 1939,
+  "q2": null,
+  "q3": 1688912,
+  "q4": null
  },
  {
   "name": "AUSTRALIA 108",
@@ -1622,7 +2152,11 @@
   "avail": 31,
   "launch_date": "2018-02-28",
   "developer": "WCL-SOUTHBANK (VIC) PTY LTD",
-  "total_units": 1105
+  "total_units": 1105,
+  "psf": 1042,
+  "q2": 540000,
+  "q3": 1620000,
+  "q4": null
  },
  {
   "name": "OKA HAUS",
@@ -1635,7 +2169,11 @@
   "avail": 0,
   "launch_date": "2018-02-28",
   "developer": "Sansiri PLC",
-  "total_units": 1178
+  "total_units": 1178,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "PREMIER TOWER",
@@ -1648,7 +2186,11 @@
   "avail": 752,
   "launch_date": "2018-02-28",
   "developer": "Fragrance Group",
-  "total_units": 796
+  "total_units": 796,
+  "psf": 1106,
+  "q2": 689760,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "REFERENCE SATHORN WONGWIANYAI",
@@ -1661,7 +2203,11 @@
   "avail": 53,
   "launch_date": "2018-02-28",
   "developer": "SC Asset Corporation PCL",
-  "total_units": 819
+  "total_units": 819,
+  "psf": 168529,
+  "q2": 11440000,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "THE LINE WONGSAWANG",
@@ -1674,7 +2220,11 @@
   "avail": 83,
   "launch_date": "2018-02-28",
   "developer": "BTS Sansiri Holding Six Limited",
-  "total_units": 1287
+  "total_units": 1287,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "XT HUAIKHWANG",
@@ -1687,7 +2237,11 @@
   "avail": 0,
   "launch_date": "2018-02-28",
   "developer": "SANSIRI PLC",
-  "total_units": 1404
+  "total_units": 1404,
+  "psf": 22377,
+  "q2": 5541000,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "THE ABODE AT DEVONSHIRE",
@@ -1700,7 +2254,11 @@
   "avail": 0,
   "launch_date": "2018-01-18",
   "developer": "TTH DEVELOPMENT PTE LTD",
-  "total_units": 26
+  "total_units": 26,
+  "psf": 1609,
+  "q2": null,
+  "q3": 4380000,
+  "q4": null
  },
  {
   "name": "ARC 380",
@@ -1713,7 +2271,11 @@
   "avail": 8,
   "launch_date": "2017-11-30",
   "developer": "Tong Eng Brothers",
-  "total_units": 144
+  "total_units": 144,
+  "psf": 3211,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "SO SOFITEL KL RESIDENCES",
@@ -1726,7 +2288,11 @@
   "avail": 590,
   "launch_date": "2017-11-30",
   "developer": "Oxley Rising Sdn Bhd",
-  "total_units": 590
+  "total_units": 590,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "SO SOFITEL KL RESIDENCES",
@@ -1739,7 +2305,11 @@
   "avail": 154,
   "launch_date": "2017-11-30",
   "developer": "Oxley Rising Sdn Bhd",
-  "total_units": 590
+  "total_units": 590,
+  "psf": 2961,
+  "q2": 2148000,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "IVY TOWER",
@@ -1752,7 +2322,11 @@
   "avail": 256,
   "launch_date": "2017-03-09",
   "developer": "KPG Capital",
-  "total_units": 256
+  "total_units": 256,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "LONDON DOCK  EMERY WHARF",
@@ -1765,7 +2339,11 @@
   "avail": 105,
   "launch_date": "2017-02-18",
   "developer": "St George City Ltd",
-  "total_units": 105
+  "total_units": 105,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "111 SOMERSET",
@@ -1778,7 +2356,11 @@
   "avail": 86,
   "launch_date": "2016-07-14",
   "developer": "SHUN TAK HOLDINGS",
-  "total_units": 292
+  "total_units": 292,
+  "psf": 3518,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "CENTRIUM SQUARE",
@@ -1791,7 +2373,11 @@
   "avail": 49,
   "launch_date": "2016-01-31",
   "developer": "Feature Development Pte Ltd",
-  "total_units": 231
+  "total_units": 231,
+  "psf": 2612,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "THE VENUE SHOPPES",
@@ -1804,7 +2390,11 @@
   "avail": 11,
   "launch_date": "2014-11-30",
   "developer": "Crescent View Developments Pte Ltd",
-  "total_units": 11
+  "total_units": 11,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "GREENWOOD MEWS",
@@ -1817,7 +2407,11 @@
   "avail": 5,
   "launch_date": "2014-06-30",
   "developer": "Far East Organization",
-  "total_units": 0
+  "total_units": 0,
+  "psf": 1417,
+  "q2": null,
+  "q3": null,
+  "q4": 4170042
  },
  {
   "name": "THE INDEX",
@@ -1830,7 +2424,11 @@
   "avail": 0,
   "launch_date": "2014-06-30",
   "developer": "Grow-Tech Properties Pte Ltd",
-  "total_units": 0
+  "total_units": 0,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "NV APARTMENTS",
@@ -1843,7 +2441,11 @@
   "avail": 407,
   "launch_date": "2014-02-28",
   "developer": "Fragrance Group Limited",
-  "total_units": 388
+  "total_units": 388,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "SHOPPES @ ASCENT 456",
@@ -1856,7 +2458,11 @@
   "avail": 5,
   "launch_date": "2013-10-14",
   "developer": "Quest Homes Pte Ltd",
-  "total_units": 0
+  "total_units": 0,
+  "psf": 3108,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "HILLION RESIDENCES",
@@ -1869,7 +2475,11 @@
   "avail": 12,
   "launch_date": "2013-03-26",
   "developer": "SIM LIAN JV (BP RETAIL) PTE LTD/SIM LIAN JV (BP) PTE LTD",
-  "total_units": 546
+  "total_units": 546,
+  "psf": 1113,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "ALANA",
@@ -1882,7 +2492,11 @@
   "avail": 0,
   "launch_date": "2012-12-31",
   "developer": "Far East Organization",
-  "total_units": 78
+  "total_units": 78,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "SKIES MILTONIA",
@@ -1895,7 +2509,11 @@
   "avail": 2,
   "launch_date": "2012-12-31",
   "developer": "TG MASTER PTE LTD",
-  "total_units": 420
+  "total_units": 420,
+  "psf": 1167,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "EDEN RESIDENCES CAPITOL",
@@ -1908,7 +2526,11 @@
   "avail": 2,
   "launch_date": "2012-10-31",
   "developer": "CAPITOL HOTEL MANAGEMENT PTE LTD/CAPITOL RESIDENTIAL DEVELOPMENT PTE LTD/CAPITOL RETAIL MANAGEMENT PTE LTD",
-  "total_units": 39
+  "total_units": 39,
+  "psf": 3934,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "THE LINE @ TANJONG RHU",
@@ -1918,10 +2540,14 @@
   "district": "D15",
   "country": "SG",
   "top_year": 2017,
-  "avail": 8,
+  "avail": 7,
   "launch_date": "2012-08-16",
   "developer": "LAKEVIEW INVESTMENTS PTE LTD",
-  "total_units": 130
+  "total_units": 130,
+  "psf": 2474,
+  "q2": 2838000,
+  "q3": 2332408,
+  "q4": null
  },
  {
   "name": "26 NEWTON",
@@ -1934,7 +2560,11 @@
   "avail": 6,
   "launch_date": "2012-03-23",
   "developer": "NOVELTY CORP PTE LTD",
-  "total_units": 180
+  "total_units": 180,
+  "psf": 2146,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "SEASCAPE",
@@ -1947,7 +2577,11 @@
   "avail": 44,
   "launch_date": "2010-03-26",
   "developer": "SEAVIEW (SENTOSA) PTE LTD",
-  "total_units": 151
+  "total_units": 151,
+  "psf": 2218,
+  "q2": null,
+  "q3": 4455000,
+  "q4": 5553000
  },
  {
   "name": "CONCOURSE SKYLINE",
@@ -1960,7 +2594,11 @@
   "avail": 13,
   "launch_date": "2008-09-24",
   "developer": "HONG FOK LAND LTD",
-  "total_units": 360
+  "total_units": 360,
+  "psf": 2292,
+  "q2": 3150000,
+  "q3": 3385395,
+  "q4": 5372406
  },
  {
   "name": "REIGNWOOD HAMILTON SCOTTS",
@@ -1973,7 +2611,11 @@
   "avail": 5,
   "launch_date": "2008-08-08",
   "developer": "SARDINIA PROPERTIES PTE LTD",
-  "total_units": 56
+  "total_units": 56,
+  "psf": 3978,
+  "q2": null,
+  "q3": 10038000,
+  "q4": null
  },
  {
   "name": "THE GREEN COLLECTION",
@@ -1986,7 +2628,11 @@
   "avail": 0,
   "launch_date": "2008-02-29",
   "developer": "Green Collection Pte Ltd",
-  "total_units": 0
+  "total_units": 0,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "TURQUOISE",
@@ -1999,7 +2645,11 @@
   "avail": 1,
   "launch_date": "2007-10-24",
   "developer": "HO BEE COVE PTE LTD",
-  "total_units": 91
+  "total_units": 91,
+  "psf": 1664,
+  "q2": null,
+  "q3": 3438000,
+  "q4": 4397000
  },
  {
   "name": "THE LUMOS",
@@ -2012,7 +2662,11 @@
   "avail": 20,
   "launch_date": "2007-08-07",
   "developer": "BUILDHOME PTE LTD",
-  "total_units": 53
+  "total_units": 53,
+  "psf": 2595,
+  "q2": 2975000,
+  "q3": 4686000,
+  "q4": 6040000
  },
  {
   "name": "THE OCEANFRONT @ SENTOSA COVE",
@@ -2025,7 +2679,11 @@
   "avail": 1,
   "launch_date": "2007-04-30",
   "developer": "TC DEVELOPMENT PTE LTD",
-  "total_units": 264
+  "total_units": 264,
+  "psf": 2086,
+  "q2": null,
+  "q3": null,
+  "q4": 4200000
  },
  {
   "name": "DRAYCOTT EIGHT",
@@ -2038,7 +2696,11 @@
   "avail": 21,
   "launch_date": "2005-11-16",
   "developer": "WINWORTH INVESTMENT PTE LTD",
-  "total_units": 136
+  "total_units": 136,
+  "psf": 2626,
+  "q2": null,
+  "q3": null,
+  "q4": 7037280
  },
  {
   "name": "ENTERPRISE ONE",
@@ -2051,7 +2713,11 @@
   "avail": 0,
   "launch_date": "2000-12-08",
   "developer": "Eunos Link Technology Park Ltd",
-  "total_units": 0
+  "total_units": 0,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "EUNOS TECHNOLINK",
@@ -2064,7 +2730,11 @@
   "avail": 0,
   "launch_date": "1998-12-31",
   "developer": "Eunos Link Technology Park Ltd",
-  "total_units": 0
+  "total_units": 0,
+  "psf": null,
+  "q2": null,
+  "q3": null,
+  "q4": null
  },
  {
   "name": "LUCKY PLAZA",
@@ -2077,6 +2747,10 @@
   "avail": 8,
   "launch_date": "1976-12-31",
   "developer": "Far East Organization",
-  "total_units": 0
+  "total_units": 0,
+  "psf": 8941,
+  "q2": null,
+  "q3": null,
+  "q4": null
  }
 ]

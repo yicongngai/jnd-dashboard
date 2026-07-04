@@ -2,7 +2,7 @@
   "_meta": {
     "metric": "avail = units available (in-market unsold / upcoming full size)",
     "scope": "SG residential condos \u2014 AUTO from ERA Property Portal API (propertyportal.era.com.sg)",
-    "as_of": "2026-07-02",
+    "as_of": "2026-07-04",
     "auto": true,
     "counts": {
       "in_market": 83,
@@ -17,7 +17,11 @@
       "avail": 72,
       "developer": "CDL-MFA Altair Property Pte Ltd",
       "top": "TOP 2032",
-      "stale": false
+      "stale": false,
+      "psf": 3083,
+      "q2": 1477000,
+      "q3": 2200000,
+      "q4": 4388000
     },
     {
       "name": "Tengah Garden Residences",
@@ -26,7 +30,11 @@
       "avail": 2,
       "developer": "HONG LEONG/ GUOCOLAND/ CSC LAND",
       "top": "TOP 2031",
-      "stale": false
+      "stale": false,
+      "psf": 2108,
+      "q2": 1110000,
+      "q3": 1588000,
+      "q4": 2288000
     },
     {
       "name": "Vela Bay",
@@ -35,7 +43,11 @@
       "avail": 141,
       "developer": "SingHaiyi Group / Haiyi Holdings",
       "top": "TOP 2031",
-      "stale": false
+      "stale": false,
+      "psf": 2910,
+      "q2": 1500000,
+      "q3": 2287000,
+      "q4": 3192000
     },
     {
       "name": "Penrith",
@@ -44,7 +56,11 @@
       "avail": 10,
       "developer": "GuocoLand / Hong Leong Holdings / Hong Realty",
       "top": "TOP 2031",
-      "stale": false
+      "stale": false,
+      "psf": 2808,
+      "q2": 1501000,
+      "q3": 1983000,
+      "q4": 3542000
     },
     {
       "name": "Promenade Peak",
@@ -53,16 +69,24 @@
       "avail": 163,
       "developer": "Valerian Residential Pte. Ltd",
       "top": "TOP 2031",
-      "stale": false
+      "stale": false,
+      "psf": 3037,
+      "q2": 1806800,
+      "q3": 2799400,
+      "q4": 4494600
     },
     {
       "name": "Union Square Residences",
       "district": "D01",
       "region": "CCR",
-      "avail": 185,
+      "avail": 182,
       "developer": "CDL",
       "top": "TOP 2031",
-      "stale": false
+      "stale": false,
+      "psf": 3106,
+      "q2": 1880000,
+      "q3": 2600000,
+      "q4": 4158000
     },
     {
       "name": "Pinery Residences",
@@ -71,7 +95,11 @@
       "avail": 36,
       "developer": "Hoi Hup Realty /Sunway Developments",
       "top": "TOP 2030",
-      "stale": false
+      "stale": false,
+      "psf": 2540,
+      "q2": 1486000,
+      "q3": 1930000,
+      "q4": 2722000
     },
     {
       "name": "River Modern",
@@ -80,7 +108,11 @@
       "avail": 29,
       "developer": "Guocoland",
       "top": "TOP 2030",
-      "stale": false
+      "stale": false,
+      "psf": 3345,
+      "q2": 1548000,
+      "q3": 2298000,
+      "q4": 4588000
     },
     {
       "name": "The Sen",
@@ -89,7 +121,11 @@
       "avail": 209,
       "developer": "SL Capital (8) Pte Ltd",
       "top": "TOP 2030",
-      "stale": false
+      "stale": false,
+      "psf": 2464,
+      "q2": 1515000,
+      "q3": 1956000,
+      "q4": 3450000
     },
     {
       "name": "The Robertson Opus",
@@ -98,7 +134,11 @@
       "avail": 142,
       "developer": "RIVERSIDE PROPERTY PTE. LTD",
       "top": "TOP 2030",
-      "stale": false
+      "stale": false,
+      "psf": 3360,
+      "q2": 2170000,
+      "q3": 3169000,
+      "q4": 5120000
     },
     {
       "name": "Parktown Residence",
@@ -107,7 +147,11 @@
       "avail": 28,
       "developer": "UOL/ SINGAPORE LAND/ CAPITALAND",
       "top": "TOP 2030",
-      "stale": false
+      "stale": false,
+      "psf": 2434,
+      "q2": 1394000,
+      "q3": 2266000,
+      "q4": 2879000
     },
     {
       "name": "Hudson Place Residences",
@@ -116,7 +160,11 @@
       "avail": 105,
       "developer": "Guocoland",
       "top": "TOP 2029",
-      "stale": false
+      "stale": false,
+      "psf": 2511,
+      "q2": 1455000,
+      "q3": 2050000,
+      "q4": 2715000
     },
     {
       "name": "Narra Residences",
@@ -125,7 +173,11 @@
       "avail": 337,
       "developer": "Santarli / Apex Asia Alpha",
       "top": "TOP 2029",
-      "stale": false
+      "stale": false,
+      "psf": 2234,
+      "q2": 1176000,
+      "q3": 1630000,
+      "q4": 2448000
     },
     {
       "name": "Faber Residence",
@@ -134,7 +186,11 @@
       "avail": 16,
       "developer": "GuocoLand",
       "top": "TOP 2029",
-      "stale": false
+      "stale": false,
+      "psf": 2167,
+      "q2": 1277000,
+      "q3": 1574000,
+      "q4": 2336000
     },
     {
       "name": "Springleaf Residence",
@@ -143,7 +199,11 @@
       "avail": 21,
       "developer": "GuocoLand / Hong Leong Holdings",
       "top": "TOP 2029",
-      "stale": false
+      "stale": false,
+      "psf": 2193,
+      "q2": 1057000,
+      "q3": 1609000,
+      "q4": 2496000
     },
     {
       "name": "River Green",
@@ -152,7 +212,11 @@
       "avail": 32,
       "developer": "WINCHAMP INVESTMENT PTE LTD",
       "top": "TOP 2029",
-      "stale": false
+      "stale": false,
+      "psf": 3211,
+      "q2": 1455000,
+      "q3": 2188000,
+      "q4": 3180000
     },
     {
       "name": "Lyndenwoods",
@@ -161,7 +225,11 @@
       "avail": 1,
       "developer": "CapitaLand",
       "top": "TOP 2029",
-      "stale": false
+      "stale": false,
+      "psf": 2528,
+      "q2": 2319000,
+      "q3": 2469000,
+      "q4": 3663000
     },
     {
       "name": "One Marina Gardens",
@@ -170,7 +238,11 @@
       "avail": 293,
       "developer": "KINGSFORD DEVELOPMENT LED CONSORTIUM",
       "top": "TOP 2029",
-      "stale": false
+      "stale": false,
+      "psf": 2987,
+      "q2": 1799999,
+      "q3": 2551440,
+      "q4": 4773400
     },
     {
       "name": "Aurea",
@@ -179,7 +251,11 @@
       "avail": 119,
       "developer": "FAR EAST ORGANIZATION / PERENNIAL HOLDINGS / SINO LAND",
       "top": "TOP 2029",
-      "stale": false
+      "stale": false,
+      "psf": 3000,
+      "q2": 1771000,
+      "q3": 2666600,
+      "q4": 4080510
     },
     {
       "name": "The Collective at One Sophia",
@@ -188,7 +264,11 @@
       "avail": 268,
       "developer": "Sophia Residential Pte. Ltd.",
       "top": "TOP 2029",
-      "stale": false
+      "stale": false,
+      "psf": 2890,
+      "q2": 1828000,
+      "q3": 2892000,
+      "q4": null
     },
     {
       "name": "Canberra Crescent Residences",
@@ -197,7 +277,11 @@
       "avail": 37,
       "developer": "Peak Crescent Pte Ltd",
       "top": "TOP 2028",
-      "stale": false
+      "stale": false,
+      "psf": 2000,
+      "q2": 1090000,
+      "q3": 1515000,
+      "q4": 2151700
     },
     {
       "name": "Upperhouse at Orchard Boulevard",
@@ -206,7 +290,11 @@
       "avail": 56,
       "developer": "United Venture Development (No.7) Pte, Ltd,",
       "top": "TOP 2028",
-      "stale": false
+      "stale": false,
+      "psf": 3488,
+      "q2": 2171000,
+      "q3": 3874000,
+      "q4": 7111000
     },
     {
       "name": "W Residences Marina View - Singapore",
@@ -215,7 +303,11 @@
       "avail": 667,
       "developer": "Boulevard Development Pte Ltd (IOI Properties Singapore)",
       "top": "TOP 2028",
-      "stale": false
+      "stale": false,
+      "psf": 3666,
+      "q2": 1880000,
+      "q3": 3358000,
+      "q4": 8740000
     },
     {
       "name": "Ocho",
@@ -224,7 +316,24 @@
       "avail": 18,
       "developer": "Primest Land V1 Pte Ltd",
       "top": "TOP 2028",
-      "stale": false
+      "stale": false,
+      "psf": 2046,
+      "q2": 1483762,
+      "q3": 1861100,
+      "q4": 2245299
+    },
+    {
+      "name": "Elta",
+      "district": "D05",
+      "region": "RCR",
+      "avail": 89,
+      "developer": "MCL LAND/ CSC LAND",
+      "top": "TOP 2028",
+      "stale": false,
+      "psf": 2567,
+      "q2": 1388000,
+      "q3": 2198000,
+      "q4": 2842000
     },
     {
       "name": "Bagnall Haus",
@@ -233,7 +342,11 @@
       "avail": 9,
       "developer": "ROXY PACIFIC HOLDINGS",
       "top": "TOP 2028",
-      "stale": false
+      "stale": false,
+      "psf": 2543,
+      "q2": 1777000,
+      "q3": 2306000,
+      "q4": 3019000
     },
     {
       "name": "The Orie",
@@ -242,7 +355,11 @@
       "avail": 36,
       "developer": "CDL/ FRASERS PROPERTY/ SEKISUI HOUSE",
       "top": "TOP 2028",
-      "stale": false
+      "stale": false,
+      "psf": 2706,
+      "q2": 1480000,
+      "q3": 2090000,
+      "q4": 2920000
     },
     {
       "name": "Nava Grove",
@@ -251,7 +368,11 @@
       "avail": 2,
       "developer": "MCL LAND/ SINARMAS LAND",
       "top": "TOP 2028",
-      "stale": false
+      "stale": false,
+      "psf": 2500,
+      "q2": 1388000,
+      "q3": 2188000,
+      "q4": 3103500
     },
     {
       "name": "Meyer Blue",
@@ -260,16 +381,24 @@
       "avail": 49,
       "developer": "UOL Group Limited Singapore Land Group",
       "top": "TOP 2028",
-      "stale": false
+      "stale": false,
+      "psf": 3178,
+      "q2": 2014000,
+      "q3": 3001000,
+      "q4": 4528000
     },
     {
       "name": "The Arcady at Boon Keng",
       "district": "D12",
       "region": "RCR",
-      "avail": 68,
+      "avail": 67,
       "developer": "KSH Holdings Ultra Unity(JV)",
       "top": "TOP 2028",
-      "stale": false
+      "stale": false,
+      "psf": 2682,
+      "q2": 1721000,
+      "q3": 2446000,
+      "q4": 3794000
     },
     {
       "name": "J'den",
@@ -278,16 +407,24 @@
       "avail": 13,
       "developer": "Tanglin R.E Holdings Pte Ltd",
       "top": "TOP 2028",
-      "stale": false
+      "stale": false,
+      "psf": 2573,
+      "q2": 1820000,
+      "q3": 2619000,
+      "q4": 3371000
     },
     {
       "name": "Terra Hill",
       "district": "D05",
       "region": "RCR",
-      "avail": 67,
+      "avail": 66,
       "developer": "Hoi Hup Sunway Kent Ridge Pte Ltd",
       "top": "TOP 2028",
-      "stale": false
+      "stale": false,
+      "psf": 2615,
+      "q2": 1563000,
+      "q3": 2292000,
+      "q4": 3503000
     },
     {
       "name": "Newport Residences",
@@ -296,7 +433,11 @@
       "avail": 48,
       "developer": "City Developments Limited",
       "top": "TOP 2027",
-      "stale": false
+      "stale": false,
+      "psf": 3265,
+      "q2": 1968000,
+      "q3": 3238000,
+      "q4": 8280000
     },
     {
       "name": "Artisan 8",
@@ -305,7 +446,11 @@
       "avail": 17,
       "developer": "Apex Asia (2) Pte Ltd",
       "top": "TOP 2027",
-      "stale": false
+      "stale": false,
+      "psf": 2683,
+      "q2": 1598000,
+      "q3": 2029000,
+      "q4": 2628000
     },
     {
       "name": "Arina East Residences",
@@ -314,16 +459,11 @@
       "avail": 21,
       "developer": "ZACD GROUP",
       "top": "TOP 2027",
-      "stale": false
-    },
-    {
-      "name": "Elta",
-      "district": "D05",
-      "region": "RCR",
-      "avail": 89,
-      "developer": "MCL LAND/ CSC LAND",
-      "top": "TOP 2027",
-      "stale": false
+      "stale": false,
+      "psf": 2897,
+      "q2": 1888000,
+      "q3": 2588000,
+      "q4": 3850000
     },
     {
       "name": "Chuan Park",
@@ -332,7 +472,11 @@
       "avail": 33,
       "developer": "Kingsford Property Development Pte Ltd",
       "top": "TOP 2027",
-      "stale": false
+      "stale": false,
+      "psf": 2564,
+      "q2": 1648276,
+      "q3": 2266457,
+      "q4": 3231798
     },
     {
       "name": "8@bt",
@@ -341,7 +485,11 @@
       "avail": 48,
       "developer": "Bukit One Pte Ltd",
       "top": "TOP 2027",
-      "stale": false
+      "stale": false,
+      "psf": 2798,
+      "q2": 1892000,
+      "q3": 2617000,
+      "q4": 3646000
     },
     {
       "name": "Kassia",
@@ -350,7 +498,11 @@
       "avail": 48,
       "developer": "Tripartite Developers Pte. Limited",
       "top": "TOP 2027",
-      "stale": false
+      "stale": false,
+      "psf": 1999,
+      "q2": 1198000,
+      "q3": 1661000,
+      "q4": 2490000
     },
     {
       "name": "Sora",
@@ -359,7 +511,11 @@
       "avail": 213,
       "developer": "Lakeside Residential Pte Ltd",
       "top": "TOP 2027",
-      "stale": false
+      "stale": false,
+      "psf": 2314,
+      "q2": 1305000,
+      "q3": 2105000,
+      "q4": 3258000
     },
     {
       "name": "The Hillshore",
@@ -368,7 +524,11 @@
       "avail": 47,
       "developer": "Hillside View Development Pte Ltd",
       "top": "TOP 2027",
-      "stale": false
+      "stale": false,
+      "psf": 2512,
+      "q2": 1600000,
+      "q3": 2488000,
+      "q4": 3919000
     },
     {
       "name": "Ardor Residence",
@@ -377,7 +537,11 @@
       "avail": 3,
       "developer": "Nanshan Group",
       "top": "TOP 2027",
-      "stale": false
+      "stale": false,
+      "psf": 2486,
+      "q2": 2158000,
+      "q3": 2415000,
+      "q4": 3267000
     },
     {
       "name": "Lentoria",
@@ -386,7 +550,11 @@
       "avail": 19,
       "developer": "TID Residential Pte.Ltd",
       "top": "TOP 2027",
-      "stale": false
+      "stale": false,
+      "psf": 2387,
+      "q2": 1491000,
+      "q3": 1873000,
+      "q4": 2577000
     },
     {
       "name": "Tmw Maxwell",
@@ -395,7 +563,11 @@
       "avail": 319,
       "developer": "Maxwell Residential Pte Ltd and Maxwell Commercial Pte Ltd",
       "top": "TOP 2027",
-      "stale": false
+      "stale": false,
+      "psf": 3147,
+      "q2": 2227000,
+      "q3": null,
+      "q4": null
     },
     {
       "name": "The Myst",
@@ -404,7 +576,11 @@
       "avail": 18,
       "developer": "CDL Aries Pte. Ltd.",
       "top": "TOP 2027",
-      "stale": false
+      "stale": false,
+      "psf": 2097,
+      "q2": 1344000,
+      "q3": 1708000,
+      "q4": 2746000
     },
     {
       "name": "The Continuum",
@@ -413,7 +589,11 @@
       "avail": 35,
       "developer": "Hoi Hup Sunway Katong Pte Ltd",
       "top": "TOP 2027",
-      "stale": false
+      "stale": false,
+      "psf": 2856,
+      "q2": 1696000,
+      "q3": 2342000,
+      "q4": 3321000
     },
     {
       "name": "The Giverny Residences",
@@ -422,7 +602,11 @@
       "avail": 3,
       "developer": "Robin Development Pte.Ltd",
       "top": "TOP 2026",
-      "stale": false
+      "stale": false,
+      "psf": 3551,
+      "q2": null,
+      "q3": 5497000,
+      "q4": 9566000
     },
     {
       "name": "Norwood Grand",
@@ -431,7 +615,11 @@
       "avail": 33,
       "developer": "CDL",
       "top": "TOP 2026",
-      "stale": false
+      "stale": false,
+      "psf": 2052,
+      "q2": null,
+      "q3": 2142000,
+      "q4": 2616000
     },
     {
       "name": "Hillock Green",
@@ -440,7 +628,11 @@
       "avail": 3,
       "developer": "Lentor Central Development",
       "top": "TOP 2026",
-      "stale": false
+      "stale": false,
+      "psf": 2169,
+      "q2": 1289000,
+      "q3": 1819000,
+      "q4": 2384000
     },
     {
       "name": "The Shorefront",
@@ -449,7 +641,11 @@
       "avail": 8,
       "developer": "163@Loyang Pte Ltd",
       "top": "TOP 2026",
-      "stale": false
+      "stale": false,
+      "psf": 1933,
+      "q2": 1494000,
+      "q3": 1780000,
+      "q4": 2880000
     },
     {
       "name": "The Lakegarden Residences",
@@ -458,16 +654,24 @@
       "avail": 2,
       "developer": "WingTai Asia",
       "top": "TOP 2026",
-      "stale": false
+      "stale": false,
+      "psf": 2186,
+      "q2": 1259400,
+      "q3": 1878300,
+      "q4": 2535100
     },
     {
       "name": "Grand Dunman",
       "district": "D15",
       "region": "RCR",
-      "avail": 85,
+      "avail": 86,
       "developer": "SingHaiyi Group Ltd",
       "top": "TOP 2026",
-      "stale": false
+      "stale": false,
+      "psf": 2578,
+      "q2": 1925000,
+      "q3": 2458000,
+      "q4": 3256000
     },
     {
       "name": "Pinetree Hill",
@@ -476,7 +680,11 @@
       "avail": 1,
       "developer": "United Venture Development(No.5)Pte Ltd",
       "top": "TOP 2026",
-      "stale": false
+      "stale": false,
+      "psf": 2489,
+      "q2": 1705000,
+      "q3": 2489000,
+      "q4": 3213000
     },
     {
       "name": "Canninghill Piers",
@@ -485,7 +693,11 @@
       "avail": 7,
       "developer": "DBS TRUSTEE LIMITED/LEGEND COMMERCIAL TRUSTEE PTE LTD/LEGEND QUAY PTE LTD",
       "top": "TOP 2026",
-      "stale": false
+      "stale": false,
+      "psf": 3064,
+      "q2": 2352000,
+      "q3": 3503000,
+      "q4": 4880000
     },
     {
       "name": "21 Anderson",
@@ -494,7 +706,11 @@
       "avail": 1,
       "developer": "KHENG LEONG",
       "top": "TOP 2025",
-      "stale": true
+      "stale": true,
+      "psf": 5126,
+      "q2": 10000000,
+      "q3": null,
+      "q4": 22554000
     },
     {
       "name": "The Ranz",
@@ -503,7 +719,11 @@
       "avail": 6,
       "developer": "Kefi Development Pte. Ltd.",
       "top": "TOP 2025",
-      "stale": true
+      "stale": true,
+      "psf": 2177,
+      "q2": 1541000,
+      "q3": null,
+      "q4": 3796000
     },
     {
       "name": "Tembusu Grand",
@@ -512,7 +732,11 @@
       "avail": 7,
       "developer": "CDL Triton Pte. Ltd ((City Developments Ltd)",
       "top": "TOP 2025",
-      "stale": true
+      "stale": true,
+      "psf": 2462,
+      "q2": 1564000,
+      "q3": 2302000,
+      "q4": 3288000
     },
     {
       "name": "Claydence",
@@ -521,7 +745,11 @@
       "avail": 8,
       "developer": "HONG HOW LAND PTE LTD",
       "top": "TOP 2025",
-      "stale": true
+      "stale": true,
+      "psf": 2571,
+      "q2": 1807800,
+      "q3": 2582400,
+      "q4": 5626400
     },
     {
       "name": "Gems Ville",
@@ -530,7 +758,11 @@
       "avail": 11,
       "developer": "EAST ASIA GEYLANG DEVELOPMENT PTE LTD",
       "top": "TOP 2025",
-      "stale": true
+      "stale": true,
+      "psf": 2002,
+      "q2": 1488000,
+      "q3": 2138000,
+      "q4": null
     },
     {
       "name": "Sophia Regency",
@@ -539,7 +771,11 @@
       "avail": 38,
       "developer": "East Asia Sophia Development",
       "top": "TOP 2025",
-      "stale": true
+      "stale": true,
+      "psf": 3066,
+      "q2": 2199000,
+      "q3": null,
+      "q4": null
     },
     {
       "name": "Atlassia",
@@ -548,7 +784,11 @@
       "avail": 2,
       "developer": "K16 PLACE PTE LTD",
       "top": "TOP 2025",
-      "stale": true
+      "stale": true,
+      "psf": 2316,
+      "q2": 3059028,
+      "q3": 2402424,
+      "q4": 2602794
     },
     {
       "name": "Grange 1866",
@@ -557,7 +797,11 @@
       "avail": 2,
       "developer": "GRANGE 1866 PTE LTD",
       "top": "TOP 2025",
-      "stale": true
+      "stale": true,
+      "psf": 3118,
+      "q2": 1986000,
+      "q3": null,
+      "q4": null
     },
     {
       "name": "Phoenix Residences",
@@ -566,7 +810,11 @@
       "avail": 1,
       "developer": "USB (PHOENIX) PTE LTD",
       "top": "TOP 2024",
-      "stale": true
+      "stale": true,
+      "psf": 1649,
+      "q2": 1141384,
+      "q3": 1630636,
+      "q4": null
     },
     {
       "name": "Midtown Bay",
@@ -575,7 +823,11 @@
       "avail": 70,
       "developer": "GUOCO MIDTOWN PTE LTD/MIDTOWN BAY PTE LTD",
       "top": "TOP 2024",
-      "stale": true
+      "stale": true,
+      "psf": 3611,
+      "q2": 2183200,
+      "q3": 4691000,
+      "q4": null
     },
     {
       "name": "Boulevard 88",
@@ -584,16 +836,24 @@
       "avail": 1,
       "developer": "GRANMIL HOLDINGS PTE LTD",
       "top": "TOP 2024",
-      "stale": true
+      "stale": true,
+      "psf": 4012,
+      "q2": 4785000,
+      "q3": 7061000,
+      "q4": null
     },
     {
       "name": "19 Nassim",
       "district": "D10",
       "region": "CCR",
-      "avail": 2,
+      "avail": 1,
       "developer": "PARKSVILLE DEVELOPMENT PTE LTD",
       "top": "TOP 2023",
-      "stale": true
+      "stale": true,
+      "psf": 3511,
+      "q2": 2524288,
+      "q3": 4939050,
+      "q4": null
     },
     {
       "name": "Jervois Prive",
@@ -602,7 +862,11 @@
       "avail": 20,
       "developer": "JERVOIS MIDAS PTE LTD",
       "top": "TOP 2022",
-      "stale": true
+      "stale": true,
+      "psf": 3022,
+      "q2": 1956000,
+      "q3": 3431000,
+      "q4": 4685000
     },
     {
       "name": "10 Evelyn",
@@ -611,7 +875,11 @@
       "avail": 3,
       "developer": "CREATIVE INVESTMENTS PTE LTD",
       "top": "TOP 2022",
-      "stale": true
+      "stale": true,
+      "psf": 2460,
+      "q2": 2057000,
+      "q3": null,
+      "q4": null
     },
     {
       "name": "Jui Residences",
@@ -620,7 +888,11 @@
       "avail": 1,
       "developer": "TIARA LAND PTE LTD",
       "top": "TOP 2022",
-      "stale": true
+      "stale": true,
+      "psf": 1939,
+      "q2": null,
+      "q3": 1688912,
+      "q4": null
     },
     {
       "name": "The Lumos",
@@ -629,7 +901,11 @@
       "avail": 20,
       "developer": "BUILDHOME PTE LTD",
       "top": "TOP 2019",
-      "stale": true
+      "stale": true,
+      "psf": 2595,
+      "q2": 2975000,
+      "q3": 4686000,
+      "q4": 6040000
     },
     {
       "name": "Hillion Residences",
@@ -638,7 +914,11 @@
       "avail": 12,
       "developer": "SIM LIAN JV (BP RETAIL) PTE LTD/SIM LIAN JV (BP) PTE LTD",
       "top": "TOP 2018",
-      "stale": true
+      "stale": true,
+      "psf": 1113,
+      "q2": null,
+      "q3": null,
+      "q4": null
     },
     {
       "name": "Eden Residences Capitol",
@@ -647,16 +927,24 @@
       "avail": 2,
       "developer": "CAPITOL HOTEL MANAGEMENT PTE LTD/CAPITOL RESIDENTIAL DEVELOPMENT PTE LTD/CAPITOL RETAIL MANAGEMENT PTE LTD",
       "top": "TOP 2018",
-      "stale": true
+      "stale": true,
+      "psf": 3934,
+      "q2": null,
+      "q3": null,
+      "q4": null
     },
     {
       "name": "The Line @ Tanjong Rhu",
       "district": "D15",
       "region": "RCR",
-      "avail": 8,
+      "avail": 7,
       "developer": "LAKEVIEW INVESTMENTS PTE LTD",
       "top": "TOP 2017",
-      "stale": true
+      "stale": true,
+      "psf": 2474,
+      "q2": 2838000,
+      "q3": 2332408,
+      "q4": null
     },
     {
       "name": "26 Newton",
@@ -665,7 +953,11 @@
       "avail": 6,
       "developer": "NOVELTY CORP PTE LTD",
       "top": "TOP 2016",
-      "stale": true
+      "stale": true,
+      "psf": 2146,
+      "q2": null,
+      "q3": null,
+      "q4": null
     },
     {
       "name": "Skies Miltonia",
@@ -674,7 +966,11 @@
       "avail": 2,
       "developer": "TG MASTER PTE LTD",
       "top": "TOP 2015",
-      "stale": true
+      "stale": true,
+      "psf": 1167,
+      "q2": null,
+      "q3": null,
+      "q4": null
     },
     {
       "name": "Concourse Skyline",
@@ -683,7 +979,11 @@
       "avail": 13,
       "developer": "HONG FOK LAND LTD",
       "top": "TOP 2014",
-      "stale": true
+      "stale": true,
+      "psf": 2292,
+      "q2": 3150000,
+      "q3": 3385395,
+      "q4": 5372406
     },
     {
       "name": "Cape Royale",
@@ -692,7 +992,11 @@
       "avail": 99,
       "developer": "PINNACLE (SENTOSA) PTE LTD",
       "top": "TOP 2013",
-      "stale": true
+      "stale": true,
+      "psf": 2158,
+      "q2": null,
+      "q3": 3520000,
+      "q4": 5348000
     },
     {
       "name": "Reignwood Hamilton Scotts",
@@ -701,7 +1005,11 @@
       "avail": 5,
       "developer": "SARDINIA PROPERTIES PTE LTD",
       "top": "TOP 2012",
-      "stale": true
+      "stale": true,
+      "psf": 3978,
+      "q2": null,
+      "q3": 10038000,
+      "q4": null
     },
     {
       "name": "The Residences at W Singapore Sentosa Cove",
@@ -710,7 +1018,11 @@
       "avail": 68,
       "developer": "CITYVIEW PLACE HOLDINGS PTE LTD",
       "top": "TOP 2011",
-      "stale": true
+      "stale": true,
+      "psf": 1796,
+      "q2": 2162000,
+      "q3": 2787600,
+      "q4": 3560400
     },
     {
       "name": "Seascape",
@@ -719,7 +1031,11 @@
       "avail": 44,
       "developer": "SEAVIEW (SENTOSA) PTE LTD",
       "top": "TOP 2011",
-      "stale": true
+      "stale": true,
+      "psf": 2218,
+      "q2": null,
+      "q3": 4455000,
+      "q4": 5553000
     },
     {
       "name": "Turquoise",
@@ -728,7 +1044,11 @@
       "avail": 1,
       "developer": "HO BEE COVE PTE LTD",
       "top": "TOP 2010",
-      "stale": true
+      "stale": true,
+      "psf": 1664,
+      "q2": null,
+      "q3": 3438000,
+      "q4": 4397000
     },
     {
       "name": "The Oceanfront @ Sentosa Cove",
@@ -737,7 +1057,11 @@
       "avail": 1,
       "developer": "TC DEVELOPMENT PTE LTD",
       "top": "TOP 2010",
-      "stale": true
+      "stale": true,
+      "psf": 2086,
+      "q2": null,
+      "q3": null,
+      "q4": 4200000
     },
     {
       "name": "Draycott Eight",
@@ -746,7 +1070,11 @@
       "avail": 21,
       "developer": "WINWORTH INVESTMENT PTE LTD",
       "top": "TOP 2006",
-      "stale": true
+      "stale": true,
+      "psf": 2626,
+      "q2": null,
+      "q3": null,
+      "q4": 7037280
     },
     {
       "name": "The Draycott",
@@ -755,7 +1083,11 @@
       "avail": 27,
       "developer": "Tan Chwee Boon Pte Ltd",
       "top": "TOP 1980",
-      "stale": true
+      "stale": true,
+      "psf": 2461,
+      "q2": null,
+      "q3": null,
+      "q4": 5935000
     }
   ],
   "rest_of_2026": [
