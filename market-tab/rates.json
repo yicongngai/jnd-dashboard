@@ -1,17 +1,18 @@
 {
   "sora_3m": {
-    "value": 1.08,
+    "value": 1.09,
     "as_of": "2026-07-05",
     "sources": [
+      "MAS",
       "MortgageWise",
       "loansaver"
     ],
-    "n_sources": 2,
+    "n_sources": 3,
     "range": [
       1.0727,
-      1.09
+      1.0911
     ],
-    "source": "consensus of 2 sources",
+    "source": "consensus of 3 sources",
     "status": "verified"
   },
   "maintained": {
