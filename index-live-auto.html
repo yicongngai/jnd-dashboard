@@ -2787,6 +2787,7 @@ body.client-view #tool-advisory .scenario-card.not-viable { display: none; }
         <div class="sub" id="scenario-count">Comparing 6 paths — ranked by fit to goal</div>
       </div>
       <div id="advisory-banner"></div>
+<div id="path-rationale"></div>
       <div class="scenarios-grid" id="scenarios"></div>
     </div>
 
@@ -6039,6 +6040,36 @@ function renderScenarios(scenarios, p) {
   $('scenarios').innerHTML = html;
   $('scenario-count').textContent = `${scenarios.filter(s => s.viable).length} viable of ${scenarios.length} paths — ranked by goal fit`;
 
+  // Why-this-ranking: 2-5 plain lines built from the ACTUAL computed numbers —
+  // why the top path wins, and why each notable alternative doesn't.
+  (function(){
+    var host = $('path-rationale');
+    if (!host) return;
+    if (!topViable) { host.innerHTML = ''; return; }
+    var L = [];
+    if (topHasGoodROE) {
+      var firstPro = String(topViable.pros || '').split('.')[0];
+      L.push('<b>Why ' + topViable.name + ':</b> highest 5-yr net ROE among viable paths (' +
+             topViable.score.toFixed(0) + '%). ' + firstPro + '.');
+    }
+    scenarios.forEach(function(sc){
+      if (sc === topViable || L.length >= 6) return;
+      if (!sc.viable) {
+        L.push('<b>Why not ' + sc.name + ':</b> ' + (sc.tagline || 'not financially viable at current inputs') + '.');
+      } else if (sc.quantum && sc.quantum.severity === 'inadequate') {
+        L.push('<b>Why not ' + sc.name + ':</b> the workable price only buys an inadequate unit (' + (sc.quantum.label || 'too small') + ').');
+      } else {
+        L.push('<b>' + sc.name + ':</b> viable but ranked lower — ' + sc.score.toFixed(0) + '% vs ' +
+               topViable.score.toFixed(0) + '% ROE' +
+               (sc.quantum && sc.quantum.severity === 'tight' ? ', and unit size is tight' : '') + '.');
+      }
+    });
+    host.innerHTML = L.length ? '<div style="background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:14px 16px;margin:0 0 14px">' +
+      '<div style="font-size:10.5px;letter-spacing:.6px;font-weight:700;color:#9a2a2a;text-transform:uppercase;margin-bottom:7px">Why this ranking</div>' +
+      L.map(function(x){ return '<div style="font-size:12.5px;color:#374151;line-height:1.55;margin:3px 0">' + x + '</div>'; }).join('') +
+      '</div>' : '';
+  })();
+
   // v3.25: Advisory banner when even the top path is below ROE floor
   const bannerEl = $('advisory-banner');
   if (bannerEl) {
@@ -7590,6 +7621,42 @@ vrRecalc();
       { name: 'Quantum', score: p5, max: 20 },
       { name: 'Transformation', score: p6, max: 10 },
     ];
+    // Verdict rationale: what's carrying the score and what's dragging it.
+    (function(){
+      var strip = document.querySelector('#tool-nl .score-strip');
+      if (!strip) return;
+      var why = document.getElementById('verdictWhy');
+      if (!why) {
+        why = document.createElement('div');
+        why.id = 'verdictWhy';
+        why.style.cssText = 'background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:12px 16px;margin:10px 0 4px;font-size:12.5px;color:#374151;line-height:1.6';
+        strip.insertAdjacentElement('afterend', why);
+      }
+      var filled = [p1,p2,p3,p4,p5,p6].some(function(x){ return x > 0; });
+      if (!filled) { why.style.display = 'none'; return; }
+      why.style.display = '';
+      var STRONG = { 'Location':'strong location (schools / MRT / amenities)', 'Dev. Size':'healthy development scale',
+        'Resale Health':'liquid, growing district resale market', 'PSF Gap':'attractively priced vs surrounding resale',
+        'Quantum':'competitive quantum vs resale', 'Transformation':'URA transformation upside nearby' };
+      var WEAK = { 'Location':'location fundamentals are weak (schools / MRT / amenities)', 'Dev. Size':'small development — thinner exit liquidity',
+        'Resale Health':'district resale is thin or softening', 'PSF Gap':'priced rich vs surrounding resale',
+        'Quantum':'quantum premium vs comparable resale', 'Transformation':'no major transformation catalysts' };
+      var defs=[['Location',p1,20],['Dev. Size',p2,10],['Resale Health',p3,20],['PSF Gap',p4,20],['Quantum',p5,20],['Transformation',p6,10]];
+      var good=defs.filter(function(d){return d[1]/d[2]>=0.7;}).map(function(d){return STRONG[d[0]];});
+      var bad=defs.filter(function(d){return d[1]/d[2]<=0.4;}).map(function(d){return WEAK[d[0]];});
+      var verdictLine = total>=75 ? 'Scores as a <b>BUY</b> ('+total+'/100).' :
+                        total>=50 ? 'Scores as a <b>WATCH</b> ('+total+'/100) — a mixed case.' :
+                                    'Scores as an <b>AVOID</b> ('+total+'/100) at these inputs.';
+      var closing = total>=75 ? 'The pillars support entry — verify day-one pricing and stack selection.' :
+                    total>=50 ? 'Entry depends on price: the weak pillars below need to be compensated in the deal.' :
+                                'The fundamentals don\'t support entry unless the inputs change materially.';
+      var htmlW='<div>'+verdictLine+'</div>';
+      if(good.length) htmlW+='<div style="margin-top:4px"><b style="color:#1b5e20">Working for it:</b> '+good.join('; ')+'.</div>';
+      if(bad.length) htmlW+='<div style="margin-top:4px"><b style="color:#b71c1c">Against it:</b> '+bad.join('; ')+'.</div>';
+      htmlW+='<div style="margin-top:4px;color:#6b7280">'+closing+'</div>';
+      why.innerHTML=htmlW;
+    })();
+
     $('pillarBars').innerHTML = pillars.map(p => {
       const pct = (p.score / p.max) * 100;
       return '<div class="pillar-bar-row">' +
@@ -8794,5 +8861,57 @@ vrRecalc();
 })();
 </script>
 <!--/JND-LIVE-CD-JS-->
+
+<script>
+/* Thousands separators for money fields across all tabs ($1,000,000 style).
+   Number inputs can't display commas, so money-ish inputs become type=text and
+   a prototype-level value shim keeps every tab's existing calc code working:
+   scripts READING .value get clean digits (commas stripped), scripts WRITING
+   .value get auto-formatted — only for opted-in fields, everything else untouched. */
+(function(){
+  var RX=/(price|value|valuation|loan|amt|amount|budget|income|quantum|cpf|cash|debt|proceeds|psf|rent|salary|2br|3br|4br|maint|fee|cost|outlay|capital|topup|monthly|oa\b|absd|bsd)/i;
+  var desc=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value');
+  function fmt(v){
+    var t=String(v==null?'':v).replace(/,/g,'');
+    if(t==='') return '';
+    var m=t.match(/^(-?)(\d+)(\.\d*)?$/);
+    if(!m) return String(v);
+    return m[1]+m[2].replace(/\B(?=(\d{3})+(?!\d))/g,',')+(m[3]||'');
+  }
+  Object.defineProperty(HTMLInputElement.prototype,'value',{
+    configurable:true,
+    get:function(){ var v=desc.get.call(this); return this.__jndComma? String(v).replace(/,/g,''):v; },
+    set:function(v){ if(this.__jndComma) desc.set.call(this,fmt(v)); else desc.set.call(this,v); }
+  });
+  function enhance(el){
+    if(el.__jndComma) return;
+    el.__jndComma=true;
+    el.setAttribute('type','text');
+    el.setAttribute('inputmode','decimal');
+    el.setAttribute('autocomplete','off');
+    desc.set.call(el,fmt(desc.get.call(el)));
+    el.addEventListener('input',function(){
+      var raw=desc.get.call(el), f=fmt(raw);
+      if(f!==raw && /^[\d,]*\.?\d*$/.test(raw.replace(/^-/,''))){
+        var pos=el.selectionStart||0;
+        var digitsBefore=(raw.slice(0,pos).match(/[\d.]/g)||[]).length;
+        desc.set.call(el,f);
+        var np=0,cnt=0;
+        while(np<f.length&&cnt<digitsBefore){ if(/[\d.]/.test(f[np]))cnt++; np++; }
+        try{ el.setSelectionRange(np,np); }catch(e){}
+      }
+    });
+  }
+  function scan(){
+    [].forEach.call(document.querySelectorAll('input[type=number]'),function(el){
+      var step=parseFloat(el.getAttribute('step')||'1');
+      var hint=(el.id||'')+' '+(el.name||'')+' '+(el.getAttribute('placeholder')||'');
+      if(RX.test(hint)||step>=100) enhance(el);
+    });
+  }
+  if(document.readyState!=='loading')scan();else document.addEventListener('DOMContentLoaded',scan);
+  setTimeout(scan,2000);   // catch late-built inputs
+})();
+</script>
 </body>
 </html>
