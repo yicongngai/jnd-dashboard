@@ -1,17 +1,18 @@
 {
   "sora_3m": {
-    "value": 1.07,
-    "as_of": "2026-06-28",
+    "value": 1.08,
+    "as_of": "2026-07-05",
     "sources": [
+      "MortgageWise",
       "loansaver"
     ],
-    "n_sources": 1,
+    "n_sources": 2,
     "range": [
-      1.07,
-      1.07
+      1.0727,
+      1.09
     ],
-    "source": "loansaver (MAS republisher; MAS portal in maintenance)",
-    "status": "fallback-loansaver"
+    "source": "consensus of 2 sources",
+    "status": "verified"
   },
   "maintained": {
     "spread": 0.75,
