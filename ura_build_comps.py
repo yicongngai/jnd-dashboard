@@ -9,6 +9,7 @@ Output: ura-comps.json  +  prints size & coverage.
 Key via env: URA_ACCESS_KEY
 """
 import os, json, sys, re, time
+from datetime import datetime, timezone, timedelta
 import requests
 
 KEY = os.environ["URA_ACCESS_KEY"]
@@ -87,7 +88,13 @@ def main():
                 ])
                 total_txn += 1
     # drop empty
-    out = {"as_of":"2026-06",
+    # as_of = BUILD date (this script runs daily; freshness monitors pull recency).
+    # latest_month = newest contract month in the data (URA caveats lodge with weeks
+    # of lag, so this trails ~4-6 weeks; monitored separately with a wider limit).
+    mmyy = [t[2] for v in projects.values() for t in v["t"] if t[2] and len(str(t[2])) == 4]
+    latest = max(mmyy, key=lambda m: (int(m[2:]), int(m[:2]))) if mmyy else None
+    out = {"as_of": datetime.now(timezone(timedelta(hours=8))).strftime("%Y-%m-%d"),
+           "latest_month": f"20{latest[2:]}-{latest[:2]}" if latest else None,
            "source":"URA Data Service · PMI_Resi_Transaction (private caveats, ~3yr)",
            "fields":"t=[sqft,price,contractMMYY,remLeaseYrs(0=FH,-1=na),propType,saleType(1new/2sub/3resale),district]",
            "projects":[v for v in projects.values() if v["t"]]}
