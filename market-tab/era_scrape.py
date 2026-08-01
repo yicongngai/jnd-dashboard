@@ -119,8 +119,14 @@ def classify(r):
     if keep and not upcoming and avail <= 0:
         keep, typ = False, "sold_out"
 
+    # `id` is the ERA portal's own project id. It is what makes the count on the
+    # board clickable through to the page it came from:
+    #   https://propertyportal.era.com.sg/new-launches/detail/<id>
+    # Verified 1 Aug 2026 (id 52114376 -> DUNEARN HOUSE, "Units: 380").
     return {"name": name, "status": "pre_launch" if upcoming else "in_market",
             "type": typ, "keep": keep, "district": (r.get("district") or "").upper(),
+            "era_id": r.get("id"),
+            "sold": (us or {}).get("numberOfSoldUnits"),
             "country": r.get("country"), "top_year": top_year, "avail": avail,
             "launch_date": (r.get("launchDate") or "")[:10],
             "developer": re.sub(r"\s+", " ", (r.get("developer") or "")).strip(),
@@ -150,7 +156,10 @@ def main():
     def ent(r, k):
         o = {"name": titlecase(r["name"]), "district": r["district"],
              "region": region_of(r["district"]), "avail": r["avail"],
-             "developer": r["developer"]}
+             "developer": r["developer"], "era_id": r.get("era_id"),
+             "total_units": r.get("total_units"), "sold": r.get("sold"),
+             "url": (f"https://propertyportal.era.com.sg/new-launches/detail/{r['era_id']}"
+                     if r.get("era_id") else None)}
         if k == "in":
             o["top"] = ("TOP " + str(r["top_year"])) if r.get("top_year") else "TOP n/a"
             o["stale"] = not (r.get("top_year") and r["top_year"] >= THIS_YEAR)
@@ -159,6 +168,7 @@ def main():
         return o
 
     launches = {"_meta": {"metric": "avail = units available (in-market unsold / upcoming full size)",
+                          "source_url": "each project links to its ERA portal page, the page the count is read from",
                 "scope": "SG residential condos — AUTO from ERA Property Portal API (propertyportal.era.com.sg)",
                 "as_of": _SCRAPE_DATE, "auto": True,
                 "counts": {"in_market": len(im), "rest_of_2026": len(pl)}},

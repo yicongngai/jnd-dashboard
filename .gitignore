@@ -14,3 +14,15 @@ __pycache__/
 # Never commit secrets
 .env
 *.key
+
+# URA API key — NEVER commit
+.ura_key
+
+# Local-only tooling and noise — this repo is PUBLIC.
+# The vault ingests write to a path on Justin's Mac and have no business here.
+.DS_Store
+*.log
+ura_vault_daily.sh
+ura_vault_ingest.py
+hdb_vault_ingest.py
+launches_vault_ingest.py
