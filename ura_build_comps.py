@@ -12,19 +12,57 @@ import os, json, sys, re, time
 from datetime import datetime, timezone, timedelta
 import requests
 
-KEY = os.environ["URA_ACCESS_KEY"]
+def _load_key():
+    """URA_ACCESS_KEY from env, else the gitignored .ura_key file next to this script."""
+    k = os.environ.get("URA_ACCESS_KEY", "").strip()
+    if k:
+        return k
+    kf = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".ura_key")
+    try:
+        return open(kf, encoding="utf-8").read().strip()
+    except OSError:
+        sys.exit("No URA key — set URA_ACCESS_KEY or write it to jnd-tools-dashboard/.ura_key")
+
+
+KEY = _load_key()
 UA  = "Mozilla/5.0 (JND-Tools DataPrep)"
 BASE = "https://eservice.ura.gov.sg/uraDataService"
+
+# URA's bot protection blocks datacentre IPs. Proven 1 Aug 2026: the SAME key
+# returns 200 from Justin's home connection and 403 from every GitHub runner —
+# and a *wrong* key does NOT 403, it returns 200 with "Invalid Access Key". So the
+# 403 is the WAF, never the credential, and rotating the key cannot fix it.
+#
+# If a Zyte key is present we route through a Singapore residential IP, which is
+# the only way the cloud can reach URA. Without one we go direct, which still
+# works from the station. Either way a failure keeps the last-good file.
+UNLOCKER = os.environ.get("UNLOCKER_API_KEY", "").strip()
+ZYTE = "https://api.zyte.com/v1/extract"
+
+
+def _via_zyte(url, headers):
+    body = {"url": url, "httpResponseBody": True,
+            "geolocation": "SG",
+            "customHttpRequestHeaders":
+                [{"name": k, "value": v} for k, v in headers.items()]}
+    r = requests.post(ZYTE, auth=(UNLOCKER, ""), json=body, timeout=180)
+    r.raise_for_status()
+    import base64
+    return json.loads(base64.b64decode(r.json()["httpResponseBody"]))
+
 
 def _get(url, headers, tries=3):
     for i in range(tries):
         try:
+            if UNLOCKER:
+                return _via_zyte(url, headers)
             r = requests.get(url, headers=headers, timeout=120)
             r.raise_for_status()
             r.encoding = r.apparent_encoding or "utf-8"
             return r.json()
-        except Exception as e:
-            if i == tries-1: raise
+        except Exception:
+            if i == tries - 1:
+                raise
             time.sleep(2)
 
 def token():
