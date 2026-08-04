@@ -11,11 +11,15 @@ Sources (both keyless):
 
 Output hdb-txns.json:
   {"as_of","months",N blocks:[{"n":"466 HOUGANG AVE 8","tn":"HOUGANG","x":..,"y":..,
-   "r":[[MMYY, flatType, storeyLo, sqm, price], ...]}]}
-  flatType: 1..5 rooms, "E"=Executive, "M"=Multi-gen. MMYY matches ura-comps.
+   "r":[[MMYY, flatType, storeyLo, sqm, price, flatModel], ...]}]}
+  flatType : 1..5 rooms, "E"=Executive, "M"=Multi-gen. MMYY matches ura-comps.
+  flatModel: "A"=Apartment "P"=Premium Apartment "M"=Maisonette "L"=Premium Apt
+             Loft "Q"/"I"/"J"=other maisonettes "G"/"3"=multi-gen, lowercase for
+             the ordinary models, "?"=unrecognised. Needed because flat_type
+             "EXECUTIVE" mixes Apartment, Premium Apartment and Maisonette.
 Called daily from build_hdb_blocks.py (never breaks that build).
 """
-import json, os, re, sys, time, urllib.request, urllib.parse
+import json, os, re, sys, time, urllib.error, urllib.request, urllib.parse
 from datetime import datetime, timezone, timedelta
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -27,11 +31,38 @@ UA = {"User-Agent": "Mozilla/5.0 (JND-Tools)"}
 FT = {"1 ROOM": 1, "2 ROOM": 2, "3 ROOM": 3, "4 ROOM": 4, "5 ROOM": 5,
       "EXECUTIVE": "E", "MULTI-GENERATION": "M"}
 
+# flat_type alone is NOT enough. "EXECUTIVE" covers the Executive Apartment, the
+# Executive Maisonette and the Premium Apartment, which are different products at
+# different prices — around Pioneer the maisonettes run ~$60 psf under the
+# apartments. Quoting them together overstated the EA median by $16,500. Keep the
+# model, one letter, so a caller can split them.
+FM = {"apartment": "A", "premium apartment": "P", "premium apartment loft": "L",
+      "maisonette": "M", "premium maisonette": "Q", "improved-maisonette": "I",
+      "model a-maisonette": "J", "multi generation": "G", "3gen": "3",
+      "improved": "i", "new generation": "n", "model a": "a", "model a2": "b",
+      "standard": "s", "simplified": "z", "adjoined flat": "j", "terrace": "t",
+      "dbss": "d", "type s1": "1", "type s2": "2"}
 
-def _get(url):
-    req = urllib.request.Request(url, headers=UA)
-    with urllib.request.urlopen(req, timeout=25) as r:
-        return json.loads(r.read().decode("utf-8", "replace"))
+
+def fm(model):
+    """flat_model -> one letter. Unknown models keep a '?' rather than being
+    silently folded into a neighbour."""
+    return FM.get((model or "").strip().lower(), "?")
+
+
+def _get(url, tries=5):
+    """data.gov.sg returns 429 under a tight loop. Back off rather than lose the
+    month, otherwise a rate limit silently truncates the dataset."""
+    for i in range(tries):
+        try:
+            req = urllib.request.Request(url, headers=UA)
+            with urllib.request.urlopen(req, timeout=45) as r:
+                return json.loads(r.read().decode("utf-8", "replace"))
+        except urllib.error.HTTPError as e:
+            if e.code in (429, 500, 502, 503) and i < tries - 1:
+                time.sleep(3 * (i + 1))
+                continue
+            raise
 
 
 def months_back(n=12):
@@ -113,7 +144,11 @@ def run(geocode_cap=150):
             b["r"].append([mmyy, FT.get(t.get("flat_type", ""), 0),
                            int(storey.group(1)) if storey else 0,
                            round(float(t.get("floor_area_sqm", 0))),
-                           int(float(t.get("resale_price", 0)))])
+                           int(float(t.get("resale_price", 0))),
+                           # APPENDED, never inserted — consumers read these rows
+                           # positionally, so a new trailing field is invisible
+                           # to them and an inserted one corrupts every read.
+                           fm(t.get("flat_model", ""))])
         except (ValueError, TypeError):
             continue
 

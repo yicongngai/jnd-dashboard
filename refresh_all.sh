@@ -24,10 +24,11 @@ run(){ echo "-> $*" | tee -a "$LOG"; if "$@" >>"$LOG" 2>&1; then echo "   ok" | 
 ( cd market-tab && run python3 era_scrape.py )
 
 # 3. URA private caveats (weekly) -> ura-comps.json   [needs URA_ACCESS_KEY]
-if [ -n "${URA_ACCESS_KEY:-}" ]; then
+if [ -n "${URA_ACCESS_KEY:-}" ] || [ -f "$DASH/.ura_key" ]; then
   run python3 ura_build_comps.py
+  run python3 ura_vault_ingest.py     # URA data -> Obsidian second brain
 else
-  echo "   URA_ACCESS_KEY not set — skipping URA refresh (keeping last-good ura-comps.json)" | tee -a "$LOG"
+  echo "   no URA key (env or .ura_key) — skipping URA refresh + vault ingest (keeping last-good)" | tee -a "$LOG"
 fi
 
 # 4. HDB block index (rarely changes — new BTOs complete) -> hdb-blocks.json

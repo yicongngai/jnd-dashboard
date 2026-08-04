@@ -26,3 +26,55 @@ ura_vault_daily.sh
 ura_vault_ingest.py
 hdb_vault_ingest.py
 launches_vault_ingest.py
+launch_details_ingest.py
+
+# ERA PRO (app.singmap.com) harvests — agent-portal data behind Justin's login.
+# Per-unit status, floor plans and the sold-out unit maps are ERA's, not ours,
+# and this repo is PUBLIC. These files stay on the Mac. Never commit them.
+erapro-availability.json
+erapro-units.json
+erapro-units.jsonl
+soldout_units.json
+erapro-worklist.json
+erapro-worklist-live.json
+erapro_receiver.py
+erapro_merge.py
+soldout_ingest.py
+ERAPRO-HARVEST.md
+erapro_units_to_avail.py
+erapro-availability.json.bak-merge
+erapro-worklist-soldout.json
+erapro-forsale.json
+unit_check.py
+unit_maps.py
+unit-facings.json
+unit-maps/
+.unit_check_cache/
+UNIT-CHECK.md
+brochures/
+brochure-index.json
+brochure-targets.json
+brochure-size-unknown.json
+brochure_harvest.py
+brochure_parse.py
+brochure-units.json
+stacked-assets/
+stacked-keys.json
+stacked-targets.json
+mcst-strata.json
+stacked_harvest.py
+stacked_read.py
+stacked-units.json
+stacked_ingest.py
+review_sheet.py
+stacked-review-queue.json
+stacked-units.json
+review-sheets/
+bin/
+
+# Rebuilt every morning by refresh_all.sh — tracked copies only create daily noise.
+# Files stay on disk (and in Dropbox); they are build inputs, not published assets.
+hdb-block-coords.json
+onemap-blocks.json
+market-tab/launches.json
+market-tab/era_classified.json

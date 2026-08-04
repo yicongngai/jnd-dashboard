@@ -639,11 +639,11 @@
       "name": "Norwood Grand",
       "district": "D25",
       "region": "OCR",
-      "avail": 30,
+      "avail": 29,
       "developer": "CDL",
       "era_id": 11737675,
       "total_units": 348,
-      "sold": 318,
+      "sold": 319,
       "url": "https://propertyportal.era.com.sg/new-launches/detail/11737675",
       "top": "TOP 2026",
       "stale": false

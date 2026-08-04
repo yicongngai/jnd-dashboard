@@ -1,0 +1,2978 @@
+[
+ {
+  "project": "SUNHAVEN",
+  "unit": "#00-16",
+  "plan_image": "Sunhaven-floor-plan_19.jpg",
+  "reason": "floor 0 is not a real floor"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#16-02",
+  "plan_image": "Sunhaven-floor-plan_25.jpg",
+  "reason": "floor 16 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#16-16",
+  "plan_image": "Sunhaven-floor-plan_19.jpg",
+  "reason": "floor 16 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#16-25",
+  "plan_image": "Sunhaven-floor-plan_15.jpg",
+  "reason": "floor 16 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#16-33",
+  "plan_image": "Sunhaven-floor-plan_16.jpg",
+  "reason": "floor 16 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#17-02",
+  "plan_image": "Sunhaven-floor-plan_25.jpg",
+  "reason": "floor 17 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#17-16",
+  "plan_image": "Sunhaven-floor-plan_19.jpg",
+  "reason": "floor 17 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#17-25",
+  "plan_image": "Sunhaven-floor-plan_15.jpg",
+  "reason": "floor 17 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#17-33",
+  "plan_image": "Sunhaven-floor-plan_16.jpg",
+  "reason": "floor 17 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#18-02",
+  "plan_image": "Sunhaven-floor-plan_25.jpg",
+  "reason": "floor 18 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#18-16",
+  "plan_image": "Sunhaven-floor-plan_19.jpg",
+  "reason": "floor 18 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#18-25",
+  "plan_image": "Sunhaven-floor-plan_15.jpg",
+  "reason": "floor 18 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#18-33",
+  "plan_image": "Sunhaven-floor-plan_16.jpg",
+  "reason": "floor 18 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#19-02",
+  "plan_image": "Sunhaven-floor-plan_25.jpg",
+  "reason": "floor 19 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#19-16",
+  "plan_image": "Sunhaven-floor-plan_19.jpg",
+  "reason": "floor 19 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#19-25",
+  "plan_image": "Sunhaven-floor-plan_15.jpg",
+  "reason": "floor 19 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#19-33",
+  "plan_image": "Sunhaven-floor-plan_16.jpg",
+  "reason": "floor 19 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#20-02",
+  "plan_image": "Sunhaven-floor-plan_25.jpg",
+  "reason": "floor 20 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#20-16",
+  "plan_image": "Sunhaven-floor-plan_19.jpg",
+  "reason": "floor 20 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#20-25",
+  "plan_image": "Sunhaven-floor-plan_15.jpg",
+  "reason": "floor 20 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#20-33",
+  "plan_image": "Sunhaven-floor-plan_16.jpg",
+  "reason": "floor 20 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#21-02",
+  "plan_image": "Sunhaven-floor-plan_25.jpg",
+  "reason": "floor 21 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#21-16",
+  "plan_image": "Sunhaven-floor-plan_19.jpg",
+  "reason": "floor 21 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#21-25",
+  "plan_image": "Sunhaven-floor-plan_15.jpg",
+  "reason": "floor 21 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#21-33",
+  "plan_image": "Sunhaven-floor-plan_16.jpg",
+  "reason": "floor 21 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#22-02",
+  "plan_image": "Sunhaven-floor-plan_25.jpg",
+  "reason": "floor 22 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#22-16",
+  "plan_image": "Sunhaven-floor-plan_19.jpg",
+  "reason": "floor 22 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#22-25",
+  "plan_image": "Sunhaven-floor-plan_15.jpg",
+  "reason": "floor 22 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#22-33",
+  "plan_image": "Sunhaven-floor-plan_16.jpg",
+  "reason": "floor 22 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#23-16",
+  "plan_image": "Sunhaven-floor-plan_19.jpg",
+  "reason": "floor 23 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#23-25",
+  "plan_image": "Sunhaven-floor-plan_15.jpg",
+  "reason": "floor 23 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#23-33",
+  "plan_image": "Sunhaven-floor-plan_16.jpg",
+  "reason": "floor 23 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#24-16",
+  "plan_image": "Sunhaven-floor-plan_19.jpg",
+  "reason": "floor 24 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#24-25",
+  "plan_image": "Sunhaven-floor-plan_15.jpg",
+  "reason": "floor 24 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#24-33",
+  "plan_image": "Sunhaven-floor-plan_16.jpg",
+  "reason": "floor 24 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#25-16",
+  "plan_image": "Sunhaven-floor-plan_19.jpg",
+  "reason": "floor 25 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#25-25",
+  "plan_image": "Sunhaven-floor-plan_15.jpg",
+  "reason": "floor 25 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#25-33",
+  "plan_image": "Sunhaven-floor-plan_16.jpg",
+  "reason": "floor 25 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#26-16",
+  "plan_image": "Sunhaven-floor-plan_19.jpg",
+  "reason": "floor 26 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#26-25",
+  "plan_image": "Sunhaven-floor-plan_15.jpg",
+  "reason": "floor 26 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#26-33",
+  "plan_image": "Sunhaven-floor-plan_16.jpg",
+  "reason": "floor 26 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#27-16",
+  "plan_image": "Sunhaven-floor-plan_19.jpg",
+  "reason": "floor 27 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#27-25",
+  "plan_image": "Sunhaven-floor-plan_15.jpg",
+  "reason": "floor 27 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#27-33",
+  "plan_image": "Sunhaven-floor-plan_16.jpg",
+  "reason": "floor 27 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#28-16",
+  "plan_image": "Sunhaven-floor-plan_19.jpg",
+  "reason": "floor 28 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#28-25",
+  "plan_image": "Sunhaven-floor-plan_15.jpg",
+  "reason": "floor 28 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#28-33",
+  "plan_image": "Sunhaven-floor-plan_16.jpg",
+  "reason": "floor 28 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#29-16",
+  "plan_image": "Sunhaven-floor-plan_19.jpg",
+  "reason": "floor 29 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#29-25",
+  "plan_image": "Sunhaven-floor-plan_15.jpg",
+  "reason": "floor 29 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#29-33",
+  "plan_image": "Sunhaven-floor-plan_16.jpg",
+  "reason": "floor 29 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#30-16",
+  "plan_image": "Sunhaven-floor-plan_19.jpg",
+  "reason": "floor 30 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#30-25",
+  "plan_image": "Sunhaven-floor-plan_15.jpg",
+  "reason": "floor 30 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#30-28",
+  "plan_image": "Sunhaven-floor-plan_5.jpg",
+  "reason": "floor 30 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#30-33",
+  "plan_image": "Sunhaven-floor-plan_16.jpg",
+  "reason": "floor 30 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#30-36",
+  "plan_image": "Sunhaven-floor-plan.jpg",
+  "reason": "floor 30 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#31-16",
+  "plan_image": "Sunhaven-floor-plan_19.jpg",
+  "reason": "floor 31 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#31-33",
+  "plan_image": "Sunhaven-floor-plan_16.jpg",
+  "reason": "floor 31 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#32-16",
+  "plan_image": "Sunhaven-floor-plan_19.jpg",
+  "reason": "floor 32 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#32-33",
+  "plan_image": "Sunhaven-floor-plan_16.jpg",
+  "reason": "floor 32 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#33-16",
+  "plan_image": "Sunhaven-floor-plan_19.jpg",
+  "reason": "floor 33 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#33-29",
+  "plan_image": "Sunhaven-floor-plan_28.jpg",
+  "reason": "floor 33 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#33-33",
+  "plan_image": "Sunhaven-floor-plan_16.jpg",
+  "reason": "floor 33 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#34-16",
+  "plan_image": "Sunhaven-floor-plan_19.jpg",
+  "reason": "floor 34 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#34-33",
+  "plan_image": "Sunhaven-floor-plan_16.jpg",
+  "reason": "floor 34 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#35-16",
+  "plan_image": "Sunhaven-floor-plan_19.jpg",
+  "reason": "floor 35 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#35-33",
+  "plan_image": "Sunhaven-floor-plan_16.jpg",
+  "reason": "floor 35 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#36-16",
+  "plan_image": "Sunhaven-floor-plan_19.jpg",
+  "reason": "floor 36 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#36-33",
+  "plan_image": "Sunhaven-floor-plan_16.jpg",
+  "reason": "floor 36 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "SUNHAVEN",
+  "unit": "#37-33",
+  "plan_image": "Sunhaven-floor-plan_16.jpg",
+  "reason": "floor 37 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#21-01",
+  "plan_image": "My Manhattan-floor-plan_10.jpg",
+  "reason": "floor 21 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#21-08",
+  "plan_image": "My Manhattan-floor-plan_14.jpg",
+  "reason": "floor 21 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#21-11",
+  "plan_image": "My Manhattan-floor-plan_7.jpg",
+  "reason": "floor 21 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#21-12",
+  "plan_image": "My Manhattan-floor-plan_6.jpg",
+  "reason": "floor 21 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#21-14",
+  "plan_image": "My Manhattan-floor-plan_15.jpg",
+  "reason": "floor 21 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#21-15",
+  "plan_image": "My Manhattan-floor-plan_13.jpg",
+  "reason": "floor 21 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#21-17",
+  "plan_image": "My Manhattan-floor-plan_16.jpg",
+  "reason": "floor 21 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#21-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 21 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#22-11",
+  "plan_image": "My Manhattan-floor-plan_7.jpg",
+  "reason": "floor 22 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#22-12",
+  "plan_image": "My Manhattan-floor-plan_6.jpg",
+  "reason": "floor 22 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#22-15",
+  "plan_image": "My Manhattan-floor-plan_13.jpg",
+  "reason": "floor 22 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#22-17",
+  "plan_image": "My Manhattan-floor-plan_16.jpg",
+  "reason": "floor 22 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#22-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 22 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#23-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 23 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#24-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 24 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#25-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 25 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#26-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 26 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#27-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 27 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#28-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 28 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#29-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 29 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#30-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 30 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#31-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 31 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#32-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 32 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#33-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 33 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#34-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 34 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#35-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 35 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#36-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 36 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#37-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 37 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#38-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 38 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#39-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 39 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#40-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 40 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#41-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 41 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#42-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 42 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#43-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 43 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#44-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 44 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#45-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 45 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#46-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 46 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#47-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 47 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#48-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 48 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#49-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 49 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#50-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 50 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#51-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 51 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#52-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 52 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#53-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 53 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#54-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 54 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#55-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 55 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#56-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 56 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#57-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 57 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#58-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 58 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#59-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 59 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#60-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 60 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#61-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 61 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#62-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 62 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#63-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 63 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#64-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 64 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#65-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 65 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#66-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 66 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#67-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 67 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#68-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 68 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#69-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 69 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#70-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 70 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#71-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 71 is not a real floor"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#72-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 72 is not a real floor"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#73-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 73 is not a real floor"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#74-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 74 is not a real floor"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#75-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 75 is not a real floor"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#76-19",
+  "plan_image": "My Manhattan-floor-plan.jpg",
+  "reason": "floor 76 is not a real floor"
+ },
+ {
+  "project": "My Manhattan",
+  "unit": "#77-19",
+  "plan_image": "My Manhattan-floor-plan_1.jpg",
+  "reason": "floor 77 is not a real floor"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#11-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 11 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#12-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 12 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#13-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 13 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#14-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 14 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#15-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 15 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#16-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 16 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#17-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 17 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#18-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 18 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#19-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 19 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#20-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 20 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#21-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 21 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#22-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 22 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#23-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 23 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#24-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 24 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#25-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 25 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#26-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 26 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#27-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 27 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#28-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 28 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#29-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 29 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#30-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 30 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#31-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 31 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#32-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 32 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#33-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 33 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#34-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 34 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#35-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 35 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#36-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 36 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#37-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 37 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#38-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 38 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#39-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 39 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#40-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 40 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#41-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 41 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#42-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 42 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#43-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 43 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#44-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 44 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#45-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 45 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#46-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 46 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#47-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 47 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#48-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 48 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#49-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 49 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#50-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 50 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#51-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 51 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#52-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 52 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#53-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 53 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#54-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 54 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#55-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 55 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#56-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 56 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#57-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 57 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#58-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 58 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#59-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 59 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Sorrento",
+  "unit": "#60-25",
+  "plan_image": "The Sorrento-floor-plan_37.jpg",
+  "reason": "floor 60 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#31-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 31 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#32-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 32 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#33-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 33 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#34-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 34 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#35-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 35 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#36-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 36 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#37-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 37 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#38-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 38 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#39-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 39 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#40-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 40 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#41-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 41 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#42-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 42 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#43-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 43 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#44-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 44 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#45-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 45 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#46-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 46 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#47-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 47 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#48-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 48 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#49-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 49 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#50-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 50 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#51-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 51 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#52-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 52 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#53-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 53 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#54-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 54 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#55-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 55 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#56-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 56 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#57-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 57 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#58-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 58 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#59-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 59 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#60-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 60 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#61-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 61 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#62-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 62 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#63-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 63 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#64-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 64 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#65-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 65 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#66-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 66 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#67-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 67 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#68-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 68 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#69-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 69 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#70-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 70 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#71-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 71 is not a real floor"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#72-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 72 is not a real floor"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#73-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 73 is not a real floor"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#74-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 74 is not a real floor"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#75-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 75 is not a real floor"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#76-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 76 is not a real floor"
+ },
+ {
+  "project": "THE ANSLEY",
+  "unit": "#77-02",
+  "plan_image": "The Ansley-floor-plan_3.jpg",
+  "reason": "floor 77 is not a real floor"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#21-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 21 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#22-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 22 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#23-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 23 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#24-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 24 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#25-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 25 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#26-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 26 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#27-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 27 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#28-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 28 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#29-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 29 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#30-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 30 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#31-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 31 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#32-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 32 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#33-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 33 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#34-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 34 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#35-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 35 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#36-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 36 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#37-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 37 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#38-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 38 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#39-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 39 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#40-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 40 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#41-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 41 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#42-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 42 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#43-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 43 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#44-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 44 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#45-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 45 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#46-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 46 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#47-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 47 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#48-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 48 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#49-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 49 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#50-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 50 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#51-18",
+  "plan_image": "North Park Residences-floor-plan_14.jpg",
+  "reason": "floor 51 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "North Park Residences",
+  "unit": "#57-18",
+  "plan_image": "North Park Residences-floor-plan_16.jpg",
+  "reason": "floor 57 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "The Santorini",
+  "unit": "#00-27",
+  "plan_image": "The Santorini-floor-plan_15.jpg",
+  "reason": "floor 0 is not a real floor"
+ },
+ {
+  "project": "The Santorini",
+  "unit": "#00-28",
+  "plan_image": "The Santorini-floor-plan_12.jpg",
+  "reason": "floor 0 is not a real floor"
+ },
+ {
+  "project": "The Santorini",
+  "unit": "#00-34",
+  "plan_image": "The Santorini-floor-plan_16.jpg",
+  "reason": "floor 0 is not a real floor"
+ },
+ {
+  "project": "The Santorini",
+  "unit": "#00-37",
+  "plan_image": "The Santorini-floor-plan_11.jpg",
+  "reason": "floor 0 is not a real floor"
+ },
+ {
+  "project": "The Santorini",
+  "unit": "#21-28",
+  "plan_image": "The Santorini-floor-plan_12.jpg",
+  "reason": "floor 21 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "The Santorini",
+  "unit": "#22-28",
+  "plan_image": "The Santorini-floor-plan_12.jpg",
+  "reason": "floor 22 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "The Santorini",
+  "unit": "#23-28",
+  "plan_image": "The Santorini-floor-plan_12.jpg",
+  "reason": "floor 23 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "The Santorini",
+  "unit": "#24-28",
+  "plan_image": "The Santorini-floor-plan_12.jpg",
+  "reason": "floor 24 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "The Santorini",
+  "unit": "#25-28",
+  "plan_image": "The Santorini-floor-plan_12.jpg",
+  "reason": "floor 25 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "The Santorini",
+  "unit": "#26-28",
+  "plan_image": "The Santorini-floor-plan_12.jpg",
+  "reason": "floor 26 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "The Santorini",
+  "unit": "#27-28",
+  "plan_image": "The Santorini-floor-plan_12.jpg",
+  "reason": "floor 27 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "The Santorini",
+  "unit": "#28-28",
+  "plan_image": "The Santorini-floor-plan_12.jpg",
+  "reason": "floor 28 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "The Santorini",
+  "unit": "#29-28",
+  "plan_image": "The Santorini-floor-plan_12.jpg",
+  "reason": "floor 29 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "The Santorini",
+  "unit": "#30-28",
+  "plan_image": "The Santorini-floor-plan_12.jpg",
+  "reason": "floor 30 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "The Santorini",
+  "unit": "#31-28",
+  "plan_image": "The Santorini-floor-plan_12.jpg",
+  "reason": "floor 31 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "The Santorini",
+  "unit": "#32-28",
+  "plan_image": "The Santorini-floor-plan_12.jpg",
+  "reason": "floor 32 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "The Santorini",
+  "unit": "#33-28",
+  "plan_image": "The Santorini-floor-plan_12.jpg",
+  "reason": "floor 33 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "The Santorini",
+  "unit": "#34-28",
+  "plan_image": "The Santorini-floor-plan_12.jpg",
+  "reason": "floor 34 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "The Santorini",
+  "unit": "#35-28",
+  "plan_image": "The Santorini-floor-plan_12.jpg",
+  "reason": "floor 35 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "The Santorini",
+  "unit": "#36-28",
+  "plan_image": "The Santorini-floor-plan_12.jpg",
+  "reason": "floor 36 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "The Santorini",
+  "unit": "#37-28",
+  "plan_image": "The Santorini-floor-plan_12.jpg",
+  "reason": "floor 37 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "The Santorini",
+  "unit": "#38-28",
+  "plan_image": "The Santorini-floor-plan_12.jpg",
+  "reason": "floor 38 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "The Santorini",
+  "unit": "#39-28",
+  "plan_image": "The Santorini-floor-plan_12.jpg",
+  "reason": "floor 39 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "The Santorini",
+  "unit": "#40-28",
+  "plan_image": "The Santorini-floor-plan_12.jpg",
+  "reason": "floor 40 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "The Santorini",
+  "unit": "#41-28",
+  "plan_image": "The Santorini-floor-plan_12.jpg",
+  "reason": "floor 41 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "The Santorini",
+  "unit": "#42-28",
+  "plan_image": "The Santorini-floor-plan_12.jpg",
+  "reason": "floor 42 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "The Santorini",
+  "unit": "#43-28",
+  "plan_image": "The Santorini-floor-plan_12.jpg",
+  "reason": "floor 43 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forestville",
+  "unit": "#21-39",
+  "plan_image": "Forestville-floor-plan_45.jpg",
+  "reason": "floor 21 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forestville",
+  "unit": "#22-39",
+  "plan_image": "Forestville-floor-plan_45.jpg",
+  "reason": "floor 22 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forestville",
+  "unit": "#23-39",
+  "plan_image": "Forestville-floor-plan_45.jpg",
+  "reason": "floor 23 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forestville",
+  "unit": "#24-39",
+  "plan_image": "Forestville-floor-plan_45.jpg",
+  "reason": "floor 24 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forestville",
+  "unit": "#25-39",
+  "plan_image": "Forestville-floor-plan_45.jpg",
+  "reason": "floor 25 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forestville",
+  "unit": "#26-39",
+  "plan_image": "Forestville-floor-plan_45.jpg",
+  "reason": "floor 26 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forestville",
+  "unit": "#27-39",
+  "plan_image": "Forestville-floor-plan_45.jpg",
+  "reason": "floor 27 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forestville",
+  "unit": "#28-39",
+  "plan_image": "Forestville-floor-plan_45.jpg",
+  "reason": "floor 28 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forestville",
+  "unit": "#29-39",
+  "plan_image": "Forestville-floor-plan_45.jpg",
+  "reason": "floor 29 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forestville",
+  "unit": "#30-39",
+  "plan_image": "Forestville-floor-plan_45.jpg",
+  "reason": "floor 30 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forestville",
+  "unit": "#31-39",
+  "plan_image": "Forestville-floor-plan_45.jpg",
+  "reason": "floor 31 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forestville",
+  "unit": "#32-39",
+  "plan_image": "Forestville-floor-plan_45.jpg",
+  "reason": "floor 32 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forestville",
+  "unit": "#33-39",
+  "plan_image": "Forestville-floor-plan_45.jpg",
+  "reason": "floor 33 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forestville",
+  "unit": "#34-39",
+  "plan_image": "Forestville-floor-plan_45.jpg",
+  "reason": "floor 34 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forestville",
+  "unit": "#35-39",
+  "plan_image": "Forestville-floor-plan_45.jpg",
+  "reason": "floor 35 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forestville",
+  "unit": "#36-39",
+  "plan_image": "Forestville-floor-plan_45.jpg",
+  "reason": "floor 36 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forestville",
+  "unit": "#37-39",
+  "plan_image": "Forestville-floor-plan_45.jpg",
+  "reason": "floor 37 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forestville",
+  "unit": "#38-39",
+  "plan_image": "Forestville-floor-plan_45.jpg",
+  "reason": "floor 38 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forestville",
+  "unit": "#44-45",
+  "plan_image": "Forestville-floor-plan_24.jpg",
+  "reason": "floor 44 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forestville",
+  "unit": "#47-46",
+  "plan_image": "Forestville-floor-plan_22.jpg",
+  "reason": "floor 47 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forest Woods",
+  "unit": "#00-14",
+  "plan_image": "Forest Woods-floor-plan_22.jpg",
+  "reason": "floor 0 is not a real floor"
+ },
+ {
+  "project": "Forest Woods",
+  "unit": "#00-17",
+  "plan_image": "Forest Woods-floor-plan_15.jpg",
+  "reason": "floor 0 is not a real floor"
+ },
+ {
+  "project": "Forest Woods",
+  "unit": "#21-03",
+  "plan_image": "Forest Woods-floor-plan_5.jpg",
+  "reason": "floor 21 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forest Woods",
+  "unit": "#21-17",
+  "plan_image": "Forest Woods-floor-plan_15.jpg",
+  "reason": "floor 21 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forest Woods",
+  "unit": "#22-03",
+  "plan_image": "Forest Woods-floor-plan_5.jpg",
+  "reason": "floor 22 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forest Woods",
+  "unit": "#22-17",
+  "plan_image": "Forest Woods-floor-plan_15.jpg",
+  "reason": "floor 22 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forest Woods",
+  "unit": "#23-03",
+  "plan_image": "Forest Woods-floor-plan_5.jpg",
+  "reason": "floor 23 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forest Woods",
+  "unit": "#23-17",
+  "plan_image": "Forest Woods-floor-plan_15.jpg",
+  "reason": "floor 23 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forest Woods",
+  "unit": "#24-03",
+  "plan_image": "Forest Woods-floor-plan_5.jpg",
+  "reason": "floor 24 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forest Woods",
+  "unit": "#24-17",
+  "plan_image": "Forest Woods-floor-plan_15.jpg",
+  "reason": "floor 24 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forest Woods",
+  "unit": "#25-03",
+  "plan_image": "Forest Woods-floor-plan_5.jpg",
+  "reason": "floor 25 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forest Woods",
+  "unit": "#25-17",
+  "plan_image": "Forest Woods-floor-plan_15.jpg",
+  "reason": "floor 25 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forest Woods",
+  "unit": "#26-03",
+  "plan_image": "Forest Woods-floor-plan_5.jpg",
+  "reason": "floor 26 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forest Woods",
+  "unit": "#27-03",
+  "plan_image": "Forest Woods-floor-plan_5.jpg",
+  "reason": "floor 27 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forest Woods",
+  "unit": "#28-03",
+  "plan_image": "Forest Woods-floor-plan_5.jpg",
+  "reason": "floor 28 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forest Woods",
+  "unit": "#29-03",
+  "plan_image": "Forest Woods-floor-plan_5.jpg",
+  "reason": "floor 29 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forest Woods",
+  "unit": "#30-03",
+  "plan_image": "Forest Woods-floor-plan_5.jpg",
+  "reason": "floor 30 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forest Woods",
+  "unit": "#31-03",
+  "plan_image": "Forest Woods-floor-plan_5.jpg",
+  "reason": "floor 31 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Forest Woods",
+  "unit": "#32-03",
+  "plan_image": "Forest Woods-floor-plan_5.jpg",
+  "reason": "floor 32 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "E Maison",
+  "unit": "#11-26",
+  "plan_image": "E Maison-floor-plan_6.jpg",
+  "reason": "floor 11 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "E Maison",
+  "unit": "#12-26",
+  "plan_image": "E Maison-floor-plan_6.jpg",
+  "reason": "floor 12 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "E Maison",
+  "unit": "#13-26",
+  "plan_image": "E Maison-floor-plan_6.jpg",
+  "reason": "floor 13 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "E Maison",
+  "unit": "#14-26",
+  "plan_image": "E Maison-floor-plan_6.jpg",
+  "reason": "floor 14 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "E Maison",
+  "unit": "#15-26",
+  "plan_image": "E Maison-floor-plan_6.jpg",
+  "reason": "floor 15 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "E Maison",
+  "unit": "#16-26",
+  "plan_image": "E Maison-floor-plan_6.jpg",
+  "reason": "floor 16 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "E Maison",
+  "unit": "#17-26",
+  "plan_image": "E Maison-floor-plan_6.jpg",
+  "reason": "floor 17 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "E Maison",
+  "unit": "#18-26",
+  "plan_image": "E Maison-floor-plan_6.jpg",
+  "reason": "floor 18 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "E Maison",
+  "unit": "#19-26",
+  "plan_image": "E Maison-floor-plan_6.jpg",
+  "reason": "floor 19 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "E Maison",
+  "unit": "#20-26",
+  "plan_image": "E Maison-floor-plan_6.jpg",
+  "reason": "floor 20 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "E Maison",
+  "unit": "#21-26",
+  "plan_image": "E Maison-floor-plan_6.jpg",
+  "reason": "floor 21 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "E Maison",
+  "unit": "#22-26",
+  "plan_image": "E Maison-floor-plan_6.jpg",
+  "reason": "floor 22 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "E Maison",
+  "unit": "#23-26",
+  "plan_image": "E Maison-floor-plan_6.jpg",
+  "reason": "floor 23 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "E Maison",
+  "unit": "#24-26",
+  "plan_image": "E Maison-floor-plan_6.jpg",
+  "reason": "floor 24 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "E Maison",
+  "unit": "#25-26",
+  "plan_image": "E Maison-floor-plan_6.jpg",
+  "reason": "floor 25 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "THE WATERSIDE",
+  "unit": "#31-10",
+  "plan_image": "The Waterside-floor-plan_3.jpg",
+  "reason": "floor 31 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE WATERSIDE",
+  "unit": "#32-10",
+  "plan_image": "The Waterside-floor-plan_3.jpg",
+  "reason": "floor 32 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE WATERSIDE",
+  "unit": "#33-10",
+  "plan_image": "The Waterside-floor-plan_3.jpg",
+  "reason": "floor 33 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE WATERSIDE",
+  "unit": "#34-10",
+  "plan_image": "The Waterside-floor-plan_3.jpg",
+  "reason": "floor 34 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE WATERSIDE",
+  "unit": "#35-10",
+  "plan_image": "The Waterside-floor-plan_3.jpg",
+  "reason": "floor 35 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE WATERSIDE",
+  "unit": "#36-10",
+  "plan_image": "The Waterside-floor-plan_3.jpg",
+  "reason": "floor 36 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE WATERSIDE",
+  "unit": "#37-10",
+  "plan_image": "The Waterside-floor-plan_3.jpg",
+  "reason": "floor 37 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE WATERSIDE",
+  "unit": "#38-10",
+  "plan_image": "The Waterside-floor-plan_3.jpg",
+  "reason": "floor 38 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE WATERSIDE",
+  "unit": "#39-10",
+  "plan_image": "The Waterside-floor-plan_3.jpg",
+  "reason": "floor 39 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE WATERSIDE",
+  "unit": "#40-10",
+  "plan_image": "The Waterside-floor-plan_3.jpg",
+  "reason": "floor 40 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE WATERSIDE",
+  "unit": "#41-10",
+  "plan_image": "The Waterside-floor-plan_3.jpg",
+  "reason": "floor 41 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE WATERSIDE",
+  "unit": "#42-10",
+  "plan_image": "The Waterside-floor-plan_3.jpg",
+  "reason": "floor 42 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE WATERSIDE",
+  "unit": "#43-10",
+  "plan_image": "The Waterside-floor-plan_3.jpg",
+  "reason": "floor 43 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE WATERSIDE",
+  "unit": "#44-10",
+  "plan_image": "The Waterside-floor-plan_3.jpg",
+  "reason": "floor 44 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE WATERSIDE",
+  "unit": "#82-20",
+  "plan_image": "The Waterside-floor-plan.jpg",
+  "reason": "floor 82 is not a real floor"
+ },
+ {
+  "project": "COUNTRY PARK CONDOMINIUM",
+  "unit": "#11-01",
+  "plan_image": "Country Park Condominium-floor-plan_15.jpg",
+  "reason": "floor 11 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "COUNTRY PARK CONDOMINIUM",
+  "unit": "#11-20",
+  "plan_image": "Country Park Condominium-floor-plan_14.jpg",
+  "reason": "floor 11 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "COUNTRY PARK CONDOMINIUM",
+  "unit": "#12-01",
+  "plan_image": "Country Park Condominium-floor-plan_15.jpg",
+  "reason": "floor 12 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "COUNTRY PARK CONDOMINIUM",
+  "unit": "#12-20",
+  "plan_image": "Country Park Condominium-floor-plan_14.jpg",
+  "reason": "floor 12 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "COUNTRY PARK CONDOMINIUM",
+  "unit": "#13-01",
+  "plan_image": "Country Park Condominium-floor-plan_15.jpg",
+  "reason": "floor 13 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "COUNTRY PARK CONDOMINIUM",
+  "unit": "#13-20",
+  "plan_image": "Country Park Condominium-floor-plan_14.jpg",
+  "reason": "floor 13 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "COUNTRY PARK CONDOMINIUM",
+  "unit": "#14-01",
+  "plan_image": "Country Park Condominium-floor-plan_15.jpg",
+  "reason": "floor 14 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "COUNTRY PARK CONDOMINIUM",
+  "unit": "#14-20",
+  "plan_image": "Country Park Condominium-floor-plan_14.jpg",
+  "reason": "floor 14 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "COUNTRY PARK CONDOMINIUM",
+  "unit": "#15-01",
+  "plan_image": "Country Park Condominium-floor-plan_15.jpg",
+  "reason": "floor 15 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "COUNTRY PARK CONDOMINIUM",
+  "unit": "#15-20",
+  "plan_image": "Country Park Condominium-floor-plan_14.jpg",
+  "reason": "floor 15 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "COUNTRY PARK CONDOMINIUM",
+  "unit": "#16-20",
+  "plan_image": "Country Park Condominium-floor-plan_14.jpg",
+  "reason": "floor 16 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "COUNTRY PARK CONDOMINIUM",
+  "unit": "#17-20",
+  "plan_image": "Country Park Condominium-floor-plan_14.jpg",
+  "reason": "floor 17 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "COUNTRY PARK CONDOMINIUM",
+  "unit": "#18-20",
+  "plan_image": "Country Park Condominium-floor-plan_14.jpg",
+  "reason": "floor 18 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "COUNTRY PARK CONDOMINIUM",
+  "unit": "#19-20",
+  "plan_image": "Country Park Condominium-floor-plan_14.jpg",
+  "reason": "floor 19 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "BELYSA",
+  "unit": "#26-01",
+  "plan_image": "Belysa-floor-plan_4.jpg",
+  "reason": "floor 26 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "BELYSA",
+  "unit": "#27-01",
+  "plan_image": "Belysa-floor-plan_4.jpg",
+  "reason": "floor 27 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "BELYSA",
+  "unit": "#28-01",
+  "plan_image": "Belysa-floor-plan_4.jpg",
+  "reason": "floor 28 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "BELYSA",
+  "unit": "#29-01",
+  "plan_image": "Belysa-floor-plan_4.jpg",
+  "reason": "floor 29 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "BELYSA",
+  "unit": "#30-01",
+  "plan_image": "Belysa-floor-plan_4.jpg",
+  "reason": "floor 30 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "BELYSA",
+  "unit": "#31-01",
+  "plan_image": "Belysa-floor-plan_4.jpg",
+  "reason": "floor 31 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "BELYSA",
+  "unit": "#32-01",
+  "plan_image": "Belysa-floor-plan_4.jpg",
+  "reason": "floor 32 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "BELYSA",
+  "unit": "#33-01",
+  "plan_image": "Belysa-floor-plan_4.jpg",
+  "reason": "floor 33 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "BELYSA",
+  "unit": "#34-01",
+  "plan_image": "Belysa-floor-plan_4.jpg",
+  "reason": "floor 34 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "BELYSA",
+  "unit": "#35-01",
+  "plan_image": "Belysa-floor-plan_4.jpg",
+  "reason": "floor 35 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "BELYSA",
+  "unit": "#36-01",
+  "plan_image": "Belysa-floor-plan_4.jpg",
+  "reason": "floor 36 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "High Park Residences",
+  "unit": "#31-41",
+  "plan_image": "High Park Residences-floor-plan_72.jpg",
+  "reason": "floor 31 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "High Park Residences",
+  "unit": "#32-41",
+  "plan_image": "High Park Residences-floor-plan_72.jpg",
+  "reason": "floor 32 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "High Park Residences",
+  "unit": "#33-41",
+  "plan_image": "High Park Residences-floor-plan_72.jpg",
+  "reason": "floor 33 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "High Park Residences",
+  "unit": "#34-41",
+  "plan_image": "High Park Residences-floor-plan_72.jpg",
+  "reason": "floor 34 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "High Park Residences",
+  "unit": "#35-41",
+  "plan_image": "High Park Residences-floor-plan_72.jpg",
+  "reason": "floor 35 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "High Park Residences",
+  "unit": "#36-41",
+  "plan_image": "High Park Residences-floor-plan_72.jpg",
+  "reason": "floor 36 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "High Park Residences",
+  "unit": "#37-41",
+  "plan_image": "High Park Residences-floor-plan_72.jpg",
+  "reason": "floor 37 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "High Park Residences",
+  "unit": "#38-41",
+  "plan_image": "High Park Residences-floor-plan_72.jpg",
+  "reason": "floor 38 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "High Park Residences",
+  "unit": "#39-41",
+  "plan_image": "High Park Residences-floor-plan_72.jpg",
+  "reason": "floor 39 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "High Park Residences",
+  "unit": "#40-41",
+  "plan_image": "High Park Residences-floor-plan_72.jpg",
+  "reason": "floor 40 is above anything URA has recorded here (top caveat band 25)"
+ },
+ {
+  "project": "THE TRUMPS",
+  "unit": "#00-07",
+  "plan_image": "The Trumps-floor-plan_25.jpg",
+  "reason": "floor 0 is not a real floor"
+ },
+ {
+  "project": "THE TRUMPS",
+  "unit": "#00-13",
+  "plan_image": "The Trumps-floor-plan_3.jpg",
+  "reason": "floor 0 is not a real floor"
+ },
+ {
+  "project": "THE TRUMPS",
+  "unit": "#26-05",
+  "plan_image": "The Trumps-floor-plan_20.jpg",
+  "reason": "floor 26 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "THE TRUMPS",
+  "unit": "#26-13",
+  "plan_image": "The Trumps-floor-plan.jpg",
+  "reason": "floor 26 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "THE TRUMPS",
+  "unit": "#27-13",
+  "plan_image": "The Trumps-floor-plan.jpg",
+  "reason": "floor 27 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "THE TRUMPS",
+  "unit": "#28-13",
+  "plan_image": "The Trumps-floor-plan.jpg",
+  "reason": "floor 28 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "THE TRUMPS",
+  "unit": "#29-13",
+  "plan_image": "The Trumps-floor-plan.jpg",
+  "reason": "floor 29 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "THE TRUMPS",
+  "unit": "#30-13",
+  "plan_image": "The Trumps-floor-plan.jpg",
+  "reason": "floor 30 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "THE TRUMPS",
+  "unit": "#31-13",
+  "plan_image": "The Trumps-floor-plan.jpg",
+  "reason": "floor 31 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "THE TRUMPS",
+  "unit": "#32-13",
+  "plan_image": "The Trumps-floor-plan.jpg",
+  "reason": "floor 32 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "Kandis Residence",
+  "unit": "#16-15",
+  "plan_image": "Kandis Residence-floor-plan_7.jpg",
+  "reason": "floor 16 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "Kandis Residence",
+  "unit": "#16-21",
+  "plan_image": "Kandis Residence-floor-plan_11.jpg",
+  "reason": "floor 16 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "Kandis Residence",
+  "unit": "#17-21",
+  "plan_image": "Kandis Residence-floor-plan_11.jpg",
+  "reason": "floor 17 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "Kandis Residence",
+  "unit": "#18-21",
+  "plan_image": "Kandis Residence-floor-plan_11.jpg",
+  "reason": "floor 18 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "Kandis Residence",
+  "unit": "#19-21",
+  "plan_image": "Kandis Residence-floor-plan_11.jpg",
+  "reason": "floor 19 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "Kandis Residence",
+  "unit": "#20-21",
+  "plan_image": "Kandis Residence-floor-plan_11.jpg",
+  "reason": "floor 20 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "Kandis Residence",
+  "unit": "#21-21",
+  "plan_image": "Kandis Residence-floor-plan_11.jpg",
+  "reason": "floor 21 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "Kandis Residence",
+  "unit": "#22-21",
+  "plan_image": "Kandis Residence-floor-plan_11.jpg",
+  "reason": "floor 22 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "Terrasse",
+  "unit": "#11-12",
+  "plan_image": "Terrasse-floor-plan_17.jpg",
+  "reason": "floor 11 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "Terrasse",
+  "unit": "#11-19",
+  "plan_image": "Terrasse-floor-plan_12.jpg",
+  "reason": "floor 11 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "Terrasse",
+  "unit": "#12-12",
+  "plan_image": "Terrasse-floor-plan_17.jpg",
+  "reason": "floor 12 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "Terrasse",
+  "unit": "#12-19",
+  "plan_image": "Terrasse-floor-plan_12.jpg",
+  "reason": "floor 12 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "Terrasse",
+  "unit": "#13-12",
+  "plan_image": "Terrasse-floor-plan_17.jpg",
+  "reason": "floor 13 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "Terrasse",
+  "unit": "#13-19",
+  "plan_image": "Terrasse-floor-plan_12.jpg",
+  "reason": "floor 13 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "Terrasse",
+  "unit": "#14-12",
+  "plan_image": "Terrasse-floor-plan_17.jpg",
+  "reason": "floor 14 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "Terrasse",
+  "unit": "#14-19",
+  "plan_image": "Terrasse-floor-plan_12.jpg",
+  "reason": "floor 14 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "Ecopolitan",
+  "unit": "#26-27",
+  "plan_image": "Ecopolitan-floor-plan_42.jpg",
+  "reason": "floor 26 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "Ecopolitan",
+  "unit": "#26-31",
+  "plan_image": "Ecopolitan-floor-plan_37.jpg",
+  "reason": "floor 26 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "Ecopolitan",
+  "unit": "#27-31",
+  "plan_image": "Ecopolitan-floor-plan_37.jpg",
+  "reason": "floor 27 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "Ecopolitan",
+  "unit": "#28-31",
+  "plan_image": "Ecopolitan-floor-plan_37.jpg",
+  "reason": "floor 28 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "Ecopolitan",
+  "unit": "#29-31",
+  "plan_image": "Ecopolitan-floor-plan_37.jpg",
+  "reason": "floor 29 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "Ecopolitan",
+  "unit": "#30-31",
+  "plan_image": "Ecopolitan-floor-plan_37.jpg",
+  "reason": "floor 30 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "NV RESIDENCES",
+  "unit": "#21-15",
+  "plan_image": "Nv Residences-floor-plan.jpg",
+  "reason": "floor 21 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "NV RESIDENCES",
+  "unit": "#22-15",
+  "plan_image": "Nv Residences-floor-plan.jpg",
+  "reason": "floor 22 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "NV RESIDENCES",
+  "unit": "#23-15",
+  "plan_image": "Nv Residences-floor-plan.jpg",
+  "reason": "floor 23 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "NV RESIDENCES",
+  "unit": "#24-15",
+  "plan_image": "Nv Residences-floor-plan.jpg",
+  "reason": "floor 24 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "NV RESIDENCES",
+  "unit": "#25-15",
+  "plan_image": "Nv Residences-floor-plan.jpg",
+  "reason": "floor 25 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "HAIG COURT",
+  "unit": "#55-15",
+  "plan_image": "Haig Court-floor-plan_3.jpg",
+  "reason": "floor 55 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "HAIG COURT",
+  "unit": "#56-15",
+  "plan_image": "Haig Court-floor-plan_4.jpg",
+  "reason": "floor 56 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "HAIG COURT",
+  "unit": "#60-17",
+  "plan_image": "Haig Court-floor-plan.jpg",
+  "reason": "floor 60 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "Jade Residences",
+  "unit": "#00-00",
+  "plan_image": "Jade Residences-floor-plan_11.jpg",
+  "reason": "floor 0 is not a real floor"
+ },
+ {
+  "project": "Jade Residences",
+  "unit": "#00-10",
+  "plan_image": "Jade Residences-floor-plan_9.jpg",
+  "reason": "floor 0 is not a real floor"
+ },
+ {
+  "project": "Jade Residences",
+  "unit": "#00-14",
+  "plan_image": "Jade Residences-floor-plan_4.jpg",
+  "reason": "floor 0 is not a real floor"
+ },
+ {
+  "project": "KENTISH GREEN",
+  "unit": "#00-15",
+  "plan_image": "Kentish Green-floor-plan_99.jpg",
+  "reason": "floor 0 is not a real floor"
+ },
+ {
+  "project": "KENTISH GREEN",
+  "unit": "#16-15",
+  "plan_image": "Kentish Green-floor-plan_20.jpg",
+  "reason": "floor 16 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "KENTISH GREEN",
+  "unit": "#52-189",
+  "plan_image": "Kentish Green-floor-plan_86.jpg",
+  "reason": "floor 52 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "Park Place Residences at PLQ",
+  "unit": "#26-20",
+  "plan_image": "Park Place Residences At Plq-floor-plan_7.jpg",
+  "reason": "floor 26 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "Park Place Residences at PLQ",
+  "unit": "#27-20",
+  "plan_image": "Park Place Residences At Plq-floor-plan_7.jpg",
+  "reason": "floor 27 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "Park Place Residences at PLQ",
+  "unit": "#28-20",
+  "plan_image": "Park Place Residences At Plq-floor-plan_13.jpg",
+  "reason": "floor 28 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "Skysuites@Anson",
+  "unit": "#71-01",
+  "plan_image": "Skysuites@anson-floor-plan.jpg",
+  "reason": "floor 71 is not a real floor"
+ },
+ {
+  "project": "Skysuites@Anson",
+  "unit": "#71-03",
+  "plan_image": "Skysuites@anson-floor-plan_1.jpg",
+  "reason": "floor 71 is not a real floor"
+ },
+ {
+  "project": "Skysuites@Anson",
+  "unit": "#71-06",
+  "plan_image": "Skysuites@anson-floor-plan_2.jpg",
+  "reason": "floor 71 is not a real floor"
+ },
+ {
+  "project": "Alex Residences",
+  "unit": "#00-02",
+  "plan_image": "Alex Residences-floor-plan_8.jpg",
+  "reason": "floor 0 is not a real floor"
+ },
+ {
+  "project": "Alex Residences",
+  "unit": "#00-12",
+  "plan_image": "Alex Residences-floor-plan_9.jpg",
+  "reason": "floor 0 is not a real floor"
+ },
+ {
+  "project": "Space @ Kovan",
+  "unit": "#20-20",
+  "plan_image": "Space @ Kovan-floor-plan_3.jpg",
+  "reason": "floor 20 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "Space @ Kovan",
+  "unit": "#32-23",
+  "plan_image": "Space @ Kovan-floor-plan_7.jpg",
+  "reason": "floor 32 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "The Scala",
+  "unit": "#32-17",
+  "plan_image": "The Scala-floor-plan_11.jpg",
+  "reason": "floor 32 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "The Scala",
+  "unit": "#34-17",
+  "plan_image": "The Scala-floor-plan_6.jpg",
+  "reason": "floor 34 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "THE WATERINA",
+  "unit": "#47-44",
+  "plan_image": "The Waterina-floor-plan_3.jpg",
+  "reason": "floor 47 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "THE WATERINA",
+  "unit": "#58-54",
+  "plan_image": "The Waterina-floor-plan.jpg",
+  "reason": "floor 58 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "THOMSON V TWO",
+  "unit": "#41-36",
+  "plan_image": "Thomson V Two-floor-plan_4.jpg",
+  "reason": "floor 41 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "THOMSON V TWO",
+  "unit": "#41-40",
+  "plan_image": "Thomson V Two-floor-plan_22.jpg",
+  "reason": "floor 41 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "8 Saint Thomas",
+  "unit": "#00-02",
+  "plan_image": "8 Saint Thomas-floor-plan_17.jpg",
+  "reason": "floor 0 is not a real floor"
+ },
+ {
+  "project": "ADRIA",
+  "unit": "#76-24",
+  "plan_image": "Adria-floor-plan_8.jpg",
+  "reason": "floor 76 is not a real floor"
+ },
+ {
+  "project": "Bellewaters",
+  "unit": "#00-31",
+  "plan_image": "Bellewaters-floor-plan_11.jpg",
+  "reason": "floor 0 is not a real floor"
+ },
+ {
+  "project": "BLOSSOM RESIDENCES",
+  "unit": "#91-07",
+  "plan_image": "Blossom Residences-floor-plan_13.jpg",
+  "reason": "floor 91 is not a real floor"
+ },
+ {
+  "project": "CARISSA PARK CONDOMINIUM",
+  "unit": "#00-10",
+  "plan_image": "Carissa Park Condominium-floor-plan_7.jpg",
+  "reason": "floor 0 is not a real floor"
+ },
+ {
+  "project": "Casa Cambio",
+  "unit": "#75-10",
+  "plan_image": "Casa Cambio-floor-plan_2.jpg",
+  "reason": "floor 75 is not a real floor"
+ },
+ {
+  "project": "DAHLIA PARK CONDOMINIUM",
+  "unit": "#00-20",
+  "plan_image": "Dahlia Park Condominium-floor-plan_8.jpg",
+  "reason": "floor 0 is not a real floor"
+ },
+ {
+  "project": "Espada",
+  "unit": "#63-03",
+  "plan_image": "Espada-floor-plan_6.jpg",
+  "reason": "floor 63 is above anything URA has recorded here (top caveat band 35)"
+ },
+ {
+  "project": "ESTELLA GARDENS",
+  "unit": "#31-02",
+  "plan_image": "Estella Gardens-floor-plan_12.jpg",
+  "reason": "floor 31 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "FREESIA WOODS",
+  "unit": "#20-21",
+  "plan_image": "Freesia Woods-floor-plan_9.jpg",
+  "reason": "floor 20 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "Goodwood Residence",
+  "unit": "#76-00",
+  "plan_image": "Goodwood Residence-floor-plan_11.jpg",
+  "reason": "floor 76 is not a real floor"
+ },
+ {
+  "project": "Guillemard Suites",
+  "unit": "#39-38",
+  "plan_image": "Guillemard Suites-floor-plan.jpg",
+  "reason": "floor 39 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "HILLVIEW REGENCY",
+  "unit": "#00-11",
+  "plan_image": "Hillview Regency-floor-plan_37.jpg",
+  "reason": "floor 0 is not a real floor"
+ },
+ {
+  "project": "HOLLAND PEAK",
+  "unit": "#69-175",
+  "plan_image": "Holland Peak-floor-plan_6.jpg",
+  "reason": "floor 69 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "KENSINGTON PARK CONDOMINIUM",
+  "unit": "#00-09",
+  "plan_image": "Kensington Park Condominium-floor-plan.jpg",
+  "reason": "floor 0 is not a real floor"
+ },
+ {
+  "project": "MARINA BAY RESIDENCES",
+  "unit": "#63-01",
+  "plan_image": "Marina Bay Residences-floor-plan.jpg",
+  "reason": "floor 63 is above anything URA has recorded here (top caveat band 55)"
+ },
+ {
+  "project": "Mon Jervois",
+  "unit": "#00-14",
+  "plan_image": "Mon Jervois-floor-plan.jpg",
+  "reason": "floor 0 is not a real floor"
+ },
+ {
+  "project": "MONTROSA",
+  "unit": "#00-811",
+  "plan_image": "Montrosa-floor-plan_1.jpg",
+  "reason": "floor 0 is not a real floor"
+ },
+ {
+  "project": "MONTVIEW",
+  "unit": "#00-03",
+  "plan_image": "Montview-floor-plan_6.jpg",
+  "reason": "floor 0 is not a real floor"
+ },
+ {
+  "project": "Natura@Hillview",
+  "unit": "#19-04",
+  "plan_image": "Natura@hillview-floor-plan_22.jpg",
+  "reason": "floor 19 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "Newton Edge",
+  "unit": "#00-03",
+  "plan_image": "Newton Edge-floor-plan_7.jpg",
+  "reason": "floor 0 is not a real floor"
+ },
+ {
+  "project": "Palm Isles",
+  "unit": "#40-39",
+  "plan_image": "Palm Isles-floor-plan_6.jpg",
+  "reason": "floor 40 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "PARK GREEN",
+  "unit": "#00-06",
+  "plan_image": "Park Green-floor-plan_12.jpg",
+  "reason": "floor 0 is not a real floor"
+ },
+ {
+  "project": "PRIVE",
+  "unit": "#56-53",
+  "plan_image": "Prive-floor-plan.jpg",
+  "reason": "floor 56 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "ROSEWOOD SUITES",
+  "unit": "#40-37",
+  "plan_image": "Rosewood Suites-floor-plan_11.jpg",
+  "reason": "floor 40 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "SEASONS PARK",
+  "unit": "#41-07",
+  "plan_image": "Seasons Park-floor-plan_27.jpg",
+  "reason": "floor 41 is above anything URA has recorded here (top caveat band 20)"
+ },
+ {
+  "project": "Siglap V",
+  "unit": "#19-18",
+  "plan_image": "Siglap V-floor-plan_5.jpg",
+  "reason": "floor 19 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "Spottiswoode Residences",
+  "unit": "#85-89",
+  "plan_image": "Spottiswoode Residences-floor-plan_9.jpg",
+  "reason": "floor 85 is not a real floor"
+ },
+ {
+  "project": "THE COAST AT SENTOSA COVE",
+  "unit": "#23-24",
+  "plan_image": "The Coast At Sentosa Cove-floor-plan_12.jpg",
+  "reason": "floor 23 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "THE EDEN AT TAMPINES",
+  "unit": "#80-000",
+  "plan_image": "The Eden At Tampines-floor-plan_2.jpg",
+  "reason": "floor 80 is not a real floor"
+ },
+ {
+  "project": "The Foresta @ Mount Faber",
+  "unit": "#13-12",
+  "plan_image": "The Foresta @ Mount Faber-floor-plan_2.jpg",
+  "reason": "floor 13 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "THE PROMENADE@PELIKAT",
+  "unit": "#18-01",
+  "plan_image": "The Promenade@pelikat-floor-plan_13.jpg",
+  "reason": "floor 18 is above anything URA has recorded here (top caveat band 5)"
+ },
+ {
+  "project": "THE RESERVE RESIDENCES",
+  "unit": "#00-15",
+  "plan_image": "THE RESERVE RESIDENCES-Floor-Plan_36.jpg",
+  "reason": "floor 0 is not a real floor"
+ },
+ {
+  "project": "THE STERLING",
+  "unit": "#00-509",
+  "plan_image": "The Sterling-floor-plan_5.jpg",
+  "reason": "floor 0 is not a real floor"
+ },
+ {
+  "project": "Waterscape At Cavenagh",
+  "unit": "#18-16",
+  "plan_image": "Waterscape At Cavenagh-floor-plan_40.jpg",
+  "reason": "floor 18 is above anything URA has recorded here (top caveat band 10)"
+ },
+ {
+  "project": "YEWTEE RESIDENCES",
+  "unit": "#70-101",
+  "plan_image": "Yewtee Residences-floor-plan_27.jpg",
+  "reason": "floor 70 is above anything URA has recorded here (top caveat band 15)"
+ },
+ {
+  "project": "ZEDGE",
+  "unit": "#00-04",
+  "plan_image": "Zedge-floor-plan_8.jpg",
+  "reason": "floor 0 is not a real floor"
+ }
+]

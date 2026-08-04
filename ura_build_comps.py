@@ -58,8 +58,14 @@ def _get(url, headers, tries=3):
                 return _via_zyte(url, headers)
             r = requests.get(url, headers=headers, timeout=120)
             r.raise_for_status()
+            # URA mixes latin-1 bytes into an otherwise utf-8 stream (accented
+            # project names), which makes a strict decode raise mid-payload and
+            # lose the whole batch. Replace the bad bytes rather than fail.
             r.encoding = r.apparent_encoding or "utf-8"
-            return r.json()
+            try:
+                return r.json()
+            except (UnicodeDecodeError, ValueError):
+                return json.loads(r.content.decode("utf-8", "replace"))
         except Exception:
             if i == tries - 1:
                 raise
@@ -122,7 +128,15 @@ def main():
                     rem if rem is not None else -1,
                     PT.get(t.get("propertyType",""), t.get("propertyType","")[:2]),
                     int(t.get("typeOfSale","0") or 0),
-                    t.get("district","")
+                    t.get("district",""),
+                    # floorRange, e.g. "06-10". URA bands floors in fives and never
+                    # publishes the exact level, but the band is the difference
+                    # between a rough comp and a usable one — two 990 sqft caveats
+                    # at Tembusu Grand only compared honestly once the band showed
+                    # both were 06-10. APPENDED, never inserted: the dashboard reads
+                    # these rows positionally (t[0]..t[5]), so a new trailing field
+                    # is invisible to it and an inserted one would corrupt every read.
+                    t.get("floorRange") or "",
                 ])
                 total_txn += 1
     # drop empty
@@ -134,7 +148,7 @@ def main():
     out = {"as_of": datetime.now(timezone(timedelta(hours=8))).strftime("%Y-%m-%d"),
            "latest_month": f"20{latest[2:]}-{latest[:2]}" if latest else None,
            "source":"URA Data Service · PMI_Resi_Transaction (private caveats, ~3yr)",
-           "fields":"t=[sqft,price,contractMMYY,remLeaseYrs(0=FH,-1=na),propType,saleType(1new/2sub/3resale),district]",
+           "fields":"t=[sqft,price,contractMMYY,remLeaseYrs(0=FH,-1=na),propType,saleType(1new/2sub/3resale),district,floorRange]",
            "projects":[v for v in projects.values() if v["t"]]}
     with open("ura-comps.json","w") as f:
         json.dump(out, f, separators=(",",":"))
