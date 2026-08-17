@@ -4,15 +4,14 @@
     "as_of": "2026-08-17",
     "sources": [
       "MAS",
-      "MortgageWise",
       "loansaver"
     ],
-    "n_sources": 3,
+    "n_sources": 2,
     "range": [
-      1.1175,
-      1.1238
+      1.12,
+      1.1255
     ],
-    "source": "consensus of 3 sources",
+    "source": "consensus of 2 sources",
     "status": "verified"
   },
   "maintained": {
