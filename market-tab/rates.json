@@ -1,15 +1,15 @@
 {
   "sora_3m": {
-    "value": 1.12,
-    "as_of": "2026-08-17",
+    "value": 1.13,
+    "as_of": "2026-08-18",
     "sources": [
       "MAS",
       "loansaver"
     ],
     "n_sources": 2,
     "range": [
-      1.12,
-      1.1255
+      1.1255,
+      1.13
     ],
     "source": "consensus of 2 sources",
     "status": "verified"
