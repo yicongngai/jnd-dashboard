@@ -1,6 +1,6 @@
 {
   "sora_3m": {
-    "value": 1.14,
+    "value": 1.15,
     "as_of": "2026-08-24",
     "sources": [
       "MAS",
@@ -8,8 +8,8 @@
     ],
     "n_sources": 2,
     "range": [
-      1.14,
-      1.1471
+      1.1471,
+      1.15
     ],
     "source": "consensus of 2 sources",
     "status": "verified"
