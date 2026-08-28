@@ -20,6 +20,13 @@ parts = [
 # backfill produces the file; page JS degrades gracefully without the block.
 if os.path.exists("hdb-txns.json"):
     parts.append(("jnd-hdb-txns", load("hdb-txns.json")))
+# Market Pulse fundamentals: population, GDP, the URA price index (SingStat, refreshed
+# daily but only changing quarterly) and the PR/citizenship grants (ICA, annual, hand
+# entered). Optional so a SingStat outage degrades the charts rather than the build.
+for _f, _id in (("market-pulse-series.json", "jnd-fundamentals"),
+                ("grants.json", "jnd-grants")):
+    if os.path.exists(_f):
+        parts.append((_id, load(_f)))
 block = "<!--JND-DATA-->\n" + "".join(
     f'<script type="application/json" id="{i}">{c}</script>\n' for i, c in parts
 ) + "<!--/JND-DATA-->"
