@@ -78,3 +78,10 @@ hdb-block-coords.json
 onemap-blocks.json
 market-tab/launches.json
 market-tab/era_classified.json
+
+# Per-project report data. Contains scraped PropertyGuru ASKING prices, which are
+# fine to use internally and are not ours to republish. This repo is PUBLIC and the
+# deploy only copies index.html, decoupling.html and playbook.pdf, so this folder must
+# never be committed or staged.
+report-data/
+report-prototype.html

@@ -41,7 +41,23 @@ TABLES = {
                                "Permanent Resident Population", "Non-Resident Population"]),
     "gdp":        ("M014871", ["GDP At Current Market Prices"]),
     "ppi":        ("M212261", ["Residential Properties", "Landed", "Non-Landed"]),
+    # Household income. M810361 carries the DOS headline medians INCLUDING employer CPF
+    # — the basis the newspapers quote — and 17906 the per-decile averages EXCLUDING
+    # employer CPF, which is the basis a bank actually assesses TDSR on. Both are kept
+    # because they answer different questions and mixing them overstates borrowing power
+    # by about 14%.
+    "income":     ("M810361", ["Median Monthly Household Employment Income Including "
+                               "Employer CPF Contributions",
+                               "Median Monthly Household Employment Income Per Household "
+                               "Member (Including Employer CPF Contributions)"]),
+    "deciles":    ("17906", ["Total", "1st (Lowest)", "2nd", "3rd", "4th", "5th",
+                             "6th", "7th", "8th", "9th", "10th (Highest)"]),
 }
+
+# 17896 nests its columns two deep — year -> household type -> Average/Median — so the
+# flat rowText extractor cannot read it. It is the only source for the MEDIAN household
+# income excluding employer CPF, which is what the loan figures are built on.
+MEDIAN_EXCL = "17896"
 
 
 def fetch(table_id, tries=4):
@@ -99,6 +115,28 @@ def main():
         out["series"][name]["changed"] = (old != new)
         flag = "  NEW PERIOD" if old and old != new else ""
         print(f"  {name:<11}{tid}  {d.get('frequency'):<10}latest {new}{flag}")
+
+    # --- the nested table, fetched on its own terms ---------------------------
+    d = fetch(MEDIAN_EXCL)
+    med = {}
+    for r in d.get("row", []):
+        yr = r.get("rowText")
+        for c in r.get("columns", []):
+            if c.get("key") != "Resident Employed Households":
+                continue
+            for sub in c.get("columns", []):
+                if str(sub.get("key", "")).startswith("Median"):
+                    med[yr] = sub.get("value")
+    yrs = sorted(med)
+    out["series"]["median_excl_cpf"] = {
+        "table": MEDIAN_EXCL, "title": d.get("title"), "frequency": d.get("frequency"),
+        "latest_period": yrs[-1] if yrs else None,
+        "rows": {"Median Monthly Household Employment Income Excluding Employer CPF "
+                 "(Resident Employed Households)": med},
+    }
+    old = (prev.get("series", {}).get("median_excl_cpf") or {}).get("latest_period")
+    out["series"]["median_excl_cpf"]["changed"] = (old != (yrs[-1] if yrs else None))
+    print(f"  {'medianExcl':<11}{MEDIAN_EXCL}  {d.get('frequency'):<10}latest {yrs[-1] if yrs else '—'}")
 
     if a.check:
         print("  --check, nothing written")
