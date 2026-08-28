@@ -10,6 +10,20 @@ def load(p):
     assert "</script" not in s.lower(), f"{p} contains </script>!"
     return s
 
+# Refresh the Market Pulse fundamentals BEFORE inlining them. This lives here rather
+# than in refresh.yml for the same reason the decoupling staging does: the deploy token
+# has no `workflow` scope, so a push that edits the workflow file is rejected outright.
+# Failure is non-fatal — a SingStat outage keeps the last good file and the charts stay
+# on the previous quarter, which is honest, rather than failing the whole deploy.
+try:
+    import subprocess as _sp
+    _r = _sp.run(["python3", "singstat_fetch.py"], capture_output=True, text=True, timeout=300)
+    print(_r.stdout.strip() or "singstat_fetch: no output")
+    if _r.returncode != 0:
+        print("singstat_fetch FAILED — keeping last-good market-pulse-series.json")
+except Exception as _e:
+    print(f"singstat_fetch skipped: {_e}")
+
 parts = [
     ("jnd-hdb-blocks",  load("hdb-blocks.json")),
     ("jnd-ura-comps",   load("ura-comps.json")),

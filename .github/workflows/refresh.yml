@@ -44,7 +44,6 @@ jobs:
           ( cd market-tab && python3 era_scrape.py )   || echo "ERA failed — keeping last-good launches.json"
           python3 ura_build_comps.py                   || echo "URA build failed — keeping last-good ura-comps.json"
           python3 build_hdb_blocks.py                  || echo "HDB block build failed — keeping last-good hdb-blocks.json"
-          python3 singstat_fetch.py                    || echo "SingStat failed — keeping last-good market-pulse-series.json"
           python3 inject_data_all.py
           mkdir -p publish
           cp index-live-auto.html publish/index.html
