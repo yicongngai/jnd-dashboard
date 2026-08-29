@@ -192,7 +192,12 @@ def main():
     ap.add_argument("--max-geocode", type=int, default=1200)
     a = ap.parse_args()
 
-    today = datetime.date.today()
+    # SGT explicitly, not the machine's clock. GitHub Actions runs in UTC and the
+    # refresh fires at 23:00 UTC, which is 07:00 the NEXT day in Singapore — so
+    # date.today() there stamped the page "refreshed" with yesterday's date every
+    # single run, and would pick the wrong year for a few hours each New Year.
+    today = (datetime.datetime.now(datetime.timezone.utc)
+             + datetime.timedelta(hours=8)).date()
     year = today.year
     blocks = fetch_blocks()
     def sold_units(r):
