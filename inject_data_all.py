@@ -24,6 +24,21 @@ try:
 except Exception as _e:
     print(f"singstat_fetch skipped: {_e}")
 
+# MOP pipeline. Re-pulls data.gov.sg every run, so blocks completing and whole new
+# towns (Tengah arrived this way) appear without anyone touching this. It also geocodes
+# a slice of any blocks still missing coordinates, capped so one slow OneMap day cannot
+# stall the deploy — the rest are picked up tomorrow. Non-fatal for the same reason as
+# above: a stale map beats a failed build.
+try:
+    import subprocess as _sp2
+    _r2 = _sp2.run(["python3", "mop_build.py", "--max-geocode", "400"],
+                   capture_output=True, text=True, timeout=900)
+    print(_r2.stdout.strip() or "mop_build: no output")
+    if _r2.returncode != 0:
+        print("mop_build FAILED — keeping last-good mop-data.json")
+except Exception as _e:
+    print(f"mop_build skipped: {_e}")
+
 parts = [
     ("jnd-hdb-blocks",  load("hdb-blocks.json")),
     ("jnd-ura-comps",   load("ura-comps.json")),
@@ -38,7 +53,8 @@ if os.path.exists("hdb-txns.json"):
 # daily but only changing quarterly) and the PR/citizenship grants (ICA, annual, hand
 # entered). Optional so a SingStat outage degrades the charts rather than the build.
 for _f, _id in (("market-pulse-series.json", "jnd-fundamentals"),
-                ("grants.json", "jnd-grants")):
+                ("grants.json", "jnd-grants"),
+                ("mop-data.json", "jnd-mop")):
     if os.path.exists(_f):
         parts.append((_id, load(_f)))
 block = "<!--JND-DATA-->\n" + "".join(
