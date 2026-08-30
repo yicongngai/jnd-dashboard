@@ -39,6 +39,16 @@ try:
 except Exception as _e:
     print(f"mop_build skipped: {_e}")
 
+# Map layers depend on mop-data.json, so this runs after it.
+try:
+    import subprocess as _sp3
+    _r3 = _sp3.run(["python3", "map_build.py"], capture_output=True, text=True, timeout=600)
+    print(_r3.stdout.strip() or "map_build: no output")
+    if _r3.returncode != 0:
+        print("map_build FAILED — keeping last-good map-layers.json")
+except Exception as _e:
+    print(f"map_build skipped: {_e}")
+
 parts = [
     ("jnd-hdb-blocks",  load("hdb-blocks.json")),
     ("jnd-ura-comps",   load("ura-comps.json")),
@@ -54,7 +64,8 @@ if os.path.exists("hdb-txns.json"):
 # entered). Optional so a SingStat outage degrades the charts rather than the build.
 for _f, _id in (("market-pulse-series.json", "jnd-fundamentals"),
                 ("grants.json", "jnd-grants"),
-                ("mop-data.json", "jnd-mop")):
+                ("mop-data.json", "jnd-mop"),
+                ("map-layers.json", "jnd-map")):
     if os.path.exists(_f):
         parts.append((_id, load(_f)))
 block = "<!--JND-DATA-->\n" + "".join(
