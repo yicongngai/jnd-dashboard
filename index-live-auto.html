@@ -2512,6 +2512,9 @@ button[style*="border-radius:7px"],button[style*="border-radius:8px"]{border-rad
 .leaflet-control-zoom a{border-radius:0 !important;font-family:inherit !important;}
 .leaflet-control-zoom{border-radius:10px !important;overflow:hidden;}
 .leaflet-popup-content-wrapper{border-radius:14px !important;}
+.leaflet-popup-content,#gm-detail-body{font-family:'Outfit',system-ui,sans-serif;font-weight:400;font-size:12.5px;color:#1B1D22;line-height:1.45;}
+.leaflet-popup-content{margin:12px 14px !important;min-width:300px;}
+.leaflet-popup-content b{font-weight:600;}
 .leaflet-container *{font-family:"Outfit","Avenir Next","Helvetica Neue",Arial,sans-serif !important;}
 
 /* map row: the map column and the By-town card share one height */
@@ -4682,33 +4685,32 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
       /* The newest row is the one that matters in a negotiation, so it is the one the
          eye should land on first. */
       var newest = i === 0;
-      return "<tr style='background:" + (newest ? "#fff5f6" : (i % 2 ? "#F7F7F8" : "#fff")) + "'>" +
-        "<td style='padding:4px 6px;white-space:nowrap;" +
-          (newest ? "font-weight:700;color:#CF3F22" : "color:#1B1D22") + "'>" + mmyy(r[0]) + "</td>" +
-        "<td style='padding:4px 6px;text-align:right;font-variant-numeric:tabular-nums;" +
-          (newest ? "font-weight:700" : "") + "'>" + money(r[2]) + "</td>" +
-        "<td style='padding:4px 6px;text-align:right;font-variant-numeric:tabular-nums;" +
-          "font-weight:600;color:" + (r[3] >= med ? "#E8722C" : "#a8460f") + "'>" +
+      return "<tr style='background:" + (newest ? "#FDF6EC" : (i % 2 ? "#F7F7F8" : "#fff")) + "'>" +
+        "<td style='padding:5px 6px;white-space:nowrap;font-weight:" + (newest ? "600" : "500") + ";color:" + (newest ? "#CF3F22" : "#1B1D22") + "'>" + mmyy(r[0]) + "</td>" +
+        "<td style='padding:5px 6px;text-align:right;font-variant-numeric:tabular-nums;color:#1B1D22;" +
+          "font-weight:" + (newest ? "600" : "500") + "'>" + money(r[2]) + "</td>" +
+        "<td style='padding:5px 6px;text-align:right;font-variant-numeric:tabular-nums;" +
+          "font-weight:600;color:" + (r[3] >= med ? "#8E2118" : "#1B1D22") + "'>" +
           money(r[3]) + "</td>" +
-        "<td style='padding:4px 6px;text-align:right;color:#6E737D;white-space:nowrap'>" + size + "</td>" +
-        "<td style='padding:4px 6px;text-align:right;color:#9EA2AA;white-space:nowrap'>" + extra + "</td></tr>";
+        "<td style='padding:5px 6px;text-align:right;color:#41454E;white-space:nowrap'>" + size + "</td>" +
+        "<td style='padding:5px 6px;text-align:right;color:#6E737D;white-space:nowrap'>" + extra + "</td></tr>";
     }).join("");
     return head +
       "<div style='margin-top:8px;display:flex;justify-content:space-between;align-items:baseline;gap:10px'>" +
       "<span style='font-size:10px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;" +
       "color:#6E737D'>Last " + t.length + " transaction" + (t.length > 1 ? "s" : "") + "</span>" +
       (psfs.length > 1 ? "<span style='font-size:11px;color:#1B1D22'><b>" + money(med) +
-        "</b> psf median &middot; <span style='color:#6E737D'>" + money(lo) + " to " +
+        "</b> psf median &middot; <span style='color:#41454E'>" + money(lo) + " to " +
         money(hi) + "</span></span>" : "") + "</div>" +
       "<div style='overflow-x:auto;margin-top:4px'>" +
-      "<table style='font-size:11.5px;border-collapse:collapse;width:100%'>" +
+      "<table style='font-size:12.5px;border-collapse:collapse;width:100%;color:#1B1D22'>" +
       "<thead><tr>" +
       ["Date", "Price", "PSF", "Size", isHdb ? "Type" : "Floor"].map(function (hh, i) {
         return "<th style='padding:0 6px 3px;text-align:" + (i ? "right" : "left") +
-               ";font-size:9px;letter-spacing:.4px;text-transform:uppercase;color:#9EA2AA;" +
-               "font-weight:700;border-bottom:1px solid #e6eaf2'>" + hh + "</th>"; }).join("") +
+               ";font-size:10px;letter-spacing:.3px;text-transform:uppercase;color:#6E737D;" +
+               "font-weight:600;border-bottom:1px solid #E6E7E9'>" + hh + "</th>"; }).join("") +
       "</tr></thead><tbody>" + rowsHtml + "</tbody></table></div>" +
-      "<div style='margin-top:6px;font-size:10px;color:#9EA2AA'>" +
+      "<div style='margin-top:6px;font-size:10.5px;color:#6E737D'>" +
       (isHdb ? "HDB resale, last 12 months" : "URA caveats") +
       " &middot; green is at or above the median psf</div>";
   }
