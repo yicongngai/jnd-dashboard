@@ -2521,10 +2521,21 @@ button[style*="border-radius:7px"],button[style*="border-radius:8px"]{border-rad
 #tool-roe select,#tool-roe select option,#tool-vr select,#tool-np select{color:#41454E !important;}
 /* the town card ends where the map ends: it fills its column, and the column
    keeps the legend's height (20px) free at the bottom */
-#tool-mp .gm-side>div:last-child{padding-bottom:20px;box-sizing:border-box;}
+#tool-mp .gm-side>div:last-child{padding-bottom:0;box-sizing:border-box;}
 #tool-mp .gm-side>div:last-child>[id^="gm-panel-"]{flex:1 1 auto;min-height:0;overflow:auto;}
 
+
+/* Map box: only as tall as the island needs. The Singapore bounds the map is fitted to
+   (1.205-1.485N, 103.605-104.045E) are about 14:9, so the box takes that shape instead of
+   a viewport height, which left grey letterboxing above and below the tiles. */
+#tool-mp .gm-map{height:auto !important;min-height:0 !important;aspect-ratio:14/9;}
+@media(max-width:680px){#tool-mp .gm-map{aspect-ratio:4/3;}}
 </style>
+<script id="jnd-map-sync">/* Keep the By-town card exactly as tall as the map box (the legend under the map is not counted). */
+(function(){function sync(){var m=document.getElementById('gm-map');if(!m)return;var side=m.closest('.gm-side');if(!side)return;var last=side.lastElementChild,first=side.firstElementChild;if(!last||last===first)return;var a=first.getBoundingClientRect(),b=last.getBoundingClientRect();if(Math.abs(a.top-b.top)<2&&b.left>a.left+10){last.style.height=Math.round(m.getBoundingClientRect().height)+'px';}else{last.style.height='';}}
+function arm(){var m=document.getElementById('gm-map');if(!m)return;if(window.ResizeObserver){new ResizeObserver(sync).observe(m);}window.addEventListener('resize',sync);sync();}
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',arm);}else{arm();}})();
+</script>
 </head>
 <body>
 
