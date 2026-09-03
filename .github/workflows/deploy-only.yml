@@ -1,0 +1,33 @@
+name: Deploy only (no data refresh)
+# For cosmetic changes to index-live-auto.html: publishes the file exactly as
+# committed, with the data that was baked into it by the last full refresh.
+# Takes about a minute instead of the 15-35 minute full refresh. Trigger:
+#   POST /repos/yicongngai/jnd-dashboard/actions/workflows/deploy-only.yml/dispatches
+on:
+  workflow_dispatch: {}
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Stage the committed page
+        run: |
+          mkdir -p publish
+          cp index-live-auto.html publish/index.html
+          cp playbook.pdf publish/playbook.pdf
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: publish
+      - id: deploy
+        uses: actions/deploy-pages@v4
