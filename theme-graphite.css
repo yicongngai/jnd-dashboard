@@ -99,6 +99,9 @@ button[style*="border-radius:7px"],button[style*="border-radius:8px"]{border-rad
 /* map row: the map column and the By-town card share one height */
 #tool-mp .gm-side{align-items:stretch !important;}
 #tool-mp .gm-side>*{display:flex;flex-direction:column;min-height:0;}
-#tool-mp .gm-side>*>[class*=panel],#tool-mp .gm-side>*>.gm-panel{flex:1;}
 
 #tool-roe select,#tool-roe select option,#tool-vr select,#tool-np select{color:#41454E !important;}
+/* the town card ends where the map ends: it fills its column, and the column
+   keeps the legend's height (20px) free at the bottom */
+#tool-mp .gm-side>div:last-child{padding-bottom:20px;box-sizing:border-box;}
+#tool-mp .gm-side>div:last-child>[id^="gm-panel-"]{flex:1 1 auto;min-height:0;overflow:auto;}
