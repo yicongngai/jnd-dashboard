@@ -2512,6 +2512,12 @@ button[style*="border-radius:7px"],button[style*="border-radius:8px"]{border-rad
 .leaflet-control-zoom a{border-radius:0 !important;font-family:inherit !important;}
 .leaflet-control-zoom{border-radius:10px !important;overflow:hidden;}
 .leaflet-popup-content-wrapper{border-radius:14px !important;}
+/* Leaflet's own popup skin is not in this build, so the popup had NO background and the
+   transaction table sat straight on the map tiles (Justin: 'the table is too faint'). */
+.leaflet-container .leaflet-popup-content-wrapper{background:#FFFFFF !important;color:#1B1D22;box-shadow:0 10px 28px rgba(27,29,34,.22) !important;padding:2px;}
+.leaflet-container .leaflet-popup-tip{background:#FFFFFF !important;width:14px;height:14px;margin:-8px auto 0;transform:rotate(45deg);box-shadow:none !important;}
+.leaflet-container .leaflet-popup-tip-container{width:28px;height:14px;position:absolute;left:50%;margin-left:-14px;overflow:hidden;pointer-events:none;}
+.leaflet-container .leaflet-popup-close-button{color:#6E737D !important;font-size:18px;}
 .leaflet-popup-content,#gm-detail-body{font-family:'Outfit',system-ui,sans-serif;font-weight:400;font-size:12.5px;color:#1B1D22;line-height:1.45;}
 .leaflet-popup-content{margin:12px 14px !important;min-width:300px;}
 .leaflet-popup-content b{font-weight:600;}
