@@ -85,3 +85,13 @@ button[style*="border-radius:7px"],button[style*="border-radius:8px"]{border-rad
 #tool-np,#tool-vr,#tool-roe,#tool-dc,#tool-pb,#tool-calc{--jnd-red:#1B1D22;}
 [style*="background:#c8102e"],[style*="background: #c8102e"],[style*="background-color:#c8102e"]{background:#1B1D22 !important;}
 #tool-np [class*="head"],#tool-vr [class*="head"],#tool-np [class*="header"],#tool-vr [class*="header"]{background:#1B1D22 !important;color:#FFFFFF !important;border-radius:22px 22px 0 0 !important;}
+/* Leaflet map: the skin must never touch tiles, panes or layers. The generic
+   "[class*=tile]" rule above rounded and shadowed every map tile, which drew a
+   grid of seams over the map (his "map doesn't load well", 3 Sep). */
+.leaflet-container,.leaflet-container *{border-radius:0 !important;box-shadow:none !important;}
+.leaflet-tile,.leaflet-tile-container,.leaflet-layer,.leaflet-pane,.leaflet-pane *,.leaflet-tile img,.leaflet-marker-icon,.leaflet-overlay-pane svg{border:0 !important;background:transparent !important;box-shadow:none !important;border-radius:0 !important;}
+.leaflet-container{border-radius:22px !important;}
+.leaflet-control-zoom a{border-radius:0 !important;font-family:inherit !important;}
+.leaflet-control-zoom{border-radius:10px !important;overflow:hidden;}
+.leaflet-popup-content-wrapper{border-radius:14px !important;}
+.leaflet-container *{font-family:"Outfit","Avenir Next","Helvetica Neue",Arial,sans-serif !important;}
