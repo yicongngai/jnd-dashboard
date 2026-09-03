@@ -2414,7 +2414,66 @@ body.client-view #tool-advisory .scenario-card.not-viable { display: none; }
   .plink:hover{border-bottom-style:solid}
 </style>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap">
-<link rel="stylesheet" href="theme-graphite.css">
+<style id="jnd-graphite">
+/* JND Graphite skin for the Toolkit (jndtoolkit.com). The page hardcodes its
+   colours per tool, so this maps the chrome and the recurring classes. Colour,
+   type, radius and shadow only. See command-centre/theme-graphite.css. */
+body,#tool-advisory,#tool-market,#tool-calculators,[id^="tool-"]{font-family:"Outfit","Avenir Next","Helvetica Neue",Arial,sans-serif !important;background:#F7F7F8 !important;color:#1B1D22 !important;}
+.app-logo-strip{border-bottom:0 !important;}
+.app-bar{background:#FFFFFF !important;color:#1B1D22 !important;border-bottom:1px solid #E6E7E9 !important;}
+.app-brand h1{font-weight:400 !important;font-size:20px !important;letter-spacing:-0.01em;}
+.app-brand h1 span{color:#8E2118 !important;font-weight:500 !important;}
+.app-brand .ver{color:#9EA2AA !important;letter-spacing:0 !important;text-transform:none !important;}
+.app-tabs{background:#E6E7E9 !important;border-radius:999px !important;}
+.app-tabs button{color:#6E737D !important;border-radius:999px !important;font-weight:500 !important;}
+.app-tabs button.active{background:#8E2118 !important;color:#FFFFFF !important;}
+.app-tabs button .icon{display:none !important;}
+.tool-container{background:#F7F7F8 !important;}
+.ver-badge{background:#1B1D22 !important;font-family:inherit !important;border-radius:999px !important;}
+/* recurring surfaces inside the tools */
+[class*="card"],[class*="panel"],[class*="box"],[class*="tile"],[class*="kpi"],section,.sumbox{border-color:transparent !important;border-radius:22px !important;box-shadow:0 1px 2px rgba(27,29,34,.04),0 8px 24px rgba(27,29,34,.05);background:#FFFFFF;}
+header,.section-head,[class*="head"]{border-color:#E6E7E9 !important;}
+button,.btn,[class*="btn"],[class*="chip"],[class*="pill"],[class*="tag"]{border-radius:999px !important;font-family:inherit !important;font-weight:500 !important;}
+button[class*="primary"],.btn-primary,button.active,[class*="btn"].active,[class*="chip"].active,[class*="pill"].active{background:#8E2118 !important;border-color:#8E2118 !important;color:#FFFFFF !important;}
+input,select,textarea{border-radius:999px !important;border:1px solid #E6E7E9 !important;font-family:inherit !important;background:#FFFFFF !important;}
+h1,h2,h3{font-weight:400 !important;letter-spacing:-0.01em;}
+th{text-transform:none !important;letter-spacing:0 !important;font-weight:400 !important;color:#6E737D !important;}
+a{color:#1B1D22;}
+/* the old brand colours, wherever they were hardcoded as classes */
+[style*="#c8102e"],[style*="#0f2746"]{color:inherit;}
+/* inner tools: the navy bands, red rules, teal buttons and tracked caps they hardcode */
+#tool-advisory header,#tool-mp .mp-bar,.gm-bar,#tool-mp .eff,#tool-advisory .summary-card,#tool-mp .affcard.med{background:#FFFFFF !important;color:#1B1D22 !important;border:0 !important;border-radius:22px !important;box-shadow:0 1px 2px rgba(27,29,34,.04),0 8px 24px rgba(27,29,34,.05);}
+#tool-advisory header h1 span,#tool-mp .mp-bar span,#tool-mp .lcol .h .c b,#tool-mp .li.stale .nm small b{color:#8E2118 !important;}
+#tool-advisory .summary-card h2,#tool-advisory .summary-item .label,#tool-mp .affcard .who,#tool-mp .affcard .biglbl{color:#6E737D !important;opacity:1 !important;}
+#tool-advisory .view-toggle button.active,#tool-advisory .inline-toggle button.active,.gm-chip.on,.gm-chip.mop.on,#tool-roe header.page-head .actions button,#calc-wrap .copen,#adv-wrap .copen,#tool-mp .chip.CCR,#tool-mp .chip.OCR,#tool-mp .tag.stale,#tool-advisory .badge.recommended{background:#8E2118 !important;border-color:#8E2118 !important;color:#FFFFFF !important;border-radius:999px !important;}
+#calc-wrap .ccard:hover .copen,#adv-wrap .ccard:hover .copen{background:#CF3F22 !important;}
+#tool-mp .tag.auto,#calc-wrap .ctag.own,#adv-wrap .ctag.own{background:#E6E7E9 !important;color:#41454E !important;}
+#calc-wrap .ctag.ret,#adv-wrap .ctag.ret,#tool-np .np-tl-px-chip{background:#F0F1F3 !important;color:#8E2118 !important;border-radius:999px !important;}
+#tool-mp .sec>h2{border-left:0 !important;padding-left:0 !important;}
+#tool-mp .lcol .h{border-bottom:1px solid #E6E7E9 !important;}
+#tool-advisory .scenario-card.recommended{border-color:#8E2118 !important;background:#FFFFFF !important;}
+#tool-advisory .ip-section.red,#tool-advisory .ip-section.green{background:#F7F7F8 !important;border-left-color:#C7C9CE !important;}
+#tool-roe .col-tag.buc,#tool-roe .col-tag.resale{background:#E6E7E9 !important;color:#1B1D22 !important;border:0 !important;border-radius:999px !important;}
+/* every label that was tracked caps: sentence case, lighter */
+#tool-advisory aside.inputs h2,#tool-advisory .section-block h3,#tool-advisory .panel-header h2,#tool-advisory .badge,#tool-advisory .ip-section h4,#tool-advisory .talking-points h4,#tool-advisory .stress-controls label,#tool-np .np-purchase-title,#tool-np .section-divider,#tool-vr .vr-cost-cell .lbl,#tool-vr .vr-cost-cell-yellow .vr-cy-label,#tool-vr .vr-summary-block .lbl,#tool-nl .score-strip .score-label,#tool-nl .project-info h3,#tool-nl .card-title-block .pillar-tag,#tool-nl .data-sources strong,#tool-nl .calc-row .calc-label,#tool-nl .highlight-box .hl-label,.gm-kpi .l,.gm-grp .h,.gm-panel h4,.gm-item .lv,.gm-table th,#calc-wrap .ctag,#adv-wrap .ctag,#tool-mp .kpi .k,#tool-mp .sec>h2,#tool-mp .card .lbl,#tool-mp .afftable th,#tool-mp .lcol .h .t,#tool-advisory .summary-card h2{text-transform:none !important;letter-spacing:0 !important;font-weight:400 !important;color:#6E737D !important;}
+/* the navy that was used as "ink" */
+#tool-advisory .scenario-card h3,#tool-advisory .stress-controls .val,#tool-roe header.page-head .titles h1,#tool-roe .panel-header,#tool-roe .row .val,#tool-roe .row .input-wrap input,#tool-roe .yrs-chip input,.gm-kpi .v,.gm-item .nm,.gm-res,.gm-tagpill,#calc-wrap .chome-title,#adv-wrap .chome-title,#calc-wrap .ccard h3,#adv-wrap .ccard h3,#tool-mp .kpi .v,#tool-mp .afftable td,#tool-mp .gm-stat b,#tool-mp .li .nm,#tool-nl .project-info h3{color:#1B1D22 !important;}
+.gm-kpi .v,#tool-mp .kpi .v,#tool-mp .gm-stat b,#calc-wrap .chome-title,#adv-wrap .chome-title,#tool-roe header.page-head .titles h1{font-weight:300 !important;letter-spacing:-0.02em !important;}
+#tool-mp .up{color:#3E7C59 !important;} #tool-mp .down,#tool-roe .row .val.expense,#tool-advisory .metric-row .v.warn{color:#B42318 !important;}
+#tool-advisory .metric-row .v.good,#tool-advisory .pros-cons .pros{color:#3E7C59 !important;}
+#tool-advisory .field-row input:focus,#tool-advisory .field-row select:focus{border-color:#9EA2AA !important;box-shadow:none !important;}
+.gm-chip,.gm-tagpill,#tool-roe .row .input-wrap,#calc-wrap .cback,#adv-wrap .cback{border-radius:999px !important;border-color:#E6E7E9 !important;}
+.gm-chip:focus-visible,#calc-wrap .ccard:focus-visible,#adv-wrap .ccard:focus-visible{outline-color:#8E2118 !important;}
+
+/* teal, mapped: active/primary to ember, the rest to ink */
+/* teal lives in inline style attributes; !important from a stylesheet still wins */
+[style*="background:#0f766e"],[style*="background: #0f766e"]{background:#8E2118 !important;border-color:#8E2118 !important;color:#FFFFFF !important;}
+[style*="border:1px solid #0f766e"]{border-color:#C7C9CE !important;color:#1B1D22 !important;background:#FFFFFF !important;}
+[style*="color:#0f766e"]:not([style*="background"]){color:#1B1D22 !important;}
+button[style*="border-radius:7px"],button[style*="border-radius:8px"]{border-radius:999px !important;font-weight:500 !important;}
+[style*="text-transform:uppercase"]{text-transform:none !important;letter-spacing:0 !important;}
+
+</style>
 </head>
 <body>
 
