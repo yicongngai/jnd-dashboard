@@ -2519,6 +2519,8 @@ button[style*="border-radius:7px"],button[style*="border-radius:8px"]{border-rad
 #tool-mp .gm-side>*{display:flex;flex-direction:column;min-height:0;}
 #tool-mp .gm-side>*>[class*=panel],#tool-mp .gm-side>*>.gm-panel{flex:1;}
 
+#tool-roe select,#tool-roe select option,#tool-vr select,#tool-np select{color:#41454E !important;}
+
 </style>
 </head>
 <body>
@@ -4576,7 +4578,7 @@ button[style*="border-radius:7px"],button[style*="border-radius:8px"]{border-rad
     return 2 * R * Math.asin(Math.sqrt(h));
   }
 
-  var COLOR = { mop: "#CF3F22", hdb: "#2E5C3B", condo: "#CF3F22", landed: "#F2A63A" };
+  var COLOR = { mop: "#8E2118", hdb: "#2E5C3B", condo: "#CF3F22", landed: "#F2A63A" };
   var POPUP_OPTS = { maxWidth: 400, autoClose: true, closeOnClick: false, autoPan: true };
 
   /* A dot that does not react gives you no idea whether you are on it. Hovering swells
@@ -4595,12 +4597,12 @@ button[style*="border-radius:7px"],button[style*="border-radius:8px"]{border-rad
     mop: '<span><i style="background:#CF3F22"></i>Block reaching MOP, sized by flats</span>',
     school: '<span><b style="color:#1B1D22">Solid</b> = in every ring, ' +
             '<b style="color:#1B1D22">faint</b> = in one only</span>' +
-            '<span><i style="background:#41454E"></i>HDB</span>' +
-            '<span><i style="background:#E8722C"></i>Condo</span>' +
-            '<span><i style="background:#E8722C"></i>Landed</span>' +
-            '<span><i style="background:#CF3F22"></i>Reaching MOP</span>' +
-            '<span><i style="background:#E8722C"></i>Selected school</span>' +
-            '<span><i style="background:#E8722C"></i>Selected station</span>'
+            '<span><i style="background:#2E5C3B"></i>HDB</span>' +
+            '<span><i style="background:#CF3F22"></i>Condo</span>' +
+            '<span><i style="background:#F2A63A"></i>Landed</span>' +
+            '<span><i style="background:#8E2118"></i>Reaching MOP</span>' +
+            '<span><i style="background:#1B1D22"></i>Selected school</span>' +
+            '<span><i style="background:#6E737D"></i>Selected station</span>'
   };
   var NOTE = {
     mop: "<b>How the date is worked out.</b> A flat reaches its Minimum Occupation Period " +

@@ -100,3 +100,5 @@ button[style*="border-radius:7px"],button[style*="border-radius:8px"]{border-rad
 #tool-mp .gm-side{align-items:stretch !important;}
 #tool-mp .gm-side>*{display:flex;flex-direction:column;min-height:0;}
 #tool-mp .gm-side>*>[class*=panel],#tool-mp .gm-side>*>.gm-panel{flex:1;}
+
+#tool-roe select,#tool-roe select option,#tool-vr select,#tool-np select{color:#41454E !important;}
