@@ -2519,8 +2519,7 @@ button[style*="border-radius:7px"],button[style*="border-radius:8px"]{border-rad
 #tool-mp .gm-side>*{display:flex;flex-direction:column;min-height:0;}
 
 #tool-roe select,#tool-roe select option,#tool-vr select,#tool-np select{color:#41454E !important;}
-/* the town card ends where the map ends: it fills its column, and the column
-   keeps the legend's height (20px) free at the bottom */
+/* the town card ends where the map ends (height synced by the jnd-map-sync script) */
 #tool-mp .gm-side>div:last-child{padding-bottom:0;box-sizing:border-box;}
 #tool-mp .gm-side>div:last-child>[id^="gm-panel-"]{flex:1 1 auto;min-height:0;overflow:auto;}
 
@@ -4592,7 +4591,7 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
     return 2 * R * Math.asin(Math.sqrt(h));
   }
 
-  var COLOR = { mop: "#8E2118", hdb: "#2E5C3B", condo: "#CF3F22", landed: "#F2A63A" };
+  var COLOR = { mop: "#8E2118", hdb: "#2E5C3B", condo: "#1B1D22", landed: "#F6D046" };
   var POPUP_OPTS = { maxWidth: 400, autoClose: true, closeOnClick: false, autoPan: true };
 
   /* A dot that does not react gives you no idea whether you are on it. Hovering swells
@@ -4612,10 +4611,10 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
     school: '<span><b style="color:#1B1D22">Solid</b> = in every ring, ' +
             '<b style="color:#1B1D22">faint</b> = in one only</span>' +
             '<span><i style="background:#2E5C3B"></i>HDB</span>' +
-            '<span><i style="background:#CF3F22"></i>Condo</span>' +
-            '<span><i style="background:#F2A63A"></i>Landed</span>' +
+            '<span><i style="background:#1B1D22"></i>Condo</span>' +
+            '<span><i style="background:#F6D046"></i>Landed</span>' +
             '<span><i style="background:#8E2118"></i>Reaching MOP</span>' +
-            '<span><i style="background:#1B1D22"></i>Selected school</span>' +
+            '<span><i style="background:#E8722C"></i>Selected school</span>' +
             '<span><i style="background:#6E737D"></i>Selected station</span>'
   };
   var NOTE = {
@@ -4847,10 +4846,10 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
              thicker stroke so they are easier to hit without looking heavier. */
           radius: all ? (kind === "mop" ? 8 : 7) : 6,
           color: COLOR[kind], weight: all ? 1.8 : 1.4,
-          opacity: all ? 1 : 0.55,
+          opacity: all ? 1 : 0.75,
           /* a project we could not place by name is drawn hollow, so an approximate
              position never masquerades as a precise one */
-          fillOpacity: (x.exact === false) ? 0 : (all ? 0.62 : 0.16)
+          fillOpacity: (x.exact === false) ? 0 : (all ? 0.88 : 0.45)
         }).bindPopup(popupFor(x), POPUP_OPTS)
           .on("click", function () { showDetail(x); })
           .on("mouseover", function () { grow(this, true); })
