@@ -2472,6 +2472,36 @@ a{color:#1B1D22;}
 [style*="color:#0f766e"]:not([style*="background"]){color:#1B1D22 !important;}
 button[style*="border-radius:7px"],button[style*="border-radius:8px"]{border-radius:999px !important;font-weight:500 !important;}
 [style*="text-transform:uppercase"]{text-transform:none !important;letter-spacing:0 !important;}
+/* ── inner tools: remap each tool's own token set, then the inline colours ── */
+#tool-np,#tool-vr,#tool-roe,#tool-dc,#tool-pb,#tool-calc,#tool-advisory,#tool-mp{
+  --jnd-navy:#1B1D22;--jnd-navy-soft:#41454E;--jnd-red:#8E2118;--jnd-gold:#8E2118;--jnd-gold-light:#E6E7E9;
+  --jnd-text:#1B1D22;--jnd-muted:#6E737D;--jnd-border:#E6E7E9;--jnd-bg:#F7F7F8;--jnd-card:#FFFFFF;
+  --jnd-yellow:#F0F1F3;--jnd-yellow-border:#C7C9CE;--jnd-yellow-band:#F0F1F3;--jnd-pink:#F0F1F3;--jnd-pink-soft:#F7F7F8;--jnd-good:#3E7C59;}
+#tool-nl{--navy:#1B1D22;--navy-soft:#41454E;--gold:#8E2118;--gold-light:#E6E7E9;--bg:#F7F7F8;--card:#FFFFFF;--text:#1B1D22;--muted:#6E737D;--border:#E6E7E9;
+  --good:#3E7C59;--warn:#B7791F;--bad:#B42318;--good-bg:#F0F1F3;--warn-bg:#F0F1F3;}
+/* inline colours used as chrome inside those tools */
+[style*="#0f2746"],[style*="#0f2540"]{color:#1B1D22 !important;}
+[style*="background:#0f2746"],[style*="background: #0f2746"],[style*="background:#0f2540"],[style*="background-color:#0f2746"]{background:#1B1D22 !important;color:#FFFFFF !important;}
+[style*="#c8102e"]{color:#8E2118 !important;}
+[style*="background:#c8102e"],[style*="background: #c8102e"],[style*="background-color:#c8102e"]{background:#8E2118 !important;color:#FFFFFF !important;}
+[style*="border-left:3px solid #c8102e"],[style*="border-left: 3px solid #c8102e"],[style*="border-left:4px solid #c8102e"]{border-left-color:#C7C9CE !important;}
+[style*="#1565c0"]{color:#41454E !important;} [style*="#8b0000"]{color:#8E2118 !important;}
+[style*="#1b5e20"],[style*="#1f7a5a"]{color:#3E7C59 !important;} [style*="#b91c1c"]{color:#B42318 !important;}
+[style*="background:#e8f5e9"],[style*="background:#e3f2eb"]{background:#F0F1F3 !important;}
+[style*="#6b7280"],[style*="#5a6577"],[style*="#374151"]{color:#6E737D !important;}
+[style*="#9ca3af"],[style*="#9aa3b2"]{color:#9EA2AA !important;}
+[style*="border:1px solid #d8dde7"],[style*="border:1px solid #d1d5db"],[style*="border:1px solid #e2e6ee"]{border-color:#E6E7E9 !important;}
+/* shape and type inside the tools */
+#tool-np *,#tool-vr *,#tool-roe *,#tool-dc *,#tool-pb *,#tool-calc *,#tool-nl *{font-family:"Outfit","Avenir Next","Helvetica Neue",Arial,sans-serif !important;}
+#tool-np [class*="card"],#tool-vr [class*="card"],#tool-roe .panel,#tool-dc [class*="card"],#tool-pb [class*="card"],#tool-nl [class*="card"],#tool-nl .highlight-box,#tool-nl .score-strip{border:0 !important;border-radius:22px !important;box-shadow:0 1px 2px rgba(27,29,34,.04),0 8px 24px rgba(27,29,34,.05);background:#FFFFFF;}
+#tool-np button,#tool-vr button,#tool-roe button,#tool-dc button,#tool-pb button,#tool-calc button,#tool-nl button,#tool-nl [class*="tag"],#tool-nl [class*="pill"],#tool-np [class*="chip"],#tool-vr [class*="chip"]{border-radius:999px !important;font-weight:500 !important;}
+#tool-np [class*="title"],#tool-vr [class*="title"],#tool-nl h1,#tool-nl h2,#tool-dc h1,#tool-pb h1,#tool-calc h1{font-weight:300 !important;letter-spacing:-0.02em !important;text-transform:none !important;}
+#tool-nl [class*="label"],#tool-nl [class*="tag"],#tool-np [class*="lbl"],#tool-vr [class*="lbl"],#tool-np [class*="label"],#tool-vr [class*="label"]{text-transform:none !important;letter-spacing:0 !important;font-weight:400 !important;}
+#tool-nl .card-title-block .pillar-tag,#tool-nl .project-info h3{color:#6E737D !important;}
+/* dose 1 means the panel header bands are ink, not ember; ember stays on the action */
+#tool-np,#tool-vr,#tool-roe,#tool-dc,#tool-pb,#tool-calc{--jnd-red:#1B1D22;}
+[style*="background:#c8102e"],[style*="background: #c8102e"],[style*="background-color:#c8102e"]{background:#1B1D22 !important;}
+#tool-np [class*="head"],#tool-vr [class*="head"],#tool-np [class*="header"],#tool-vr [class*="header"]{background:#1B1D22 !important;color:#FFFFFF !important;border-radius:22px 22px 0 0 !important;}
 
 </style>
 </head>
