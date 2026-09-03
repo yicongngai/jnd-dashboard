@@ -4847,9 +4847,10 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
           radius: all ? (kind === "mop" ? 8 : 7) : 6,
           color: COLOR[kind], weight: all ? 1.8 : 1.4,
           opacity: all ? 1 : 0.75,
-          /* a project we could not place by name is drawn hollow, so an approximate
-             position never masquerades as a precise one */
-          fillOpacity: (x.exact === false) ? 0 : (all ? 0.88 : 0.45)
+          /* an approximate position (most landed rows) used to be drawn hollow; Justin
+             read those as pale "rings" and asked for solid colour, so it is now a lighter
+             fill instead of none */
+          fillOpacity: (x.exact === false) ? 0.6 : (all ? 0.88 : 0.45)
         }).bindPopup(popupFor(x), POPUP_OPTS)
           .on("click", function () { showDetail(x); })
           .on("mouseover", function () { grow(this, true); })
