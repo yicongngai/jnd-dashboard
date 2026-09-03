@@ -1,4 +1,4 @@
-/* JND Graphite skin for the Toolkit (jndtoolkit.com). The page hardcodes its
+/* JND Graphite & Ember skin for the Toolkit (jndtoolkit.com). The page hardcodes its
    colours per tool, so this maps the chrome and the recurring classes. Colour,
    type, radius and shadow only. See command-centre/theme-graphite.css. */
 body,#tool-advisory,#tool-market,#tool-calculators,[id^="tool-"]{font-family:"Outfit","Avenir Next","Helvetica Neue",Arial,sans-serif !important;background:#F7F7F8 !important;color:#1B1D22 !important;}
@@ -95,3 +95,8 @@ button[style*="border-radius:7px"],button[style*="border-radius:8px"]{border-rad
 .leaflet-control-zoom{border-radius:10px !important;overflow:hidden;}
 .leaflet-popup-content-wrapper{border-radius:14px !important;}
 .leaflet-container *{font-family:"Outfit","Avenir Next","Helvetica Neue",Arial,sans-serif !important;}
+
+/* map row: the map column and the By-town card share one height */
+#tool-mp .gm-side{align-items:stretch !important;}
+#tool-mp .gm-side>*{display:flex;flex-direction:column;min-height:0;}
+#tool-mp .gm-side>*>[class*=panel],#tool-mp .gm-side>*>.gm-panel{flex:1;}
