@@ -57,11 +57,11 @@ button[style*="border-radius:7px"],button[style*="border-radius:8px"]{border-rad
 [style*="text-transform:uppercase"]{text-transform:none !important;letter-spacing:0 !important;}
 /* ── inner tools: remap each tool's own token set, then the inline colours ── */
 #tool-np,#tool-vr,#tool-roe,#tool-dc,#tool-pb,#tool-calc,#tool-advisory,#tool-mp{
-  --jnd-navy:#1B1D22;--jnd-navy-soft:#41454E;--jnd-red:#8E2118;--jnd-gold:#8E2118;--jnd-gold-light:#E6E7E9;
+  --jnd-navy:#1B1D22;--jnd-navy-soft:#41454E;--jnd-red:#8E2118;--jnd-gold:#E8722C;--jnd-gold-light:#F6D046;
   --jnd-text:#1B1D22;--jnd-muted:#6E737D;--jnd-border:#E6E7E9;--jnd-bg:#F7F7F8;--jnd-card:#FFFFFF;
-  --jnd-yellow:#F0F1F3;--jnd-yellow-border:#C7C9CE;--jnd-yellow-band:#F0F1F3;--jnd-pink:#F0F1F3;--jnd-pink-soft:#F7F7F8;--jnd-good:#3E7C59;}
-#tool-nl{--navy:#1B1D22;--navy-soft:#41454E;--gold:#8E2118;--gold-light:#E6E7E9;--bg:#F7F7F8;--card:#FFFFFF;--text:#1B1D22;--muted:#6E737D;--border:#E6E7E9;
-  --good:#3E7C59;--warn:#B7791F;--bad:#B42318;--good-bg:#F0F1F3;--warn-bg:#F0F1F3;}
+  --jnd-yellow:#FDF0C4;--jnd-yellow-border:#F2A63A;--jnd-yellow-band:#FBE3C4;--jnd-pink:#FBEFD9;--jnd-pink-soft:#FDF6EC;--jnd-good:#3E7C59;}
+#tool-nl{--navy:#1B1D22;--navy-soft:#41454E;--gold:#E8722C;--gold-light:#F6D046;--bg:#F7F7F8;--card:#FFFFFF;--text:#1B1D22;--muted:#6E737D;--border:#E6E7E9;
+  --good:#3E7C59;--warn:#E8722C;--bad:#B42318;--good-bg:#F0F1F3;--warn-bg:#FDF0C4;}
 /* inline colours used as chrome inside those tools */
 [style*="#0f2746"],[style*="#0f2540"]{color:#1B1D22 !important;}
 [style*="background:#0f2746"],[style*="background: #0f2746"],[style*="background:#0f2540"],[style*="background-color:#0f2746"]{background:#1B1D22 !important;color:#FFFFFF !important;}
