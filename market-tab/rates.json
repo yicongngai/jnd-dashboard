@@ -1,14 +1,14 @@
 {
   "sora_3m": {
-    "value": 1.19,
+    "value": 1.2,
     "as_of": "2026-09-04",
     "sources": [
       "MAS"
     ],
     "n_sources": 1,
     "range": [
-      1.1943,
-      1.1943
+      1.1967,
+      1.1967
     ],
     "source": "MAS (authoritative, sole source)",
     "status": "mas-only"
