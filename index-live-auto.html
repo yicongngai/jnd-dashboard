@@ -3645,7 +3645,7 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
     </div>
     <div class="vr-field disabled" id="vr-rs-rent-field">
       <label>Monthly Rent</label>
-      <div class="vr-input-wrap"><span class="vr-pfx">$</span><input type="number" id="vr-rs-rent-mo" class="with-pfx" value="4500" step="100" disabled oninput="vrRecalc()"></div>
+      <div class="vr-input-wrap"><span class="vr-pfx">$</span><input type="number" id="vr-rs-rent-mo" class="with-pfx" value="4500" step="100" disabled oninput="vrApplyAutoAv(); vrRecalc()"></div>
     </div>
     <div class="vr-field disabled" id="vr-rs-mtr-field">
       <label>Marginal Tax Rate</label>
@@ -6102,13 +6102,13 @@ const REGS = {
   // Singapore Property Tax (IRAS, applied to Annual Value)
   // Owner-Occupied progressive tiers (2026)
   PT_OO: [
-    { ceiling: 8000, rate: 0 },
-    { ceiling: 30000, rate: 0.04 },
-    { ceiling: 40000, rate: 0.06 },
-    { ceiling: 55000, rate: 0.10 },
-    { ceiling: 70000, rate: 0.14 },
-    { ceiling: 85000, rate: 0.20 },
-    { ceiling: 100000, rate: 0.26 },
+    { ceiling: 12000, rate: 0 },
+    { ceiling: 40000, rate: 0.04 },
+    { ceiling: 50000, rate: 0.06 },
+    { ceiling: 75000, rate: 0.10 },
+    { ceiling: 85000, rate: 0.14 },
+    { ceiling: 100000, rate: 0.20 },
+    { ceiling: 140000, rate: 0.26 },
     { ceiling: Infinity, rate: 0.32 }
   ],
   // Non-owner-occupied (rented out) progressive tiers (2026)
@@ -6116,7 +6116,7 @@ const REGS = {
     { ceiling: 30000, rate: 0.12 },
     { ceiling: 45000, rate: 0.20 },
     { ceiling: 60000, rate: 0.28 },
-    { ceiling: 75000, rate: 0.36 },
+    { ceiling: 75000, rate: 0.32 },
     { ceiling: Infinity, rate: 0.36 }
   ],
   // AV (Annual Value, IRAS) is typically ~85% of gross annual market rent
@@ -7862,6 +7862,7 @@ const PT_NOO = [
   { ceiling: 30000, rate: 0.12 },
   { ceiling: 45000, rate: 0.20 },
   { ceiling: 60000, rate: 0.28 },
+  { ceiling: 75000, rate: 0.32 },
   { ceiling: Infinity, rate: 0.36 }
 ];
 function propertyTax(av, brackets) {
@@ -8008,7 +8009,14 @@ function compute() {
   // 1. Estimate AV from price using tiered SG yield model (editable; user override sticks)
   const avInput = $('rs-av');
   if (+avInput.value === 0 || !avInput.dataset.userEdited) {
-    avInput.value = estimateAv(rsPrice);
+    // IRAS sets AV from the market rent of comparable units. When a rent is entered
+    // use it directly (AV ~= 12 x monthly rent, IRAS runs a little under asking);
+    // otherwise fall back to the price-yield estimate. (4 Sep 2026: the price ratio
+    // alone read high for rented-out units.)
+    const rentMoForAv = +$('rs-rent-mo').value || 0;
+    avInput.value = (roeState.rsMode === 'rent' && rentMoForAv > 0)
+      ? Math.round(rentMoForAv * 12 * 0.9 / 1000) * 1000
+      : estimateAv(rsPrice);
   }
   const av = +avInput.value || 0;
 
@@ -8680,6 +8688,7 @@ const VR_PTAX_NOO = [
   { upto: 30000,  rate: 0.12 },
   { upto: 45000,  rate: 0.20 },
   { upto: 60000,  rate: 0.28 },
+  { upto: 75000,  rate: 0.32 },
   { upto: Infinity, rate: 0.36 }
 ];
 
@@ -8716,7 +8725,12 @@ function vrOnRsAvEdit() { vrState.rsAvManual = true; vrRecalc(); }
 function vrApplyAutoAv() {
   if (vrState.rsAvManual) return;
   const px = +document.getElementById('vr-rs-px').value || 0;
-  document.getElementById('vr-rs-av').value = vrEstimateAv(px);
+  // IRAS AV = market rent of comparable units: when rented out and a rent is entered,
+  // AV follows the rent (~12 x monthly, a little under asking); else price-yield estimate.
+  const vrRentMoForAv = +(document.getElementById('vr-rs-rent-mo') || {}).value || 0;
+  document.getElementById('vr-rs-av').value = (vrState.rsMode === 'rent' && vrRentMoForAv > 0)
+    ? Math.round(vrRentMoForAv * 12 * 0.9 / 1000) * 1000
+    : vrEstimateAv(px);
 }
 function vrOnRsPxChange() {
   vrApplyAutoAv();
@@ -8725,6 +8739,7 @@ function vrOnRsPxChange() {
 
 function vrSetRsMode(mode) {
   vrState.rsMode = mode;
+  vrApplyAutoAv();
   document.getElementById('vr-rs-mode-own').classList.toggle('active', mode === 'own');
   document.getElementById('vr-rs-mode-rent').classList.toggle('active', mode === 'rent');
   const rentDisabled = mode !== 'rent';
