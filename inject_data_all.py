@@ -5,6 +5,13 @@ import json, os, shutil
 F = "index-live-auto.html"
 html = open(F, encoding="utf-8").read()
 
+# SKIP_FETCH=1 (deploy-only.yml, added 4 Sep 2026): inline the data files exactly as
+# committed, without re-pulling anything. The committed index-live-auto.html carries
+# EMPTY data fences, so publishing it without this step ships a page with no map, no
+# comps and no fundamentals. That is what happened 3-4 Sep (deploy-only ran the raw
+# file for ~10 hours). The daily 07:00 refresh still re-bakes everything fresh.
+SKIP_FETCH = os.environ.get("SKIP_FETCH") == "1"
+
 def load(p):
     s = open(p, encoding="utf-8").read()
     assert "</script" not in s.lower(), f"{p} contains </script>!"
@@ -16,6 +23,7 @@ def load(p):
 # Failure is non-fatal — a SingStat outage keeps the last good file and the charts stay
 # on the previous quarter, which is honest, rather than failing the whole deploy.
 try:
+    if SKIP_FETCH: raise RuntimeError("SKIP_FETCH")
     import subprocess as _sp
     _r = _sp.run(["python3", "singstat_fetch.py"], capture_output=True, text=True, timeout=300)
     print(_r.stdout.strip() or "singstat_fetch: no output")
@@ -30,6 +38,7 @@ except Exception as _e:
 # stall the deploy — the rest are picked up tomorrow. Non-fatal for the same reason as
 # above: a stale map beats a failed build.
 try:
+    if SKIP_FETCH: raise RuntimeError("SKIP_FETCH")
     import subprocess as _sp2
     _r2 = _sp2.run(["python3", "mop_build.py", "--max-geocode", "400"],
                    capture_output=True, text=True, timeout=900)
@@ -41,6 +50,7 @@ except Exception as _e:
 
 # Map layers depend on mop-data.json, so this runs after it.
 try:
+    if SKIP_FETCH: raise RuntimeError("SKIP_FETCH")
     import subprocess as _sp3
     _r3 = _sp3.run(["python3", "map_build.py"], capture_output=True, text=True, timeout=600)
     print(_r3.stdout.strip() or "map_build: no output")
@@ -83,6 +93,7 @@ else:
 open(F, "w", encoding="utf-8").write(html)
 print(f"inlined {len(parts)} data blocks; file {os.path.getsize(F)/1e6:.2f} MB")
 print("ids present:", all(f'id="{i}"' in html for i, _ in parts))
+assert 'id="jnd-map"' in html and 'id="jnd-ura-comps"' in html, "baked data missing — refusing to produce an empty page"
 
 # Stage the embedded Decoupling Toolkit alongside the dashboard for the Pages deploy.
 # (Done here, not in refresh.yml, so the deploy token doesn't need `workflow` scope.)

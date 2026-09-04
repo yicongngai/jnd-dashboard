@@ -20,8 +20,13 @@ jobs:
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - name: Stage the committed page
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Bake the committed data into the page (no fetching), then stage
         run: |
+          SKIP_FETCH=1 python3 inject_data_all.py
+          grep -q 'id="jnd-map"' index-live-auto.html || { echo "no map data baked — abort"; exit 1; }
           mkdir -p publish
           cp index-live-auto.html publish/index.html
           cp playbook.pdf publish/playbook.pdf
