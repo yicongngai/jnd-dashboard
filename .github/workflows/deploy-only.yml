@@ -25,6 +25,8 @@ jobs:
           mkdir -p publish
           cp index-live-auto.html publish/index.html
           cp playbook.pdf publish/playbook.pdf
+          # keep parity with inject_data_all.py, which stages the Decoupling Toolkit file too
+          [ -f decoupling.html ] && cp decoupling.html publish/decoupling.html || true
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
