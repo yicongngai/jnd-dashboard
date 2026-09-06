@@ -25,6 +25,9 @@ jobs:
           python-version: '3.12'
       - name: Bake the committed data into the page (no fetching), then stage
         run: |
+          # launches.json is a build input that is not tracked (tidy-up, 4 Sep 2026); rebuild it
+          # from the tracked scrape, or fall back to the auto board, before baking.
+          [ -f market-tab/launches.json ] || ( cd market-tab && python3 build_board.py ) || cp market-tab/launches.auto.json market-tab/launches.json
           SKIP_FETCH=1 python3 inject_data_all.py
           grep -q 'id="jnd-map"' index-live-auto.html || { echo "no map data baked — abort"; exit 1; }
           mkdir -p publish
