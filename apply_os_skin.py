@@ -4,11 +4,19 @@ that rebuilds the file from an older template. Presentation only; no data, no lo
 import re, sys
 P = "index-live-auto.html"
 s = open(P, encoding="utf-8").read()
-if "theme-os-toolkit.css" in s and 'id="os-headline"' in s:
+if "theme-os-toolkit.css" in s and 'id="os-headline"' in s and "<title>JND Toolkit</title>" in s:
     print("already applied"); sys.exit(0)
+if "theme-os-toolkit.css" in s and 'id="os-headline"' in s:   # only the title pass is missing
+    s = re.sub(r"<title>JND Tools Dashboard[^<]*</title>", "<title>JND Toolkit</title>", s, count=1)
+    s = re.sub(r'<span class="ver">v[0-9.]+</span>', '', s, count=1)
+    s = re.sub(r'<div class="ver-badge">[^<]*</div>', '', s, count=1)
+    open(P, "w", encoding="utf-8").write(s); print("title pass applied"); sys.exit(0)
 if "theme-os-toolkit.css" not in s:
     s = s.replace("</head>", '<link rel="stylesheet" href="theme-os-toolkit.css">\n</head>', 1)
 s = s.replace("<h1>JND <span>Tools</span> Dashboard</h1>", "<h1>JND <span>Toolkit</span></h1>", 1)
+s = re.sub(r"<title>JND Tools Dashboard[^<]*</title>", "<title>JND Toolkit</title>", s, count=1)   # no version in the tab (his ask, 6 Sep 2026)
+s = re.sub(r'<span class="ver">v[0-9.]+</span>', '', s, count=1)
+s = re.sub(r'<div class="ver-badge">[^<]*</div>', '', s, count=1)
 a = '''  <div class="sec">📍 Recent Transactions — near a location</div>
   <div class="card" style="padding:14px 16px">'''
 b = '''  <div class="os-hero">
