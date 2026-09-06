@@ -7,7 +7,7 @@ D = json.load(open(os.path.join(HERE, "launch.json"), encoding="utf-8"))
 money = lambda v: "$" + format(int(v), ",")
 mil = lambda v: "$%.2fM" % (v / 1e6)
 
-def esc(s): return str(s).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+def esc(s): return str(s).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
 
 facts = [("Preview", D["preview"]), ("Homes", format(D["units"], ",")), ("Towers", D["towers"]), ("Site", format(D["site_sqft"], ",") + " sqft"),
          ("Tenure", D["tenure"]), ("Vacant possession", D["novp"]), ("Land", "$%s psf ppr, %s" % (format(D["land_psf_ppr"], ","), D["land_month"])), ("Developer", D["developer"]),
@@ -25,11 +25,11 @@ neigh_rows = "".join('<tr class="nb" data-psf="%d" data-top="%d" data-asnew="%d"
 upside_html = ""
 jtx_rows = "".join('<tr class="%s"><td>%s</td><td>%s</td><td class="n">%s sqft</td><td>%s</td><td class="n">%s</td><td class="n">$%s psf</td></tr>' % ("hi" if hi else "", esc(m), esc(f), sz, esc(t), mil(p), format(psf, ",")) for m, f, sz, t, p, psf, hi in D["lakegrande_tx"])
 sinming_rows = "".join('<tr><td>%s</td><td>%s</td><td>%s</td><td class="n">%s</td></tr>' % (esc(b), esc(t), esc(m), money(p)) for b, t, m, p in D["hdb"])
-evidence_html = "".join('<figure class="ev"><img src="assets/slides/%s.jpg" alt="Slide" loading="lazy" decoding="async"><figcaption><span>For Lucerne Grand</span>%s</figcaption></figure>' % (f, esc(c)) for f, c in D["evidence"])
+evidence_html = "".join('<figure class="ev"><img data-lb="assets/slides/%s.jpg" data-cap="%s" src="assets/slides/%s.jpg" alt="Slide" loading="lazy" decoding="async"><figcaption><span>For Lucerne Grand</span>%s</figcaption></figure>' % (f, esc(c), f, esc(c)) for f, c in D["evidence"])
 timeline_html = "".join('<div class="tl"><div class="d">%s</div><div class="w">%s</div></div>' % (esc(a), esc(b)) for a, b in D["timeline"])
 falsify_html = ""
 plan_idx = "".join('<tr><td>%s</td><td><b>%s</b></td><td>%s</td><td>%s</td></tr>' % (esc(t), esc(c), esc(sz), esc(w)) for t, c, sz, w in D["plan_index"])
-plans_html = "".join('<figure class="plan"><a href="assets/pages/%s.jpg" target="_blank" rel="noopener"><img src="assets/pages/%s.jpg" alt="%s" loading="lazy" decoding="async"></a><figcaption>%s</figcaption></figure>' % (f, f, esc(c), esc(c)) for f, c in D["plans"])
+plans_html = "".join('<figure class="plan"><img data-lb="assets/pages/%s.jpg" data-cap="%s" data-kicker="Floor plan, from the developer brochure" src="assets/pages/%s.jpg" alt="%s" loading="lazy" decoding="async"><figcaption>%s</figcaption></figure>' % (f, esc(c), f, esc(c), esc(c)) for f, c in D["plans"])
 spec_html = "".join('<div class="bcard%s"><h3>%s</h3><ul>%s</ul></div>' % (" soon" if t == "Not out yet" else "", esc(t), "".join("<li>%s</li>" % esc(x) for x in xs)) for t, xs in D["spec"].items())
 specg_html = "".join('<figure class="g"><img src="assets/img/%s.jpg" alt="%s" loading="lazy" decoding="async"><figcaption>%s</figcaption></figure>' % (f, esc(c), esc(c)) for f, c in D["spec_gallery"])
 mix_html = "".join('<div class="mix"><div class="n">%s</div><div class="l">%s, %s</div></div>' % (format(n, ","), esc(t), p) for t, n, p in D["mix"])
@@ -226,6 +226,29 @@ body.dark #nav a{background:rgba(255,255,255,.3)} body.dark #nav a.on{background
 @media (max-width:900px){.wrap{padding:0 22px}section{padding:80px 0}h2{font-size:36px}#hero h1{font-size:56px}#hero .top,#hero .txt,#hero .cue{left:22px;right:22px}#hero .txt{bottom:80px}.three,.bgrid,.pairs,.two,.grow{grid-template-columns:1fr}.maps{grid-template-columns:1fr}.facts{grid-template-columns:1fr 1fr}.tls{grid-template-columns:1fr 1fr;gap:22px}.tls::before{display:none}.gallery,.evs{padding:40px 22px 56px}.gallery .g{flex-basis:88vw}#nav{display:none}.ntable .n{font-size:17px}}
 @media (prefers-reduced-motion:reduce){#hero .bg{animation:none}.reveal{opacity:1;transform:none;transition:none}}
 
+/* back to the launch list + full-screen viewer */
+#back{position:fixed;left:22px;top:20px;z-index:70;display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.02em;padding:9px 15px 9px 12px;border-radius:999px;background:rgba(255,255,255,.86);color:var(--g5);border:1px solid rgba(27,29,34,.06);box-shadow:0 8px 26px rgba(27,29,34,.10);-webkit-backdrop-filter:saturate(140%) blur(8px);backdrop-filter:saturate(140%) blur(8px);opacity:0;transform:translateY(-8px);pointer-events:none;transition:opacity .35s,transform .35s,background .3s,color .3s}
+#back.on{opacity:1;transform:none;pointer-events:auto}
+#back:hover{background:#FFF}
+#back i{font-style:normal;font-size:15px;line-height:1}
+body.dark #back{background:rgba(20,22,24,.62);color:rgba(255,255,255,.86);border-color:rgba(255,255,255,.16)}
+body.dark #back:hover{background:rgba(20,22,24,.82)}
+#hero .top .jnd a{border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:2px}
+#lb{position:fixed;inset:0;z-index:120;display:none;background:rgba(var(--dark2rgb),.95);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);touch-action:none}
+#lb.on{display:block}
+#lb .stage{position:absolute;inset:0;overflow:hidden;cursor:zoom-in}
+#lb.zoomed .stage{cursor:grab}#lb.zoomed.drag .stage{cursor:grabbing}
+#lb img{position:absolute;left:50%;top:50%;max-width:94vw;max-height:88vh;transform:translate(-50%,-50%) scale(1);transform-origin:center;transition:transform .35s cubic-bezier(.2,.7,.2,1);will-change:transform;border-radius:10px;background:#FFF;box-shadow:0 40px 120px rgba(0,0,0,.55);user-select:none;-webkit-user-drag:none}
+#lb.drag img{transition:none}
+#lb .x{position:absolute;right:20px;top:18px;z-index:2;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.10);color:#FFF;font:400 22px/1 var(--font-body);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s}
+#lb .x:hover{background:rgba(255,255,255,.2)}
+#lb .cap{position:absolute;left:0;right:0;bottom:20px;text-align:center;color:rgba(255,255,255,.82);font-size:13px;padding:0 80px;pointer-events:none}
+#lb .cap b{display:block;font-weight:400;color:rgba(255,255,255,.5);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;margin-top:8px}
+#lb .zoom{position:absolute;right:20px;bottom:18px;z-index:2;display:flex;gap:8px}
+#lb .zoom button{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.10);color:#FFF;font:400 18px/1 var(--font-body);cursor:pointer;transition:background .25s}
+#lb .zoom button:hover{background:rgba(255,255,255,.2)}
+[data-lb]{cursor:zoom-in}
+@media (max-width:900px){#back{left:14px;top:14px}#lb .cap{padding:0 20px;font-size:12px}}
 /* brand wash behind the light chapters, still, shifts with scroll */
 body{position:relative}
 .wash{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
@@ -250,11 +273,13 @@ h1,h2{-webkit-font-smoothing:antialiased}
 </head>
 <body>
 <div class="wash"><i class="w1"></i><i class="w2"></i></div><div id="prog"></div>
+<a id="back" href="../../?tab=launches"><i>&larr;</i> All JND launches</a>
+<div id="lb" aria-hidden="true"><div class="stage"><img alt=""></div><button class="x" type="button" aria-label="Close">&times;</button><div class="zoom"><button type="button" class="zout" aria-label="Zoom out">&minus;</button><button type="button" class="zin" aria-label="Zoom in">+</button></div><div class="cap"></div></div>
 <nav id="nav"></nav>
 
 <section id="hero" data-title="Lucerne Grand">
   <div class="bg"></div><div class="veil"></div><div class="hl"></div>
-  <div class="top"><div class="jnd">JND <span>Launch</span></div><div>New launch, {{DISTRICT}} · Preview <b>{{PREVIEW}}</b> · Booking <b>{{BOOKING}}</b></div></div>
+  <div class="top"><div class="jnd"><a href="../../?tab=launches">JND <span>Launch</span></a></div><div>New launch, {{DISTRICT}} · Preview <b>{{PREVIEW}}</b> · Booking <b>{{BOOKING}}</b></div></div>
   <div class="txt">
     <div class="eyebrow">{{TAGLINE}}</div>
     <h1>Lucerne<br>Grand</h1>
@@ -278,7 +303,7 @@ h1,h2{-webkit-font-smoothing:antialiased}
     </div>
     <div class="facts reveal">{{FACTS}}</div>
     <div class="mixrow reveal">{{MIX}}</div>
-    <div class="maps reveal"><img src="assets/pages/siteplan.jpg" alt="Site plan and unit distribution"><img src="assets/pages/orientation.jpg" alt="Site orientation"></div>
+    <div class="maps reveal"><img data-lb="assets/pages/siteplan.jpg" data-cap="Site plan and unit distribution" src="assets/pages/siteplan.jpg" alt="Site plan and unit distribution"><img data-lb="assets/pages/orientation.jpg" data-cap="Site orientation" src="assets/pages/orientation.jpg" alt="Site orientation"></div>
   </div>
 </section>
 
@@ -300,7 +325,7 @@ h1,h2{-webkit-font-smoothing:antialiased}
     <div class="eyebrow reveal">Every floor plan, from the CDL brochure</div>
     <h2 class="reveal d1"><b>17 layouts</b> across five blocks.</h2>
     <p class="lede reveal d2">Two to four bedrooms, 624 to 1,432 sqft. Every plan has a washer cum dryer point and a household shelter from the 3-bedroom up; the 4-bedroom Premium + Entertainment can take or leave the entertainment room wall for a limited period. Tap a page to open it full size.</p>
-    <div class="maps reveal"><img src="assets/img/schematic.jpg" alt="Schematic diagram, all five blocks"><img src="assets/img/siteplan-brochure.jpg" alt="Site plan"></div>
+    <div class="maps reveal"><img data-lb="assets/img/schematic.jpg" data-cap="Schematic diagram, all five blocks" src="assets/img/schematic.jpg" alt="Schematic diagram, all five blocks"><img data-lb="assets/img/siteplan-brochure.jpg" data-cap="Site plan" src="assets/img/siteplan-brochure.jpg" alt="Site plan"></div>
     <table class="pidx reveal"><thead><tr><th>Type</th><th>Layout</th><th>Size</th><th>Where</th></tr></thead><tbody>{{PLANIDX}}</tbody></table>
     <div class="note">Sizes include balcony and private enclosed space where applicable. Stacks read from the brochure plans; (P) types are the ground-floor units with a PES.</div>
     <div class="plans reveal">{{PLANS}}</div>
@@ -326,10 +351,10 @@ h1,h2{-webkit-font-smoothing:antialiased}
     <div class="fromrow reveal"><div class="from"><div class="k">2-bedroom from, ERA kit</div><div class="n">$1.4xM</div></div><div class="from"><div class="k">3-bedroom from, ERA kit</div><div class="n">$2.1xM</div></div><div class="from"><div class="k">4-bedroom from, ERA kit</div><div class="n">$2.8xM</div></div></div>
     <table class="ptable matrix reveal"><thead><tr><th>Type</th>{{PRICE_HEAD}}</tr></thead><tbody>{{PRICES}}</tbody></table>
     <div class="note">For comparison, the two launches still selling on Lakeside reached $2,581 psf at Sora and $2,556 psf at LakeGarden Residences, and J'den at Jurong East reached $2,832 psf. Neither Sora nor LakeGarden has completed, so they are the new-sale cohort, not the resale proof below. ERA objection handling kit, September 2026.</div>
-    <div class="eyebrow" style="margin-top:72px">Same money, which will you buy</div>
+    <div class="eyebrow" style="margin-top:72px">Four bedrooms, the same size, one street apart</div>
     <div class="pairs">
-      <div class="pair reveal"><span class="tag">Resale, finished 2019</span><div class="who">Lake Grande, Jurong Lake Link</div><div class="p">$2.36M to $2.43M</div><div class="d">4-bedroom, 1,152 sqft, 6th to 15th floor, sold April and July 2026 at $2,047 to $2,108 psf. Completed 2019. Five minutes' walk to Lakeside MRT.</div></div>
-      <div class="pair tr reveal d1"><span class="tag">Brand new, ready 2030</span><div class="who">Lucerne Grand</div><div class="p">$2.37M</div><div class="d">3-bedroom Premium + Study, 947 sqft, at $2,500 psf. Same money. Brand new, full 99-year lease, the MRT and a supermarket at the door.</div></div>
+      <div class="pair reveal"><span class="tag">Resale, finished 2019</span><div class="who">Lake Grande, Jurong Lake Link</div><div class="p">$2.43M</div><div class="d">4-bedroom type D1, 1,152 sqft, 11th to 15th floor, sold July 2026 at $2,108 psf. Eighty eight years left on the lease. Put that unit on a fresh 99-year lease by the age gap method and it is $2,712 psf, or <b>$3.12M</b>.</div></div>
+      <div class="pair tr reveal d1"><span class="tag">Brand new, ready 2030</span><div class="who">Lucerne Grand</div><div class="p">$2.91M</div><div class="d">4-bedroom Premium type DP1, 1,163 sqft, at $2,500 psf. Eleven square feet larger, a full 99-year lease, brand new, with the MRT and a supermarket downstairs. About $215k under the matched-lease price of the resale.</div></div>
     </div>
     <div class="proof reveal">
       <div class="ptx">
@@ -337,12 +362,12 @@ h1,h2{-webkit-font-smoothing:antialiased}
         <table class="jtx"><thead><tr><th>Sold</th><th>Floor</th><th class="n">Size</th><th>Type</th><th class="n">Price</th><th class="n">psf</th></tr></thead><tbody>{{JTX}}</tbody></table>
         <div class="note">The two 1,152 sqft sales are stack 08, type D1, floors 6 to 15. Source: URA Realis via the JND vault, August 2026.</div>
       </div>
-      <div class="plans"><figure class="pplan"><img src="assets/img/lakegrande-d1-plan.jpg" alt="Lake Grande type D1 floor plan"><figcaption><b>Lake Grande type D1, 4-bedroom.</b> 107 sqm, 1,152 sqft. Four bedrooms, two baths, utility and dry kitchen. Stack 08, floors 2 to 16.</figcaption></figure><figure class="pplan"><img src="assets/img/lucerne-cp2s-plan.jpg" alt="Lucerne Grand 3-bedroom Premium + Study floor plan"><figcaption><b>Lucerne Grand 3-bedroom Premium + Study.</b> 947 to 1,001 sqft. Three bedrooms, two baths, flexi study, yard and household shelter. Draft plan from the ERA briefing deck, subject to change.</figcaption></figure></div>
+      <div class="plans"><figure class="pplan"><img data-lb="assets/img/lakegrande-d1-plan.jpg" data-cap="Lake Grande type D1, 4-bedroom, 1,152 sqft" data-kicker="Floor plan" src="assets/img/lakegrande-d1-plan.jpg" alt="Lake Grande type D1 floor plan"><figcaption><b>Lake Grande type D1, 4-bedroom.</b> 107 sqm, 1,152 sqft. Four bedrooms, two baths, utility and dry kitchen. Stack 08, floors 2 to 16.</figcaption></figure><figure class="pplan"><img data-lb="assets/img/lucerne-dp1-plan.jpg" data-cap="Lucerne Grand type DP1, 4-bedroom Premium, 1,163 sqft" data-kicker="Floor plan" src="assets/img/lucerne-dp1-plan.jpg" alt="Lucerne Grand type DP1 floor plan"><figcaption><b>Lucerne Grand type DP1, 4-bedroom Premium.</b> 108 sqm, 1,163 sqft. Four bedrooms, walk-in wardrobe off the master, yard and household shelter. Block 32 stack 10 and Block 34 stack 21, floors 3 to 17.</figcaption></figure></div>
     </div>
   </div>
 </section>
 
-<section class="bandimg" data-title="Which will you buy" id="band2"><div class="pimg" style="background-image:url(assets/img/lake-gardens.jpg)"></div><div class="veil"></div><div class="btxt"><div class="eyebrow">Same money</div><h2>Which will you buy?</h2></div></section>
+<section class="bandimg" data-title="Which will you buy" id="band2"><div class="pimg" style="background-image:url(assets/img/lake-gardens.jpg)"></div><div class="veil"></div><div class="btxt"><div class="eyebrow">Same four bedrooms, matched lease</div><h2>Which will you buy?</h2></div></section>
 
 <section id="neighbours" data-title="The neighbours">
   <div class="wrap">
@@ -450,6 +475,44 @@ h1,h2{-webkit-font-smoothing:antialiased}
     var fits=prices.filter(function(p){ return p[2]<=max; }); var best=fits.length?fits[fits.length-1]:null;
     document.getElementById('v-fits').innerHTML= best ? 'Reaches a <b>'+best[0]+'</b>, '+best[1].toLocaleString()+' sqft, $'+(best[2]/1e6).toFixed(2)+'M at $'+PSF.toLocaleString()+' psf'+(fits.length>1?', and everything below it.':'.') : 'Below the 2-bedroom entry at this loan. Try a smaller loan.'; }
   ['i-sale','i-loan'].forEach(function(id){ document.getElementById(id).addEventListener('input',fp); }); fp();
+  // full-screen viewer for plans, maps and slides: close button, Esc, backdrop, zoom and pan
+  (function(){
+    var lb=document.getElementById('lb'), img=lb.querySelector('img'), cap=lb.querySelector('.cap'), stage=lb.querySelector('.stage');
+    var z=1, ox=0, oy=0, sx=0, sy=0, px=0, py=0, down=false, moved=0;
+    function apply(){ img.style.transform='translate(-50%,-50%) translate('+ox+'px,'+oy+'px) scale('+z+')'; lb.classList.toggle('zoomed', z>1.02); }
+    function open(src, text, kicker){ img.src=src; cap.innerHTML=(text||'')+(kicker?'<b>'+kicker+'</b>':''); z=1; ox=oy=0; apply(); lb.classList.add('on'); document.body.style.overflow='hidden'; }
+    function close(){ lb.classList.remove('on'); document.body.style.overflow=''; setTimeout(function(){ if(!lb.classList.contains('on')) img.removeAttribute('src'); },300); }
+    function zoom(f, cx, cy){ var nz=Math.min(6,Math.max(1,z*f)); if(nz===z) return; var r=nz/z; if(cx!==undefined){ ox=cx-(cx-ox)*r; oy=cy-(cy-oy)*r; } z=nz; if(z<=1.02){ z=1; ox=oy=0; } apply(); }
+    document.addEventListener('click',function(e){
+      var t=e.target.closest('[data-lb]'); if(!t) return;
+      if(t.dataset.dragged==='1'){ t.dataset.dragged='0'; return; }
+      e.preventDefault(); open(t.dataset.lb||t.getAttribute('src'), t.dataset.cap||t.alt||'', t.dataset.kicker||'Pinch, scroll or use the buttons to zoom');
+    });
+    lb.querySelector('.x').addEventListener('click',close);
+    lb.addEventListener('click',function(e){ if(e.target===lb||e.target===stage) close(); });
+    lb.querySelector('.zin').addEventListener('click',function(e){ e.stopPropagation(); zoom(1.5); });
+    lb.querySelector('.zout').addEventListener('click',function(e){ e.stopPropagation(); zoom(1/1.5); });
+    document.addEventListener('keydown',function(e){ if(!lb.classList.contains('on')) return; if(e.key==='Escape'){ close(); } if(e.key==='+'||e.key==='='){ zoom(1.4); } if(e.key==='-'){ zoom(1/1.4); } });
+    stage.addEventListener('wheel',function(e){ e.preventDefault(); var r=lb.getBoundingClientRect(); zoom(e.deltaY<0?1.12:1/1.12, e.clientX-r.width/2, e.clientY-r.height/2); },{passive:false});
+    stage.addEventListener('dblclick',function(e){ var r=lb.getBoundingClientRect(); zoom(z>1.02?1/z:2.2, e.clientX-r.width/2, e.clientY-r.height/2); });
+    stage.addEventListener('pointerdown',function(e){ if(z<=1.02) return; down=true; moved=0; sx=e.clientX; sy=e.clientY; px=ox; py=oy; lb.classList.add('drag'); stage.setPointerCapture(e.pointerId); });
+    stage.addEventListener('pointermove',function(e){ if(!down) return; moved+=Math.abs(e.movementX)+Math.abs(e.movementY); ox=px+(e.clientX-sx); oy=py+(e.clientY-sy); apply(); });
+    ['pointerup','pointercancel'].forEach(function(ev){ stage.addEventListener(ev,function(){ down=false; lb.classList.remove('drag'); }); });
+    // two-finger pinch
+    var pts={}, base=0, bz=1;
+    stage.addEventListener('touchstart',function(e){ if(e.touches.length===2){ base=Math.hypot(e.touches[0].clientX-e.touches[1].clientX, e.touches[0].clientY-e.touches[1].clientY); bz=z; } },{passive:true});
+    stage.addEventListener('touchmove',function(e){ if(e.touches.length===2&&base){ e.preventDefault(); var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX, e.touches[0].clientY-e.touches[1].clientY); z=Math.min(6,Math.max(1,bz*d/base)); if(z<=1.02){ z=1; ox=oy=0; } apply(); } },{passive:false});
+    stage.addEventListener('touchend',function(e){ if(e.touches.length<2) base=0; },{passive:true});
+    // a drag inside a scrolling strip must not open the viewer
+    ['gallery','specg','evs'].forEach(function(id){ var el=document.getElementById(id); if(!el) return; var x0=0,y0=0;
+      el.addEventListener('pointerdown',function(e){ x0=e.clientX; y0=e.clientY; });
+      el.addEventListener('pointerup',function(e){ if(Math.abs(e.clientX-x0)+Math.abs(e.clientY-y0)>8){ var t=e.target.closest('[data-lb]'); if(t) t.dataset.dragged='1'; } }); });
+  })();
+  // back to the launch list, once the hero is behind you
+  (function(){ var b=document.getElementById('back'), hero=document.getElementById('hero');
+    function s(){ b.classList.toggle('on', window.scrollY > hero.offsetHeight*0.6); }
+    window.addEventListener('scroll',s,{passive:true}); s();
+  })();
   // progress bar + brand wash drift + hero pointer light
   (function(){ var prog=document.getElementById('prog'), ws=[].slice.call(document.querySelectorAll('.wash i')), hero=document.getElementById('hero'), bg=hero.querySelector('.bg'), hl=hero.querySelector('.hl');
     function onScroll(){ var h=document.documentElement, p=h.scrollTop/(h.scrollHeight-h.clientHeight||1); prog.style.width=(p*100)+'%'; ws.forEach(function(w,i){ w.style.transform='translateY('+(-h.scrollTop*(i?0.06:0.1))+'px)'; }); }

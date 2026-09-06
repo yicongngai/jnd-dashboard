@@ -6110,8 +6110,10 @@ window.addEventListener('load', function() {
   setTimeout(function() {
     try {
       // Always open Market Pulse on load (Justin, 20 Jul) — last-used tab is
-      // intentionally ignored.
-      appSwitchTab('mp');
+      // intentionally ignored. ?tab=<name> is an explicit request, not a memory:
+      // the launch presentation pages link back here with ?tab=launches (6 Sep 2026).
+      var want = new URLSearchParams(location.search).get('tab');
+      appSwitchTab(want && document.getElementById('tool-' + want) ? want : 'mp');
     } catch(e) { console.error('Load-time init error:', e); }
   }, 100);
 });
