@@ -2544,6 +2544,7 @@ button[style*="border-radius:7px"],button[style*="border-radius:8px"]{border-rad
 function arm(){var m=document.getElementById('gm-map');if(!m)return;if(window.ResizeObserver){new ResizeObserver(sync).observe(m);}window.addEventListener('resize',sync);sync();}
 if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',arm);}else{arm();}})();
 </script>
+<link rel="stylesheet" href="theme-os-toolkit.css">
 </head>
 <body>
 
@@ -2552,7 +2553,7 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 
 <div class="app-bar">
   <div class="app-brand">
-    <h1>JND <span>Tools</span> Dashboard</h1>
+    <h1>JND <span>Toolkit</span></h1>
     <span class="ver">v3.52</span>
   </div>
   <nav class="app-tabs">
@@ -4443,8 +4444,12 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
     <h1>Market <span>Pulse</span></h1>
     <div class="asof" id="asof">Loading live market data…</div>
   </div>
-  <div class="sec">📍 Recent Transactions — near a location</div>
-  <div class="card" style="padding:14px 16px">
+  <div class="os-hero">
+    <div class="os-eyebrow" id="os-eyebrow">From the papers</div>
+    <h1 class="os-line" id="os-headline" title="Open the article">Singapore property, in the news today.</h1>
+    <div class="os-hmeta" id="os-hmeta"></div>
+    <p class="os-sub">See what has sold around you. Private caveats from URA, three years. HDB resales, twelve months. Ranked by distance from where you stand. Your location stays on this device.</p>
+  <div class="card os-nm" style="padding:14px 16px">
     <div style="display:flex;gap:6px;margin-bottom:10px" id="nm-ptype">
       <button data-pt="all" style="cursor:pointer;font:600 12px/1 inherit;border:1px solid #8E2118;border-radius:7px;padding:7px 12px;background:#8E2118;color:#fff">All</button>
       <button data-pt="condo" style="cursor:pointer;font:600 12px/1 inherit;border:1px solid #E6E7E9;border-radius:7px;padding:7px 12px;background:#fff;color:#41454E">Condo / Apt</button>
@@ -4452,14 +4457,15 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
       <button data-pt="hdb" style="cursor:pointer;font:600 12px/1 inherit;border:1px solid #E6E7E9;border-radius:7px;padding:7px 12px;background:#fff;color:#41454E">HDB</button>
     </div>
     <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-      <button id="nm-btn" style="cursor:pointer;font:600 13px/1 inherit;color:#fff;background:#8E2118;border:none;border-radius:8px;padding:10px 16px">📍 Use my current location</button>
+      <button id="nm-btn" style="cursor:pointer;font:600 13px/1 inherit;color:#fff;background:#8E2118;border:none;border-radius:8px;padding:10px 16px">Use my location</button>
       <span style="font-size:12px;color:#9EA2AA">or</span>
-      <input id="nm-q" placeholder="block · road · project" autocomplete="off" spellcheck="false" style="flex:1;min-width:160px;font:inherit;font-size:13px;padding:9px 10px;border:1px solid #E6E7E9;border-radius:8px;outline:none" />
+      <input id="nm-q" placeholder="or a block, road or project" autocomplete="off" spellcheck="false" style="flex:1;min-width:160px;font:inherit;font-size:13px;padding:9px 10px;border:1px solid #E6E7E9;border-radius:8px;outline:none" />
       <button id="nm-go" style="cursor:pointer;font:600 13px/1 inherit;color:#8E2118;background:#fff;border:1px solid #8E2118;border-radius:8px;padding:9px 14px">Search</button>
     </div>
     <div id="nm-status" style="font-size:12px;color:#6E737D;margin-top:8px"></div>
     <div id="nm-out" style="margin-top:6px"></div>
-    <div style="font-size:10.5px;color:#9EA2AA;margin-top:8px">Private sales caveats (URA, ~3yr) + HDB resales (data.gov.sg, 12mo). Rings measured to each project\u2019s nearest block. Location is used on this device only; search via OneMap (SLA).</div>
+    <div style="font-size:10.5px;color:#9EA2AA;margin-top:8px">Private sales caveats (URA, ~3yr) + HDB resales (data.gov.sg, 12mo). Rings measured to each project’s nearest block. Location is used on this device only; search via OneMap (SLA).</div>
+  </div>
   </div>
   <div class="kpis">
     <div class="kpi"><div class="k">Private PPI (QoQ)</div><div class="v" id="k-ppi">—</div></div>
@@ -13124,6 +13130,39 @@ svg.leaflet-image-layer.leaflet-interactive path {
   }
   if(document.readyState!=='loading')scan();else document.addEventListener('DOMContentLoaded',scan);
   setTimeout(scan,2000);   // catch late-built inputs
+})();
+</script>
+<div class="sky"><i class="a"></i><i class="b"></i><i class="c"></i><div class="grain"></div></div>
+<script>
+(function(){ // the hero headline: the day's property news, one at a time, a new one every three hours
+  var el=document.getElementById('os-headline'), meta=document.getElementById('os-hmeta'), eye=document.getElementById('os-eyebrow'); if(!el) return;
+  var items=[], cur=-1, manual=0;
+  var paper={ST:'The Straits Times',BT:'The Business Times',ZB:'Lianhe Zaobao',EdgeProp:'EdgeProp'};
+  function pick(){ return items.length ? (Math.floor(Date.now()/(3*3600*1000)) + manual) % items.length : -1; }
+  function show(i, instant){ if(i<0||i===cur) return; cur=i; var it=items[i];
+    var go=function(){ el.textContent=it.h; el.style.cursor=it.link?'pointer':'default';
+      meta.innerHTML=[paper[it.src]||it.src, it.date, it.topic].filter(Boolean).join(' · ')+(it.link?' · <a class="os-read" href="'+it.link+'" target="_blank" rel="noopener">Read the article ↗</a>':'')+' · <a class="os-next" onclick="return osNextHeadline()">Next story ›</a>'; };
+    if(instant){ go(); return; }
+    el.classList.add('fade'); meta.classList.add('fade'); setTimeout(function(){ go(); el.classList.remove('fade'); meta.classList.remove('fade'); }, 420); }
+  el.addEventListener('click', function(){ var it=items[cur]; if(it&&it.link) window.open(it.link,'_blank','noopener'); });
+  window.osNextHeadline=function(){ if(!items.length) return false; manual++; show(pick()); return false; };
+  fetch('headlines.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(j){
+    items=(j.items||[]).filter(function(x){return x.h;}); if(!items.length) return;
+    eye.textContent='From the papers, '+(items.length)+' stories this week'; show(pick(), true);
+    setInterval(function(){ show(pick()); }, 60000);
+  }).catch(function(){});
+})();
+(function(){ // JND Toolkit, the OS look: lights answer the scroll, sections ease in, no motion on its own
+  var L=[document.querySelector('.sky .a'),document.querySelector('.sky .b'),document.querySelector('.sky .c')]; var cur=0,target=0,raf=null;
+  function frame(){ cur+=(target-cur)*.08; var y=cur;
+    L[0].style.transform='translate('+(y*.10)+'px,'+(-y*.16)+'px) scale('+(1+Math.min(.25,y/6000))+')';
+    L[1].style.transform='translate('+(-y*.12)+'px,'+(-y*.05)+'px)';
+    L[2].style.transform='translate('+(y*.04)+'px,'+(-y*.22)+'px)';
+    if(Math.abs(target-cur)>.5) raf=requestAnimationFrame(frame); else raf=null; }
+  window.addEventListener('scroll',function(){ target=window.scrollY||0; if(!raf) raf=requestAnimationFrame(frame); },{passive:true});
+  try{ var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('#tool-mp .kpis, #tool-mp .sec, #tool-mp .cards3 > .card').forEach(function(el){ if(el.getBoundingClientRect().top>window.innerHeight){ el.classList.add('reveal'); io.observe(el);} }); }catch(e){}
+  document.querySelectorAll('#tool-mp .sec > h2, .app-tabs button').forEach(function(x){ var t=x.firstChild; while(t&&t.nodeType!==3) t=t.nextSibling; if(t) t.textContent=t.textContent.replace(/^[^A-Za-z0-9]+/,''); });
 })();
 </script>
 </body>

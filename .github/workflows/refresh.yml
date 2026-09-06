@@ -48,6 +48,8 @@ jobs:
           mkdir -p publish
           cp index-live-auto.html publish/index.html
           cp playbook.pdf publish/playbook.pdf
+          cp theme-os-toolkit.css publish/theme-os-toolkit.css
+          [ -f headlines.json ] && cp headlines.json publish/headlines.json || true
           echo "Built: $(du -h publish/index.html | cut -f1) + playbook $(du -h playbook.pdf | cut -f1)"
 
       - uses: actions/configure-pages@v5

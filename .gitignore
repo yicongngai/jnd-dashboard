@@ -85,3 +85,7 @@ market-tab/era_classified.json
 # never be committed or staged.
 report-data/
 report-prototype.html
+
+# local design previews
+index-os-preview*.html
+index-live-auto.html.bak-*
