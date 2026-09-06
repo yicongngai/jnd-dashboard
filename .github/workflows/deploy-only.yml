@@ -40,6 +40,7 @@ jobs:
           [ -f decoupling.html ] && cp decoupling.html publish/decoupling.html || true
           # launch presentation pages: built page + referenced assets only (6 Sep 2026)
           for d in launch/*/; do [ -f "$d/index.html" ] || continue; mkdir -p "publish/$d"; cp "$d/index.html" "publish/$d/"; cp -r "$d/assets" "publish/$d/"; done
+          [ -f launch/index.json ] && cp launch/index.json publish/launch/index.json || true
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

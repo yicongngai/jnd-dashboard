@@ -1,0 +1,22 @@
+{
+ "launches": [
+  {
+   "slug": "lucerne-grand",
+   "name": "Lucerne Grand",
+   "district": "District 22, Jurong Lake District",
+   "preview": "18 September 2026",
+   "booking": "3 October 2026",
+   "thesis": "Lakeside MRT one minute away. A supermarket and shops downstairs. 570 homes by CDL in five blocks beside Jurong Lake Gardens. Preview 18 September 2026, booking 3 October.",
+   "hero": "launch/lucerne-grand/assets/img/hero-river-dusk.jpg"
+  },
+  {
+   "slug": "thomson-reserve",
+   "name": "Thomson Reserve",
+   "district": "District 20, Bishan planning area",
+   "preview": "3 October 2026",
+   "booking": "",
+   "thesis": "Upper Thomson MRT at the doorstep. Ai Tong within 1 km. 1,268 homes by UOL, Singapore Land and CapitaLand. Preview 3 October 2026.",
+   "hero": "launch/thomson-reserve/assets/img/towers-pool.jpg"
+  }
+ ]
+}
