@@ -46,7 +46,7 @@ img{display:block;max-width:100%}
 .wrap{max-width:1280px;margin:0 auto;padding:0 56px}
 section{position:relative;padding:120px 0}
 .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--g3);margin-bottom:18px}
-h2{font-family:var(--font-display);font-size:60px;font-weight:300;letter-spacing:-.01em;line-height:1.05;max-width:900px;text-wrap:balance}
+h2{font-family:var(--font-display);font-size:54px;font-weight:200;letter-spacing:-.03em;line-height:1.06;max-width:900px;text-wrap:balance}
 h2 b{font-weight:500}
 .lede{font-size:18px;color:var(--g4);max-width:720px;margin-top:22px;line-height:1.6}
 .reveal{opacity:0;transform:translateY(26px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
@@ -62,7 +62,7 @@ h2 b{font-weight:500}
 #hero .top .jnd span{color:var(--gold)}
 #hero .txt{position:absolute;left:56px;right:56px;bottom:92px;z-index:2;max-width:980px}
 #hero .eyebrow{color:rgba(255,255,255,.7)}
-#hero h1{font-family:var(--font-h1);font-size:96px;font-weight:400;letter-spacing:.04em;line-height:1.02;margin:0 0 22px;text-transform:uppercase}
+#hero h1{font-family:var(--font-h1);font-size:88px;font-weight:100;letter-spacing:.08em;line-height:1.04;margin:0 0 22px;text-transform:uppercase}
 #hero .thesis{font-size:20px;color:rgba(255,255,255,.88);max-width:760px;line-height:1.5;font-weight:300}
 #hero .cue{position:absolute;right:56px;bottom:44px;z-index:2;font-size:12px;color:rgba(255,255,255,.6);display:flex;align-items:center;gap:10px}
 #hero .cue i{width:1px;height:38px;background:rgba(255,255,255,.5);display:block;animation:cue 2.2s ease-in-out infinite}
@@ -189,7 +189,7 @@ body.dark #nav a{background:rgba(255,255,255,.3)} body.dark #nav a.on{background
 .bandimg .pimg{position:absolute;left:0;right:0;top:-12%;height:124%;background-size:cover;background-position:center;will-change:transform}
 .bandimg .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(var(--dark2rgb),.05) 0%,rgba(var(--dark2rgb),.2) 50%,rgba(var(--dark2rgb),.8) 100%)}
 .bandimg .btxt{position:relative;z-index:2;padding:0 56px 72px}
-.bandimg .eyebrow{color:rgba(255,255,255,.7)}.bandimg h2{color:#FFF;font-size:84px;max-width:none}
+.bandimg .eyebrow{color:rgba(255,255,255,.7)}.bandimg h2{color:#FFF;font-size:72px;max-width:none}
 .gallery .g{flex:0 0 min(86vw,1180px);border-radius:30px}
 @media (max-width:900px){.counts{grid-template-columns:repeat(3,1fr)}.fromrow{grid-template-columns:1fr}.bandimg h2{font-size:40px}.bandimg .btxt{padding:0 22px 44px}}
 /* falsify + close */
@@ -452,7 +452,7 @@ for k, v in {"{{DISTRICT}}": esc(D["district"]), "{{PREVIEW}}": esc(D["preview"]
              "{{SINMING}}": sinming_rows, "{{EVIDENCE}}": evidence_html, "{{TIMELINE}}": timeline_html, "{{FALSIFY}}": falsify_html, "{{SOURCES}}": esc(D["sources"]), "{{UPSIDE}}": upside_html, "{{JTX}}": jtx_rows}.items():
     out = out.replace(k, v)
 T = D["theme"]; _rgb = lambda h: ",".join(str(int(h.lstrip("#")[i:i+2], 16)) for i in (0, 2, 4))
-out = out.replace("{{THEMEVARS}}", "{" + "".join("--%s:%s;" % (k, v) for k, v in T.items() if k not in ("display", "h1", "fonts", "concept")) + "--dark2rgb:%s;--font-display:'%s',Georgia,serif;--font-h1:'%s',Georgia,serif;--font-body:'Outfit','Avenir Next','Helvetica Neue',Arial,sans-serif;--ok:#3E7C59;" % (_rgb(T["dark2"]), T["display"], T["h1"]) + "}").replace("{{FONTS}}", T["fonts"])
+out = out.replace("{{THEMEVARS}}", "{" + "".join("--%s:%s;" % (k, v) for k, v in T.items() if k not in ("display", "h1", "fonts", "concept")) + "--dark2rgb:%s;--font-display:'%s','Avenir Next','Helvetica Neue',Arial,sans-serif;--font-h1:'%s','Avenir Next','Helvetica Neue',Arial,sans-serif;--font-body:'Outfit','Avenir Next','Helvetica Neue',Arial,sans-serif;--ok:#3E7C59;" % (_rgb(T["dark2"]), T["display"], T["h1"]) + "}").replace("{{FONTS}}", T["fonts"])
 out = out.replace("var prices=PRICES;", "var prices=" + json.dumps([[p[0], p[1], p[2]] for p in D["prices"]]) + ";")
 open(os.path.join(HERE, "index.html"), "w", encoding="utf-8").write(out)
 print("built", len(out), "bytes")

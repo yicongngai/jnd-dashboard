@@ -686,9 +686,9 @@
   "tint2": "#E9DCC7",
   "wash1": "rgba(176,141,87,.22)",
   "wash2": "rgba(203,191,174,.4)",
-  "display": "Cormorant Garamond",
-  "h1": "Cinzel",
-  "fonts": "family=Cinzel:wght@400;500&family=Cormorant+Garamond:wght@300;400;500&family=Outfit:wght@200;300;400;500",
+  "display": "Outfit",
+  "h1": "Outfit",
+  "fonts": "family=Outfit:wght@100;200;300;400;500",
   "concept": "The mountain, the lake, the home. Cream, taupe and dark timber from the CDL brochure."
  }
 }

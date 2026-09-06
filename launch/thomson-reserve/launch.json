@@ -461,9 +461,9 @@
   "tint2": "#E1E9E3",
   "wash1": "rgba(152,181,177,.35)",
   "wash2": "rgba(218,214,179,.45)",
-  "display": "Cormorant Garamond",
-  "h1": "Cormorant Garamond",
-  "fonts": "family=Cormorant+Garamond:wght@300;400;500&family=Outfit:wght@200;300;400;500",
+  "display": "Outfit",
+  "h1": "Outfit",
+  "fonts": "family=Outfit:wght@100;200;300;400;500",
   "concept": "En plein air. Porcelain light, morning mist, teal blue and canopy green from the Thomson Reserve brand guide."
  }
 }
