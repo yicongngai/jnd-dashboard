@@ -28,8 +28,9 @@ sinming_rows = "".join('<tr><td>%s</td><td>%s</td><td>%s</td><td class="n">%s</t
 evidence_html = "".join('<figure class="ev"><img data-lb="assets/slides/%s.jpg" data-cap="%s" src="assets/slides/%s.jpg" alt="Slide" loading="lazy" decoding="async"><figcaption><span>For Lucerne Grand</span>%s</figcaption></figure>' % (f, esc(c), f, esc(c)) for f, c in D["evidence"])
 timeline_html = "".join('<div class="tl"><div class="d">%s</div><div class="w">%s</div></div>' % (esc(a), esc(b)) for a, b in D["timeline"])
 falsify_html = ""
-coh_html = "".join('<figure class="coh%s"><img data-lb="assets/img/%s.jpg" data-cap="%s, %s" data-kicker="Floor plan" src="assets/img/%s.jpg" alt="%s floor plan" loading="lazy" decoding="async"><figcaption><div class="cname">%s</div><div class="cwhere">%s</div><div class="ctype">%s<span>%s</span></div><div class="cq">%s</div><div class="cpsf">%s</div><div class="cwhen">%s</div></figcaption></figure>' % (
-    " ours" if c.get("me") else "", c["img"], esc(c["name"]), esc(c["size"]), c["img"], esc(c["name"]), esc(c["name"]), esc(c["where"]), esc(c["type"]), esc(c["size"]), esc(c["q"]), esc(c["psf"]), esc(c["when"])) for c in D["cohort"])
+coh_html = "".join('<figure class="coh%s"><img data-lb="assets/img/%s.jpg" data-cap="%s, %s" data-kicker="Floor plan" src="assets/img/%s.jpg" alt="%s floor plan" loading="lazy" decoding="async"><figcaption><div class="cname">%s</div><div class="cwhere">%s</div><div class="ctype">%s<span>%s</span></div><div class="cq">%s</div><div class="cpsf">%s</div><ul class="ctx">%s</ul></figcaption></figure>' % (
+    " ours" if c.get("me") else "", c["img"], esc(c["name"]), esc(c["size"]), c["img"], esc(c["name"]), esc(c["name"]), esc(c["where"]), esc(c["type"]), esc(c["size"]), esc(c["q"]), esc(c["psf"]),
+    "".join("<li>%s</li>" % esc(t) for t in c["tx"])) for c in D["cohort"])
 plan_idx = "".join('<tr><td>%s</td><td><b>%s</b></td><td>%s</td><td>%s</td></tr>' % (esc(t), esc(c), esc(sz), esc(w)) for t, c, sz, w in D["plan_index"])
 plans_html = "".join('<figure class="plan"><img data-lb="assets/pages/%s.jpg" data-cap="%s" data-kicker="Floor plan, from the developer brochure" src="assets/pages/%s.jpg" alt="%s" loading="lazy" decoding="async"><figcaption>%s</figcaption></figure>' % (f, esc(c), f, esc(c), esc(c)) for f, c in D["plans"])
 spec_html = "".join('<div class="bcard%s"><h3>%s</h3><ul>%s</ul></div>' % (" soon" if t == "Not out yet" else "", esc(t), "".join("<li>%s</li>" % esc(x) for x in xs)) for t, xs in D["spec"].items())
@@ -119,13 +120,15 @@ body.dark #nav a{background:rgba(255,255,255,.3)} body.dark #nav a.on{background
 .coh .ctype span{display:block;color:var(--g3);font-size:12.5px}
 .coh .cq{font-size:25px;font-weight:200;letter-spacing:-.02em;margin-top:12px;line-height:1.15;text-wrap:balance}
 .coh figcaption{display:flex;flex-direction:column;flex:1}
-.coh .cwhen{margin-top:auto;padding-top:8px}
+
 .coh .cpsf{font-size:12.5px;color:var(--g4);margin-top:6px}
-.coh .cwhen{font-size:11.5px;color:var(--g3);margin-top:8px}
+.coh .ctx{list-style:none;margin-top:auto;padding-top:14px}
+.coh .ctx li{font-size:11.5px;color:var(--g4);padding:6px 0;border-top:1px solid var(--line);line-height:1.45}
+.coh.ours .ctx li{color:var(--ondark4);border-top-color:rgba(255,255,255,.12);font-size:12.5px}
 .coh.ours{background:var(--ink);border-color:transparent}
 .coh.ours img{background:#FFF}
 .coh.ours .cname,.coh.ours .cq{color:#FFF}
-.coh.ours .cwhere,.coh.ours .cwhen{color:var(--ondark3)}
+.coh.ours .cwhere{color:var(--ondark3)}
 .coh.ours .ctype,.coh.ours .cpsf{color:var(--ondark4)}
 .coh.ours .ctype{border-top-color:rgba(255,255,255,.14)}
 .coh.ours .ctype span{color:var(--ondark3)}
@@ -383,10 +386,10 @@ h1,h2{-webkit-font-smoothing:antialiased}
 <section id="cohort" data-title="The other launches">
   <div class="wrap">
     <div class="eyebrow reveal">Transacted, not asking. URA caveats.</div>
-    <h2 class="reveal d1">Three launches in the district, and <b>what a 3-bedroom cost</b>.</h2>
-    <p class="lede reveal d2">All three are District 22, all 99-year leasehold, none of them completed. These are the real caveats for the 3-bedroom stack at each, against Lucerne Grand's 3-bedroom at the working number. Tap any plan to open it.</p>
+    <h2 class="reveal d1">The three launches still selling, and <b>the most a 3-bedroom fetched</b>.</h2>
+    <p class="lede reveal d2">The basic 3-bedroom at each, and its highest transactions. All District 22, all 99-year leasehold, none of them completed. Lucerne Grand's 3-bedroom starts under every one of them. Tap any plan to open it.</p>
     <div class="cohgrid">{{COHORT}}</div>
-    <div class="note">Lucerne Grand's 3-bedroom is the most compact of the four, which is where the quantum gap comes from; the psf line is under each price so nothing is hidden. Sora's low floors are the closest on quantum. Sizes and layouts from the ERA unit sheets, prices from URA Realis via the JND vault, latest August 2026.</div>
+    <div class="note">Lucerne Grand's 3-bedroom is 872 sqft, the most compact of the four, and part of the gap is size; the psf sits under every price. Sora's 936 sqft units have also gone as low as $2.14M on the first five floors, so that is the one to answer in the room. At this page's $2,500 working number Lucerne's 872 sqft is $2.18M. Sizes and layouts from the ERA unit sheets, prices from URA Realis via the JND vault, latest August 2026.</div>
   </div>
 </section>
 

@@ -698,20 +698,28 @@
    "img": "sora-c1-plan",
    "type": "3-bedroom Deluxe, type C1",
    "size": "936 sqft, 87 sqm",
-   "q": "$2.14M to $2.19M",
-   "psf": "$2,282 to $2,339 psf",
-   "when": "Five sales, April to June 2026",
+   "q": "$2.19M",
+   "psf": "highest transacted, $2,339 psf",
+   "tx": [
+    "Jun 2026, floors 06 to 10, $2,189,000 at $2,339 psf",
+    "Jun 2026, floors 01 to 05, $2,179,000 at $2,328 psf",
+    "Jul 2026, floors 01 to 05, $2,169,000 at $2,317 psf"
+   ],
    "me": false
   },
   {
    "name": "LakeGarden Residences",
    "where": "Yuan Ching Road, launched August 2023",
-   "img": "lakegarden-cs2-plan",
-   "type": "3-bedroom + Study, type CS2",
-   "size": "1,109 sqft, 103 sqm",
-   "q": "$2.29M to $2.54M",
-   "psf": "$2,065 to $2,292 psf",
-   "when": "February and March 2026",
+   "img": "lakegarden-c2-plan",
+   "type": "3-bedroom, type C2",
+   "size": "1,012 sqft, 94 sqm",
+   "q": "$2.39M",
+   "psf": "highest transacted, $2,365 psf",
+   "tx": [
+    "Feb 2026, floors 16 to 20, $2,393,000 at $2,365 psf",
+    "Feb 2026, floors 16 to 20, $2,390,000 at $2,362 psf",
+    "Only two caveats for this type"
+   ],
    "me": false
   },
   {
@@ -720,9 +728,13 @@
    "img": "jden-c2-plan",
    "type": "3-bedroom, type C2",
    "size": "1,184 sqft, 110 sqm",
-   "q": "$3.00M to $3.08M",
-   "psf": "$2,534 to $2,605 psf",
-   "when": "June 2025 to July 2026",
+   "q": "$3.08M",
+   "psf": "highest transacted, $2,605 psf",
+   "tx": [
+    "Jul 2026, floors 36 to 40, $3,084,000 at $2,605 psf",
+    "Jul 2025, floors 36 to 40, $3,038,000 at $2,566 psf",
+    "Jul 2024, floors 31 to 35, $3,015,000 at $2,546 psf"
+   ],
    "me": false
   },
   {
@@ -731,9 +743,13 @@
    "img": "lucerne-c1-plan",
    "type": "3-bedroom, type C1",
    "size": "872 sqft, 81 sqm",
-   "q": "$2.18M",
-   "psf": "at $2,500 psf",
-   "when": "From $2.01M at the ERA kit's $2,3xx start",
+   "q": "From $2.09M",
+   "psf": "at the ERA kit's $2,4xx estimate",
+   "tx": [
+    "$96k under Sora",
+    "$300k under LakeGarden Residences",
+    "$991k under J'den"
+   ],
    "me": true
   }
  ]
