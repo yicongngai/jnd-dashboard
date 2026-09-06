@@ -350,24 +350,11 @@ h1,h2{-webkit-font-smoothing:antialiased}
     <p class="lede reveal d2">{{PRICE_BASIS}}</p>
     <div class="fromrow reveal"><div class="from"><div class="k">2-bedroom from, ERA kit</div><div class="n">$1.4xM</div></div><div class="from"><div class="k">3-bedroom from, ERA kit</div><div class="n">$2.1xM</div></div><div class="from"><div class="k">4-bedroom from, ERA kit</div><div class="n">$2.8xM</div></div></div>
     <table class="ptable matrix reveal"><thead><tr><th>Type</th>{{PRICE_HEAD}}</tr></thead><tbody>{{PRICES}}</tbody></table>
-    <div class="note">For comparison, the two launches still selling on Lakeside reached $2,581 psf at Sora and $2,556 psf at LakeGarden Residences, and J'den at Jurong East reached $2,832 psf. Neither Sora nor LakeGarden has completed, so they are the new-sale cohort, not the resale proof below. ERA objection handling kit, September 2026.</div>
-    <div class="eyebrow" style="margin-top:72px">Three bedrooms, 947 square feet, one street apart</div>
-    <div class="pairs">
-      <div class="pair reveal"><span class="tag">Resale, 88 years left</span><div class="who">Lake Grande, Jurong Lake Link</div><div class="p">$1.84M</div><div class="d">3-bedroom type C3, 947 sqft, 6th to 10th floor, sold May 2026 at $1,943 psf. Completed 2019. Put the same unit on a fresh 99-year lease by the age gap method and it is $2,537 psf, or <b>$2.40M</b>.</div></div>
-      <div class="pair tr reveal d1"><span class="tag">Brand new, ready 2030</span><div class="who">Lucerne Grand</div><div class="p">$2.37M</div><div class="d">3-bedroom Premium + Study type CP1S, 947 sqft, at $2,500 psf. The same 88 square metres, with a study on top, a full 99-year lease, the MRT and a supermarket downstairs. About $35k under the matched-lease price of the resale.</div></div>
-    </div>
-    <div class="proof reveal">
-      <div class="ptx">
-        <div class="eyebrow">Lake Grande sales, URA caveats, 2026</div>
-        <table class="jtx"><thead><tr><th>Sold</th><th>Floor</th><th class="n">Size</th><th>Type</th><th class="n">Price</th><th class="n">psf</th></tr></thead><tbody>{{JTX}}</tbody></table>
-        <div class="note">The highlighted row is the 947 sqft type C3, the same size as Lucerne Grand's 3-bedroom Premium + Study. Source: URA Realis via the JND vault, August 2026.</div>
-      </div>
-      <div class="plans"><figure class="pplan"><img data-lb="assets/img/lakegrande-c3-plan.jpg" data-cap="Lake Grande type C3, 3-bedroom, 947 sqft" data-kicker="Floor plan" src="assets/img/lakegrande-c3-plan.jpg" alt="Lake Grande type C3 floor plan"><figcaption><b>Lake Grande type C3, 3-bedroom.</b> 88 sqm, 947 sqft. Three bedrooms, two baths, flexi room and kitchen off the dining. Stacks 01 and 11, floors 2 to 16.</figcaption></figure><figure class="pplan"><img data-lb="assets/img/lucerne-cp1s-plan.jpg" data-cap="Lucerne Grand type CP1S, 3-bedroom Premium + Study, 947 sqft" data-kicker="Floor plan" src="assets/img/lucerne-cp1s-plan.jpg" alt="Lucerne Grand type CP1S floor plan"><figcaption><b>Lucerne Grand type CP1S, 3-bedroom Premium + Study.</b> 88 sqm, 947 sqft. The same size, with a study, a yard and a household shelter. Block 38 stacks 33 and 34, floors 3 to 17.</figcaption></figure></div>
-    </div>
+    <div class="note">For comparison, the two launches still selling on Lakeside reached $2,581 psf at Sora and $2,556 psf at LakeGarden Residences, and J'den at Jurong East reached $2,832 psf. Neither Sora nor LakeGarden has completed, so they are the new-sale cohort, not the resale benchmark in the next chapter. ERA objection handling kit, September 2026.</div>
   </div>
 </section>
 
-<section class="bandimg" data-title="Which will you buy" id="band2"><div class="pimg" style="background-image:url(assets/img/lake-gardens.jpg)"></div><div class="veil"></div><div class="btxt"><div class="eyebrow">The same 947 square feet</div><h2>Which will you buy?</h2></div></section>
+<section class="bandimg" data-title="Same lake, different lease" id="band2"><div class="pimg" style="background-image:url(assets/img/lake-gardens.jpg)"></div><div class="veil"></div><div class="btxt"><div class="eyebrow">The resale next door</div><h2>Same lake,<br><b>different lease.</b></h2></div></section>
 
 <section id="neighbours" data-title="The neighbours">
   <div class="wrap">
@@ -377,6 +364,9 @@ h1,h2{-webkit-font-smoothing:antialiased}
     <table class="ntable reveal"><thead><tr><th>Project</th><th>Sells for today, URA caveats</th><th class="n mid">Lease years older</th><th class="n">Brand-new price</th></tr></thead><tbody>{{NEIGH}}</tbody></table>
     <div class="band reveal" id="band"></div>
     <div class="note">Caveats from URA via the JND vault, latest August 2026. Lease start dates from the ERA kit. Lake Grande first because it is the last big launch on Lakeside to go through launch, completion and resale.</div>
+    <div class="eyebrow" style="margin-top:72px">Lake Grande, the sales behind that first row</div>
+    <table class="jtx reveal"><thead><tr><th>Sold</th><th>Floor</th><th class="n">Size</th><th>Type</th><th class="n">Price</th><th class="n">psf</th></tr></thead><tbody>{{JTX}}</tbody></table>
+    <div class="note">Every Lake Grande sale of a 3 or 4-bedroom this year. Source: URA Realis via the JND vault, August 2026.</div>
   </div>
 </section>
 
