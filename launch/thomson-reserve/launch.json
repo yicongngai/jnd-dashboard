@@ -1,0 +1,439 @@
+{
+ "name": "Thomson Reserve",
+ "tagline": "A sanctuary perfectly placed",
+ "district": "District 20, Bishan planning area",
+ "address": "1, 3, 5, 7, 9, 11 Bright Hill Drive",
+ "preview": "3 October 2026",
+ "developer": "UOL Group, Singapore Land and CapitaLand Development (Tamarind Development Pte Ltd)",
+ "tenure": "99-year leasehold",
+ "units": 1268,
+ "towers": "Two 30-storey towers and four 21-storey towers",
+ "site_sqft": 555067,
+ "site_sqm": 51567,
+ "carpark": 1014,
+ "plot_ratio": 2.1,
+ "novp": "1Q 2031, estimated",
+ "land_psf_ppr": 1178,
+ "land_month": "October 2024",
+ "architect": "P&T Consultants",
+ "landscape": "Ecoplan Asia",
+ "interiors": "2nd Edition",
+ "builder": "Lian Beng Construction",
+ "thesis": "Upper Thomson MRT at the doorstep. Ai Tong within 1 km. 1,268 homes by UOL, Singapore Land and CapitaLand. Preview 3 October 2026.",
+ "mix": [
+  [
+   "2 to 3-bedroom types",
+   1066,
+   "84%"
+  ],
+  [
+   "4 to 5-bedroom types",
+   202,
+   "16%"
+  ]
+ ],
+ "price_basis": "The developer has not released prices. Sizes are today's common sizes from the ERA Project Marketing info kit, run from its $2,550 estimate up to $3,000 psf. The $2,700 to $2,800 columns are where this launch is expected to open.",
+ "prices": [
+  [
+   "2 Bedroom",
+   581,
+   1626800,
+   "$1.4x to $1.5x"
+  ],
+  [
+   "2 Bedroom Premium",
+   667,
+   1867600,
+   "$1.7x"
+  ],
+  [
+   "2 Bedroom Premium + Study",
+   732,
+   2049600,
+   "$1.7x"
+  ],
+  [
+   "3 Bedroom",
+   818,
+   2290400,
+   "$2.1x"
+  ],
+  [
+   "3 Bedroom Premium",
+   915,
+   2562000,
+   "$2.3x"
+  ],
+  [
+   "3 Bedroom Premium + Study",
+   1033,
+   2892400,
+   "$2.3x"
+  ],
+  [
+   "4 Bedroom",
+   1173,
+   3284400,
+   "$2.9x"
+  ],
+  [
+   "4 Bedroom Premium",
+   1238,
+   3466400,
+   "$3.1x"
+  ]
+ ],
+ "brief": {
+  "Low-density landscape": [
+   "Minimal building footprint, six blocks on 555,067 sqft",
+   "Terraced landscape over two levels",
+   "Blocks positioned to maximise views"
+  ],
+  "Resort-scale facilities": [
+   "Three dedicated clubs, 80 curated facilities",
+   "50m lap pool, island pool, infinity, wellness and leisure pools",
+   "Grand Clubhouse zone with the Classic Collection"
+  ],
+  "Wellness and lifestyle": [
+   "Main gym and a private gym",
+   "Tennis court, multipurpose court",
+   "Pilates studio, hydro spa, wellness pods, yoga deck"
+  ],
+  "Entertainment": [
+   "Double-volume Grand Function Room",
+   "KTV and entertainment room, recreation room",
+   "Golf simulator, kids' function room and playroom"
+  ],
+  "Two collections": [
+   "Luxury Collection, two 30-storey towers furthest from Bright Hill Drive",
+   "Classic Collection, four 21-storey towers within the Grand Clubhouse zone",
+   "PES units with direct facility access"
+  ],
+  "Specifications": [
+   "Smeg, Miele and Liebherr appliances",
+   "GROHE and BLANCO fittings",
+   "Marble flooring in selected units"
+  ]
+ },
+ "gallery": [
+  [
+   "island-club-night",
+   "Island Club at night"
+  ],
+  [
+   "pool-aerial",
+   "The pools from above"
+  ],
+  [
+   "clubhouse-dusk",
+   "Grand Clubhouse at dusk"
+  ],
+  [
+   "towers-pool",
+   "The towers over the water"
+  ],
+  [
+   "grand-function-room",
+   "Double-volume Grand Function Room"
+  ],
+  [
+   "wellness-pavilion",
+   "Wellness Club pavilion"
+  ],
+  [
+   "lounge",
+   "Club lounge"
+  ],
+  [
+   "lawn-pavilion",
+   "Lawn and pavilion"
+  ],
+  [
+   "golf-simulator",
+   "Golf simulator"
+  ],
+  [
+   "yoga-studio",
+   "Yoga studio"
+  ],
+  [
+   "reading-room",
+   "Reading room"
+  ]
+ ],
+ "neighbours": [
+  {
+   "name": "JadeScape",
+   "where": "Shunfu Road, Marymount MRT",
+   "top": 2023,
+   "units": 1206,
+   "resale": "$2,630 to $2,650 psf",
+   "unit": "3-bed 1,152 sqft, $3.03M to $3.06M, Jul to Aug 2026",
+   "psf": 2640,
+   "lease": 91,
+   "mrt": 1.1,
+   "a": 3350,
+   "b": 3220,
+   "yrs": 8,
+   "asnew": 3222
+  },
+  {
+   "name": "Sky Vue",
+   "where": "Bishan Street 15, Bishan MRT",
+   "top": 2016,
+   "units": 694,
+   "resale": "$2,440 to $2,540 psf",
+   "unit": "1,141 sqft, $2.78M to $2.90M, Jul 2026",
+   "psf": 2490,
+   "lease": 86,
+   "mrt": 1.1,
+   "a": 3340,
+   "b": 3430,
+   "yrs": 15,
+   "asnew": 3434
+  },
+  {
+   "name": "Thomson Three",
+   "where": "Bright Hill Drive, next door",
+   "top": 2016,
+   "units": 445,
+   "resale": "$2,280 to $2,360 psf",
+   "unit": "1,141 sqft, $2.60M to $2.70M, Jun 2026",
+   "psf": 2330,
+   "lease": 85,
+   "mrt": 1.1,
+   "a": 3160,
+   "b": 3270,
+   "yrs": 15,
+   "asnew": 3265
+  },
+  {
+   "name": "Thomson Grand",
+   "where": "Sin Ming Walk",
+   "top": 2015,
+   "units": 361,
+   "resale": "$1,930 to $1,990 psf",
+   "unit": "1,356 sqft, $2.61M to $2.70M, Aug 2026",
+   "psf": 1960,
+   "lease": 84,
+   "mrt": 1.0,
+   "a": 2450,
+   "b": 2930,
+   "yrs": 16,
+   "asnew": 2926
+  }
+ ],
+ "evidence": [
+  [
+   "deck-50",
+   "Private prices kept climbing. Thomson Reserve is in this market."
+  ],
+  [
+   "deck-51",
+   "The private market tells a different story."
+  ],
+  [
+   "deck-52",
+   "Land prices since 2023. Thomson Reserve's site went for $1,178 psf ppr in October 2024, near the bottom of this list."
+  ],
+  [
+   "deck-53",
+   "Land bids bounced 25% from the 2024 low, $1,143 to $1,428 in the first half of 2026. The next launch on this line will be built on dearer land than Thomson Reserve."
+  ],
+  [
+   "deck-54",
+   "Why swap from a non-harmonised home to a harmonised one: new launch prices barely moved for two years while resale caught up. Sell high, buy low."
+  ],
+  [
+   "deck-55",
+   "Sell high to buy low. Resale prices are now higher than brand new."
+  ],
+  [
+   "deck-56",
+   "Penrith, 936 sqft, $2.53M brand new. Stirling Residences, 1,055 sqft, $2.80M resale. The new one costs less. The same pair exists here: JadeScape resale against a new Thomson Reserve unit."
+  ],
+  [
+   "deck-57",
+   "The same idea again. Resale quantums are above brand new."
+  ],
+  [
+   "deck-58",
+   "Seaside Residences, 1,130 sqft resale, $2.8M. Emerald of Katong, 1,023 sqft brand new, $2.73M. Sell high, buy low."
+  ],
+  [
+   "deck-59",
+   "The results of harmonisation are already showing in the numbers."
+  ],
+  [
+   "deck-60",
+   "Emerald of Katong bought $222k cheaper than a similar Tembusu Grand unit. If it later sells at the same price, that is a $700k gain. Thomson Reserve is the harmonised launch on this line."
+  ]
+ ],
+ "timeline": [
+  [
+   "3 Oct 2026",
+   "Preview opens"
+  ],
+  [
+   "Oct 2026",
+   "Booking, Option to Purchase"
+  ],
+  [
+   "2027 to 2030",
+   "Progressive payments while the estate is built"
+  ],
+  [
+   "Oct 2030",
+   "Four years from purchase, Seller's Stamp Duty clears"
+  ],
+  [
+   "1Q 2031",
+   "Notice of vacant possession, estimated"
+  ],
+  [
+   "2031 to 2032",
+   "Exit window, the next upgrader buys at brand-new-equivalent psf"
+  ]
+ ],
+ "falsify": [
+  "The developer opens well above $2,800 psf on common sizes.",
+  "HDB resale prices pick up speed again through the second half of 2026, and the upgrader's window moves."
+ ],
+ "sources": "URA caveats via the JND vault, latest August 2026. HDB resale via data.gov.sg, twelve months to September 2026. Land bids compiled from URA and HDB tender awards. Project facts and estimated prices from the ERA Project Marketing preliminary info kit and the 25 August developer brief. Justin Ngai's Thomson Reserve client deck, August 2026.",
+ "psf": 2800,
+ "hdb": [
+  [
+   "Blk 259 Ang Mo Kio Ave 2",
+   "5-room, 135 sqm, floor 22 to 24",
+   "Sep 2026",
+   999888
+  ],
+  [
+   "Blk 235 Bishan St 22",
+   "4-room, 105 sqm, floor 07 to 09",
+   "Sep 2026",
+   880000
+  ],
+  [
+   "Blk 255 Ang Mo Kio Ave 4",
+   "4-room, 98 sqm, floor 10 to 12",
+   "Sep 2026",
+   585000
+  ],
+  [
+   "Blk 273B Bishan St 24",
+   "5-room, 120 sqm, floor 31 to 33",
+   "Aug 2026",
+   1620000
+  ],
+  [
+   "Blk 228B Ang Mo Kio St 23",
+   "5-room, 113 sqm, floor 19 to 21",
+   "Aug 2026",
+   1315000
+  ],
+  [
+   "Blk 446 Bright Hill Dr",
+   "5-room, 122 sqm, floor 04 to 06",
+   "Aug 2026",
+   1158000
+  ],
+  [
+   "Blk 290 Bishan St 24",
+   "5-room, 123 sqm, floor 25 to 27",
+   "Aug 2026",
+   1128000
+  ],
+  [
+   "Blk 312 Shunfu Rd",
+   "5-room, 121 sqm, floor 10 to 12",
+   "Aug 2026",
+   950000
+  ],
+  [
+   "Blk 273A Bishan St 24",
+   "4-room, 95 sqm, floor 34 to 36",
+   "Aug 2026",
+   1300000
+  ],
+  [
+   "Blk 228A Ang Mo Kio St 23",
+   "4-room, 96 sqm, floor 25 to 27",
+   "Aug 2026",
+   1168888
+  ],
+  [
+   "Blk 227A Ang Mo Kio St 23",
+   "4-room, 93 sqm, floor 25 to 27",
+   "Aug 2026",
+   1075000
+  ],
+  [
+   "Blk 308B Ang Mo Kio Ave 1",
+   "4-room, 94 sqm, floor 10 to 12",
+   "Aug 2026",
+   925000
+  ]
+ ],
+ "jadescape_tx": [
+  [
+   "Aug 2026",
+   "16 to 20",
+   "1,152",
+   "3-bedroom Premium",
+   3030000,
+   2630,
+   true
+  ],
+  [
+   "Jul 2026",
+   "16 to 20",
+   "1,152",
+   "3-bedroom Premium",
+   3055000,
+   2652,
+   true
+  ],
+  [
+   "Apr 2026",
+   "16 to 20",
+   "1,055",
+   "3-bedroom Deluxe",
+   2745000,
+   2602,
+   false
+  ],
+  [
+   "May 2026",
+   "06 to 10",
+   "1,012",
+   "3-bedroom Deluxe",
+   2620000,
+   2589,
+   false
+  ],
+  [
+   "Apr 2026",
+   "11 to 15",
+   "904",
+   "3-bedroom",
+   2250000,
+   2489,
+   false
+  ]
+ ],
+ "watch_groups": [
+  "Thomson Reserve Hyper 1",
+  "Thomson reserve updates"
+ ],
+ "checklist": {
+  "Brochure": false,
+  "Floor plans": false,
+  "Site plan": true,
+  "Show unit photos": false,
+  "Specifications": false,
+  "Schedule of finishes": false,
+  "Price list": false,
+  "Preview and booking dates": true
+ }
+}

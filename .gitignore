@@ -89,3 +89,8 @@ report-prototype.html
 # local design previews
 index-os-preview*.html
 index-live-auto.html.bak-*
+
+# launch presentation pages: the built page and its referenced assets ship; the ERA kits,
+# raw renders and the watcher's inbox never do (6 Sep 2026)
+launch/*/drops/
+!launch/*/index.html

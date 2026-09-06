@@ -38,6 +38,8 @@ jobs:
           [ -f headlines.json ] && cp headlines.json publish/headlines.json || true
           # keep parity with inject_data_all.py, which stages the Decoupling Toolkit file too
           [ -f decoupling.html ] && cp decoupling.html publish/decoupling.html || true
+          # launch presentation pages: built page + referenced assets only (6 Sep 2026)
+          for d in launch/*/; do [ -f "$d/index.html" ] || continue; mkdir -p "publish/$d"; cp "$d/index.html" "publish/$d/"; cp -r "$d/assets" "publish/$d/"; done
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

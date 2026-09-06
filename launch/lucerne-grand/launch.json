@@ -1,0 +1,664 @@
+{
+ "name": "Lucerne Grand",
+ "tagline": "Where your West Side story begins",
+ "district": "District 22, Jurong Lake District",
+ "address": "30, 32, 34, 36, 38 Lakeside Drive",
+ "preview": "18 September 2026",
+ "booking": "3 October 2026",
+ "developer": "City Developments Limited (CDL Polaris Properties Pte Ltd)",
+ "tenure": "99-year leasehold from 8 September 2025",
+ "units": 570,
+ "towers": "Five 17-storey blocks over Lucerne Galleria",
+ "site_sqft": 145152,
+ "site_sqm": 13485.1,
+ "carpark": 456,
+ "novp": "7 December 2031 at the latest, expected 2030",
+ "land_psf_ppr": 1132,
+ "land_month": "June 2025",
+ "architect": "ADDP Architects",
+ "landscape": "Tinderbox",
+ "interiors": "2nd Edition",
+ "builder": "United Tec Construction",
+ "thesis": "Lakeside MRT one minute away. A supermarket and shops downstairs. 570 homes by CDL in five blocks beside Jurong Lake Gardens. Preview 18 September 2026, booking 3 October.",
+ "mix": [
+  [
+   "2-bedroom types",
+   222,
+   "39%"
+  ],
+  [
+   "3-bedroom types",
+   253,
+   "44%"
+  ],
+  [
+   "4-bedroom types",
+   95,
+   "17%"
+  ]
+ ],
+ "price_basis": "The developer has not released prices. Sizes are from the ERA Project Marketing briefing deck of 22 August, run from $2,300 to $2,800 psf. The ERA kit puts the start at $2,3xx psf with most units below $2,700, and its starting quantums are in the first column. The $2,400 to $2,500 columns are where this launch is expected to open; the working number on this page is $2,500.",
+ "psf": 2500,
+ "top_year": 2030,
+ "rate": 45,
+ "prices": [
+  [
+   "2 Bedroom",
+   624,
+   1560000,
+   "$1.4x"
+  ],
+  [
+   "2 Bedroom + Study",
+   667,
+   1667500,
+   ""
+  ],
+  [
+   "3 Bedroom",
+   872,
+   2180000,
+   "$2.1x"
+  ],
+  [
+   "3 Bedroom Premium + Study",
+   947,
+   2367500,
+   ""
+  ],
+  [
+   "4 Bedroom Premium",
+   1152,
+   2880000,
+   "$2.8x"
+  ],
+  [
+   "4 Bedroom Premium + Study",
+   1345,
+   3362500,
+   ""
+  ],
+  [
+   "4 Bedroom Premium + Entertainment",
+   1432,
+   3580000,
+   ""
+  ]
+ ],
+ "brief": {
+  "Lucerne Galleria": [
+   "About 1,000 sqm of shops and restaurants at level 1",
+   "A 700 sqm supermarket downstairs",
+   "Sheltered walk to Lakeside MRT, one minute"
+  ],
+  "Five blocks, 17 storeys": [
+   "570 homes on 145,152 sqft",
+   "Blocks turned to the lake and the river",
+   "Views over Jurong Lake Gardens from about level 12"
+  ],
+  "Club Lucerne": [
+   "Clubhouse, lap pool and aqua lounge",
+   "Kids' splash pool and gourmet pavilion",
+   "Outdoor fitness, wellness garden and pets garden"
+  ],
+  "Homes": [
+   "2-bedroom 624 sqft to 4-bedroom Premium + Entertainment 1,432 sqft",
+   "Dumbbell 2-bedroom + Study layouts",
+   "Flexi study in the 3-bedroom Premium + Study"
+  ],
+  "Specifications": [
+   "Bosch and Samsung appliances",
+   "Geberit, hansgrohe and Franke fittings",
+   "Smart home and smart community systems"
+  ],
+  "Schools within 1 km": [
+   "Rulang Primary and Shuqun Primary",
+   "Yuhua Secondary and River Valley High",
+   "Canadian International School and NTU nearby"
+  ]
+ },
+ "gallery": [
+  [
+   "aerial-evening",
+   "The five blocks at dusk"
+  ],
+  [
+   "pool-evening",
+   "The lap pool at night"
+  ],
+  [
+   "entrance",
+   "The arrival court"
+  ],
+  [
+   "galleria",
+   "Lucerne Galleria at level 1"
+  ],
+  [
+   "mrt-frontage",
+   "Lakeside MRT next door"
+  ],
+  [
+   "lap-pool",
+   "Lap pool and aqua lounge"
+  ],
+  [
+   "club-interior",
+   "Inside Club Lucerne"
+  ],
+  [
+   "kids-pool",
+   "Kids' splash pool"
+  ],
+  [
+   "gourmet-pavilion",
+   "Gourmet pavilion"
+  ],
+  [
+   "wellness-garden",
+   "Wellness garden and pets garden"
+  ],
+  [
+   "living",
+   "Living and dining, show unit"
+  ],
+  [
+   "bedroom",
+   "Master bedroom"
+  ],
+  [
+   "balcony",
+   "Over Jurong Lake Gardens"
+  ]
+ ],
+ "neighbours": [
+  {
+   "name": "Lake Grande",
+   "where": "Jurong Lake Link, Lakeside MRT",
+   "top": 2019,
+   "units": 710,
+   "resale": "$2,050 to $2,110 psf",
+   "unit": "4-bed 1,152 sqft, $2.36M to $2.43M, Apr to Jul 2026",
+   "psf": 2080,
+   "lease": 88,
+   "yrs": 10,
+   "asnew": 2682,
+   "lease_start": "2015-06-09"
+  },
+  {
+   "name": "Lakeville",
+   "where": "Jurong Lake Link, Lakeside MRT",
+   "top": 2017,
+   "units": 696,
+   "resale": "$1,920 to $2,020 psf",
+   "unit": "1,141 sqft, $2.19M to $2.30M, May to Jun 2026",
+   "psf": 1970,
+   "lease": 86,
+   "yrs": 12,
+   "asnew": 2661,
+   "lease_start": "2013-04-30"
+  },
+  {
+   "name": "The Lakefront Residences",
+   "where": "Lakeside Drive, next door",
+   "top": 2014,
+   "units": 629,
+   "resale": "$1,780 to $1,810 psf",
+   "unit": "1,001 to 1,216 sqft, $1.81M to $2.20M, Apr to Aug 2026",
+   "psf": 1800,
+   "lease": 83,
+   "yrs": 15,
+   "asnew": 2624,
+   "lease_start": "2010-08-03"
+  },
+  {
+   "name": "Caspian",
+   "where": "Lakeside Drive, next door",
+   "top": 2012,
+   "units": 712,
+   "resale": "$1,560 to $1,720 psf",
+   "unit": "1,001 to 1,238 sqft, $1.56M to $2.00M, Mar to Jul 2026",
+   "psf": 1620,
+   "lease": 82,
+   "yrs": 18,
+   "asnew": 2576,
+   "lease_start": "2008-03-17"
+  },
+  {
+   "name": "The Lakeshore",
+   "where": "Jurong West Street 41",
+   "top": 2008,
+   "units": 848,
+   "resale": "$1,430 to $1,700 psf",
+   "unit": "1,109 to 1,184 sqft, $1.59M to $2.02M, Jun to Jul 2026",
+   "psf": 1520,
+   "lease": 76,
+   "yrs": 23,
+   "asnew": 2708,
+   "lease_start": "2002-11-22"
+  }
+ ],
+ "lakegrande_tx": [
+  [
+   "Jul 2026",
+   "11 to 15",
+   "1,152",
+   "4-bedroom D1",
+   2428000,
+   2108,
+   true
+  ],
+  [
+   "Apr 2026",
+   "06 to 10",
+   "1,152",
+   "4-bedroom D1",
+   2358000,
+   2047,
+   true
+  ],
+  [
+   "Jul 2026",
+   "11 to 15",
+   "1,302",
+   "4-bedroom",
+   2560000,
+   1966,
+   false
+  ],
+  [
+   "May 2026",
+   "01 to 05",
+   "980",
+   "3-bedroom C4",
+   1900000,
+   1939,
+   false
+  ],
+  [
+   "May 2026",
+   "06 to 10",
+   "947",
+   "3-bedroom C3",
+   1840000,
+   1943,
+   false
+  ]
+ ],
+ "hdb": [
+  [
+   "Blk 138B Yuan Ching Rd",
+   "5-room, 108 sqm, floor 10 to 12",
+   "Aug 2026",
+   940000
+  ],
+  [
+   "Blk 138C Yuan Ching Rd",
+   "4-room, 89 sqm, floor 13 to 15",
+   "Jul 2026",
+   768888
+  ],
+  [
+   "Blk 165B Yung Kuang Rd",
+   "5-room, 113 sqm, floor 19 to 21",
+   "Jul 2026",
+   768000
+  ],
+  [
+   "Blk 164A Yung Kuang Rd",
+   "5-room, 113 sqm, floor 16 to 18",
+   "Jul 2026",
+   755000
+  ],
+  [
+   "Blk 138C Yuan Ching Rd",
+   "4-room, 91 sqm, floor 04 to 06",
+   "Aug 2026",
+   722888
+  ],
+  [
+   "Blk 140D Corporation Dr",
+   "4-room, 93 sqm, floor 16 to 18",
+   "Aug 2026",
+   708888
+  ],
+  [
+   "Blk 325 Tah Ching Rd",
+   "5-room, 124 sqm, floor 07 to 09",
+   "Sep 2026",
+   698888
+  ],
+  [
+   "Blk 339A Kang Ching Rd",
+   "4-room, 89 sqm, floor 10 to 12",
+   "Sep 2026",
+   650000
+  ],
+  [
+   "Blk 158 Yung Loh Rd",
+   "5-room, 125 sqm, floor 04 to 06",
+   "Jul 2026",
+   650000
+  ],
+  [
+   "Blk 175A Yung Kuang Rd",
+   "4-room, 93 sqm, floor 04 to 06",
+   "Sep 2026",
+   648000
+  ],
+  [
+   "Blk 156 Yung Loh Rd",
+   "4-room, 107 sqm, floor 13 to 15",
+   "Aug 2026",
+   540000
+  ],
+  [
+   "Blk 153 Yung Ho Rd",
+   "4-room, 104 sqm, floor 13 to 15",
+   "Aug 2026",
+   490000
+  ]
+ ],
+ "evidence": [
+  [
+   "deck-45",
+   "Private prices kept climbing. Lucerne Grand is in this market."
+  ],
+  [
+   "deck-46",
+   "The private market tells a different story."
+  ],
+  [
+   "deck-47",
+   "Land prices since 2023. Lucerne Grand's site went for $1,132 psf ppr in June 2025, near the bottom of this list. Land is the floor under the price, not a discount."
+  ],
+  [
+   "deck-48",
+   "Land bids bounced 25% from the 2024 low. The next Lakeside plot will be built on dearer land than Lucerne Grand."
+  ],
+  [
+   "deck-49",
+   "Why swap from a non-harmonised home to a harmonised one: new launch prices barely moved for two years while resale caught up. Sell high, buy low."
+  ],
+  [
+   "deck-50",
+   "Sell high to buy low. Resale prices are now higher than brand new."
+  ],
+  [
+   "deck-51",
+   "Penrith, 936 sqft, $2.53M brand new. Stirling Residences, 1,055 sqft, $2.80M resale. The same pair exists here: a Lake Grande 4-bedder against a new Lucerne Grand 3-bedroom Premium + Study."
+  ],
+  [
+   "deck-52",
+   "The same idea again. Resale quantums are above brand new."
+  ],
+  [
+   "deck-53",
+   "Seaside Residences, 1,130 sqft resale, $2.8M. Emerald of Katong, 1,023 sqft brand new, $2.73M. Sell high, buy low."
+  ],
+  [
+   "deck-54",
+   "The results of harmonisation are already showing in the numbers."
+  ],
+  [
+   "deck-55",
+   "Emerald of Katong bought $222k cheaper than a similar Tembusu Grand unit. If it later sells at the same price, that is a $700k gain. Lucerne Grand is the harmonised launch on Lakeside."
+  ]
+ ],
+ "timeline": [
+  [
+   "18 Sep 2026",
+   "Preview opens"
+  ],
+  [
+   "3 Oct 2026",
+   "Booking, Option to Purchase"
+  ],
+  [
+   "2027 to 2030",
+   "Progressive payments while the estate is built"
+  ],
+  [
+   "Oct 2030",
+   "Four years from purchase, Seller's Stamp Duty clears"
+  ],
+  [
+   "2030",
+   "Completion, estimated"
+  ],
+  [
+   "2031 to 2032",
+   "Exit window, the next upgrader buys at brand-new-equivalent psf"
+  ]
+ ],
+ "sources": "URA caveats via the JND vault, latest August 2026. HDB resale via data.gov.sg, four months to September 2026. Land bids compiled from URA and HDB tender awards. Project facts from the ERA Project Marketing agents briefing deck of 22 August 2026, the info deck of 10 August and the objection handling kit of 4 September 2026; unit mix and sizes are estimates subject to final survey. Justin Ngai's Lucerne Grand client deck, August 2026.",
+ "lease_start": "2025-09-08",
+ "lease_year": 2025,
+ "plan_index": [
+  [
+   "2-bedroom",
+   "B1",
+   "624 sqft, 58 sqm",
+   "Blocks 36 and 38"
+  ],
+  [
+   "2-bedroom + Study",
+   "B2S",
+   "667 sqft, 62 sqm",
+   "Blocks 36 and 38"
+  ],
+  [
+   "2-bedroom + Study",
+   "B3S",
+   "710 sqft, 66 sqm",
+   "Block 34, stacks 19 and 20"
+  ],
+  [
+   "3-bedroom",
+   "C1",
+   "872 sqft, 81 sqm",
+   "Block 32 stack 09, Block 34 stack 22, Block 36 stack 29"
+  ],
+  [
+   "3-bedroom",
+   "C2",
+   "883 sqft, 82 sqm",
+   "Block 30 stack 07, Block 36 stack 24"
+  ],
+  [
+   "3-bedroom",
+   "C3",
+   "893 sqft, 83 sqm",
+   "Block 38, stacks 32 and 35"
+  ],
+  [
+   "3-bedroom",
+   "C3a",
+   "904 sqft, 84 sqm",
+   "Block 30 stack 01"
+  ],
+  [
+   "3-bedroom Premium + Study",
+   "CP1S",
+   "947 sqft, 88 sqm",
+   "Block 38, stacks 33 and 34"
+  ],
+  [
+   "3-bedroom Premium + Study",
+   "CP2S",
+   "1,001 sqft, 93 sqm",
+   "Block 30 stack 05, Block 32 stack 14, Block 34 stack 17, Block 36 stack 26"
+  ],
+  [
+   "3-bedroom Premium + Study",
+   "CP3S",
+   "1,001 sqft, 93 sqm",
+   "Block 36 stack 30"
+  ],
+  [
+   "3-bedroom Premium + Study",
+   "CP4S",
+   "1,001 sqft, 93 sqm",
+   "Block 30 stack 06"
+  ],
+  [
+   "4-bedroom Premium",
+   "DP1",
+   "1,163 sqft, 108 sqm",
+   "Block 32 stack 10, Block 34 stack 21"
+  ],
+  [
+   "4-bedroom Premium",
+   "DP2",
+   "1,195 sqft, 111 sqm",
+   "Block 30 stack 02, floors 4 to 17"
+  ],
+  [
+   "4-bedroom Premium",
+   "DP2a",
+   "1,152 sqft, 107 sqm",
+   "Block 30, #03-02 only"
+  ],
+  [
+   "4-bedroom Premium + Study",
+   "DP1S",
+   "1,345 sqft, 125 sqm",
+   "Block 36 stack 25"
+  ],
+  [
+   "4-bedroom Premium + Entertainment",
+   "DP1E",
+   "1,432 sqft, 133 sqm",
+   "Block 32 stack 13, Block 34 stack 18"
+  ]
+ ],
+ "plans": [
+  [
+   "bro-20",
+   "2-bedroom B1, 2-bedroom + Study B2S and B3S"
+  ],
+  [
+   "bro-21",
+   "3-bedroom C1 and C2"
+  ],
+  [
+   "bro-22",
+   "3-bedroom C2 (P) and C3"
+  ],
+  [
+   "bro-23",
+   "3-bedroom C3a, 3-bedroom Premium + Study CP1S"
+  ],
+  [
+   "bro-24",
+   "3-bedroom Premium + Study CP2S and CP3S"
+  ],
+  [
+   "bro-25",
+   "3-bedroom Premium + Study CP4S, 4-bedroom Premium DP1"
+  ],
+  [
+   "bro-26",
+   "4-bedroom Premium DP2 and DP2a"
+  ],
+  [
+   "bro-27",
+   "4-bedroom Premium + Study DP1S, 4-bedroom Premium + Entertainment DP1E"
+  ],
+  [
+   "bro-28",
+   "Approved balcony screen, typical units"
+  ]
+ ],
+ "spec": {
+  "Kitchen": [
+   "Bosch built-in oven, hob and hood",
+   "Samsung fridge and washer cum dryer, every unit has a WD point",
+   "Franke sink, hansgrohe mixer",
+   "Cutlery drawer, pull-out sauce rack, flip-down panel, deep drawers"
+  ],
+  "Bathrooms": [
+   "Geberit wall-hung WCs and concealed cisterns",
+   "hansgrohe taps and rain showers",
+   "Stone-look feature wall and vanity mirror cabinet in the master bath",
+   "Common bath with glass shower screen"
+  ],
+  "Wardrobes and storage": [
+   "Master wardrobe with dresser and laminate side panel",
+   "His and hers walk-in wardrobe in the 4-bedroom Premium + Entertainment",
+   "DB and storage cabinet with a removable panel for a future robot vacuum",
+   "Household shelter and yard in every 3 and 4-bedroom"
+  ],
+  "Smart home": [
+   "Smart digital lockset: PIN, biometrics, key, card or remote",
+   "Smart lighting at the foyer, IP camera, smart home gateway",
+   "Smart air-con control in the living room and master bedroom",
+   "Smart booking, audio video telephony and QR invite for visitors"
+  ],
+  "Build and green": [
+   "BCA Green Mark Platinum Super Low Energy",
+   "North-south facade, ledges and balconies shade the interiors",
+   "Retractable balcony screens, 40% porosity, approved",
+   "Air-conditioning to living and all bedrooms; walls marked on the plans cannot be hacked"
+  ],
+  "Not out yet": [
+   "The developer's schedule of finishes: appliance models, floor and wall finishes, tile and stone specifications",
+   "Comes with the price list; this chapter takes it the day it drops"
+  ]
+ },
+ "spec_gallery": [
+  [
+   "kitchen-2brs",
+   "2-bedroom + Study kitchen, show unit"
+  ],
+  [
+   "kitchen-3bps",
+   "3-bedroom Premium + Study kitchen"
+  ],
+  [
+   "kitchen-4bpe",
+   "4-bedroom Premium + Entertainment kitchen"
+  ],
+  [
+   "dining-cabinet",
+   "Dining with storage and display, 4-bedroom"
+  ],
+  [
+   "common-bath",
+   "Common bathroom"
+  ],
+  [
+   "master-bath",
+   "Master bathroom, 2-bedroom + Study and 3-bedroom Premium + Study"
+  ],
+  [
+   "master-bath-4bpe",
+   "Master bathroom, 4-bedroom Premium + Entertainment"
+  ],
+  [
+   "wardrobe-4bpe",
+   "Master wardrobe, 4-bedroom Premium + Entertainment"
+  ],
+  [
+   "wardrobe-common",
+   "Master and common wardrobes"
+  ],
+  [
+   "brands",
+   "Premium provision, from the ERA briefing deck"
+  ]
+ ],
+ "watch_groups": [
+  "Lucerne Grand Hyper 1"
+ ],
+ "checklist": {
+  "Brochure": true,
+  "Floor plans": true,
+  "Site plan": true,
+  "Show unit photos": true,
+  "Specifications": true,
+  "Schedule of finishes": false,
+  "Price list": false,
+  "Preview and booking dates": true
+ }
+}
