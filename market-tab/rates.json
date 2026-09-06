@@ -1,17 +1,17 @@
 {
   "sora_3m": {
-    "value": 1.2,
-    "as_of": "2026-09-05",
+    "value": 1.16,
+    "as_of": "2026-09-06",
     "sources": [
-      "MAS"
+      "loansaver"
     ],
     "n_sources": 1,
     "range": [
-      1.1967,
-      1.1967
+      1.16,
+      1.16
     ],
-    "source": "MAS (authoritative, sole source)",
-    "status": "mas-only"
+    "source": "loansaver (MAS republisher; MAS portal in maintenance)",
+    "status": "fallback-loansaver"
   },
   "maintained": {
     "spread": 0.75,
