@@ -69,6 +69,30 @@ body.dark #nav a{background:rgba(255,255,255,.3)} body.dark #nav a.on{background
 .gallery .g:hover img{transform:scale(1.06)}
 .gallery figcaption{position:absolute;left:26px;bottom:22px;font-size:14px;color:#FFF;text-shadow:0 2px 16px rgba(0,0,0,.6)}
 .ghint{color:var(--ondark3);font-size:12.5px;text-align:center;padding-bottom:40px;margin-top:-40px}
+/* the cohort still selling */
+.cohgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px;align-items:stretch}
+.coh{background:var(--card);border-radius:22px;border:1px solid rgba(27,29,34,.05);box-shadow:0 12px 40px rgba(27,29,34,.05);padding:16px 16px 20px;display:flex;flex-direction:column;height:100%;margin:0;transition:transform .3s,box-shadow .3s}
+.coh:hover{transform:translateY(-3px);box-shadow:0 20px 56px rgba(27,29,34,.09)}
+.coh img{border-radius:12px;width:100%;aspect-ratio:4/3;object-fit:contain;background:#FFF}
+.coh figcaption{padding:16px 6px 0}
+.coh .cname{font-size:19px;font-weight:400;letter-spacing:-.01em}
+.coh .cwhere{font-size:12px;color:var(--g3);margin-top:3px}
+.coh .ctype{font-size:13px;color:var(--g4);margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+.coh .ctype span{display:block;color:var(--g3);font-size:12.5px}
+.coh .cq{font-size:25px;font-weight:200;letter-spacing:-.02em;margin-top:12px;line-height:1.15;text-wrap:balance}
+.coh figcaption{display:flex;flex-direction:column;flex:1}
+.coh .cwhen{margin-top:auto;padding-top:8px}
+.coh .cpsf{font-size:12.5px;color:var(--g4);margin-top:6px}
+.coh .cwhen{font-size:11.5px;color:var(--g3);margin-top:8px}
+.coh.ours{background:var(--ink);border-color:transparent}
+.coh.ours img{background:#FFF}
+.coh.ours .cname,.coh.ours .cq{color:#FFF}
+.coh.ours .cwhere,.coh.ours .cwhen{color:var(--ondark3)}
+.coh.ours .ctype,.coh.ours .cpsf{color:var(--ondark4)}
+.coh.ours .ctype{border-top-color:rgba(255,255,255,.14)}
+.coh.ours .ctype span{color:var(--ondark3)}
+@media (max-width:1100px){.cohgrid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.cohgrid{grid-template-columns:1fr}}
 /* floor plans + specs */
 .pidx{width:100%;border-collapse:collapse;margin-top:44px;background:var(--card);border-radius:22px;overflow:hidden;box-shadow:0 12px 40px rgba(27,29,34,.05)}
 .pidx th{font-weight:400;color:var(--g3);font-size:12.5px;text-align:left;padding:14px 20px;border-bottom:1px solid var(--g1)}
@@ -315,6 +339,16 @@ h1,h2{-webkit-font-smoothing:antialiased}
     <div class="fromrow reveal"><div class="from"><div class="k">2-bedroom from, ERA kit</div><div class="n">$1.4xM</div></div><div class="from"><div class="k">3-bedroom from, ERA kit</div><div class="n">$2.1xM</div></div><div class="from"><div class="k">4-bedroom from, ERA kit</div><div class="n">$2.8xM</div></div></div>
     <table class="ptable matrix reveal"><thead><tr><th>Type</th><th class="n from">Starting price</th><th class="n">$2,300 psf</th><th class="n kit">$2,400 psf</th><th class="n kit">$2,500 psf</th><th class="n">$2,600 psf</th><th class="n">$2,700 psf</th><th class="n">$2,800 psf</th></tr></thead><tbody><tr><td><b>2 Bedroom</b><span>624 sqft</span></td><td class="n from">From $1.4xM</td><td class="n">$1.44M</td><td class="n kit">$1.50M</td><td class="n kit">$1.56M</td><td class="n">$1.62M</td><td class="n">$1.68M</td><td class="n">$1.75M</td></tr><tr><td><b>2 Bedroom + Study</b><span>667 sqft</span></td><td class="n from"></td><td class="n">$1.53M</td><td class="n kit">$1.60M</td><td class="n kit">$1.67M</td><td class="n">$1.73M</td><td class="n">$1.80M</td><td class="n">$1.87M</td></tr><tr><td><b>3 Bedroom</b><span>872 sqft</span></td><td class="n from">From $2.1xM</td><td class="n">$2.01M</td><td class="n kit">$2.09M</td><td class="n kit">$2.18M</td><td class="n">$2.27M</td><td class="n">$2.35M</td><td class="n">$2.44M</td></tr><tr><td><b>3 Bedroom Premium + Study</b><span>947 sqft</span></td><td class="n from"></td><td class="n">$2.18M</td><td class="n kit">$2.27M</td><td class="n kit">$2.37M</td><td class="n">$2.46M</td><td class="n">$2.56M</td><td class="n">$2.65M</td></tr><tr><td><b>4 Bedroom Premium</b><span>1,152 sqft</span></td><td class="n from">From $2.8xM</td><td class="n">$2.65M</td><td class="n kit">$2.76M</td><td class="n kit">$2.88M</td><td class="n">$3.00M</td><td class="n">$3.11M</td><td class="n">$3.23M</td></tr><tr><td><b>4 Bedroom Premium + Study</b><span>1,345 sqft</span></td><td class="n from"></td><td class="n">$3.09M</td><td class="n kit">$3.23M</td><td class="n kit">$3.36M</td><td class="n">$3.50M</td><td class="n">$3.63M</td><td class="n">$3.77M</td></tr><tr><td><b>4 Bedroom Premium + Entertainment</b><span>1,432 sqft</span></td><td class="n from"></td><td class="n">$3.29M</td><td class="n kit">$3.44M</td><td class="n kit">$3.58M</td><td class="n">$3.72M</td><td class="n">$3.87M</td><td class="n">$4.01M</td></tr></tbody></table>
     <div class="note">For comparison, the two launches still selling on Lakeside reached $2,581 psf at Sora and $2,556 psf at LakeGarden Residences, and J'den at Jurong East reached $2,832 psf. Neither Sora nor LakeGarden has completed, so they are the new-sale cohort, not the resale benchmark in the next chapter. ERA objection handling kit, September 2026.</div>
+  </div>
+</section>
+
+<section id="cohort" data-title="The other launches">
+  <div class="wrap">
+    <div class="eyebrow reveal">Transacted, not asking. URA caveats.</div>
+    <h2 class="reveal d1">Three launches in the district, and <b>what a 3-bedroom cost</b>.</h2>
+    <p class="lede reveal d2">All three are District 22, all 99-year leasehold, none of them completed. These are the real caveats for the 3-bedroom stack at each, against Lucerne Grand's 3-bedroom at the working number. Tap any plan to open it.</p>
+    <div class="cohgrid"><figure class="coh"><img data-lb="assets/img/sora-c1-plan.jpg" data-cap="Sora, 936 sqft, 87 sqm" data-kicker="Floor plan" src="assets/img/sora-c1-plan.jpg" alt="Sora floor plan" loading="lazy" decoding="async"><figcaption><div class="cname">Sora</div><div class="cwhere">Yuan Ching Road, launched July 2024</div><div class="ctype">3-bedroom Deluxe, type C1<span>936 sqft, 87 sqm</span></div><div class="cq">$2.14M to $2.19M</div><div class="cpsf">$2,282 to $2,339 psf</div><div class="cwhen">Five sales, April to June 2026</div></figcaption></figure><figure class="coh"><img data-lb="assets/img/lakegarden-cs2-plan.jpg" data-cap="LakeGarden Residences, 1,109 sqft, 103 sqm" data-kicker="Floor plan" src="assets/img/lakegarden-cs2-plan.jpg" alt="LakeGarden Residences floor plan" loading="lazy" decoding="async"><figcaption><div class="cname">LakeGarden Residences</div><div class="cwhere">Yuan Ching Road, launched August 2023</div><div class="ctype">3-bedroom + Study, type CS2<span>1,109 sqft, 103 sqm</span></div><div class="cq">$2.29M to $2.54M</div><div class="cpsf">$2,065 to $2,292 psf</div><div class="cwhen">February and March 2026</div></figcaption></figure><figure class="coh"><img data-lb="assets/img/jden-c2-plan.jpg" data-cap="J'den, 1,184 sqft, 110 sqm" data-kicker="Floor plan" src="assets/img/jden-c2-plan.jpg" alt="J'den floor plan" loading="lazy" decoding="async"><figcaption><div class="cname">J'den</div><div class="cwhere">Jurong East Central, launched November 2023</div><div class="ctype">3-bedroom, type C2<span>1,184 sqft, 110 sqm</span></div><div class="cq">$3.00M to $3.08M</div><div class="cpsf">$2,534 to $2,605 psf</div><div class="cwhen">June 2025 to July 2026</div></figcaption></figure><figure class="coh ours"><img data-lb="assets/img/lucerne-c1-plan.jpg" data-cap="Lucerne Grand, 872 sqft, 81 sqm" data-kicker="Floor plan" src="assets/img/lucerne-c1-plan.jpg" alt="Lucerne Grand floor plan" loading="lazy" decoding="async"><figcaption><div class="cname">Lucerne Grand</div><div class="cwhere">Lakeside Drive, previews 18 September 2026</div><div class="ctype">3-bedroom, type C1<span>872 sqft, 81 sqm</span></div><div class="cq">$2.18M</div><div class="cpsf">at $2,500 psf</div><div class="cwhen">From $2.01M at the ERA kit's $2,3xx start</div></figcaption></figure></div>
+    <div class="note">Lucerne Grand's 3-bedroom is the most compact of the four, which is where the quantum gap comes from; the psf line is under each price so nothing is hidden. Sora's low floors are the closest on quantum. Sizes and layouts from the ERA unit sheets, prices from URA Realis via the JND vault, latest August 2026.</div>
   </div>
 </section>
 

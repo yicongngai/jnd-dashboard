@@ -690,5 +690,51 @@
   "h1": "Outfit",
   "fonts": "family=Outfit:wght@100;200;300;400;500",
   "concept": "The mountain, the lake, the home. Cream, taupe and dark timber from the CDL brochure."
- }
+ },
+ "cohort": [
+  {
+   "name": "Sora",
+   "where": "Yuan Ching Road, launched July 2024",
+   "img": "sora-c1-plan",
+   "type": "3-bedroom Deluxe, type C1",
+   "size": "936 sqft, 87 sqm",
+   "q": "$2.14M to $2.19M",
+   "psf": "$2,282 to $2,339 psf",
+   "when": "Five sales, April to June 2026",
+   "me": false
+  },
+  {
+   "name": "LakeGarden Residences",
+   "where": "Yuan Ching Road, launched August 2023",
+   "img": "lakegarden-cs2-plan",
+   "type": "3-bedroom + Study, type CS2",
+   "size": "1,109 sqft, 103 sqm",
+   "q": "$2.29M to $2.54M",
+   "psf": "$2,065 to $2,292 psf",
+   "when": "February and March 2026",
+   "me": false
+  },
+  {
+   "name": "J'den",
+   "where": "Jurong East Central, launched November 2023",
+   "img": "jden-c2-plan",
+   "type": "3-bedroom, type C2",
+   "size": "1,184 sqft, 110 sqm",
+   "q": "$3.00M to $3.08M",
+   "psf": "$2,534 to $2,605 psf",
+   "when": "June 2025 to July 2026",
+   "me": false
+  },
+  {
+   "name": "Lucerne Grand",
+   "where": "Lakeside Drive, previews 18 September 2026",
+   "img": "lucerne-c1-plan",
+   "type": "3-bedroom, type C1",
+   "size": "872 sqft, 81 sqm",
+   "q": "$2.18M",
+   "psf": "at $2,500 psf",
+   "when": "From $2.01M at the ERA kit's $2,3xx start",
+   "me": true
+  }
+ ]
 }

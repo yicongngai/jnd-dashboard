@@ -28,6 +28,8 @@ sinming_rows = "".join('<tr><td>%s</td><td>%s</td><td>%s</td><td class="n">%s</t
 evidence_html = "".join('<figure class="ev"><img data-lb="assets/slides/%s.jpg" data-cap="%s" src="assets/slides/%s.jpg" alt="Slide" loading="lazy" decoding="async"><figcaption><span>For Lucerne Grand</span>%s</figcaption></figure>' % (f, esc(c), f, esc(c)) for f, c in D["evidence"])
 timeline_html = "".join('<div class="tl"><div class="d">%s</div><div class="w">%s</div></div>' % (esc(a), esc(b)) for a, b in D["timeline"])
 falsify_html = ""
+coh_html = "".join('<figure class="coh%s"><img data-lb="assets/img/%s.jpg" data-cap="%s, %s" data-kicker="Floor plan" src="assets/img/%s.jpg" alt="%s floor plan" loading="lazy" decoding="async"><figcaption><div class="cname">%s</div><div class="cwhere">%s</div><div class="ctype">%s<span>%s</span></div><div class="cq">%s</div><div class="cpsf">%s</div><div class="cwhen">%s</div></figcaption></figure>' % (
+    " ours" if c.get("me") else "", c["img"], esc(c["name"]), esc(c["size"]), c["img"], esc(c["name"]), esc(c["name"]), esc(c["where"]), esc(c["type"]), esc(c["size"]), esc(c["q"]), esc(c["psf"]), esc(c["when"])) for c in D["cohort"])
 plan_idx = "".join('<tr><td>%s</td><td><b>%s</b></td><td>%s</td><td>%s</td></tr>' % (esc(t), esc(c), esc(sz), esc(w)) for t, c, sz, w in D["plan_index"])
 plans_html = "".join('<figure class="plan"><img data-lb="assets/pages/%s.jpg" data-cap="%s" data-kicker="Floor plan, from the developer brochure" src="assets/pages/%s.jpg" alt="%s" loading="lazy" decoding="async"><figcaption>%s</figcaption></figure>' % (f, esc(c), f, esc(c), esc(c)) for f, c in D["plans"])
 spec_html = "".join('<div class="bcard%s"><h3>%s</h3><ul>%s</ul></div>' % (" soon" if t == "Not out yet" else "", esc(t), "".join("<li>%s</li>" % esc(x) for x in xs)) for t, xs in D["spec"].items())
@@ -105,6 +107,30 @@ body.dark #nav a{background:rgba(255,255,255,.3)} body.dark #nav a.on{background
 .gallery .g:hover img{transform:scale(1.06)}
 .gallery figcaption{position:absolute;left:26px;bottom:22px;font-size:14px;color:#FFF;text-shadow:0 2px 16px rgba(0,0,0,.6)}
 .ghint{color:var(--ondark3);font-size:12.5px;text-align:center;padding-bottom:40px;margin-top:-40px}
+/* the cohort still selling */
+.cohgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px;align-items:stretch}
+.coh{background:var(--card);border-radius:22px;border:1px solid rgba(27,29,34,.05);box-shadow:0 12px 40px rgba(27,29,34,.05);padding:16px 16px 20px;display:flex;flex-direction:column;height:100%;margin:0;transition:transform .3s,box-shadow .3s}
+.coh:hover{transform:translateY(-3px);box-shadow:0 20px 56px rgba(27,29,34,.09)}
+.coh img{border-radius:12px;width:100%;aspect-ratio:4/3;object-fit:contain;background:#FFF}
+.coh figcaption{padding:16px 6px 0}
+.coh .cname{font-size:19px;font-weight:400;letter-spacing:-.01em}
+.coh .cwhere{font-size:12px;color:var(--g3);margin-top:3px}
+.coh .ctype{font-size:13px;color:var(--g4);margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+.coh .ctype span{display:block;color:var(--g3);font-size:12.5px}
+.coh .cq{font-size:25px;font-weight:200;letter-spacing:-.02em;margin-top:12px;line-height:1.15;text-wrap:balance}
+.coh figcaption{display:flex;flex-direction:column;flex:1}
+.coh .cwhen{margin-top:auto;padding-top:8px}
+.coh .cpsf{font-size:12.5px;color:var(--g4);margin-top:6px}
+.coh .cwhen{font-size:11.5px;color:var(--g3);margin-top:8px}
+.coh.ours{background:var(--ink);border-color:transparent}
+.coh.ours img{background:#FFF}
+.coh.ours .cname,.coh.ours .cq{color:#FFF}
+.coh.ours .cwhere,.coh.ours .cwhen{color:var(--ondark3)}
+.coh.ours .ctype,.coh.ours .cpsf{color:var(--ondark4)}
+.coh.ours .ctype{border-top-color:rgba(255,255,255,.14)}
+.coh.ours .ctype span{color:var(--ondark3)}
+@media (max-width:1100px){.cohgrid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.cohgrid{grid-template-columns:1fr}}
 /* floor plans + specs */
 .pidx{width:100%;border-collapse:collapse;margin-top:44px;background:var(--card);border-radius:22px;overflow:hidden;box-shadow:0 12px 40px rgba(27,29,34,.05)}
 .pidx th{font-weight:400;color:var(--g3);font-size:12.5px;text-align:left;padding:14px 20px;border-bottom:1px solid var(--g1)}
@@ -354,6 +380,16 @@ h1,h2{-webkit-font-smoothing:antialiased}
   </div>
 </section>
 
+<section id="cohort" data-title="The other launches">
+  <div class="wrap">
+    <div class="eyebrow reveal">Transacted, not asking. URA caveats.</div>
+    <h2 class="reveal d1">Three launches in the district, and <b>what a 3-bedroom cost</b>.</h2>
+    <p class="lede reveal d2">All three are District 22, all 99-year leasehold, none of them completed. These are the real caveats for the 3-bedroom stack at each, against Lucerne Grand's 3-bedroom at the working number. Tap any plan to open it.</p>
+    <div class="cohgrid">{{COHORT}}</div>
+    <div class="note">Lucerne Grand's 3-bedroom is the most compact of the four, which is where the quantum gap comes from; the psf line is under each price so nothing is hidden. Sora's low floors are the closest on quantum. Sizes and layouts from the ERA unit sheets, prices from URA Realis via the JND vault, latest August 2026.</div>
+  </div>
+</section>
+
 <section class="bandimg" data-title="Same lake, different lease" id="band2"><div class="pimg" style="background-image:url(assets/img/lake-gardens.jpg)"></div><div class="veil"></div><div class="btxt"><div class="eyebrow">The resale next door</div><h2>Same lake,<br><b>different lease.</b></h2></div></section>
 
 <section id="neighbours" data-title="The neighbours">
@@ -543,7 +579,7 @@ h1,h2{-webkit-font-smoothing:antialiased}
 out = HTML
 for k, v in {"{{DISTRICT}}": esc(D["district"]), "{{PREVIEW}}": esc(D["preview"]), "{{TAGLINE}}": esc(D["tagline"]), "{{THESIS}}": esc(D["thesis"]), "{{FACTS}}": facts_html,
              "{{MIX}}": mix_html, "{{BRIEF}}": brief_html, "{{GALLERY}}": gallery_html, "{{PRICE_BASIS}}": esc(D["price_basis"]), "{{PRICES}}": price_rows, "{{PRICE_HEAD}}": price_head, "{{NEIGH}}": neigh_rows,
-             "{{SINMING}}": sinming_rows, "{{EVIDENCE}}": evidence_html, "{{TIMELINE}}": timeline_html, "{{FALSIFY}}": falsify_html, "{{SOURCES}}": esc(D["sources"]), "{{UPSIDE}}": upside_html, "{{JTX}}": jtx_rows, "{{BOOKING}}": esc(D["booking"]), "{{PLANIDX}}": plan_idx, "{{PLANS}}": plans_html, "{{SPEC}}": spec_html, "{{SPECG}}": specg_html}.items():
+             "{{SINMING}}": sinming_rows, "{{EVIDENCE}}": evidence_html, "{{TIMELINE}}": timeline_html, "{{FALSIFY}}": falsify_html, "{{SOURCES}}": esc(D["sources"]), "{{UPSIDE}}": upside_html, "{{JTX}}": jtx_rows, "{{BOOKING}}": esc(D["booking"]), "{{PLANIDX}}": plan_idx, "{{COHORT}}": coh_html, "{{PLANS}}": plans_html, "{{SPEC}}": spec_html, "{{SPECG}}": specg_html}.items():
     out = out.replace(k, v)
 T = D["theme"]; _rgb = lambda h: ",".join(str(int(h.lstrip("#")[i:i+2], 16)) for i in (0, 2, 4))
 out = out.replace("{{THEMEVARS}}", "{" + "".join("--%s:%s;" % (k, v) for k, v in T.items() if k not in ("display", "h1", "fonts", "concept")) + "--dark2rgb:%s;--font-display:'%s','Avenir Next','Helvetica Neue',Arial,sans-serif;--font-h1:'%s','Avenir Next','Helvetica Neue',Arial,sans-serif;--font-body:'Outfit','Avenir Next','Helvetica Neue',Arial,sans-serif;--ok:#3E7C59;" % (_rgb(T["dark2"]), T["display"], T["h1"]) + "}").replace("{{FONTS}}", T["fonts"])
