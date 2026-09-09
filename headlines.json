@@ -1,6 +1,36 @@
 {
- "at": "2026-09-09T01:19:45.910472+08:00",
+ "at": "2026-09-10T00:18:30.000949+08:00",
  "items": [
+  {
+   "h": "9/9/26 ST - Law passed to allow lower collective sale thresholds",
+   "src": "",
+   "day": "2026-09-09",
+   "date": "09 Sep",
+   "topic": "En bloc & supply",
+   "url": null,
+   "post": "https://telegram.me/ERAnewsroom/11203",
+   "link": "https://telegram.me/ERAnewsroom/11203"
+  },
+  {
+   "h": "9/9/26 BT - En bloc sale framework recalibrated as urban renewal ‘not merely desirable, but really imperative’: Edwin Tong",
+   "src": "",
+   "day": "2026-09-09",
+   "date": "09 Sep",
+   "topic": "En bloc & supply",
+   "url": null,
+   "post": "https://telegram.me/ERAnewsroom/11205",
+   "link": "https://telegram.me/ERAnewsroom/11205"
+  },
+  {
+   "h": "9/9/26 BT - Pine Grove’s S$1.78b en bloc attempt could get fresh start under opt-in to new rules",
+   "src": "",
+   "day": "2026-09-09",
+   "date": "09 Sep",
+   "topic": "En bloc & supply",
+   "url": null,
+   "post": "https://telegram.me/ERAnewsroom/11206",
+   "link": "https://telegram.me/ERAnewsroom/11206"
+  },
   {
    "h": "Are developers over-optimistic with bullish housing land bids?",
    "src": "BT",
@@ -70,36 +100,6 @@
    "url": "https://www.edgeprop.sg/property-news/whats-moving-market-singapores-biggest-property-deals-and-hottest-searches-sept-4",
    "post": null,
    "link": "https://www.edgeprop.sg/property-news/whats-moving-market-singapores-biggest-property-deals-and-hottest-searches-sept-4"
-  },
-  {
-   "h": "Sim Lian back in the Core Central Region with Amberwood at Holland after 17 years",
-   "src": "EdgeProp",
-   "day": "2026-09-04",
-   "date": "04 Sep",
-   "topic": "Resale market",
-   "url": "https://www.edgeprop.sg/property-news/sim-lian-back-core-central-region-amberwood-holland-after-17-years",
-   "post": null,
-   "link": "https://www.edgeprop.sg/property-news/sim-lian-back-core-central-region-amberwood-holland-after-17-years"
-  },
-  {
-   "h": "Terra Hill records new psf-price low of $2,093 in developer sale",
-   "src": "EdgeProp",
-   "day": "2026-09-03",
-   "date": "03 Sep",
-   "topic": "New launches",
-   "url": "https://www.edgeprop.sg/property-news/terra-hill-records-new-psf-price-low-2093-developer-sale",
-   "post": null,
-   "link": "https://www.edgeprop.sg/property-news/terra-hill-records-new-psf-price-low-2093-developer-sale"
-  },
-  {
-   "h": "High Point back on market at $580 mil in sixth collective sale attempt",
-   "src": "EdgeProp",
-   "day": "2026-09-03",
-   "date": "03 Sep",
-   "topic": "En bloc & supply",
-   "url": "https://www.edgeprop.sg/property-news/high-point-back-market-580-mil-sixth-collective-sale-attempt",
-   "post": null,
-   "link": "https://www.edgeprop.sg/property-news/high-point-back-market-580-mil-sixth-collective-sale-attempt"
   }
  ]
 }
