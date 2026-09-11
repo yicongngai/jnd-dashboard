@@ -80,6 +80,21 @@ def onemap_name(name):
     return None
 
 
+
+def onemap_street(street):
+    """Road-level fallback for a project with no URA point that OneMap does not know by
+    name. The road centre is a rough position, so the row is flagged approximate."""
+    if not street:
+        return None
+    want = street.strip().upper()
+    d = _onemap_page(want, 1)
+    for x in d.get("results", [])[:6]:
+        if str(x.get("ROAD_NAME", "")).strip().upper() == want:
+            time.sleep(0.3)
+            return [round(float(x["LATITUDE"]), 6), round(float(x["LONGITUDE"]), 6)]
+    time.sleep(0.3)
+    return None
+
 def onemap_postal(pc):
     """Exact postal-code lookup. Backs off on 429 rather than reporting a throttle as
     a missing school, which is the mistake the block geocoder made first time."""
@@ -164,7 +179,7 @@ def main():
     comps = json.load(open(os.path.join(HERE, "ura-comps.json"), encoding="utf-8"))
     pj_path = os.path.join(HERE, "project-geocache.json")
     pj = json.load(open(pj_path, encoding="utf-8")) if os.path.exists(pj_path) else {}
-    priv, exact, approx = [], 0, 0
+    priv, exact, approx, skipped = [], 0, 0, 0
     # Most recent transactions per project, so clicking a dot answers "what has this
     # actually sold for". Six is enough to show a trend and a spread without the file
     # doubling in size; the full history stays in ura-comps.json for the unit reports.
@@ -180,10 +195,16 @@ def main():
                         t[7] if len(t) > 7 else ""])
         return out
     for p in comps.get("projects", []):
+        # URA publishes no x/y for a project until it is completed, so every launch
+        # still under construction arrives with x and y null. This loop used to skip
+        # those before the name lookup ever ran, which dropped 453 projects on 11 Sep
+        # 2026: Tembusu Grand, Grand Dunman, Parktown, Emerald of Katong, every current
+        # launch. A missing URA point now falls through to OneMap by name, then by
+        # street, and only a project OneMap cannot place at all is left off the map.
         try:
             lat, lon = svy21_to_wgs84(float(p["x"]), float(p["y"]))
         except Exception:
-            continue
+            lat = lon = None
         kinds = collections.Counter(t[4] for t in (p.get("t") or []) if len(t) > 4)
         if not kinds:
             continue
@@ -213,6 +234,16 @@ def main():
                 approx += 1
         else:
             approx += 1
+        if lat is None:
+            st = (p.get("st") or "").strip().upper()
+            got = pj.get("street:" + st, "miss") if st else None
+            if got == "miss":
+                got = onemap_street(st)
+                pj["street:" + st] = got
+            if not got:
+                skipped += 1
+                continue                      # no URA point and OneMap has nothing
+            lat, lon = got[0], got[1]
         priv.append([round(lat, 5), round(lon, 5), name, kind, p.get("seg") or "",
                      len(p.get("t") or []), 1 if kind != "landed" and pj.get(name) else 0,
                      recent(p.get("t") or [])])
@@ -221,7 +252,8 @@ def main():
                                  "exact", "txns"],
                       "txnFields": ["MMYY", "sqft", "price", "psf", "floorBand"],
                       "rows": priv}
-    print(f"  private points: {exact:,} located by name, {approx:,} on the URA point")
+    print(f"  private points: {exact:,} located by name, {approx:,} on the URA point, "
+          f"{skipped:,} unplaceable (no URA point, OneMap miss)")
 
     # --- schools, from MOE's own directory -------------------------------------
     # NOT from the amenities cache. That was built by searching OneMap and is both
