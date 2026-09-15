@@ -480,13 +480,13 @@
    "see the plan"
   ],
   [
-   "",
+   "4-bedroom Premium (Private Lift)",
    "DP1",
    "1,367 sqft, 127 sqm",
    "see the plan"
   ],
   [
-   "",
+   "5-bedroom Suite (Private Lift)",
    "E1",
    "1,808 sqft, 168 sqm",
    "see the plan"
@@ -503,11 +503,11 @@
   ],
   [
    "fp-03",
-   "Type DP1"
+   "4-bedroom Premium (Private Lift) DP1"
   ],
   [
    "fp-04",
-   "Type E1"
+   "5-bedroom Suite (Private Lift) E1"
   ]
  ],
  "plan_lede": "4 layouts, 732 to 1,808 sqft. Tap a page to open it full size.",
@@ -521,9 +521,5 @@
    "Specifications, from 🚨🚨 *EXCLUSIVE: THOMSON RESERVE SHOWFLAT — FIRST LOOK* 🚨🚨, page 2"
   ]
  ],
- "spec": {
-  "Kitchen": [
-   "Not disseminate, reproduce or circulate.*"
-  ]
- }
+ "spec": {}
 }
