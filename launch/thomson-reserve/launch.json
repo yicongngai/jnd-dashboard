@@ -431,7 +431,7 @@
   "Floor plans": true,
   "Site plan": true,
   "Show unit photos": false,
-  "Specifications": true,
+  "Specifications": false,
   "Schedule of finishes": false,
   "Price list": false,
   "Preview and booking dates": true
@@ -511,15 +511,11 @@
   ]
  ],
  "plan_lede": "4 layouts, 732 to 1,808 sqft. Tap a page to open it full size.",
- "spec_pages": [
-  [
-   "spec-01",
-   "Specifications, from 🚨🚨 *EXCLUSIVE: THOMSON RESERVE SHOWFLAT — FIRST LOOK* 🚨🚨, page 1"
-  ],
-  [
-   "spec-02",
-   "Specifications, from 🚨🚨 *EXCLUSIVE: THOMSON RESERVE SHOWFLAT — FIRST LOOK* 🚨🚨, page 2"
+ "spec_pages": [],
+ "spec": {
+  "Not out yet": [
+   "The developer's schedule of finishes: appliance models, floor and wall finishes, tile and stone specifications",
+   "Comes with the 3 October kit; this chapter takes it the day it drops"
   ]
- ],
- "spec": {}
+ }
 }
