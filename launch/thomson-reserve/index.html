@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="jnd-build" content="2026-09-15T15:38:45">
 <title>Thomson Reserve</title>
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500&display=swap">
@@ -69,6 +70,17 @@ body.dark #nav a{background:rgba(255,255,255,.3)} body.dark #nav a.on{background
 .gallery .g:hover img{transform:scale(1.06)}
 .gallery figcaption{position:absolute;left:26px;bottom:22px;font-size:14px;color:#FFF;text-shadow:0 2px 16px rgba(0,0,0,.6)}
 .ghint{color:var(--ondark3);font-size:12.5px;text-align:center;padding-bottom:40px;margin-top:-40px}
+/* floor plans + specs (ported from Lucerne Grand, 10 Sep 2026; rendered only once launch.json carries plan_index / spec) */
+.pidx{width:100%;border-collapse:collapse;margin-top:44px;background:var(--card);border-radius:22px;overflow:hidden;box-shadow:0 12px 40px rgba(27,29,34,.05)}
+.pidx th{font-weight:400;color:var(--g3);font-size:12.5px;text-align:left;padding:14px 20px;border-bottom:1px solid var(--g1)}
+.pidx td{padding:11px 20px;border-bottom:1px solid var(--line);font-size:14px}.pidx td b{font-weight:500}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:44px}
+.plan{background:var(--card);border-radius:22px;padding:14px 14px 12px;border:1px solid rgba(27,29,34,.05);box-shadow:0 12px 40px rgba(27,29,34,.05)}
+.plan img{border-radius:12px;width:100%;background:#FFF}.plan figcaption{font-size:13px;color:var(--g4);margin-top:10px}
+.plan a:hover img{opacity:.92}
+#spec{background:var(--dark);color:var(--ondark);padding-bottom:0}#spec h2{color:#FFF}#spec .lede{color:var(--ondark2)}#spec .eyebrow{color:var(--ondark3)}
+.bcard.soon{border-color:rgba(242,166,58,.45)}.bcard.soon h3{color:var(--gold)}
+@media (max-width:900px){.plans{grid-template-columns:1fr}}
 /* price */
 .ptable{width:100%;border-collapse:collapse;margin-top:40px;background:var(--card);border-radius:22px;overflow:hidden;box-shadow:0 12px 40px rgba(27,29,34,.05)}
 .ptable th{font-weight:400;color:var(--g3);font-size:12.5px;text-align:left;padding:16px 22px;border-bottom:1px solid var(--g1)}
@@ -273,6 +285,29 @@ h1,h2{-webkit-font-smoothing:antialiased}
   <div class="ghint">Artist's impressions from the developer. Drag or scroll sideways.</div>
 </section>
 
+<section id="plans" data-title="Every floor plan">
+  <div class="wrap">
+    <div class="eyebrow reveal">Every floor plan, from the developer brochure</div>
+    <h2 class="reveal d1"><b>4 layouts</b>.</h2>
+    <p class="lede reveal d2">4 layouts, 732 to 1,808 sqft. Tap a page to open it full size.</p>
+    <div class="maps reveal"><img data-lb="assets/img/siteplan-brochure.jpg" data-cap="Site plan" src="assets/img/siteplan-brochure.jpg" alt="Site plan"></div>
+    <table class="pidx reveal"><thead><tr><th>Type</th><th>Layout</th><th>Size</th><th>Where</th></tr></thead><tbody><tr><td>2-bedroom Premium + Study</td><td><b>BPS1</b></td><td>732 sqft, 68 sqm</td><td>see the plan</td></tr><tr><td>3-bedroom Premium</td><td><b>CP1</b></td><td>1,055 sqft, 98 sqm</td><td>see the plan</td></tr><tr><td></td><td><b>DP1</b></td><td>1,367 sqft, 127 sqm</td><td>see the plan</td></tr><tr><td></td><td><b>E1</b></td><td>1,808 sqft, 168 sqm</td><td>see the plan</td></tr></tbody></table>
+    <div class="note">Sizes include balcony and private enclosed space where applicable. Stacks read from the brochure plans; (P) types are the ground-floor units with a PES. Where the stack line was not readable the row says "see the plan".</div>
+    <div class="plans reveal"><figure class="plan"><img data-lb="assets/pages/fp-01.jpg" data-cap="2-bedroom Premium + Study BPS1" data-kicker="Floor plan, from the developer brochure" src="assets/pages/fp-01.jpg" alt="2-bedroom Premium + Study BPS1" loading="lazy" decoding="async"><figcaption>2-bedroom Premium + Study BPS1</figcaption></figure><figure class="plan"><img data-lb="assets/pages/fp-02.jpg" data-cap="3-bedroom Premium CP1" data-kicker="Floor plan, from the developer brochure" src="assets/pages/fp-02.jpg" alt="3-bedroom Premium CP1" loading="lazy" decoding="async"><figcaption>3-bedroom Premium CP1</figcaption></figure><figure class="plan"><img data-lb="assets/pages/fp-03.jpg" data-cap="Type DP1" data-kicker="Floor plan, from the developer brochure" src="assets/pages/fp-03.jpg" alt="Type DP1" loading="lazy" decoding="async"><figcaption>Type DP1</figcaption></figure><figure class="plan"><img data-lb="assets/pages/fp-04.jpg" data-cap="Type E1" data-kicker="Floor plan, from the developer brochure" src="assets/pages/fp-04.jpg" alt="Type E1" loading="lazy" decoding="async"><figcaption>Type E1</figcaption></figure></div>
+  </div>
+</section>
+
+<section id="spec" data-title="Specifications" class="darksec">
+  <div class="wrap">
+    <div class="eyebrow reveal">Specifications, what the kits confirm so far</div>
+    <h2 class="reveal d1">What the developer <b>specifies</b>.</h2>
+    <p class="lede reveal d2">From the developer brochure and the ERA kit. Tap a page to open it full size.</p>
+    <div class="bgrid"><div class="bcard"><h3>Kitchen</h3><ul><li>Not disseminate, reproduce or circulate.*</li></ul></div></div>
+    <div class="plans reveal"><figure class="plan"><img data-lb="assets/pages/spec-01.jpg" data-cap="Specifications, from 🚨🚨 *EXCLUSIVE: THOMSON RESERVE SHOWFLAT — FIRST LOOK* 🚨🚨, page 1" data-kicker="Specifications" src="assets/pages/spec-01.jpg" alt="Specifications, from 🚨🚨 *EXCLUSIVE: THOMSON RESERVE SHOWFLAT — FIRST LOOK* 🚨🚨, page 1" loading="lazy" decoding="async"><figcaption>Specifications, from 🚨🚨 *EXCLUSIVE: THOMSON RESERVE SHOWFLAT — FIRST LOOK* 🚨🚨, page 1</figcaption></figure><figure class="plan"><img data-lb="assets/pages/spec-02.jpg" data-cap="Specifications, from 🚨🚨 *EXCLUSIVE: THOMSON RESERVE SHOWFLAT — FIRST LOOK* 🚨🚨, page 2" data-kicker="Specifications" src="assets/pages/spec-02.jpg" alt="Specifications, from 🚨🚨 *EXCLUSIVE: THOMSON RESERVE SHOWFLAT — FIRST LOOK* 🚨🚨, page 2" loading="lazy" decoding="async"><figcaption>Specifications, from 🚨🚨 *EXCLUSIVE: THOMSON RESERVE SHOWFLAT — FIRST LOOK* 🚨🚨, page 2</figcaption></figure></div>
+  </div>
+  <div class="gallery" id="specg"></div>
+</section>
+
 <section id="price" data-title="The price">
   <div class="wrap">
     <div class="eyebrow reveal">The price</div>
@@ -280,6 +315,7 @@ h1,h2{-webkit-font-smoothing:antialiased}
     <p class="lede reveal d2">The developer has not released prices. Sizes are today's common sizes from the ERA Project Marketing info kit, run from its $2,550 estimate up to $3,000 psf. The $2,700 to $2,800 columns are where this launch is expected to open.</p>
     <div class="fromrow reveal"><div class="from"><div class="k">2-bedroom from</div><div class="n">$1.48M</div></div><div class="from"><div class="k">3-bedroom from</div><div class="n">$2.09M</div></div><div class="from"><div class="k">4-bedroom from</div><div class="n">$2.99M</div></div></div>
     <table class="ptable matrix reveal"><thead><tr><th>Type</th><th class="n from">Starting price</th><th class="n">$2,550 psf</th><th class="n">$2,600 psf</th><th class="n kit">$2,700 psf</th><th class="n kit">$2,800 psf</th><th class="n">$2,900 psf</th><th class="n">$3,000 psf</th></tr></thead><tbody><tr><td><b>2 Bedroom</b><span>581 sqft</span></td><td class="n from">From $1.4x to $1.5x</td><td class="n">$1.48M</td><td class="n">$1.51M</td><td class="n kit">$1.57M</td><td class="n kit">$1.63M</td><td class="n">$1.68M</td><td class="n">$1.74M</td></tr><tr><td><b>2 Bedroom Premium</b><span>667 sqft</span></td><td class="n from">From $1.7x</td><td class="n">$1.70M</td><td class="n">$1.73M</td><td class="n kit">$1.80M</td><td class="n kit">$1.87M</td><td class="n">$1.93M</td><td class="n">$2.00M</td></tr><tr><td><b>2 Bedroom Premium + Study</b><span>732 sqft</span></td><td class="n from">From $1.7x</td><td class="n">$1.87M</td><td class="n">$1.90M</td><td class="n kit">$1.98M</td><td class="n kit">$2.05M</td><td class="n">$2.12M</td><td class="n">$2.20M</td></tr><tr><td><b>3 Bedroom</b><span>818 sqft</span></td><td class="n from">From $2.1x</td><td class="n">$2.09M</td><td class="n">$2.13M</td><td class="n kit">$2.21M</td><td class="n kit">$2.29M</td><td class="n">$2.37M</td><td class="n">$2.45M</td></tr><tr><td><b>3 Bedroom Premium</b><span>915 sqft</span></td><td class="n from">From $2.3x</td><td class="n">$2.33M</td><td class="n">$2.38M</td><td class="n kit">$2.47M</td><td class="n kit">$2.56M</td><td class="n">$2.65M</td><td class="n">$2.75M</td></tr><tr><td><b>3 Bedroom Premium + Study</b><span>1,033 sqft</span></td><td class="n from">From $2.3x</td><td class="n">$2.63M</td><td class="n">$2.69M</td><td class="n kit">$2.79M</td><td class="n kit">$2.89M</td><td class="n">$3.00M</td><td class="n">$3.10M</td></tr><tr><td><b>4 Bedroom</b><span>1,173 sqft</span></td><td class="n from">From $2.9x</td><td class="n">$2.99M</td><td class="n">$3.05M</td><td class="n kit">$3.17M</td><td class="n kit">$3.28M</td><td class="n">$3.40M</td><td class="n">$3.52M</td></tr><tr><td><b>4 Bedroom Premium</b><span>1,238 sqft</span></td><td class="n from">From $3.1x</td><td class="n">$3.16M</td><td class="n">$3.22M</td><td class="n kit">$3.34M</td><td class="n kit">$3.47M</td><td class="n">$3.59M</td><td class="n">$3.71M</td></tr></tbody></table>
+    
     <div class="note">For comparison, starting prices at Zyon Grand were $2.31M for a 2-bedroom, $2.76M for a 3-bedroom and $4.7M for a 4-bedroom. Promenade Peak, Arina East, Union Square and The Continuum are in the same range. ERA info kit, June 2026.</div>
     <div class="eyebrow" style="margin-top:72px">Same money, which will you buy</div>
     <div class="pairs">
