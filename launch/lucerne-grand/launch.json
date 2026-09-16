@@ -658,7 +658,7 @@
   "Show unit photos": true,
   "Specifications": true,
   "Schedule of finishes": false,
-  "Price list": false,
+  "Price list": true,
   "Preview and booking dates": true
  },
  "theme": {
@@ -752,5 +752,11 @@
    ],
    "me": true
   }
+ ],
+ "price_pages": [
+  [
+   "price-01",
+   "Price list, from Lucerne Grand Price Matrix.pdf, page 1"
+  ]
  ]
 }
