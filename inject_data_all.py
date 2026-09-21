@@ -59,6 +59,37 @@ try:
 except Exception as _e:
     print(f"map_build skipped: {_e}")
 
+# NEVER PUBLISH A LAUNCH BOARD OLDER THAN THE ONE ALREADY LIVE (21 Sep 2026).
+# launches.json is not tracked, so on a CI runner it only exists if era_scrape.py just
+# succeeded. When the ERA portal times out, the workflows fall back to build_board.py,
+# which rebuilds from the tracked raw scrape of 14 Jun 2026 and shipped a 99 day old
+# board twice (6 Sep, 21 Sep). The live site is the real last-good copy, refreshed daily,
+# so compare the two and keep whichever is newer. Lives here, not in the workflow files,
+# because the deploy token cannot push workflow edits, and because both workflows run
+# this script. Any failure in here leaves the local file untouched.
+def _launch_asof(text):
+    try:
+        return (json.loads(text).get("_meta") or {}).get("as_of") or ""
+    except Exception:
+        return ""
+
+try:
+    import re as _re, urllib.request as _ur
+    _LP = "market-tab/launches.json"
+    _local = open(_LP, encoding="utf-8").read() if os.path.exists(_LP) else ""
+    _req = _ur.Request("https://jndtoolkit.com/", headers={"User-Agent": "jnd-inject"})
+    _page = _ur.urlopen(_req, timeout=30).read().decode("utf-8", "replace")
+    _m = _re.search(r'id="jnd-launches">(.*?)</script>', _page, _re.S)
+    _live = _m.group(1) if _m else ""
+    _la, _va = _launch_asof(_local), _launch_asof(_live)
+    if _va and _va > _la:
+        open(_LP, "w", encoding="utf-8").write(_live)
+        print(f"launches: local board {_la or 'missing'} is older than the live site ({_va}), kept the live one")
+    else:
+        print(f"launches: using local board {_la} (live site {_va or 'unreadable'})")
+except Exception as _e:
+    print(f"launches guard skipped: {_e}")
+
 parts = [
     ("jnd-hdb-blocks",  load("hdb-blocks.json")),
     ("jnd-ura-comps",   load("ura-comps.json")),
