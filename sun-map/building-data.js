@@ -16,6 +16,7 @@
    if(recent&&recent.floors&&!p.height&&!p.floors&&!p.hasParts&&!p.parent&&!p.minHeight){p.floors=recent.floors;p.floorSource=recent.source;p.osmRefresh=true;if(!p.name)p.name=recent.name;}
    const own=addresses[key]||{},parentAddress=p.parent?addresses[p.parent]:null;
    const a=own.address?own:parentAddress?.address?parentAddress:own;
+   p.lookupQueries=own.lookupQueries||parentAddress?.lookupQueries||[];
    if(a.address){p.address=a.address;p.addressSource=a.source;p.addressInherited=a!==own;}
    if(own.name&&!v)p.name=own.name;
    if(!p.name&&a.name)p.name=a.name;
