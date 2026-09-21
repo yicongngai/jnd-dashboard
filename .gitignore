@@ -1,6 +1,6 @@
 # Only index-live-auto.html is deployed — the other big HTML files are dead weight.
 # (They stay on your Mac; this just keeps them out of the repo.)
-index.html
+/index.html
 index-live.html
 index-v356-live.html
 inject_live.py
