@@ -32,3 +32,15 @@
 @media(min-width:701px){.embedded main{grid-template-columns:270px minmax(0,1fr);grid-template-rows:460px auto}.embedded .location,.embedded .sun-card{padding:18px}.embedded .timeline{width:100%;margin:0}.embedded .building{left:302px;max-width:calc(100% - 330px)}}
 @media(min-width:701px) and (max-width:1000px){.embedded main{grid-template-columns:240px minmax(0,1fr)}.embedded .building{left:272px;max-width:calc(100% - 300px)}}
 @media(max-width:700px){.embedded main{padding:0 12px 14px;gap:12px}.embedded header{padding-right:12px}.embedded #map{height:440px;min-height:440px}.embedded .sun-card{padding:16px}}
+
+/* Focus belongs to the enclosing pill, so its ring is not clipped inside the input. */
+#search:focus-within{border-color:#6E737D;box-shadow:0 0 0 3px #1B1D2212}
+#search #query:focus,#search #query:focus-visible,#search button:focus-visible{outline:none}
+#search button:focus-visible{box-shadow:inset 0 0 0 2px #6E737D}
+#building-address{font-weight:500;margin-top:0;color:#41454E}
+.sun-path-stop{font:500 11px Outfit,Arial,sans-serif;padding:4px 7px;background:#fffffff2;border:1px solid #DADDE1;border-radius:8px;box-shadow:0 2px 8px #1B1D2212;white-space:nowrap}
+.sun-path-stop:hover,.sun-path-stop[aria-pressed=true]{background:#1B1D22;color:white;border-color:#1B1D22}
+.sun-path-current{pointer-events:none;color:#654910;font:500 11px Outfit,Arial,sans-serif;display:flex;align-items:center;gap:4px;padding:3px 6px 3px 3px;border:1px solid #E4C976;background:#FFF9DF;border-radius:999px;white-space:nowrap;box-shadow:0 2px 8px #1B1D2220}
+.sun-path-current .sun-icon{font-size:24px;line-height:1;color:#C18414}
+.view-controls{flex-wrap:wrap;max-width:calc(100% - 90px)}
+@media(max-width:700px){.view-controls button{padding:8px 10px;font-size:12px}}
