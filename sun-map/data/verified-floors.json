@@ -1,0 +1,71 @@
+{
+  "note": "Verified storey counts, not measured architectural heights. No elevation above sea level is treated as height above ground.",
+  "records": {
+    "way/1267860760": {
+      "name": "Amber Park \u00b7 Block 16",
+      "floors": 21,
+      "source": "https://www.cdl.com.sg/our-stories/a-tale-of-two-east-coast-icons-born-a-generation-apart",
+      "publisher": "City Developments Limited",
+      "checked": "2026-09-16"
+    },
+    "way/1267860759": {
+      "name": "Amber Park \u00b7 Block 18",
+      "floors": 21,
+      "source": "https://www.cdl.com.sg/our-stories/a-tale-of-two-east-coast-icons-born-a-generation-apart",
+      "publisher": "City Developments Limited",
+      "checked": "2026-09-16"
+    },
+    "way/1267860758": {
+      "name": "Amber Park \u00b7 Block 18A",
+      "floors": 21,
+      "source": "https://www.cdl.com.sg/our-stories/a-tale-of-two-east-coast-icons-born-a-generation-apart",
+      "publisher": "City Developments Limited",
+      "checked": "2026-09-16"
+    },
+    "way/107998359": {
+      "name": "HDB 567A HOUGANG ST 51",
+      "floors": 5,
+      "address": "567A|HOUGANG ST 51",
+      "source": "https://data.gov.sg/datasets/d_17f5382f26140b1fdae0ba2ef6239d2f/view",
+      "matchId": "efd41c4c-1016-44a0-9e46-d574dd10ade0",
+      "publisher": "Housing & Development Board",
+      "checked": "2026-09-17",
+      "field": "max_floor_lvl",
+      "officialRow": 9405,
+      "yearCompleted": "1995",
+      "sourceDescription": "HDB maximum floor level 5 \u00d7 3 m; estimated height, not a measured roof. Official HDB data through December 2025, matched by exact block/street and building identity. Lower wings and roof structures are not resolved.",
+      "reviewNote": "Current carpark outline matches the OneMap rectangle; previous outline shifted south-west.",
+      "reviewImage": "research/coverage/osm/hdb-review/review-6.png"
+    },
+    "way/107998367": {
+      "name": "HDB 569 HOUGANG ST 51",
+      "floors": 17,
+      "address": "569|HOUGANG ST 51",
+      "source": "https://data.gov.sg/datasets/d_17f5382f26140b1fdae0ba2ef6239d2f/view",
+      "matchId": "4867c145-72c9-40f2-be35-f670be09a175",
+      "publisher": "Housing & Development Board",
+      "checked": "2026-09-17",
+      "field": "max_floor_lvl",
+      "officialRow": 9417,
+      "yearCompleted": "1995",
+      "sourceDescription": "HDB maximum floor level 17 \u00d7 3 m; estimated height, not a measured roof. Official HDB data through December 2025, matched by exact block/street and building identity. Lower wings and roof structures are not resolved.",
+      "reviewNote": "Current stepped outline fits the OneMap wings and recesses; previous shape filled recesses and extended east.",
+      "reviewImage": "research/coverage/osm/hdb-review/review-6.png"
+    },
+    "way/173735010": {
+      "name": "HDB 415 YISHUN AVE 11",
+      "floors": 10,
+      "address": "415|YISHUN AVE 11",
+      "source": "https://data.gov.sg/datasets/d_17f5382f26140b1fdae0ba2ef6239d2f/view",
+      "matchId": "3b837e4d-7d40-44c0-a2ca-a2ca86b5d8f8",
+      "publisher": "Housing & Development Board",
+      "checked": "2026-09-17",
+      "field": "max_floor_lvl",
+      "officialRow": 6908,
+      "yearCompleted": "1992",
+      "sourceDescription": "HDB maximum floor level 10 \u00d7 3 m; estimated height, not a measured roof. Official HDB data through December 2025, matched by exact block/street and building identity. Lower wings and roof structures are not resolved.",
+      "reviewNote": "Current outline matches the OneMap stepped ends and narrower body; previous footprint extended beyond the south-east end.",
+      "reviewImage": "research/coverage/osm/hdb-review/review-6.png"
+    }
+  }
+}

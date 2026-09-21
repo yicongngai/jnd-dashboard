@@ -101,3 +101,8 @@ if os.path.exists("decoupling.html"):
     os.makedirs("publish", exist_ok=True)
     shutil.copy("decoupling.html", "publish/decoupling.html")
     print("staged decoupling.html -> publish/")
+
+# Stage the versioned sun map. Its assets and data are self-contained.
+if os.path.isdir("sun-map"):
+    shutil.copytree("sun-map", "publish/sun-map", dirs_exist_ok=True)
+    print("staged sun-map/ -> publish/sun-map/")

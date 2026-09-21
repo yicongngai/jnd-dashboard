@@ -1,4 +1,13 @@
 /* JND Toolkit, the OS look (preview, 6 Sep 2026). Loaded after theme-graphite.css. Presentation only. */
+/* Sun study shares the Property map's controls and surface. */
+#property-map{scroll-margin-top:24px}
+#tool-mp .gm-sun-intro{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 8px}
+#tool-mp .gm-sun-intro p{margin:0;color:#6E737D;font-size:14px;line-height:1.5}
+#tool-mp .gm-sun-open{flex-shrink:0;display:inline-flex;align-items:center;padding:10px 16px;border:1px solid #E6E7E9;border-radius:999px;color:#1B1D22;background:white;font-size:14px;text-decoration:none}
+#tool-mp .gm-sun-open:hover{background:#EEEFF1;border-color:#C7C9CE}
+#tool-mp .gm-sun-open:focus-visible{outline:3px solid #E8722C;outline-offset:3px}
+#gm-sun-frame{width:100%;height:920px;border:0;display:block;border-radius:18px;background:#F7F7F8}
+@media(max-width:700px){#tool-mp .gm-sun-intro{align-items:flex-start;flex-direction:column;gap:10px}#gm-sun-frame{height:1650px}}
 body{background:#F7F7F8 !important;font-size:14px;}
 .app-logo-strip{display:none !important;}
 .app-bar{position:relative;z-index:2;background:transparent !important;border:0 !important;padding:34px 64px 0 !important;align-items:flex-start !important;}

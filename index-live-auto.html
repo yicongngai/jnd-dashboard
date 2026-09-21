@@ -4522,14 +4522,15 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
     </div>
   </div>
   <!--JND-MAPCARD-->
-  <div class="sec mapsec">
-    <h2>Property map <span class="tag auto" style="vertical-align:middle;">AUTO&middot;LIVE</span></h2>
+  <div class="sec mapsec" id="property-map">
+    <h2>Property map <span id="gm-freshness" class="tag auto" style="vertical-align:middle;">AUTO&middot;LIVE</span></h2>
     <div class="gm-wrap">
       <div class="gm-ctl" style="border-bottom:1px solid #F0F1F3;padding-bottom:11px;margin-bottom:12px">
         <div class="gm-grp"><div class="h">View</div>
-          <div class="gm-chips" id="gm-mode">
-            <button class="gm-chip on" data-mode="mop">MOP map</button>
-            <button class="gm-chip" data-mode="school">School &amp; MRT search</button>
+          <div class="gm-chips" id="gm-mode" role="group" aria-label="Property map view">
+            <button class="gm-chip on" data-mode="mop" aria-pressed="true">MOP map</button>
+            <button class="gm-chip" data-mode="school" aria-pressed="false">School &amp; MRT search</button>
+            <button class="gm-chip" data-mode="sun" aria-pressed="false">Sun &amp; shadow</button>
           </div></div>
       </div>
 
@@ -4565,8 +4566,13 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
         </div>
       </div>
 
-      <!-- one map, both views -->
-      <div class="gm-side">
+      <!-- Sun study is loaded only when opened. Its dated dataset is separate from daily market data. -->
+      <div id="gm-view-sun" style="display:none">
+        <div class="gm-sun-intro"><p>See how sunlight and building shadows change through the day.</p><a class="gm-sun-open" href="sun-map/" target="_blank" rel="noopener">Open full map ↗</a></div>
+        <iframe id="gm-sun-frame" title="Sun and shadow map" data-src="sun-map/?embed=1&amp;v=23" loading="lazy"></iframe>
+      </div>
+      <!-- one map, both existing views -->
+      <div class="gm-side" id="gm-existing-map">
         <div>
           <div class="gm-map" id="gm-map"></div>
           <div class="gm-legend" id="gm-legend"></div>
@@ -5040,13 +5046,26 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
   }
 
   function setMode(m) {
+    if (!["mop", "school", "sun"].includes(m)) m = "mop";
     MODE = m;
+    $("gm-freshness").textContent = m === "sun" ? "Buildings · Sep 2026" : "AUTO·LIVE";
     [].forEach.call($("gm-mode").children, function (b) {
-      b.classList.toggle("on", b.dataset.mode === m); });
+      b.classList.toggle("on", b.dataset.mode === m); b.setAttribute("aria-pressed", String(b.dataset.mode === m)); });
     $("gm-view-mop").style.display = m === "mop" ? "" : "none";
     $("gm-view-school").style.display = m === "school" ? "" : "none";
     $("gm-panel-mop").style.display = m === "mop" ? "" : "none";
     $("gm-panel-school").style.display = m === "school" ? "" : "none";
+    $("gm-view-sun").style.display = m === "sun" ? "" : "none";
+    var sunFrame = $("gm-sun-frame");
+    if (sunFrame.contentWindow) sunFrame.contentWindow.postMessage({type:"jnd-sun-visibility",visible:m === "sun"}, location.origin);
+    $("gm-existing-map").style.display = m === "sun" ? "none" : "";
+    $("gm-note").style.display = m === "sun" ? "none" : "";
+    if (m === "sun") {
+      var frame = $("gm-sun-frame");
+      if (!frame.getAttribute("src")) frame.src = frame.dataset.src;
+      return;
+    }
+    MAP.invalidateSize();
     $("gm-legend").innerHTML = LEG[m];
     $("gm-note").innerHTML = NOTE[m];
     clearAll();
@@ -5132,8 +5151,14 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
       if (rec) showDetail(rec.x);
     });
 
+    window.addEventListener("message", function (e) {
+      var frame = $("gm-sun-frame");
+      if (e.origin !== location.origin || e.source !== frame.contentWindow || e.data?.type !== "jnd-sun-height") return;
+      var h = e.data.height;
+      if (typeof h === "number" && Number.isFinite(h) && h >= 400 && h <= 3000) frame.style.height = Math.ceil(h) + "px";
+    });
     schoolList(""); pickedPills();
-    setMode("mop");
+    setMode(new URLSearchParams(location.search).get("map") || "mop");
     setTimeout(function () {
       MAP.invalidateSize();
       if (MODE === "mop" && SG_BOUNDS) MAP.fitBounds(SG_BOUNDS, { padding: [8, 8] });
