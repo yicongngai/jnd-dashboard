@@ -30,57 +30,96 @@
    "4 to 5-bedroom types",
    202,
    "16%"
+  ],
+  [
+   "Classic Collection",
+   740,
+   "58%"
+  ],
+  [
+   "Luxury Collection",
+   528,
+   "42%"
   ]
  ],
- "price_basis": "The developer has not released prices. Sizes are today's common sizes from the ERA Project Marketing info kit, run from its $2,550 estimate up to $3,000 psf. The $2,700 to $2,800 columns are where this launch is expected to open.",
+ "price_basis": "Unit sizes are the developer's, released 22 September 2026. Prices are still estimates: each column is the size multiplied by a possible launch psf, from $2,600 to $3,000. The $2,750 to $2,850 columns are where this launch is expected to open. The two Premium + Study rows are the two layouts of that type.",
  "prices": [
   [
    "2 Bedroom",
-   581,
-   1626800,
-   "$1.4x to $1.5x"
+   592,
+   1657600,
+   "$1.54M",
+   100
   ],
   [
    "2 Bedroom Premium",
-   667,
-   1867600,
-   "$1.7x"
+   678,
+   1898400,
+   "$1.76M",
+   416
   ],
   [
    "2 Bedroom Premium + Study",
    732,
    2049600,
-   "$1.7x"
+   "$1.90M",
+   80
+  ],
+  [
+   "2 Bedroom Premium + Study",
+   775,
+   2170000,
+   "$2.02M",
+   120
   ],
   [
    "3 Bedroom",
-   818,
-   2290400,
-   "$2.1x"
+   947,
+   2651600,
+   "$2.46M",
+   120
   ],
   [
    "3 Bedroom Premium",
-   915,
-   2562000,
-   "$2.3x"
+   1055,
+   2954000,
+   "$2.74M",
+   170
   ],
   [
    "3 Bedroom Premium + Study",
-   1033,
-   2892400,
-   "$2.3x"
+   1152,
+   3225600,
+   "$3.00M",
+   60
   ],
   [
    "4 Bedroom",
-   1173,
-   3284400,
-   "$2.9x"
-  ],
-  [
-   "4 Bedroom Premium",
    1238,
    3466400,
-   "$3.1x"
+   "$3.22M",
+   90
+  ],
+  [
+   "4 Bedroom Premium, private lift",
+   1367,
+   3827600,
+   "$3.55M",
+   56
+  ],
+  [
+   "4 Bedroom Premium + Study, private lift",
+   1485,
+   4158000,
+   "$3.86M",
+   28
+  ],
+  [
+   "5 Bedroom Suite, private lift",
+   1808,
+   5062400,
+   "$4.70M",
+   28
   ]
  ],
  "brief": {

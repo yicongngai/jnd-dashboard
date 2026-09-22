@@ -3,7 +3,7 @@
 Re-run after any change to launch.json or the images. One file out: index.html."""
 import json, os
 HERE = os.path.dirname(os.path.abspath(__file__))
-D = json.load(open(os.path.join(HERE, "launch.json"), encoding="utf-8"))
+D = json.load(open(os.path.join(HERE, os.environ.get("LAUNCH_IN", "launch.json")), encoding="utf-8"))
 money = lambda v: "$" + format(int(v), ",")
 mil = lambda v: "$%.2fM" % (v / 1e6)
 
@@ -15,9 +15,11 @@ facts = [("Preview", D["preview"]), ("Homes", format(D["units"], ",")), ("Towers
 facts_html = "".join('<div class="fact"><div class="k">%s</div><div class="v">%s</div></div>' % (esc(k), esc(v)) for k, v in facts)
 brief_html = "".join('<div class="bcard"><h3>%s</h3><ul>%s</ul></div>' % (esc(t), "".join("<li>%s</li>" % esc(x) for x in xs)) for t, xs in D["brief"].items())
 gallery_html = "".join('<figure class="g"><img src="assets/img/%s.jpg" alt="%s" loading="lazy" decoding="async"><figcaption>%s</figcaption></figure>' % (f, esc(c), esc(c)) for f, c in D["gallery"])
-PSFS = [2550, 2600, 2700, 2800, 2900, 3000]
-price_rows = "".join('<tr><td><b>%s</b><span>%s sqft</span></td><td class="n from">From %s</td>%s</tr>' % (esc(t), format(sz, ","), esc(fr), "".join('<td class="n%s">%s</td>' % (" kit" if ps in (2700, 2800) else "", mil(sz * ps)) for ps in PSFS)) for t, sz, _, fr in D["prices"])
-price_head = '<th class="n from">Starting price</th>' + "".join('<th class="n%s">$%s psf</th>' % (" kit" if ps in (2700, 2800) else "", format(ps, ",")) for ps in PSFS)
+# sizes released 22 Sep 2026; the columns follow Pear's matrix ($2,600 to $3,000, $2,750 to $2,850 expected)
+PSFS = [2700, 2750, 2800, 2850, 2900, 3000]
+KIT = (2750, 2800, 2850)
+price_rows = "".join('<tr><td><b>%s</b><span>%s sqft · %s units</span></td><td class="n from">%s</td>%s</tr>' % (esc(t), format(sz, ","), n, mil(sz * 2600), "".join('<td class="n%s">%s</td>' % (" kit" if ps in KIT else "", mil(sz * ps)) for ps in PSFS)) for t, sz, _, fr, n in D["prices"])
+price_head = '<th class="n from">$2,600 psf</th>' + "".join('<th class="n%s">$%s psf</th>' % (" kit" if ps in KIT else "", format(ps, ",")) for ps in PSFS)
 neigh_rows = "".join('<tr class="nb" data-psf="%d" data-top="%d" data-asnew="%d"><td><b>%s</b><span>%s, finished %d, %s units</span></td><td>%s<span>%s</span></td><td class="n mid">%d years</td><td class="n">%s</td></tr>' % (
     n["psf"], n["top"], n["asnew"], esc(n["name"]), esc(n["where"]), n["top"], format(n["units"], ","), esc(n["resale"]), esc(n["unit"]), n["yrs"], "$%s psf" % format(n["asnew"], ",")) for n in D["neighbours"])
 upside_html = ""
@@ -27,6 +29,48 @@ evidence_html = "".join('<figure class="ev"><img data-lb="assets/slides/%s.jpg" 
 timeline_html = "".join('<div class="tl"><div class="d">%s</div><div class="w">%s</div></div>' % (esc(a), esc(b)) for a, b in D["timeline"])
 falsify_html = "".join("<li>%s</li>" % esc(x) for x in D["falsify"])
 mix_html = "".join('<div class="mix"><div class="n">%s</div><div class="l">%s, %s</div></div>' % (format(n, ","), esc(t), p) for t, n, p in D["mix"])
+
+BANNER = r'''
+<style>#pv{position:fixed;left:0;right:0;top:0;z-index:99999;background:#111318;color:#fff;font:14px/1.5 'Outfit','Avenir Next','Helvetica Neue',Arial,sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.35)}
+#pv .row{display:flex;align-items:center;gap:16px;padding:12px 22px;flex-wrap:wrap}#pv b{font-weight:500}#pv .tag{background:#F2A63A;color:#111;border-radius:999px;padding:3px 10px;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+#pv button{border:0;border-radius:999px;padding:9px 18px;font:inherit;cursor:pointer}#pv .ok{background:#3E7C59;color:#fff}#pv .no{background:rgba(255,255,255,.12);color:#fff}#pv .more{background:transparent;color:#F2A63A;padding:9px 6px}
+#pv ul{margin:0;padding:0 22px 14px 42px;color:#d6d8de;display:none}#pv.open ul{display:block}#pv li{padding:2px 0}#pv .src{color:#8a8f9a;font-size:12.5px;padding:0 22px 12px}#pv.open .src{display:block}#pv .src{display:none}
+#pv .msg{padding:0 22px 12px;color:#F2A63A}</style>
+<div id="pv"><div class="row"><span class="tag">Preview</span><span id="pv-sum">Loading the change list…</span><button type="button" class="more" id="pv-more">What changed</button><span style="flex:1"></span><button type="button" class="no" id="pv-no">Reject</button><button type="button" class="ok" id="pv-ok">Approve and publish</button></div><ul id="pv-list"></ul><div class="src" id="pv-src"></div><div class="msg" id="pv-msg"></div></div>
+<script>(function(){var slug=location.pathname.split('/').filter(Boolean).slice(-2,-1)[0]||'';var P=null;
+function $(i){return document.getElementById(i)}
+fetch('preview.json?d='+Date.now()).then(function(r){return r.json()}).then(function(j){P=j;var n=(j.changes||[]).length;$('pv-sum').innerHTML='<b>'+(j.name||slug)+'</b>, not live. '+n+' change'+(n==1?'':'s')+' from '+(j.sources||[]).map(function(s){return s.title}).join(', ')+(j.missing&&j.missing.length?'. Still missing: '+j.missing.join(', ')+'.':'.');
+$('pv-list').innerHTML=(j.changes||[]).map(function(c){return '<li>'+c.replace(/</g,'&lt;')+'</li>'}).join('');
+$('pv-src').textContent='Sources: '+(j.sources||[]).map(function(s){return s.title+' ('+s.class+', '+s.pages+' pages)'}).join('; ')+'. Built '+j.created;}).catch(function(){$('pv-sum').textContent='Preview details unavailable (open this page through the OS server, not as a file).'});
+$('pv-more').onclick=function(){$('pv').classList.toggle('open')};
+function act(kind){var b=$('pv-ok'),c=$('pv-no');b.disabled=c.disabled=true;$('pv-msg').textContent=kind==='approve'?'Approving: rebuilding the live page, committing, deploying…':'Rejecting…';
+fetch('/api/launch/'+kind,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({slug:slug})}).then(function(r){return r.json()}).then(function(j){$('pv-msg').textContent=(j.status||'')+': '+(j.detail||'');if(j.status==='approved'){$('pv-sum').innerHTML='<b>Approved.</b> The live page is rebuilt and deploying; you get a WhatsApp line when jndtoolkit.com serves it.';}if(j.status==='rejected'){$('pv-sum').innerHTML='<b>Rejected.</b> Those documents will not be proposed again.';}}).catch(function(e){$('pv-msg').textContent='Could not reach the OS server: '+e;b.disabled=c.disabled=false});}
+$('pv-ok').onclick=function(){if(confirm('Publish this version of the '+((P&&P.name)||slug)+' page to jndtoolkit.com?'))act('approve')};
+$('pv-no').onclick=function(){if(confirm('Drop this preview? The documents behind it will not be proposed again.'))act('reject')};})();</script>
+'''
+PLAN_SEC = r'''<section id="plans" data-title="Every floor plan">
+  <div class="wrap">
+    <div class="eyebrow reveal">Every floor plan, from the developer brochure</div>
+    <h2 class="reveal d1"><b>{{PLANCOUNT}} layouts</b>.</h2>
+    <p class="lede reveal d2">{{PLANLEDE}}</p>
+    {{PLANMAPS}}
+    <table class="pidx reveal"><thead><tr><th>Type</th><th>Layout</th><th>Size</th><th>Where</th></tr></thead><tbody>{{PLANIDX}}</tbody></table>
+    <div class="note">Sizes include balcony and private enclosed space where applicable. Stacks read from the brochure plans; (P) types are the ground-floor units with a PES. Where the stack line was not readable the row says "see the plan".</div>
+    {{PLANS}}
+  </div>
+</section>
+'''
+SPEC_SEC = r'''<section id="spec" data-title="Specifications" class="darksec">
+  <div class="wrap">
+    <div class="eyebrow reveal">Specifications, what the kits confirm so far</div>
+    <h2 class="reveal d1">What the developer <b>specifies</b>.</h2>
+    <p class="lede reveal d2">From the developer brochure and the ERA kit. Tap a page to open it full size.</p>
+    <div class="bgrid">{{SPEC}}</div>
+    {{SPECPAGES}}
+  </div>
+  <div class="gallery" id="specg">{{SPECG}}</div>
+</section>
+'''
 
 HTML = r'''<!doctype html>
 <html lang="en">
@@ -99,6 +143,17 @@ body.dark #nav a{background:rgba(255,255,255,.3)} body.dark #nav a.on{background
 .gallery .g:hover img{transform:scale(1.06)}
 .gallery figcaption{position:absolute;left:26px;bottom:22px;font-size:14px;color:#FFF;text-shadow:0 2px 16px rgba(0,0,0,.6)}
 .ghint{color:var(--ondark3);font-size:12.5px;text-align:center;padding-bottom:40px;margin-top:-40px}
+/* floor plans + specs (ported from Lucerne Grand, 10 Sep 2026; rendered only once launch.json carries plan_index / spec) */
+.pidx{width:100%;border-collapse:collapse;margin-top:44px;background:var(--card);border-radius:22px;overflow:hidden;box-shadow:0 12px 40px rgba(27,29,34,.05)}
+.pidx th{font-weight:400;color:var(--g3);font-size:12.5px;text-align:left;padding:14px 20px;border-bottom:1px solid var(--g1)}
+.pidx td{padding:11px 20px;border-bottom:1px solid var(--line);font-size:14px}.pidx td b{font-weight:500}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:44px}
+.plan{background:var(--card);border-radius:22px;padding:14px 14px 12px;border:1px solid rgba(27,29,34,.05);box-shadow:0 12px 40px rgba(27,29,34,.05)}
+.plan img{border-radius:12px;width:100%;background:#FFF}.plan figcaption{font-size:13px;color:var(--g4);margin-top:10px}
+.plan a:hover img{opacity:.92}
+#spec{background:var(--dark);color:var(--ondark);padding-bottom:0}#spec h2{color:#FFF}#spec .lede{color:var(--ondark2)}#spec .eyebrow{color:var(--ondark3)}
+.bcard.soon{border-color:rgba(242,166,58,.45)}.bcard.soon h3{color:var(--gold)}
+@media (max-width:900px){.plans{grid-template-columns:1fr}}
 /* price */
 .ptable{width:100%;border-collapse:collapse;margin-top:40px;background:var(--card);border-radius:22px;overflow:hidden;box-shadow:0 12px 40px rgba(27,29,34,.05)}
 .ptable th{font-weight:400;color:var(--g3);font-size:12.5px;text-align:left;padding:16px 22px;border-bottom:1px solid var(--g1)}
@@ -303,18 +358,21 @@ h1,h2{-webkit-font-smoothing:antialiased}
   <div class="ghint">Artist's impressions from the developer. Drag or scroll sideways.</div>
 </section>
 
+{{PLANSEC}}
+{{SPECSEC}}
 <section id="price" data-title="The price">
   <div class="wrap">
     <div class="eyebrow reveal">The price</div>
-    <h2 class="reveal d1">Estimated prices, <b>from $2,550 psf</b>.</h2>
+    <h2 class="reveal d1">Released sizes, <b>estimated prices from $2,600 psf</b>.</h2>
     <p class="lede reveal d2">{{PRICE_BASIS}}</p>
-    <div class="fromrow reveal"><div class="from"><div class="k">2-bedroom from</div><div class="n">$1.48M</div></div><div class="from"><div class="k">3-bedroom from</div><div class="n">$2.09M</div></div><div class="from"><div class="k">4-bedroom from</div><div class="n">$2.99M</div></div></div>
+    <div class="fromrow reveal"><div class="from"><div class="k">2-bedroom, 592 sqft, from</div><div class="n">$1.54M</div></div><div class="from"><div class="k">3-bedroom, 947 sqft, from</div><div class="n">$2.46M</div></div><div class="from"><div class="k">4-bedroom, 1,238 sqft, from</div><div class="n">$3.22M</div></div></div>
     <table class="ptable matrix reveal"><thead><tr><th>Type</th>{{PRICE_HEAD}}</tr></thead><tbody>{{PRICES}}</tbody></table>
+    {{PRICEPAGES}}
     <div class="note">For comparison, starting prices at Zyon Grand were $2.31M for a 2-bedroom, $2.76M for a 3-bedroom and $4.7M for a 4-bedroom. Promenade Peak, Arina East, Union Square and The Continuum are in the same range. ERA info kit, June 2026.</div>
     <div class="eyebrow" style="margin-top:72px">Same money, which will you buy</div>
     <div class="pairs">
-      <div class="pair reveal"><span class="tag">Resale, finished 2023</span><div class="who">JadeScape, Shunfu Road</div><div class="p">$3.03M to $3.06M</div><div class="d">3-bedroom, 1,152 sqft, 16th to 20th floor, sold July and August 2026 at $2,630 to $2,650 psf. Completed 2023. Marymount MRT.</div></div>
-      <div class="pair tr reveal d1"><span class="tag">Brand new, ready 2031</span><div class="who">Thomson Reserve</div><div class="p">$2.89M</div><div class="d">3-bedroom Premium + Study, 1,033 sqft, at $2,800 psf. Brand new. About $150k less.</div></div>
+      <div class="pair reveal"><span class="tag">Resale, finished 2023</span><div class="who">JadeScape, Shunfu Road</div><div class="p">$3.03M to $3.06M</div><div class="d">3-bedroom Premium, 1,152 sqft, 16th to 20th floor, sold July and August 2026 at $2,630 to $2,650 psf. Completed 2023. Marymount MRT.</div></div>
+      <div class="pair tr reveal d1"><span class="tag">Brand new, ready 2031</span><div class="who">Thomson Reserve</div><div class="p">$2.95M</div><div class="d">3-bedroom Premium, 1,055 sqft, at $2,800 psf. Brand new. About $90k less than the resale.</div></div>
     </div>
     <div class="proof reveal">
       <div class="ptx">
@@ -322,7 +380,7 @@ h1,h2{-webkit-font-smoothing:antialiased}
         <table class="jtx"><thead><tr><th>Sold</th><th>Floor</th><th class="n">Size</th><th>Type</th><th class="n">Price</th><th class="n">psf</th></tr></thead><tbody>{{JTX}}</tbody></table>
         <div class="note">The two 1,152 sqft sales are stack 61 of Block 16, floors 16 to 20. Source: URA Realis via the JND vault, August 2026.</div>
       </div>
-      <figure class="pplan"><img data-lb="assets/img/jadescape-c3a-plan.jpg" data-cap="JadeScape type C3a, 3-bedroom Premium, 1,152 sqft" data-kicker="Floor plan" src="assets/img/jadescape-c3a-plan.jpg" alt="JadeScape type C3a floor plan"><figcaption><b>JadeScape type C3a, 3-bedroom Premium.</b> 107 sqm, 1,152 sqft. Three bedrooms, two baths, yard and store. Thomson Reserve's 3-bedroom Premium + Study is 1,033 sqft. Its floor plans are released with the price list and go here when they arrive.</figcaption></figure>
+      <figure class="pplan"><img data-lb="assets/img/jadescape-c3a-plan.jpg" data-cap="JadeScape type C3a, 3-bedroom Premium, 1,152 sqft" data-kicker="Floor plan" src="assets/img/jadescape-c3a-plan.jpg" alt="JadeScape type C3a floor plan"><figcaption><b>JadeScape type C3a, 3-bedroom Premium.</b> 107 sqm, 1,152 sqft. Three bedrooms, two baths, yard and store. Thomson Reserve's 3-bedroom Premium is 1,055 sqft and its Premium + Study 1,152 sqft, sizes released 22 September 2026. Its floor plans go here when the brochure arrives.</figcaption></figure>
     </div>
   </div>
 </section>
@@ -516,6 +574,30 @@ for k, v in {"{{DISTRICT}}": esc(D["district"]), "{{PREVIEW}}": esc(D["preview"]
     out = out.replace(k, v)
 T = D["theme"]; _rgb = lambda h: ",".join(str(int(h.lstrip("#")[i:i+2], 16)) for i in (0, 2, 4))
 out = out.replace("{{THEMEVARS}}", "{" + "".join("--%s:%s;" % (k, v) for k, v in T.items() if k not in ("display", "h1", "fonts", "concept")) + "--dark2rgb:%s;--font-display:'%s','Avenir Next','Helvetica Neue',Arial,sans-serif;--font-h1:'%s','Avenir Next','Helvetica Neue',Arial,sans-serif;--font-body:'Outfit','Avenir Next','Helvetica Neue',Arial,sans-serif;--ok:#3E7C59;" % (_rgb(T["dark2"]), T["display"], T["h1"]) + "}").replace("{{FONTS}}", T["fonts"])
-out = out.replace("var prices=PRICES;", "var prices=" + json.dumps([[p[0], p[1], p[2]] for p in D["prices"]]) + ";")
-open(os.path.join(HERE, "index.html"), "w", encoding="utf-8").write(out)
+out = out.replace("var prices=PRICES;", "var prices=" + json.dumps([[p[0], p[1], p[2]] for p in D["prices"] if p[1] != 775]) + ";")
+
+# ---- preview mode + data-driven chapters (10 Sep 2026): launch_ingest.py builds launch.preview.json
+#      into index.preview.html with an approval banner; the live build is unchanged.
+def _fig(lst, kicker):
+    if not lst:
+        return ""
+    return '<div class="plans reveal">%s</div>' % "".join('<figure class="plan"><img data-lb="assets/pages/%s.jpg" data-cap="%s" data-kicker="%s" src="assets/pages/%s.jpg" alt="%s" loading="lazy" decoding="async"><figcaption>%s</figcaption></figure>' % (f, esc(c), esc(kicker), f, esc(c), esc(c)) for f, c in lst)
+_pi = D.get("plan_index") or []
+_plan_idx = "".join('<tr><td>%s</td><td><b>%s</b></td><td>%s</td><td>%s</td></tr>' % (esc(t), esc(c), esc(sz), esc(w)) for t, c, sz, w in _pi)
+_plans = _fig(D.get("plans"), "Floor plan, from the developer brochure")
+_maps = "".join('<img data-lb="assets/img/%s.jpg" data-cap="%s" src="assets/img/%s.jpg" alt="%s">' % (f, c, f, c) for f, c in (("schematic", "Schematic diagram"), ("siteplan-brochure", "Site plan")) if os.path.exists(os.path.join(HERE, "assets", "img", f + ".jpg")))
+_maps = ('<div class="maps reveal">%s</div>' % _maps) if _maps else ""
+_spec = "".join('<div class="bcard%s"><h3>%s</h3><ul>%s</ul></div>' % (" soon" if t == "Not out yet" else "", esc(t), "".join("<li>%s</li>" % esc(x) for x in xs)) for t, xs in (D.get("spec") or {}).items())
+_specg = "".join('<figure class="g"><img src="assets/img/%s.jpg" alt="%s" loading="lazy" decoding="async"><figcaption>%s</figcaption></figure>' % (f, esc(c), esc(c)) for f, c in (D.get("spec_gallery") or []))
+_extra = {"{{PLANCOUNT}}": str(len(_pi)), "{{PLANLEDE}}": esc(D.get("plan_lede") or ""), "{{PLANMAPS}}": _maps, "{{PLANIDX}}": _plan_idx, "{{PLANS}}": _plans,
+          "{{SPEC}}": _spec, "{{SPECG}}": _specg, "{{SPECPAGES}}": _fig(D.get("spec_pages"), "Specifications"), "{{PRICEPAGES}}": _fig(D.get("price_pages"), "Price list")}
+_extra["{{PLANSEC}}"] = (PLAN_SEC if _pi else "")
+_extra["{{SPECSEC}}"] = (SPEC_SEC if (D.get("spec") or D.get("spec_pages")) else "")
+for _round in (1, 2):  # sections first, then the placeholders inside them
+    for k, v in _extra.items():
+        out = out.replace(k, v)
+out = out.replace('<meta name="viewport" content="width=device-width, initial-scale=1">', '<meta name="viewport" content="width=device-width, initial-scale=1">\n<meta name="jnd-build" content="%s">' % __import__("datetime").datetime.now().isoformat(timespec="seconds"), 1)
+if os.environ.get("LAUNCH_PREVIEW"):
+    out = out.replace("</body>", BANNER + "</body>", 1)
+open(os.path.join(HERE, os.environ.get("LAUNCH_OUT", "index.html")), "w", encoding="utf-8").write(out)
 print("built", len(out), "bytes")
