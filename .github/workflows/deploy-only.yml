@@ -5,6 +5,13 @@ name: Deploy only (no data refresh)
 #   POST /repos/yicongngai/jnd-dashboard/actions/workflows/deploy-only.yml/dispatches
 on:
   workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - 'launch/**'
+      - 'sun-map/**'
+      - 'sync_launch_map.py'
+      - '.github/workflows/deploy-only.yml'
 permissions:
   contents: read
   pages: write

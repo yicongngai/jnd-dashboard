@@ -2,6 +2,7 @@
 
 Both Pages deployment workflows run `python3 sync_launch_map.py` in their clean
 checkout before staging the map. The daily refresh reconciles again at 07:00 SGT.
+Commits to the published launch/map files also trigger deployment directly.
 The existing approved-launch publisher dispatches `deploy-only.yml`; its approval
 and notification behaviour is unchanged. No separate scheduler or credentials.
 
