@@ -94,3 +94,8 @@ index-live-auto.html.bak-*
 # raw renders and the watcher's inbox never do (6 Sep 2026)
 launch/*/drops/
 !launch/*/index.html
+
+# launch previews awaiting approval (10 Sep 2026): the approve step promotes them to index.html
+launch/*/index.preview.html
+launch/*/launch.preview.json
+launch/*/preview.json

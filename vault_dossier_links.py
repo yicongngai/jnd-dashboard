@@ -45,6 +45,18 @@ ALIASES = {
     "enchante": "enchant",
     "pullmanresidence": "pullmanresidences",
     "pullmanresidences": "pullmanresidencesnewton",
+    # PG suffixes the development name where URA does not — "Condo" for
+    # "Condominium", the town, the tenure category. Each verified 4 Sep 2026
+    # against the DISTRICT AND STREET both notes state independently, and each
+    # name is unique nationally, so there is no second candidate to confuse:
+    #   Ferraria Park Condo    -> "Ferraria Park Condominium": both D17, Flora Drive
+    #   The Estuary Yishun     -> "The Estuary": both D27, Yishun Avenue 1
+    #   Westwood Residences EC -> "Westwood Residences": both D22, Westwood Avenue
+    #   Springdale Condo       -> "Springdale Condominium": both D21, Hindhede Walk
+    "ferrariaparkcondo": "ferrariaparkcondominium",
+    "theestuaryyishun": "theestuary",
+    "westwoodresidencesec": "westwoodresidences",
+    "springdalecondo": "springdalecondominium",
 }
 
 _INDEX = None

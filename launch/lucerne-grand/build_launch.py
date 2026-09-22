@@ -3,7 +3,7 @@
 Re-run after any change to launch.json or the images. One file out: index.html."""
 import json, os
 HERE = os.path.dirname(os.path.abspath(__file__))
-D = json.load(open(os.path.join(HERE, "launch.json"), encoding="utf-8"))
+D = json.load(open(os.path.join(HERE, os.environ.get("LAUNCH_IN", "launch.json")), encoding="utf-8"))
 money = lambda v: "$" + format(int(v), ",")
 mil = lambda v: "$%.2fM" % (v / 1e6)
 
@@ -36,6 +36,48 @@ plans_html = "".join('<figure class="plan"><img data-lb="assets/pages/%s.jpg" da
 spec_html = "".join('<div class="bcard%s"><h3>%s</h3><ul>%s</ul></div>' % (" soon" if t == "Not out yet" else "", esc(t), "".join("<li>%s</li>" % esc(x) for x in xs)) for t, xs in D["spec"].items())
 specg_html = "".join('<figure class="g"><img src="assets/img/%s.jpg" alt="%s" loading="lazy" decoding="async"><figcaption>%s</figcaption></figure>' % (f, esc(c), esc(c)) for f, c in D["spec_gallery"])
 mix_html = "".join('<div class="mix"><div class="n">%s</div><div class="l">%s, %s</div></div>' % (format(n, ","), esc(t), p) for t, n, p in D["mix"])
+
+BANNER = r'''
+<style>#pv{position:fixed;left:0;right:0;top:0;z-index:99999;background:#111318;color:#fff;font:14px/1.5 'Outfit','Avenir Next','Helvetica Neue',Arial,sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.35)}
+#pv .row{display:flex;align-items:center;gap:16px;padding:12px 22px;flex-wrap:wrap}#pv b{font-weight:500}#pv .tag{background:#F2A63A;color:#111;border-radius:999px;padding:3px 10px;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+#pv button{border:0;border-radius:999px;padding:9px 18px;font:inherit;cursor:pointer}#pv .ok{background:#3E7C59;color:#fff}#pv .no{background:rgba(255,255,255,.12);color:#fff}#pv .more{background:transparent;color:#F2A63A;padding:9px 6px}
+#pv ul{margin:0;padding:0 22px 14px 42px;color:#d6d8de;display:none}#pv.open ul{display:block}#pv li{padding:2px 0}#pv .src{color:#8a8f9a;font-size:12.5px;padding:0 22px 12px}#pv.open .src{display:block}#pv .src{display:none}
+#pv .msg{padding:0 22px 12px;color:#F2A63A}</style>
+<div id="pv"><div class="row"><span class="tag">Preview</span><span id="pv-sum">Loading the change list…</span><button type="button" class="more" id="pv-more">What changed</button><span style="flex:1"></span><button type="button" class="no" id="pv-no">Reject</button><button type="button" class="ok" id="pv-ok">Approve and publish</button></div><ul id="pv-list"></ul><div class="src" id="pv-src"></div><div class="msg" id="pv-msg"></div></div>
+<script>(function(){var slug=location.pathname.split('/').filter(Boolean).slice(-2,-1)[0]||'';var P=null;
+function $(i){return document.getElementById(i)}
+fetch('preview.json?d='+Date.now()).then(function(r){return r.json()}).then(function(j){P=j;var n=(j.changes||[]).length;$('pv-sum').innerHTML='<b>'+(j.name||slug)+'</b>, not live. '+n+' change'+(n==1?'':'s')+' from '+(j.sources||[]).map(function(s){return s.title}).join(', ')+(j.missing&&j.missing.length?'. Still missing: '+j.missing.join(', ')+'.':'.');
+$('pv-list').innerHTML=(j.changes||[]).map(function(c){return '<li>'+c.replace(/</g,'&lt;')+'</li>'}).join('');
+$('pv-src').textContent='Sources: '+(j.sources||[]).map(function(s){return s.title+' ('+s.class+', '+s.pages+' pages)'}).join('; ')+'. Built '+j.created;}).catch(function(){$('pv-sum').textContent='Preview details unavailable (open this page through the OS server, not as a file).'});
+$('pv-more').onclick=function(){$('pv').classList.toggle('open')};
+function act(kind){var b=$('pv-ok'),c=$('pv-no');b.disabled=c.disabled=true;$('pv-msg').textContent=kind==='approve'?'Approving: rebuilding the live page, committing, deploying…':'Rejecting…';
+fetch('/api/launch/'+kind,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({slug:slug})}).then(function(r){return r.json()}).then(function(j){$('pv-msg').textContent=(j.status||'')+': '+(j.detail||'');if(j.status==='approved'){$('pv-sum').innerHTML='<b>Approved.</b> The live page is rebuilt and deploying; you get a WhatsApp line when jndtoolkit.com serves it.';}if(j.status==='rejected'){$('pv-sum').innerHTML='<b>Rejected.</b> Those documents will not be proposed again.';}}).catch(function(e){$('pv-msg').textContent='Could not reach the OS server: '+e;b.disabled=c.disabled=false});}
+$('pv-ok').onclick=function(){if(confirm('Publish this version of the '+((P&&P.name)||slug)+' page to jndtoolkit.com?'))act('approve')};
+$('pv-no').onclick=function(){if(confirm('Drop this preview? The documents behind it will not be proposed again.'))act('reject')};})();</script>
+'''
+PLAN_SEC = r'''<section id="plans" data-title="Every floor plan">
+  <div class="wrap">
+    <div class="eyebrow reveal">Every floor plan, from the developer brochure</div>
+    <h2 class="reveal d1"><b>{{PLANCOUNT}} layouts</b>.</h2>
+    <p class="lede reveal d2">{{PLANLEDE}}</p>
+    {{PLANMAPS}}
+    <table class="pidx reveal"><thead><tr><th>Type</th><th>Layout</th><th>Size</th><th>Where</th></tr></thead><tbody>{{PLANIDX}}</tbody></table>
+    <div class="note">Sizes include balcony and private enclosed space where applicable. Stacks read from the brochure plans; (P) types are the ground-floor units with a PES. Where the stack line was not readable the row says "see the plan".</div>
+    <div class="plans reveal">{{PLANS}}</div>
+  </div>
+</section>
+'''
+SPEC_SEC = r'''<section id="spec" data-title="Specifications" class="darksec">
+  <div class="wrap">
+    <div class="eyebrow reveal">Specifications, what the kits confirm so far</div>
+    <h2 class="reveal d1">What the developer <b>specifies</b>.</h2>
+    <p class="lede reveal d2">From the developer brochure and the ERA kit. Tap a page to open it full size.</p>
+    <div class="bgrid">{{SPEC}}</div>
+    {{SPECPAGES}}
+  </div>
+  <div class="gallery" id="specg">{{SPECG}}</div>
+</section>
+'''
 
 HTML = r'''<!doctype html>
 <html lang="en">
@@ -367,6 +409,7 @@ h1,h2{-webkit-font-smoothing:antialiased}
     <h2 class="reveal d1">Bosch, Samsung, Geberit, <b>hansgrohe, Franke</b>.</h2>
     <p class="lede reveal d2">From the ERA briefing deck's show unit pages and the CDL brochure. The developer's full schedule of finishes is not out yet; the last card says what is still to come.</p>
     <div class="bgrid">{{SPEC}}</div>
+    {{SPECPAGES}}
   </div>
   <div class="gallery" id="specg">{{SPECG}}</div>
   <div class="ghint">Show unit photographs from the ERA briefing deck. Drag or scroll sideways.</div>
@@ -379,6 +422,7 @@ h1,h2{-webkit-font-smoothing:antialiased}
     <p class="lede reveal d2">{{PRICE_BASIS}}</p>
     <div class="fromrow reveal"><div class="from"><div class="k">2-bedroom from, ERA kit</div><div class="n">$1.4xM</div></div><div class="from"><div class="k">3-bedroom from, ERA kit</div><div class="n">$2.1xM</div></div><div class="from"><div class="k">4-bedroom from, ERA kit</div><div class="n">$2.8xM</div></div></div>
     <table class="ptable matrix reveal"><thead><tr><th>Type</th>{{PRICE_HEAD}}</tr></thead><tbody>{{PRICES}}</tbody></table>
+    {{PRICEPAGES}}
     <div class="note">For comparison, the two launches still selling on Lakeside reached $2,581 psf at Sora and $2,556 psf at LakeGarden Residences, and J'den at Jurong East reached $2,832 psf. Neither Sora nor LakeGarden has completed, so they are the new-sale cohort, not the resale benchmark in the next chapter. ERA objection handling kit, September 2026.</div>
   </div>
 </section>
@@ -588,5 +632,29 @@ T = D["theme"]; _rgb = lambda h: ",".join(str(int(h.lstrip("#")[i:i+2], 16)) for
 out = out.replace("{{THEMEVARS}}", "{" + "".join("--%s:%s;" % (k, v) for k, v in T.items() if k not in ("display", "h1", "fonts", "concept")) + "--dark2rgb:%s;--font-display:'%s','Avenir Next','Helvetica Neue',Arial,sans-serif;--font-h1:'%s','Avenir Next','Helvetica Neue',Arial,sans-serif;--font-body:'Outfit','Avenir Next','Helvetica Neue',Arial,sans-serif;--ok:#3E7C59;" % (_rgb(T["dark2"]), T["display"], T["h1"]) + "}").replace("{{FONTS}}", T["fonts"])
 out = out.replace("__PSF__", str(PSF)).replace("__TOPY__", str(TOPY)).replace("__RATE__", str(RATE))
 out = out.replace("var prices=PRICES;", "var prices=" + json.dumps([[p[0], p[1], p[2]] for p in D["prices"]]) + ";")
-open(os.path.join(HERE, "index.html"), "w", encoding="utf-8").write(out)
+
+# ---- preview mode + data-driven chapters (10 Sep 2026): launch_ingest.py builds launch.preview.json
+#      into index.preview.html with an approval banner; the live build is unchanged.
+def _fig(lst, kicker):
+    if not lst:
+        return ""
+    return '<div class="plans reveal">%s</div>' % "".join('<figure class="plan"><img data-lb="assets/pages/%s.jpg" data-cap="%s" data-kicker="%s" src="assets/pages/%s.jpg" alt="%s" loading="lazy" decoding="async"><figcaption>%s</figcaption></figure>' % (f, esc(c), esc(kicker), f, esc(c), esc(c)) for f, c in lst)
+_pi = D.get("plan_index") or []
+_plan_idx = "".join('<tr><td>%s</td><td><b>%s</b></td><td>%s</td><td>%s</td></tr>' % (esc(t), esc(c), esc(sz), esc(w)) for t, c, sz, w in _pi)
+_plans = _fig(D.get("plans"), "Floor plan, from the developer brochure")
+_maps = "".join('<img data-lb="assets/img/%s.jpg" data-cap="%s" src="assets/img/%s.jpg" alt="%s">' % (f, c, f, c) for f, c in (("schematic", "Schematic diagram"), ("siteplan-brochure", "Site plan")) if os.path.exists(os.path.join(HERE, "assets", "img", f + ".jpg")))
+_maps = ('<div class="maps reveal">%s</div>' % _maps) if _maps else ""
+_spec = "".join('<div class="bcard%s"><h3>%s</h3><ul>%s</ul></div>' % (" soon" if t == "Not out yet" else "", esc(t), "".join("<li>%s</li>" % esc(x) for x in xs)) for t, xs in (D.get("spec") or {}).items())
+_specg = "".join('<figure class="g"><img src="assets/img/%s.jpg" alt="%s" loading="lazy" decoding="async"><figcaption>%s</figcaption></figure>' % (f, esc(c), esc(c)) for f, c in (D.get("spec_gallery") or []))
+_extra = {"{{PLANCOUNT}}": str(len(_pi)), "{{PLANLEDE}}": esc(D.get("plan_lede") or ""), "{{PLANMAPS}}": _maps, "{{PLANIDX}}": _plan_idx, "{{PLANS}}": _plans,
+          "{{SPEC}}": _spec, "{{SPECG}}": _specg, "{{SPECPAGES}}": _fig(D.get("spec_pages"), "Specifications"), "{{PRICEPAGES}}": _fig(D.get("price_pages"), "Price list")}
+_extra["{{PLANSEC}}"] = (PLAN_SEC if _pi else "")
+_extra["{{SPECSEC}}"] = (SPEC_SEC if (D.get("spec") or D.get("spec_pages")) else "")
+for _round in (1, 2):  # sections first, then the placeholders inside them
+    for k, v in _extra.items():
+        out = out.replace(k, v)
+out = out.replace('<meta name="viewport" content="width=device-width, initial-scale=1">', '<meta name="viewport" content="width=device-width, initial-scale=1">\n<meta name="jnd-build" content="%s">' % __import__("datetime").datetime.now().isoformat(timespec="seconds"), 1)
+if os.environ.get("LAUNCH_PREVIEW"):
+    out = out.replace("</body>", BANNER + "</body>", 1)
+open(os.path.join(HERE, os.environ.get("LAUNCH_OUT", "index.html")), "w", encoding="utf-8").write(out)
 print("built", len(out), "bytes")
