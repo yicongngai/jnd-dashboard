@@ -10,6 +10,12 @@ on:
     paths:
       - 'launch/**'
       - 'sun-map/**'
+      # page edits deploy on push too (22 Sep 2026); a manual dispatch of refresh.yml was
+      # blocking this fast path for 15 minutes
+      - 'index-live-auto.html'
+      - 'theme-os-toolkit.css'
+      - 'decoupling.html'
+      - 'headlines.json'
       - 'sync_launch_map.py'
       - '.github/workflows/deploy-only.yml'
 permissions:
