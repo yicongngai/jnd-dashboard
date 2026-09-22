@@ -556,5 +556,78 @@
    "The developer's schedule of finishes: appliance models, floor and wall finishes, tile and stone specifications",
    "Comes with the 3 October kit; this chapter takes it the day it drops"
   ]
- }
+ },
+ "unit_mix": [
+  [
+   "2 Bedroom",
+   592,
+   100,
+   100,
+   0
+  ],
+  [
+   "2 Bedroom Premium",
+   678,
+   416,
+   240,
+   176
+  ],
+  [
+   "2 Bedroom Premium + Study",
+   "732 / 775",
+   200,
+   80,
+   120
+  ],
+  [
+   "3 Bedroom",
+   947,
+   120,
+   60,
+   60
+  ],
+  [
+   "3 Bedroom Premium",
+   1055,
+   170,
+   140,
+   30
+  ],
+  [
+   "3 Bedroom Premium + Study",
+   1152,
+   60,
+   60,
+   0
+  ],
+  [
+   "4 Bedroom",
+   1238,
+   90,
+   60,
+   30
+  ],
+  [
+   "4 Bedroom Premium, private lift",
+   1367,
+   56,
+   0,
+   56
+  ],
+  [
+   "4 Bedroom Premium + Study, private lift",
+   1485,
+   28,
+   0,
+   28
+  ],
+  [
+   "5 Bedroom Suite, private lift",
+   1808,
+   28,
+   0,
+   28
+  ]
+ ],
+ "unit_mix_note": "Developer's unit mix, released 22 September 2026. Classic Collection 740 homes, Luxury Collection 528. 2 and 3-bedroom types make up 84% of the project; 416 of the 1,268 homes are the 678 sqft 2 Bedroom Premium alone."
 }

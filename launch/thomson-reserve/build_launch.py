@@ -28,6 +28,14 @@ sinming_rows = "".join('<tr><td>%s</td><td>%s</td><td>%s</td><td class="n">%s</t
 evidence_html = "".join('<figure class="ev"><img data-lb="assets/slides/%s.jpg" data-cap="%s" src="assets/slides/%s.jpg" alt="Slide" loading="lazy" decoding="async"><figcaption><span>For Thomson Reserve</span>%s</figcaption></figure>' % (f, esc(c), f, esc(c)) for f, c in D["evidence"])
 timeline_html = "".join('<div class="tl"><div class="d">%s</div><div class="w">%s</div></div>' % (esc(a), esc(b)) for a, b in D["timeline"])
 falsify_html = "".join("<li>%s</li>" % esc(x) for x in D["falsify"])
+mx = D.get("unit_mix") or []
+mxmax = max(r[2] for r in mx) if mx else 1
+umix_rows = "".join('<tr><td><b>%s</b><span>%s sqft</span></td><td class="n">%s</td><td class="bar"><i style="width:%.0f%%"></i><em style="width:%.0f%%"></em></td><td class="n">%s</td><td class="n">%s</td></tr>' % (
+    esc(t), sz if isinstance(sz, str) else format(sz, ","), n, 100.0 * n / mxmax, 100.0 * c / mxmax, c or "", l or "") for t, sz, n, c, l in mx)
+umix_html = ('<div class="eyebrow" style="margin-top:56px">Unit mix, every type</div><p class="lede">%s</p>'
+             '<table class="ptable umix"><thead><tr><th>Type</th><th class="n">Units</th><th></th><th class="n">Classic</th><th class="n">Luxury</th></tr></thead><tbody>%s</tbody>'
+             '<tfoot><tr><td><b>All homes</b></td><td class="n">1,268</td><td></td><td class="n">740</td><td class="n">528</td></tr></tfoot></table>'
+             '<div class="note">Bars are units per type; the darker part is the Classic Collection share. Source: developer unit mix via ERA Project Marketing, 22 September 2026.</div>') % (esc(D.get("unit_mix_note", "")), umix_rows) if mx else ""
 mix_html = "".join('<div class="mix"><div class="n">%s</div><div class="l">%s, %s</div></div>' % (format(n, ","), esc(t), p) for t, n, p in D["mix"])
 
 BANNER = r'''
@@ -233,7 +241,8 @@ body.dark #nav a{background:rgba(255,255,255,.3)} body.dark #nav a.on{background
 .step{background:var(--card);border-radius:22px;padding:26px 26px 24px;border:1px solid rgba(27,29,34,.05);box-shadow:0 12px 40px rgba(27,29,34,.05)}
 .step .sl{font-size:12.5px;color:var(--g3);margin-bottom:10px}.step .st{font-size:15px;line-height:1.5}
 .ntable .mid,.ntable th.mid{font-size:15px;font-weight:400;color:var(--g4)}
-#development .mixrow{margin-top:40px}#development .mix .n{color:var(--ink)}#development .mix .l{color:var(--g4)}
+#development .mixrow{margin-top:40px}
+.umix td.bar{width:34%;position:relative;padding:0 14px}.umix td.bar i,.umix td.bar em{display:block;height:10px;border-radius:999px;background:var(--tint2)}.umix td.bar em{position:absolute;left:14px;top:50%;margin-top:-5px;background:var(--e3);opacity:.85}.umix tfoot td{border-top:2px solid var(--g2);font-weight:500}.umix td span{display:block;color:var(--g4);font-size:12.5px}#development .mix .n{color:var(--ink)}#development .mix .l{color:var(--g4)}
 @media (max-width:900px){.steps{grid-template-columns:1fr}}
 .counts{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;margin-top:56px;border-top:1px solid var(--g1);border-bottom:1px solid var(--g1);padding:34px 0}
 .counts .n{font-size:52px;font-weight:200;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}.counts .l{color:var(--g4);margin-top:8px;font-size:13px}
@@ -341,6 +350,7 @@ h1,h2{-webkit-font-smoothing:antialiased}
     </div>
     <div class="facts reveal">{{FACTS}}</div>
     <div class="mixrow reveal">{{MIX}}</div>
+    <div class="reveal">{{UMIX}}</div>
     <div class="maps reveal"><img data-lb="assets/pages/kit-09.jpg" data-cap="Site plan" src="assets/pages/kit-09.jpg" alt="Site plan"><img data-lb="assets/pages/kit-06.jpg" data-cap="Site overview" src="assets/pages/kit-06.jpg" alt="Site overview"></div>
   </div>
 </section>
@@ -569,7 +579,7 @@ h1,h2{-webkit-font-smoothing:antialiased}
 </html>'''
 out = HTML
 for k, v in {"{{DISTRICT}}": esc(D["district"]), "{{PREVIEW}}": esc(D["preview"]), "{{TAGLINE}}": esc(D["tagline"]), "{{THESIS}}": esc(D["thesis"]), "{{FACTS}}": facts_html,
-             "{{MIX}}": mix_html, "{{BRIEF}}": brief_html, "{{GALLERY}}": gallery_html, "{{PRICE_BASIS}}": esc(D["price_basis"]), "{{PRICES}}": price_rows, "{{PRICE_HEAD}}": price_head, "{{NEIGH}}": neigh_rows,
+             "{{MIX}}": mix_html, "{{UMIX}}": umix_html, "{{BRIEF}}": brief_html, "{{GALLERY}}": gallery_html, "{{PRICE_BASIS}}": esc(D["price_basis"]), "{{PRICES}}": price_rows, "{{PRICE_HEAD}}": price_head, "{{NEIGH}}": neigh_rows,
              "{{SINMING}}": sinming_rows, "{{EVIDENCE}}": evidence_html, "{{TIMELINE}}": timeline_html, "{{FALSIFY}}": falsify_html, "{{SOURCES}}": esc(D["sources"]), "{{UPSIDE}}": upside_html, "{{JTX}}": jtx_rows}.items():
     out = out.replace(k, v)
 T = D["theme"]; _rgb = lambda h: ",".join(str(int(h.lstrip("#")[i:i+2], 16)) for i in (0, 2, 4))
