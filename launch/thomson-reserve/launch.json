@@ -2,24 +2,24 @@
  "name": "Thomson Reserve",
  "tagline": "A sanctuary perfectly placed",
  "district": "District 20, Bishan planning area",
- "address": "1, 3, 5, 7, 9, 11 Bright Hill Drive",
- "preview": "3 October 2026",
+ "address": "1 to 11 Bright Hill Drive, six blocks",
+ "preview": "17 October 2026",
  "developer": "UOL Group, Singapore Land and CapitaLand Development (Tamarind Development Pte Ltd)",
- "tenure": "99-year leasehold",
+ "tenure": "99-year leasehold from 14 July 2026",
  "units": 1268,
  "towers": "Two 30-storey towers and four 21-storey towers",
  "site_sqft": 555067,
  "site_sqm": 51567,
- "carpark": 1014,
+ "carpark": 1021,
  "plot_ratio": 2.1,
- "novp": "1Q 2031, estimated",
+ "novp": "28 February 2031, expected (legal completion 28 February 2034)",
  "land_psf_ppr": 1178,
  "land_month": "October 2024",
  "architect": "P&T Consultants",
- "landscape": "Ecoplan Asia",
+ "landscape": "Eco Plan Asia",
  "interiors": "2nd Edition",
  "builder": "Lian Beng Construction",
- "thesis": "Upper Thomson MRT at the doorstep. Ai Tong within 1 km. 1,268 homes by UOL, Singapore Land and CapitaLand. Preview 3 October 2026.",
+ "thesis": "Upper Thomson MRT at the doorstep. Ai Tong within 1 km. 1,268 homes by UOL, Singapore Land and CapitaLand. Preview 17 October 2026.",
  "mix": [
   [
    "2 to 3-bedroom types",
@@ -310,12 +310,16 @@
  ],
  "timeline": [
   [
-   "3 Oct 2026",
-   "Preview opens"
+   "23 Sep 2026",
+   "Agents' showflat viewing"
   ],
   [
-   "Oct 2026",
-   "Booking, Option to Purchase"
+   "17 to 26 Oct 2026",
+   "Preview, cheques in"
+  ],
+  [
+   "27 Oct 2026, expected",
+   "Balloting and booking, Option to Purchase"
   ],
   [
    "2027 to 2030",
@@ -326,12 +330,12 @@
    "Four years from purchase, Seller's Stamp Duty clears"
   ],
   [
-   "1Q 2031",
-   "Notice of vacant possession, estimated"
+   "28 Feb 2031",
+   "Notice of vacant possession, expected"
   ],
   [
    "2031 to 2032",
-   "Exit window, the next upgrader buys at brand-new-equivalent psf"
+   "Exit window: sell the flat, move in, or hold"
   ]
  ],
  "falsify": [
@@ -470,8 +474,8 @@
   "Floor plans": true,
   "Site plan": true,
   "Show unit photos": false,
-  "Specifications": false,
-  "Schedule of finishes": false,
+  "Specifications": true,
+  "Schedule of finishes": true,
   "Price list": false,
   "Preview and booking dates": true
  },
@@ -507,54 +511,498 @@
  },
  "plan_index": [
   [
-   "2-bedroom Premium + Study",
+   "2-Bedroom",
+   "B1",
+   "592 sqft, 55 sqm",
+   "Block 1 stack 07, floors 3 to 21, Block 3 stack 17 mirrored, floors 3 to 21 · Classic"
+  ],
+  [
+   "2-Bedroom",
+   "B2",
+   "592 sqft, 55 sqm",
+   "Block 1 stack 08, floors 3 to 21 · Classic"
+  ],
+  [
+   "2-Bedroom",
+   "B3",
+   "592 sqft, 55 sqm",
+   "Block 3 stack 16, floors 3 to 21, Block 11 stack 52, floors 3 to 21 · Classic"
+  ],
+  [
+   "2-Bedroom Premium",
+   "BP1",
+   "678 sqft, 63 sqm",
+   "Block 1 stack 03, floors 3 to 21, Block 9 stack 38 mirrored, floors 3 to 21 · Classic"
+  ],
+  [
+   "2-Bedroom Premium",
+   "BP2",
+   "678 sqft, 63 sqm",
+   "Block 3 stack 13, floors 3 to 21 · Classic"
+  ],
+  [
+   "2-Bedroom Premium",
+   "BP3",
+   "678 sqft, 63 sqm",
+   "Block 1 stack 02, floors 3 to 21, Block 3 stack 12, floors 3 to 21, Block 9 stack 39 mirrored, floors 3 to 21, Block 11 stack 47, floors 3 to 21 · Classic"
+  ],
+  [
+   "2-Bedroom Premium",
+   "BP4",
+   "678 sqft, 63 sqm",
+   "Block 11 stack 48, floors 3 to 21, Block 11 stack 49 mirrored, floors 3 to 21 · Classic"
+  ],
+  [
+   "2-Bedroom Premium",
+   "BP5",
+   "678 sqft, 63 sqm",
+   "Block 9 stack 43, floors 3 to 21 · Classic"
+  ],
+  [
+   "2-Bedroom Premium",
+   "BP8",
+   "678 sqft, 63 sqm",
+   "Block 11 stack 53, floors 3 to 21 · Classic"
+  ],
+  [
+   "2-Bedroom Premium",
+   "BP9",
+   "678 sqft, 63 sqm",
+   "Block 9 stack 42, floors 3 to 21 · Classic"
+  ],
+  [
+   "2-Bedroom Premium + Study",
    "BPS1",
    "732 sqft, 68 sqm",
-   "see the plan"
+   "Block 1 stack 04, floors 3 to 21, Block 3 stack 11 mirrored, floors 3 to 21, Block 11 stack 54, floors 3 to 21 · Classic"
   ],
   [
-   "3-bedroom Premium",
+   "2-Bedroom Premium + Study",
+   "BPS4",
+   "775 sqft, 72 sqm",
+   "Block 9 stack 44, floors 3 to 21 · Classic"
+  ],
+  [
+   "3-Bedroom",
+   "C1",
+   "947 sqft, 88 sqm",
+   "Block 1 stack 09, floors 3 to 21 · Classic"
+  ],
+  [
+   "3-Bedroom",
+   "C2",
+   "947 sqft, 88 sqm",
+   "Block 11 stack 55, floors 3 to 21 · Classic"
+  ],
+  [
+   "3-Bedroom",
+   "C4",
+   "947 sqft, 88 sqm",
+   "Block 9 stack 40, floors 3 to 21 · Classic"
+  ],
+  [
+   "3-Bedroom Premium",
    "CP1",
    "1,055 sqft, 98 sqm",
-   "see the plan"
+   "Block 1 stack 06, floors 3 to 21, Block 3 stack 18 mirrored, floors 3 to 21 · Classic"
   ],
   [
-   "4-bedroom Premium (Private Lift)",
-   "DP1",
+   "3-Bedroom Premium",
+   "CP2",
+   "1,055 sqft, 98 sqm",
+   "Block 1 stack 01, floors 3 to 21 · Classic"
+  ],
+  [
+   "3-Bedroom Premium",
+   "CP3",
+   "1,055 sqft, 98 sqm",
+   "Block 11 stack 46, floors 3 to 21 · Classic"
+  ],
+  [
+   "3-Bedroom Premium",
+   "CP4",
+   "1,055 sqft, 98 sqm",
+   "Block 11 stack 50, floors 3 to 21 · Classic"
+  ],
+  [
+   "3-Bedroom Premium",
+   "CP5",
+   "1,055 sqft, 98 sqm",
+   "Block 11 stack 51, floors 3 to 21 · Classic"
+  ],
+  [
+   "3-Bedroom Premium",
+   "CP6",
+   "1,055 sqft, 98 sqm",
+   "Block 9 stack 37, floors 3 to 21 · Classic"
+  ],
+  [
+   "3-Bedroom Premium + Study",
+   "CPS1",
+   "1,152 sqft, 107 sqm",
+   "Block 1 stack 05, floors 3 to 21, Block 3 stack 10 mirrored, floors 3 to 21 · Classic"
+  ],
+  [
+   "3-Bedroom Premium + Study",
+   "CPS2",
+   "1,152 sqft, 107 sqm",
+   "Block 9 stack 41, floors 3 to 21 · Classic"
+  ],
+  [
+   "4-Bedroom",
+   "D1",
+   "1,238 sqft, 115 sqm",
+   "Block 9 stack 45, floors 3 to 21 · Classic"
+  ],
+  [
+   "4-Bedroom",
+   "D2",
+   "1,238 sqft, 115 sqm",
+   "Block 3 stack 15, floors 3 to 21 · Classic"
+  ],
+  [
+   "4-Bedroom",
+   "D3",
+   "1,238 sqft, 115 sqm",
+   "Block 3 stack 14, floors 3 to 21 · Classic"
+  ],
+  [
+   "2-Bedroom Premium",
+   "BP2 (L)",
+   "678 sqft, 63 sqm",
+   "Block 7 stack 29, floors 2 to 30 · Luxury"
+  ],
+  [
+   "2-Bedroom Premium",
+   "BP3 (L)",
+   "678 sqft, 63 sqm",
+   "Block 5 stack 21, floors 3 to 30, Block 7 stack 30, floors 3 to 30 · Luxury"
+  ],
+  [
+   "2-Bedroom Premium",
+   "BP6 (L)",
+   "678 sqft, 63 sqm",
+   "Block 5 stack 26, floors 2 to 30, Block 7 stack 35, floors 2 to 30 · Luxury"
+  ],
+  [
+   "2-Bedroom Premium",
+   "BP7 (L)",
+   "678 sqft, 63 sqm",
+   "Block 5 stack 20, floors 2 to 30 · Luxury"
+  ],
+  [
+   "2-Bedroom Premium + Study",
+   "BPS2 (L)",
+   "732 sqft, 68 sqm",
+   "Block 7 stack 31, floors 2 to 30 · Luxury"
+  ],
+  [
+   "2-Bedroom Premium + Study",
+   "BPS3 (L)",
+   "732 sqft, 68 sqm",
+   "Block 5 stack 24, floors 2 to 30 · Luxury"
+  ],
+  [
+   "2-Bedroom Premium + Study",
+   "BPS4 (L)",
+   "775 sqft, 72 sqm",
+   "Block 5 stack 25, floors 2 to 30, Block 7 stack 34, floors 2 to 30 · Luxury"
+  ],
+  [
+   "3-Bedroom",
+   "C3 (L)",
+   "947 sqft, 88 sqm",
+   "Block 7 stack 33, floors 2 to 30 · Luxury"
+  ],
+  [
+   "3-Bedroom",
+   "C5 (L)",
+   "947 sqft, 88 sqm",
+   "Block 5 stack 23, floors 2 to 30 · Luxury"
+  ],
+  [
+   "3-Bedroom Premium",
+   "CP7 (L)",
+   "1,055 sqft, 98 sqm",
+   "Block 7 stack 28, floors 2 to 30 · Luxury"
+  ],
+  [
+   "4-Bedroom",
+   "D4 (L)",
+   "1,238 sqft, 115 sqm",
+   "Block 5 stack 27, floors 2 to 30 · Luxury"
+  ],
+  [
+   "4-Bedroom Premium (with Private Lift)",
+   "DP1 (L)",
    "1,367 sqft, 127 sqm",
-   "see the plan"
+   "Block 7 stack 36, floors 3 to 30 · Luxury"
   ],
   [
-   "5-bedroom Suite (Private Lift)",
-   "E1",
+   "4-Bedroom Premium (with Private Lift)",
+   "DP2 (L)",
+   "1,367 sqft, 127 sqm",
+   "Block 7 stack 32, floors 3 to 30 · Luxury"
+  ],
+  [
+   "4-Bedroom Premium + Study (with Private Lift)",
+   "DPS1 (L)",
+   "1,485 sqft, 138 sqm",
+   "Block 5 stack 22, floors 3 to 30 · Luxury"
+  ],
+  [
+   "5-Bedroom Suite (with Private Lift)",
+   "E1 (L)",
    "1,808 sqft, 168 sqm",
-   "see the plan"
+   "Block 5 stack 19, floors 3 to 30 · Luxury"
   ]
  ],
  "plans": [
   [
-   "fp-01",
-   "2-bedroom Premium + Study BPS1"
+   "plan-03",
+   "2-Bedroom B1, 592 sqft, Classic Collection"
   ],
   [
-   "fp-02",
-   "3-bedroom Premium CP1"
+   "plan-04",
+   "2-Bedroom B2, 592 sqft, Classic Collection"
   ],
   [
-   "fp-03",
-   "4-bedroom Premium (Private Lift) DP1"
+   "plan-05",
+   "2-Bedroom B3, 592 sqft, Classic Collection"
   ],
   [
-   "fp-04",
-   "5-bedroom Suite (Private Lift) E1"
+   "plan-06",
+   "2-Bedroom Premium BP1, 678 sqft, Classic Collection"
+  ],
+  [
+   "plan-07",
+   "2-Bedroom Premium BP2, 678 sqft, Classic Collection"
+  ],
+  [
+   "plan-08",
+   "2-Bedroom Premium BP3, 678 sqft, Classic Collection"
+  ],
+  [
+   "plan-09",
+   "2-Bedroom Premium BP4, 678 sqft, Classic Collection"
+  ],
+  [
+   "plan-10",
+   "2-Bedroom Premium BP5, 678 sqft, Classic Collection"
+  ],
+  [
+   "plan-11",
+   "2-Bedroom Premium BP8, 678 sqft, Classic Collection"
+  ],
+  [
+   "plan-12",
+   "2-Bedroom Premium BP9, 678 sqft, Classic Collection"
+  ],
+  [
+   "plan-13",
+   "2-Bedroom Premium + Study BPS1, 732 sqft, Classic Collection"
+  ],
+  [
+   "plan-14",
+   "2-Bedroom Premium + Study BPS4, 775 sqft, Classic Collection"
+  ],
+  [
+   "plan-15",
+   "3-Bedroom C1, 947 sqft, Classic Collection"
+  ],
+  [
+   "plan-16",
+   "3-Bedroom C2, 947 sqft, Classic Collection"
+  ],
+  [
+   "plan-17",
+   "3-Bedroom C4, 947 sqft, Classic Collection"
+  ],
+  [
+   "plan-18",
+   "3-Bedroom Premium CP1, 1055 sqft, Classic Collection"
+  ],
+  [
+   "plan-19",
+   "3-Bedroom Premium CP2, 1055 sqft, Classic Collection"
+  ],
+  [
+   "plan-20",
+   "3-Bedroom Premium CP3, 1055 sqft, Classic Collection"
+  ],
+  [
+   "plan-21",
+   "3-Bedroom Premium CP4, 1055 sqft, Classic Collection"
+  ],
+  [
+   "plan-22",
+   "3-Bedroom Premium CP5, 1055 sqft, Classic Collection"
+  ],
+  [
+   "plan-23",
+   "3-Bedroom Premium CP6, 1055 sqft, Classic Collection"
+  ],
+  [
+   "plan-24",
+   "3-Bedroom Premium + Study CPS1, 1152 sqft, Classic Collection"
+  ],
+  [
+   "plan-25",
+   "3-Bedroom Premium + Study CPS2, 1152 sqft, Classic Collection"
+  ],
+  [
+   "plan-26",
+   "4-Bedroom D1, 1238 sqft, Classic Collection"
+  ],
+  [
+   "plan-27",
+   "4-Bedroom D2, 1238 sqft, Classic Collection"
+  ],
+  [
+   "plan-28",
+   "4-Bedroom D3, 1238 sqft, Classic Collection"
+  ],
+  [
+   "plan-31",
+   "2-Bedroom Premium BP2 (L), 678 sqft, Luxury Collection"
+  ],
+  [
+   "plan-32",
+   "2-Bedroom Premium BP3 (L), 678 sqft, Luxury Collection"
+  ],
+  [
+   "plan-33",
+   "2-Bedroom Premium BP6 (L), 678 sqft, Luxury Collection"
+  ],
+  [
+   "plan-34",
+   "2-Bedroom Premium BP7 (L), 678 sqft, Luxury Collection"
+  ],
+  [
+   "plan-35",
+   "2-Bedroom Premium + Study BPS2 (L), 732 sqft, Luxury Collection"
+  ],
+  [
+   "plan-36",
+   "2-Bedroom Premium + Study BPS3 (L), 732 sqft, Luxury Collection"
+  ],
+  [
+   "plan-37",
+   "2-Bedroom Premium + Study BPS4 (L), 775 sqft, Luxury Collection"
+  ],
+  [
+   "plan-38",
+   "3-Bedroom C3 (L), 947 sqft, Luxury Collection"
+  ],
+  [
+   "plan-39",
+   "3-Bedroom C5 (L), 947 sqft, Luxury Collection"
+  ],
+  [
+   "plan-40",
+   "3-Bedroom Premium CP7 (L), 1055 sqft, Luxury Collection"
+  ],
+  [
+   "plan-41",
+   "4-Bedroom D4 (L), 1238 sqft, Luxury Collection"
+  ],
+  [
+   "plan-42",
+   "4-Bedroom Premium (with Private Lift) DP1 (L), 1367 sqft, Luxury Collection"
+  ],
+  [
+   "plan-43",
+   "4-Bedroom Premium (with Private Lift) DP2 (L), 1367 sqft, Luxury Collection"
+  ],
+  [
+   "plan-44",
+   "4-Bedroom Premium + Study (with Private Lift) DPS1 (L), 1485 sqft, Luxury Collection"
+  ],
+  [
+   "plan-45",
+   "5-Bedroom Suite (with Private Lift) E1 (L), 1808 sqft, Luxury Collection"
   ]
  ],
- "plan_lede": "4 layouts, 732 to 1,808 sqft. Tap a page to open it full size.",
- "spec_pages": [],
+ "plan_lede": "41 layouts across 6 blocks, 592 to 1,808 sqft, from the developer's approved unit plans released 22 September 2026. Each layout also has a 'p' variant on the lowest floor with a private enclosed space. Tap a plan to open it full size.",
+ "spec_pages": [
+  [
+   "fact-03",
+   "Factsheet V1, 22 Sep 2026: Unit mix and share value"
+  ],
+  [
+   "fact-04",
+   "Factsheet V1, 22 Sep 2026: Finishes, Classic Collection"
+  ],
+  [
+   "fact-05",
+   "Factsheet V1, 22 Sep 2026: Finishes, Luxury Collection"
+  ],
+  [
+   "fact-06",
+   "Factsheet V1, 22 Sep 2026: Appliances by type"
+  ],
+  [
+   "fact-07",
+   "Factsheet V1, 22 Sep 2026: Ceiling heights"
+  ],
+  [
+   "fact-10",
+   "Factsheet V1, 22 Sep 2026: Facilities, from the FAQ"
+  ],
+  [
+   "fact-11",
+   "Factsheet V1, 22 Sep 2026: Pools, gym and rooms, sizes"
+  ]
+ ],
  "spec": {
-  "Not out yet": [
-   "The developer's schedule of finishes: appliance models, floor and wall finishes, tile and stone specifications",
-   "Comes with the 3 October kit; this chapter takes it the day it drops"
+  "Kitchen, Classic Collection": [
+   "Smeg hood, hob and built-in oven throughout",
+   "2-bedroom types: 2-zone induction hob, 60 cm fridge freezer, washer cum dryer",
+   "3-bedroom types: 3-zone gas hob, 70 cm fridge freezer, washer cum dryer",
+   "4-bedroom: 3-zone gas hob, 90 cm fridge freezer, separate washer and dryer",
+   "Sintered stone top and backsplash, laminate or reed glass cabinets"
+  ],
+  "Kitchen, Luxury Collection": [
+   "Miele hood, hob, oven, washer and dryer",
+   "Private lift types: Miele combi steam oven, dishwasher, 5-zone gas hob, Liebherr 90 cm fridge and wine chiller",
+   "Island with natural stone top in the private lift types",
+   "Sintered stone top and backsplash, laminate or aluminium strip glass cabinets"
+  ],
+  "Floors and walls": [
+   "Classic 2 and 3-bedroom: 600 x 1200 tiles in the living, vinyl planks in the bedrooms",
+   "Classic 4-bedroom and all Luxury: marble living floor, solid timber oak in the bedrooms",
+   "Private lift types: 900 x 900 marble in the lift lobby and living, natural stone feature wall and bronze fittings in the master bath",
+   "Bathrooms: 300 x 600 floor tiles, 600 x 1200 wall tiles"
+  ],
+  "Ceilings and doors": [
+   "2.85 m in the living, dining and bedrooms across every type",
+   "2.40 m kitchens, yards and private lift lobbies; 2.30 to 2.40 m bathrooms",
+   "900 mm clear main door; digital lock on the main door and the rear door of private lift units",
+   "Window restrictors on every bedroom window, restrictors on every balcony sliding door"
+  ],
+  "Services": [
+   "Town gas for hobs and heaters from the 3-bedroom up; storage heaters in the 2-bedroom types",
+   "Pneumatic waste conveyance, one general and one recycling hopper per floor",
+   "Card access lift lobbies; card access inside the private lift cars",
+   "1,021 carpark lots with 31 EV lots (AC), 7 accessible lots, 317 bicycle lots; no parcel box, no car wash bay"
+  ],
+  "Balcony screens, developer's contractor": [
+   "2-bedroom $16,000; 2-bedroom Premium $17,000",
+   "Premium + Study 732 sqft $12,000; 775 sqft $17,000",
+   "3-bedroom types $13,000; 4-bedroom and 4-bedroom Premium $14,000",
+   "4-bedroom Premium + Study $18,000; 5-bedroom Suite $20,000. Reference prices, subject to change"
+  ],
+  "Estimated maintenance": [
+   "2-bedroom to 3-bedroom Premium: 6 shares, about $390 a month",
+   "3-bedroom Premium + Study to 4-bedroom Premium + Study: 7 shares, about $455",
+   "5-bedroom Suite: 8 shares, about $520. At $65 a share, factsheet V1"
+  ],
+  "Show units, 23 Sep agents' viewing": [
+   "2-bedroom Premium + Study BPS1, 732 sqft, Classic, by Chalked",
+   "3-bedroom Premium + Study CPS1, 1,152 sqft, Classic, by 2nd Edition",
+   "4-bedroom Premium DP1 (L), 1,367 sqft, Luxury, by Superfat Designs",
+   "5-bedroom Suite E1 (L), 1,808 sqft, Luxury, by SUJONOHUN",
+   "Show units carry ID deviations from the approved plan; the developer's deviation plans are in the kit"
   ]
  },
  "unit_mix": [
@@ -629,5 +1077,23 @@
    28
   ]
  ],
- "unit_mix_note": "Developer's unit mix, released 22 September 2026. Classic Collection 740 homes, Luxury Collection 528. 2 and 3-bedroom types make up 84% of the project; 416 of the 1,268 homes are the 678 sqft 2 Bedroom Premium alone."
+ "unit_mix_note": "Developer's unit mix, released 22 September 2026. Classic Collection 740 homes, Luxury Collection 528. 2 and 3-bedroom types make up 84% of the project; 416 of the 1,268 homes are the 678 sqft 2 Bedroom Premium alone.",
+ "elevation": [
+  [
+   "elev-blk1",
+   "Block 1, 21 storeys, stacks 01 to 09, Classic"
+  ],
+  [
+   "elev-blk9",
+   "Block 9, 21 storeys, stacks 37 to 45, Classic"
+  ],
+  [
+   "elev-blk5",
+   "Block 5, 30 storeys, stacks 19 to 27, Luxury"
+  ],
+  [
+   "elev-blk7",
+   "Block 7, 30 storeys, stacks 28 to 36, Luxury"
+  ]
+ ]
 }

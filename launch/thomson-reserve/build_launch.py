@@ -58,12 +58,12 @@ $('pv-no').onclick=function(){if(confirm('Drop this preview? The documents behin
 '''
 PLAN_SEC = r'''<section id="plans" data-title="Every floor plan">
   <div class="wrap">
-    <div class="eyebrow reveal">Every floor plan, from the developer brochure</div>
-    <h2 class="reveal d1"><b>{{PLANCOUNT}} layouts</b>.</h2>
+    <div class="eyebrow reveal">Every floor plan, from the developer's approved unit plans</div>
+    <h2 class="reveal d1"><b>{{PLANCOUNT}} layouts</b>, every stack placed.</h2>
     <p class="lede reveal d2">{{PLANLEDE}}</p>
     {{PLANMAPS}}
     <table class="pidx reveal"><thead><tr><th>Type</th><th>Layout</th><th>Size</th><th>Where</th></tr></thead><tbody>{{PLANIDX}}</tbody></table>
-    <div class="note">Sizes include balcony and private enclosed space where applicable. Stacks read from the brochure plans; (P) types are the ground-floor units with a PES. Where the stack line was not readable the row says "see the plan".</div>
+    <div class="note">Areas include balcony or private enclosed space where applicable; AC and RC ledges are excluded from the strata area. The lowest floor of each stack is the "p" variant with a private enclosed space. (L) marks the Luxury Collection in Blocks 5 and 7.</div>
     {{PLANS}}
   </div>
 </section>
@@ -72,7 +72,7 @@ SPEC_SEC = r'''<section id="spec" data-title="Specifications" class="darksec">
   <div class="wrap">
     <div class="eyebrow reveal">Specifications, what the kits confirm so far</div>
     <h2 class="reveal d1">What the developer <b>specifies</b>.</h2>
-    <p class="lede reveal d2">From the developer brochure and the ERA kit. Tap a page to open it full size.</p>
+    <p class="lede reveal d2">From the developer's factsheet V1 of 22 September 2026. Tap a page to open it full size.</p>
     <div class="bgrid">{{SPEC}}</div>
     {{SPECPAGES}}
   </div>
@@ -345,8 +345,8 @@ h1,h2{-webkit-font-smoothing:antialiased}
       <div class="c"><div class="n" data-count="6">0</div><div class="l">towers</div></div>
       <div class="c"><div class="n" data-count="3">0</div><div class="l">clubs</div></div>
       <div class="c"><div class="n" data-count="80">0</div><div class="l">facilities</div></div>
-      <div class="c"><div class="n" data-count="1014">0</div><div class="l">carpark lots</div></div>
-      <div class="c"><div class="n">2031</div><div class="l">ready, 1Q</div></div>
+      <div class="c"><div class="n" data-count="1021">0</div><div class="l">carpark lots</div></div>
+      <div class="c"><div class="n">2031</div><div class="l">ready, Feb</div></div>
     </div>
     <div class="facts reveal">{{FACTS}}</div>
     <div class="mixrow reveal">{{MIX}}</div>
@@ -404,7 +404,7 @@ h1,h2{-webkit-font-smoothing:antialiased}
     <p class="lede reveal d2">The age gap method. A condo loses about $50 psf a year as it ages. Take what the neighbour sells for today, add $50 psf for every year it will be older than Thomson Reserve in 2031, then add 6% for harmonised floor area. Tap a row to see the sum.</p>
     <table class="ntable reveal"><thead><tr><th>Project</th><th>Sells for today, URA caveats</th><th class="n mid">Older than TR by 2031</th><th class="n">Brand-new price</th></tr></thead><tbody>{{NEIGH}}</tbody></table>
     <div class="band reveal" id="band"></div>
-    <div class="note">Caveats from URA via the JND vault, latest August 2026. Thomson Reserve ready 1Q 2031. JadeScape first because it is the last big launch on this line to go through launch, completion and resale.</div>
+    <div class="note">Caveats from URA via the JND vault, latest August 2026. Thomson Reserve ready February 2031. JadeScape first because it is the last big launch on this line to go through launch, completion and resale.</div>
   </div>
 </section>
 
@@ -597,6 +597,12 @@ _plan_idx = "".join('<tr><td>%s</td><td><b>%s</b></td><td>%s</td><td>%s</td></tr
 _plans = _fig(D.get("plans"), "Floor plan, from the developer brochure")
 _maps = "".join('<img data-lb="assets/img/%s.jpg" data-cap="%s" src="assets/img/%s.jpg" alt="%s">' % (f, c, f, c) for f, c in (("schematic", "Schematic diagram"), ("siteplan-brochure", "Site plan")) if os.path.exists(os.path.join(HERE, "assets", "img", f + ".jpg")))
 _maps = ('<div class="maps reveal">%s</div>' % _maps) if _maps else ""
+# elevation charts, stack by stack per block (developer set, 22 Sep 2026)
+_el = D.get("elevation") or []
+if _el:
+    _maps += ('<div class="eyebrow" style="margin-top:36px">Elevation charts, which layout sits in which stack</div>'
+              '<div class="plans reveal">%s</div>' % "".join('<figure class="plan"><img data-lb="assets/img/%s.jpg" data-cap="%s" data-kicker="Elevation chart" src="assets/img/%s.jpg" alt="%s" loading="lazy" decoding="async"><figcaption>%s</figcaption></figure>' % (f, esc(c), f, esc(c), esc(c)) for f, c in _el)
+              + '<div class="note">Blocks 3 and 11 (Classic) were not in the 22 September set; their stacks are listed in the index below from the unit plans.</div>')
 _spec = "".join('<div class="bcard%s"><h3>%s</h3><ul>%s</ul></div>' % (" soon" if t == "Not out yet" else "", esc(t), "".join("<li>%s</li>" % esc(x) for x in xs)) for t, xs in (D.get("spec") or {}).items())
 _specg = "".join('<figure class="g"><img src="assets/img/%s.jpg" alt="%s" loading="lazy" decoding="async"><figcaption>%s</figcaption></figure>' % (f, esc(c), esc(c)) for f, c in (D.get("spec_gallery") or []))
 _extra = {"{{PLANCOUNT}}": str(len(_pi)), "{{PLANLEDE}}": esc(D.get("plan_lede") or ""), "{{PLANMAPS}}": _maps, "{{PLANIDX}}": _plan_idx, "{{PLANS}}": _plans,
