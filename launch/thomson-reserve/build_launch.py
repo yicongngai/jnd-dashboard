@@ -30,12 +30,12 @@ timeline_html = "".join('<div class="tl"><div class="d">%s</div><div class="w">%
 falsify_html = "".join("<li>%s</li>" % esc(x) for x in D["falsify"])
 mx = D.get("unit_mix") or []
 mxmax = max(r[2] for r in mx) if mx else 1
-umix_rows = "".join('<tr><td><b>%s</b><span>%s sqft</span></td><td class="n">%s</td><td class="bar"><i style="width:%.0f%%"></i><em style="width:%.0f%%"></em></td><td class="n">%s</td><td class="n">%s</td></tr>' % (
-    esc(t), sz if isinstance(sz, str) else format(sz, ","), n, 100.0 * n / mxmax, 100.0 * c / mxmax, c or "", l or "") for t, sz, n, c, l in mx)
+umix_rows = "".join('<tr><td><b>%s</b></td><td class="n">%s</td><td class="n">%s</td><td class="n">%s</td><td class="n">%s</td></tr>' % (
+    esc(t), sz if isinstance(sz, str) else format(sz, ","), n, c or "", l or "") for t, sz, n, c, l in mx)
 umix_html = ('<div class="eyebrow" style="margin-top:56px">Unit mix, every type</div><p class="lede">%s</p>'
-             '<table class="ptable umix"><thead><tr><th>Type</th><th class="n">Units</th><th></th><th class="n">Classic</th><th class="n">Luxury</th></tr></thead><tbody>%s</tbody>'
-             '<tfoot><tr><td><b>All homes</b></td><td class="n">1,268</td><td></td><td class="n">740</td><td class="n">528</td></tr></tfoot></table>'
-             '<div class="note">Bars are units per type; the darker part is the Classic Collection share. Source: developer unit mix via ERA Project Marketing, 22 September 2026.</div>') % (esc(D.get("unit_mix_note", "")), umix_rows) if mx else ""
+             '<table class="ptable umix"><thead><tr><th>Type</th><th class="n">Sqft</th><th class="n">Units</th><th class="n">Classic</th><th class="n">Luxury</th></tr></thead><tbody>%s</tbody>'
+             '<tfoot><tr><td><b>All homes</b></td><td></td><td class="n">1,268</td><td class="n">740</td><td class="n">528</td></tr></tfoot></table>'
+             '<div class="note">Source: developer unit mix via ERA Project Marketing, 22 September 2026.</div>') % (esc(D.get("unit_mix_note", "")), umix_rows) if mx else ""
 mix_html = "".join('<div class="mix"><div class="n">%s</div><div class="l">%s, %s</div></div>' % (format(n, ","), esc(t), p) for t, n, p in D["mix"])
 
 BANNER = r'''
