@@ -351,7 +351,9 @@ h1,h2{-webkit-font-smoothing:antialiased}
     <div class="facts reveal">{{FACTS}}</div>
     <div class="mixrow reveal">{{MIX}}</div>
     <div class="reveal">{{UMIX}}</div>
-    <div class="maps reveal"><img data-lb="assets/pages/kit-09.jpg" data-cap="Site plan" src="assets/pages/kit-09.jpg" alt="Site plan"><img data-lb="assets/pages/kit-06.jpg" data-cap="Site overview" src="assets/pages/kit-06.jpg" alt="Site overview"></div>
+    <div class="eyebrow" style="margin-top:40px">Site plan, developer's architect briefing, 22 September 2026</div>
+    <div class="maps reveal"><img data-lb="assets/img/siteplan-2026-09-22.jpg" data-cap="Site plan with every stack and facility, architect briefing 22 Sep 2026" src="assets/img/siteplan-2026-09-22.jpg" alt="Site plan"><img data-lb="assets/img/siteplan-distances.jpg" data-cap="Distances between blocks" src="assets/img/siteplan-distances.jpg" alt="Distances between blocks"></div>
+    <div class="note">12% of the site is building footprint; 88% is landscape, water and facilities. Blocks 5 and 7 are the 30-storey Luxury towers on the Sin Ming side; Blocks 1, 3, 9 and 11 are the 21-storey Classic towers on the Bright Hill side.</div>
   </div>
 </section>
 
@@ -597,6 +599,10 @@ _plan_idx = "".join('<tr><td>%s</td><td><b>%s</b></td><td>%s</td><td>%s</td></tr
 _plans = _fig(D.get("plans"), "Floor plan, from the developer brochure")
 _maps = "".join('<img data-lb="assets/img/%s.jpg" data-cap="%s" src="assets/img/%s.jpg" alt="%s">' % (f, c, f, c) for f, c in (("schematic", "Schematic diagram"), ("siteplan-brochure", "Site plan")) if os.path.exists(os.path.join(HERE, "assets", "img", f + ".jpg")))
 _maps = ('<div class="maps reveal">%s</div>' % _maps) if _maps else ""
+_sm = D.get("stack_maps") or []
+if _sm:
+    _maps += ('<div class="eyebrow" style="margin-top:36px">Where each type sits, ERA stack placement 22 September 2026</div>'
+              '<div class="plans reveal">%s</div>' % "".join('<figure class="plan"><img data-lb="assets/img/%s.jpg" data-cap="%s" data-kicker="Stack placement" src="assets/img/%s.jpg" alt="%s" loading="lazy" decoding="async"><figcaption>%s</figcaption></figure>' % (f, esc(c), f, esc(c), esc(c)) for f, c in _sm))
 # elevation charts, stack by stack per block (developer set, 22 Sep 2026)
 _el = D.get("elevation") or []
 if _el:

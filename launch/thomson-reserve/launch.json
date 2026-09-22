@@ -1095,5 +1095,47 @@
    "elev-blk7",
    "Block 7, 30 storeys, stacks 28 to 36, Luxury"
   ]
+ ],
+ "stack_maps": [
+  [
+   "stack-05",
+   "2 Bedroom, which stacks"
+  ],
+  [
+   "stack-06",
+   "2 Bedroom Premium, which stacks"
+  ],
+  [
+   "stack-07",
+   "2 Bedroom Premium + Study, which stacks"
+  ],
+  [
+   "stack-08",
+   "3 Bedroom, which stacks"
+  ],
+  [
+   "stack-09",
+   "3 Bedroom Premium, which stacks"
+  ],
+  [
+   "stack-10",
+   "3 Bedroom Premium + Study, which stacks"
+  ],
+  [
+   "stack-11",
+   "4 Bedroom, which stacks"
+  ],
+  [
+   "stack-12",
+   "4 Bedroom Premium, which stacks"
+  ],
+  [
+   "stack-13",
+   "4 Bedroom Premium + Study, which stacks"
+  ],
+  [
+   "stack-14",
+   "5 Bedroom Suite, which stacks"
+  ]
  ]
 }
