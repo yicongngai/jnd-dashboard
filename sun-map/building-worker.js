@@ -1,13 +1,13 @@
-importScripts('vendor/clipper.js?v=25','solar.js?v=25','polygon-engine.js?v=25','building-data.js?v=25','viewport.js?v=25','future-data.js?v=25','outline-updates.js?v=25');
+importScripts('vendor/clipper.js?v=26','solar.js?v=26','polygon-engine.js?v=26','building-data.js?v=26','viewport.js?v=26','future-data.js?v=26','outline-updates.js?v=26');
 const cache=new Map();let metadata=null,latest=0;
-async function json(url){const r=await fetch(url,{signal:AbortSignal.timeout(20000)});if(!r.ok)throw Error('Building data unavailable. Retry this area.');return url.split('?')[0].endsWith('.gz')?new Response(r.body.pipeThrough(new DecompressionStream('gzip'))).json():r.json();}
+async function json(url){const r=await fetch(url,{cache:url.includes('future-projects')?'no-cache':'default',signal:AbortSignal.timeout(20000)});if(!r.ok)throw Error('Building data unavailable. Retry this area.');return url.split('?')[0].endsWith('.gz')?new Response(r.body.pipeThrough(new DecompressionStream('gzip'))).json():r.json();}
 async function tile(key){
  if(cache.has(key)){const hit=cache.get(key);cache.delete(key);cache.set(key,hit);return hit;}
  const promise=(async()=>{const r=await fetch('data/'+key+'.json.gz',{signal:AbortSignal.timeout(20000)});if(!r.ok)throw Error('A required building tile is unavailable. Retry loading this area.');return new Response(r.body.pipeThrough(new DecompressionStream('gzip'))).json();})();
  cache.set(key,promise);try{return await promise;}catch(e){cache.delete(key);throw e;}
 }
 onmessage=async({data})=>{latest=data.id;try{
- if(!metadata)metadata=Promise.all([json('data/manifest.json?v=25'),json('data/verified-floors.json?v=25'),json('data/future-projects.json?v=25'),json('data/house-types.json'),json('data/hdb-floors.json?v=25'),json('data/osm-refresh.json?v=25'),json('data/outline-updates.json?v=25'),json('data/original-details.json?v=25'),json('data/building-addresses.json.gz?v=25')]).catch(e=>{metadata=null;throw e;});
+ if(!metadata)metadata=Promise.all([json('data/manifest.json?v=26'),json('data/verified-floors.json?v=26'),json('data/future-projects.json?v=26'),json('data/house-types.json'),json('data/hdb-floors.json?v=26'),json('data/osm-refresh.json?v=26'),json('data/outline-updates.json?v=26'),json('data/original-details.json?v=26'),json('data/building-addresses.json.gz?v=26')]).catch(e=>{metadata=null;throw e;});
  const [manifest,verified,future,houses,hdb,refresh,outlines,originals,addresses]=await metadata;if(data.id!==latest)return;
  const study=data.study||BuildingData.extent(data.center,650),wanted=data.bounds||ViewportPolicy.pad(study,ViewportPolicy.buffer);
  const keys=BuildingData.tileKeys(wanted).filter(k=>k in manifest.tiles);

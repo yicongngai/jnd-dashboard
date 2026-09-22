@@ -27,6 +27,8 @@ jobs:
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -34,6 +36,12 @@ jobs:
 
       - name: Install deps
         run: pip install requests
+
+      - name: Check launch-map sync rules
+        run: python3 -m unittest discover -s tests -p 'test_launch_map_sync.py'
+
+      - name: Reconcile published JND Launches with the sun map
+        run: python3 sync_launch_map.py
 
       - name: Refresh baked data (keep last-good on any failure)
         env:

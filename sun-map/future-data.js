@@ -12,7 +12,7 @@
   // Replace only snapshot footprints whose centre is inside the curated development site.
   // Roads, adjacent estates, and marker-only projects do not remove any source geometry.
   const retained=existing.filter(f=>{const b=G.bbox(f.geometry),point=[(b[0]+b[2])/2,(b[1]+b[3])/2];return !projects.some(p=>inside(point,p.site));});
-  for(const p of projects)for(const t of p.towers){const height=t.floors*3,source=`Future ${p.name}, ${t.name}: ${t.floors} storeys × 3 m = ${height} m estimated roof height. Approximate site-plan massing and placement; not surveyed. ${p.modelNote}${t.heightNote?' '+t.heightNote:''}`;
+  for(const p of projects)for(const t of p.towers){const height=t.floors*3,source=`Future ${p.name}, ${t.name}: ${t.floors} storeys × 3 m = ${height} m estimated roof height. Approximate site-plan massing and placement; not surveyed. ${p.modelNote} ${p.launchSync?.message||''}${t.heightNote?' '+t.heightNote:''}`;
    retained.push({type:'Feature',geometry:t.geometry,properties:{key:'future:'+p.id+':'+t.name,name:p.name+' · '+t.name,future:true,project:p.id,floors:t.floors,height,baseHeight:0,quality:'derived',source,floorSource:p.planUrl,geometrySource:t.geometrySource,originalHeight:height,originalQuality:'derived',originalSource:source,sources:[{dataset:p.planDataset||'Vault site plan / elevation chart',updated:p.asOf},{dataset:p.geometryDataset||'OneMap project location',updated:p.geometryDate||p.coordinateDate}]}});
   }
   return retained.map((f,id)=>({...f,id}));

@@ -3,9 +3,9 @@
 const $=id=>document.getElementById(id),home=[103.8320123,1.3039812],empty=()=>({type:'FeatureCollection',features:[]}),collection=features=>({type:'FeatureCollection',features});
 let map,center=home.slice(),features=[],study=null,shadowStudy=null,selected=null,loadId=0,revision=0,sceneEpoch=0,workerScene=-1,inFlight=null,ready=false,loading=false,playing=false,showShadows=true,estimates=true,workerBusy=false,pending=null,completed=null,notice='',loadError='',release='',searchSeq=0,coverageCounts=null,maximumHeight=0,includeFuture=true,futureCatalog=[],loadedViewport=null,requestedViewport=null,overview=false,edgeClipped=false,panTimer=null;
 let shadowCanvas=null,shadowContext=null,canvasBoundsKey='',groundShadowLayer=null;
-const heightEdits=new Map(),buildingWorker=new Worker('building-worker.js?v=25'),shadowWorker=new Worker('shadow-worker.js?v=25');
-fetch('data/future-projects.json?v=25').then(r=>r.json()).then(d=>{futureCatalog=d.projects;renderFutureProjects();}).catch(()=>{$('future-status').textContent='Future-project catalogue unavailable.';});
-let places=[];fetch('data/places.json?v=25').then(r=>r.json()).then(x=>places=x).catch(()=>{});
+const heightEdits=new Map(),buildingWorker=new Worker('building-worker.js?v=26'),shadowWorker=new Worker('shadow-worker.js?v=26');
+fetch('data/future-projects.json?v=26',{cache:'no-cache'}).then(r=>r.json()).then(d=>{futureCatalog=d.projects;renderFutureProjects();}).catch(()=>{$('future-status').textContent='Future-project catalogue unavailable.';});
+let places=[];fetch('data/places.json?v=26').then(r=>r.json()).then(x=>places=x).catch(()=>{});
 const today=()=>new Date(Date.now()+8*3600000).toISOString().slice(0,10);
 $('date').value=today();$('date').min='2000-01-01';$('date').max='2100-12-31';
 const moment=()=>SolarEngine.instant($('date').value,Number($('time').value));
@@ -133,14 +133,14 @@ $('load-area').onclick=()=>{if(overview)map.easeTo({zoom:16.1,duration:300});els
 $('home').onclick=()=>{map.jumpTo({center:home,zoom:16.1});loadArea(home,'ION Orchard');};
 $('future').onchange=()=>{includeFuture=$('future').checked;renderFutureProjects();requestView(true,$('place').textContent);};
 function renderFutureProjects(){
- const modeled=futureCatalog.filter(p=>p.towers?.length).length;
- $('future-status').textContent=`${modeled} projects with building models · ${futureCatalog.length-modeled} awaiting model alignment. Future heights and footprints are approximate.`;
- if(!ready)return;map.getSource('future-projects').setData(collection(includeFuture?futureCatalog.filter(p=>p.center).map((p,i)=>({type:'Feature',id:i,geometry:{type:'Point',coordinates:p.center},properties:{name:p.name,modeled:Boolean(p.towers?.length)}})):[]));
+ const modeled=futureCatalog.filter(p=>p.towers?.length).length,review=futureCatalog.filter(p=>p.launchSync&&p.launchSync.status!=='current').length;
+ $('future-status').textContent=`${modeled} projects with building models · ${futureCatalog.length-modeled} awaiting model alignment. Future heights and footprints are approximate.${review?' '+review+' JND launches awaiting plans or model review.':''}`;
+ if(!ready)return;map.getSource('future-projects').setData(collection(includeFuture?futureCatalog.map((p,i)=>({p,i})).filter(({p})=>p.center).map(({p,i})=>({type:'Feature',id:i,geometry:{type:'Point',coordinates:p.center},properties:{name:p.name,modeled:Boolean(p.towers?.length)}})):[]));
 }
-function showProject(index){const p=futureCatalog[index];if(!p)return;selected=null;$('building').hidden=false;$('building-name').textContent=p.name;$('building-address').textContent='Select an individual building for its block address.';$('address-source').hidden=true;$('address-retry').hidden=true;$('height-edit-note').hidden=true;
- $('height-source').textContent=p.towers?.length?`Completed-development scenario · ${p.towers.length} building sections. ${p.modelNote}`:'Future development · Tower placement is not yet aligned. No future shadows are calculated for this project.';
- $('height-form').hidden=true;$('reset-height').hidden=true;$('source-link').hidden=!p.planUrl;$('source-link').href=p.planUrl||'#';$('source-link').textContent='View site-plan source ↗';
- $('source-detail').textContent=`Expected completion: ${p.top}. Vault / ERA portal snapshot: ${p.asOf}. ${p.floorRange?'Listed residential floors: '+p.floorRange+'. ':''}Completion dates are source estimates.`;
+function showProject(index){const p=futureCatalog[index];if(!p)return;selected=null;$('building').hidden=false;$('building-name').textContent=p.name;$('building-address').textContent=p.address||'Select an individual building for its block address.';$('address-source').hidden=true;$('address-retry').hidden=true;$('height-edit-note').hidden=true;
+ $('height-source').textContent=p.towers?.length?`Completed-development scenario · ${p.towers.length} building sections. ${p.modelNote} ${p.launchSync?.message||''}`:'Future development · Tower placement is not yet aligned. No future shadows are calculated for this project.';if(!p.towers?.length&&p.launchSync)$('height-source').textContent=p.launchSync.message;
+ $('height-form').hidden=true;$('reset-height').hidden=true;$('source-link').hidden=!(p.launchSync?.url||p.planUrl);$('source-link').href=p.launchSync?.url||p.planUrl||'#';$('source-link').textContent=p.launchSync?'View updated JND Launches slides ↗':'View site-plan source ↗';
+ $('source-detail').textContent=`Expected completion: ${p.top}. ${p.launchSync?'JND Launches source updated: '+(p.launchSync.sourceUpdatedAt?.slice(0,10)||'date unavailable')+' · Model checked: '+(p.asOf||'pending'):'Vault / ERA portal snapshot: '+p.asOf}. ${p.floorRange?'Listed residential floors: '+p.floorRange+'. ':''}Completion dates are source estimates.`;
 }
 function choose(p){$('results').replaceChildren();$('query').value='';map.jumpTo({center:[p.lon,p.lat],zoom:16.1});loadArea([p.lon,p.lat],p.name);}
 const searchCache=new Map();let lastSearch=0;
