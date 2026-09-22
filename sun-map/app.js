@@ -2,10 +2,11 @@
 'use strict';
 const $=id=>document.getElementById(id),home=[103.8320123,1.3039812],empty=()=>({type:'FeatureCollection',features:[]}),collection=features=>({type:'FeatureCollection',features});
 let map,center=home.slice(),features=[],study=null,shadowStudy=null,selected=null,loadId=0,revision=0,sceneEpoch=0,workerScene=-1,inFlight=null,ready=false,loading=false,playing=false,showShadows=true,estimates=true,workerBusy=false,pending=null,completed=null,notice='',loadError='',release='',coverageCounts=null,maximumHeight=0,includeFuture=true,futureCatalog=[],loadedViewport=null,requestedViewport=null,overview=false,edgeClipped=false,panTimer=null;
-let shadowCanvas=null,shadowContext=null,canvasBoundsKey='',groundShadowLayer=null;
-const heightEdits=new Map(),buildingWorker=new Worker('building-worker.js?v=28'),shadowWorker=new Worker('shadow-worker.js?v=28');
-fetch('data/future-projects.json?v=28',{cache:'no-cache'}).then(r=>r.json()).then(d=>{futureCatalog=d.projects;renderFutureProjects();searchControl.refresh();}).catch(()=>{$('future-status').textContent='Future-project catalogue unavailable.';});
-let places=[];fetch('data/places.json?v=28').then(r=>r.json()).then(x=>{places=x;searchControl.refresh();}).catch(()=>{});
+let shadowFeatures=[],shadowCanvas=null,shadowContext=null,canvasBoundsKey='',groundShadowLayer=null;
+const heightEdits=new Map(),buildingWorker=new Worker('building-worker.js?v=29'),shadowWorker=new Worker('shadow-worker.js?v=29');
+buildingWorker.postMessage({type:'preload'});
+fetch('data/future-projects.json?v=29',{cache:'no-cache'}).then(r=>r.json()).then(d=>{futureCatalog=d.projects;renderFutureProjects();searchControl.refresh();}).catch(()=>{$('future-status').textContent='Future-project catalogue unavailable.';});
+let places=[];fetch('data/places.json?v=29').then(r=>r.json()).then(x=>{places=x;searchControl.refresh();}).catch(()=>{});
 const today=()=>new Date(Date.now()+8*3600000).toISOString().slice(0,10);
 $('date').value=today();$('date').min='2000-01-01';$('date').max='2100-12-31';
 const moment=()=>SolarEngine.instant($('date').value,Number($('time').value));
@@ -17,12 +18,12 @@ function stop(){playing=false;clearTimeout(stop.timer);$('play').textContent='�
 function nextFrame(){if(!playing)return;stop.timer=setTimeout(()=>{if(!playing)return;const m=Number($('time').value)+10;if(m>1200){stop();return;}$('time').value=m;update();},120);}
 function repaintShadowCanvas(){groundShadowLayer?.update();}
 function clearShadows(){if(shadowContext){shadowContext.clearRect(0,0,2048,2048);repaintShadowCanvas();}++sceneEpoch;completed=null;pending=null;map?.getSource('shadow-data')?.setData(empty());}
-function renderBuildings(){if(!ready)return;coverageCounts=null;maximumHeight=features.reduce((max,f)=>(estimates||f.properties.quality!=='derived')?Math.max(max,f.properties.height||0):max,0);clearShadows();const shown=features.map(f=>({...f,properties:{...f.properties,renderHeight:f.properties.height&&(estimates||f.properties.quality!=='derived')?f.properties.height:0}}));map.getSource('building-data').setData(collection(shown));}
+function renderBuildings(){if(!ready)return;coverageCounts=null;maximumHeight=features.reduce((max,f)=>(estimates||f.properties.quality!=='derived')?Math.max(max,f.properties.height||0):max,0);clearShadows();shadowFeatures=ScenePayload.shadows(features);const shown=ScenePayload.render(features,estimates);map.getSource('building-data').setData(collection(shown));}
 function scheduleShadows(s){const id=++revision;pending=null;
  if(!ready||loading||!shadowStudy||loadError||overview){notice=overview?'Singapore overview · Zoom in for building shadows.':loadError?'Study unavailable. Retry loading this area.':edgeClipped&&!shadowStudy?'Shadows unavailable at this dataset boundary.':'Preparing building data…';status();return;}
  const minimum=Math.max(5,Math.atan(maximumHeight/2200)*180/Math.PI);
  if(!showShadows||s.altitude<minimum){clearShadows();renderReadout();notice=!showShadows?'Shadows switched off.':s.altitude<=0?'Sun below the horizon.':`Shadows hidden below ${minimum.toFixed(1)}° altitude to keep the study within its data buffer.`;status();nextFrame();return;}
- notice=completed?'Showing '+clock(SolarEngine.instant(completed.date,completed.minutes))+' shadows · Updating to '+clock(moment())+'…':'Calculating shadows for '+clock(moment())+'…';status();pending={id,epoch:sceneEpoch,date:$('date').value,minutes:Number($('time').value),features,altitude:s.altitude,bearing:s.bearing,bounds:shadowStudy,estimates,raster:Boolean(shadowContext)};dispatch();
+ notice=completed?'Showing '+clock(SolarEngine.instant(completed.date,completed.minutes))+' shadows · Updating to '+clock(moment())+'…':'Calculating shadows for '+clock(moment())+'…';status();pending={id,epoch:sceneEpoch,date:$('date').value,minutes:Number($('time').value),features:shadowFeatures,altitude:s.altitude,bearing:s.bearing,bounds:shadowStudy,estimates,raster:Boolean(shadowContext)};dispatch();
 }
 function dispatch(){if(workerBusy||!pending)return;workerBusy=true;inFlight=pending;pending=null;const payload={...inFlight};if(workerScene===inFlight.epoch)delete payload.features;else workerScene=inFlight.epoch;shadowWorker.postMessage(payload);}
 shadowWorker.onmessage=({data})=>{
@@ -167,7 +168,7 @@ try{
  map.on('moveend',queueView);map.on('resize',queueView);
  map.on('move',()=>{if(!panTimer)panTimer=setTimeout(()=>{panTimer=null;requestView();},800);});
  map.on('pitchend',()=>{const on=map.getPitch()>10;$('view').textContent=on?'3D view':'2D view';$('view').setAttribute('aria-pressed',on);});
- map.on('load',()=>{for(const id of ['building-data','shadow-data','boundary-data','study-point','sun-path','future-projects'])map.addSource(id,{type:'geojson',data:empty()});
+ map.on('style.load',()=>{if(ready)return;for(const id of ['building-data','shadow-data','boundary-data','study-point','sun-path','future-projects'])map.addSource(id,{type:'geojson',data:empty()});
   shadowCanvas=document.createElement('canvas');shadowCanvas.width=shadowCanvas.height=2048;shadowContext=shadowCanvas.getContext?.('2d');
 
   if(shadowContext){groundShadowLayer=new GroundShadowLayer(shadowCanvas);map.addLayer(groundShadowLayer);}

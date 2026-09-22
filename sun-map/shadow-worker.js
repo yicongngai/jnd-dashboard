@@ -1,4 +1,4 @@
-importScripts('vendor/clipper.js?v=6','solar.js?v=6','polygon-engine.js?v=28','shadow-raster.js?v=28');
+importScripts('vendor/clipper.js?v=6','solar.js?v=6','polygon-engine.js?v=29','shadow-raster.js?v=29');
 let cachedFeatures=[],rasterCanvas=null,rasterContext=null;
 onmessage=({data})=>{const started=performance.now();try{
  if(Array.isArray(data.features))cachedFeatures=data.features;

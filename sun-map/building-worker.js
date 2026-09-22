@@ -1,18 +1,27 @@
-importScripts('vendor/clipper.js?v=28','solar.js?v=28','polygon-engine.js?v=28','building-data.js?v=28','viewport.js?v=28','future-data.js?v=28','outline-updates.js?v=28');
-const cache=new Map();let metadata=null,latest=0;
+importScripts('vendor/clipper.js?v=29','solar.js?v=29','polygon-engine.js?v=29','building-data.js?v=29','viewport.js?v=29','future-data.js?v=29','outline-updates.js?v=29');
+const cache=new Map();let metadata=null,manifestData=null,latest=0;
 async function json(url){const r=await fetch(url,{cache:url.includes('future-projects')?'no-cache':'default',signal:AbortSignal.timeout(20000)});if(!r.ok)throw Error('Building data unavailable. Retry this area.');return url.split('?')[0].endsWith('.gz')?new Response(r.body.pipeThrough(new DecompressionStream('gzip'))).json():r.json();}
 async function tile(key){
  if(cache.has(key)){const hit=cache.get(key);cache.delete(key);cache.set(key,hit);return hit;}
  const promise=(async()=>{const r=await fetch('data/'+key+'.json.gz',{signal:AbortSignal.timeout(20000)});if(!r.ok)throw Error('A required building tile is unavailable. Retry loading this area.');return new Response(r.body.pipeThrough(new DecompressionStream('gzip'))).json();})();
  cache.set(key,promise);try{return await promise;}catch(e){cache.delete(key);throw e;}
 }
-onmessage=async({data})=>{latest=data.id;try{
- if(!metadata)metadata=Promise.all([json('data/manifest.json?v=28'),json('data/verified-floors.json?v=28'),json('data/future-projects.json?v=28'),json('data/house-types.json'),json('data/hdb-floors.json?v=28'),json('data/osm-refresh.json?v=28'),json('data/outline-updates.json?v=28'),json('data/original-details.json?v=28'),json('data/building-addresses.json.gz?v=28')]).catch(e=>{metadata=null;throw e;});
- const [manifest,verified,future,houses,hdb,refresh,outlines,originals,addresses]=await metadata;if(data.id!==latest)return;
+function prepare(){
+ if(!manifestData)manifestData=json('data/manifest.json?v=28').catch(e=>{manifestData=null;throw e;});
+ if(!metadata)metadata=Promise.all([manifestData,json('data/verified-floors.json?v=28'),json('data/future-projects.json?v=28'),json('data/house-types.json'),json('data/hdb-floors.json?v=28'),json('data/osm-refresh.json?v=28'),json('data/outline-updates.json?v=28'),json('data/original-details.json?v=28'),json('data/building-addresses.json.gz?v=28')]).catch(e=>{metadata=null;throw e;});
+ return metadata;
+}
+onmessage=async({data})=>{if(data.type==='preload'){prepare().catch(()=>{});return;}latest=data.id;try{
+ const prepared=prepare();
  const study=data.study||BuildingData.extent(data.center,650),wanted=data.bounds||ViewportPolicy.pad(study,ViewportPolicy.buffer);
- const keys=BuildingData.tileKeys(wanted).filter(k=>k in manifest.tiles);
- if(!keys.length)throw Error('Choose a location within the supported Singapore dataset.');
- const tiles=[];let cursor=0;await Promise.all(Array.from({length:Math.min(4,keys.length)},async()=>{while(cursor<keys.length){if(data.id!==latest)return;tiles.push(await tile(keys[cursor++]));}}));
+ // Tile downloads overlap the larger metadata files; never publish a partial scene.
+ const download=(async()=>{
+  const manifest=await manifestData,keys=BuildingData.tileKeys(wanted).filter(k=>k in manifest.tiles);
+  if(!keys.length)throw Error('Choose a location within the supported Singapore dataset.');
+  const tiles=[];let cursor=0;await Promise.all(Array.from({length:Math.min(4,keys.length)},async()=>{while(cursor<keys.length){if(data.id!==latest)return;const index=cursor++;tiles[index]=await tile(keys[index]);}}));
+  return {tiles,keys};
+ })();
+ const [[manifest,verified,future,houses,hdb,refresh,outlines,originals,addresses],{tiles,keys}]=await Promise.all([prepared,download]);
  if(data.id!==latest)return;
  const detailedTiles=OutlineUpdates.apply(tiles,wanted,originals);
  let features=BuildingData.merge(OutlineUpdates.apply(detailedTiles,wanted,outlines),wanted,verified.records,houses.records,0,hdb.records,refresh.records,addresses.records);

@@ -300,7 +300,13 @@ def main():
     # Keep the embedded map cache key aligned without rewriting committed market data.
     page = root/'index-live-auto.html'
     if page.exists():
-        page.write_text(re.sub(r'(embed=1&amp;v=|theme-os-toolkit.css\?v=sun-)(25|26|27)\b', r'\g<1>28', page.read_text()))
+        content = re.sub(r'(embed=1&amp;v=|theme-os-toolkit.css\?v=sun-)(25|26|27|28)\b', r'\g<1>29', page.read_text())
+        preloader = '<script defer src="sun-map/preload-embed.js?v=29"></script>'
+        if 'src="sun-map/preload-embed.js' in content:
+            content = re.sub(r'<script[^>]*src="sun-map/preload-embed.js[^"]*"[^>]*></script>', preloader, content)
+        else:
+            content = content.replace('</body>', preloader + '\n</body>')
+        page.write_text(content)
     summary = f"JND Launches → sun map: {len(report['projects'])} published projects; " + str(sum(p['status'] != 'current' or not p['located'] for p in report['projects'])) + ' need model/source/location review.'
     print(summary)
     import os
