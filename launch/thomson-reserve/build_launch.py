@@ -59,10 +59,10 @@ $('pv-no').onclick=function(){if(confirm('Drop this preview? The documents behin
 PLAN_SEC = r'''<section id="plans" data-title="Every floor plan">
   <div class="wrap">
     <div class="eyebrow reveal">Every floor plan, from the developer's approved unit plans</div>
-    <h2 class="reveal d1"><b>{{PLANCOUNT}} layouts</b>, every stack placed.</h2>
+    <h2 class="reveal d1"><b>{{PLANCOUNT}} layouts</b>.</h2>
     <p class="lede reveal d2">{{PLANLEDE}}</p>
     {{PLANMAPS}}
-    <table class="pidx reveal"><thead><tr><th>Type</th><th>Layout</th><th>Size</th><th>Where</th></tr></thead><tbody>{{PLANIDX}}</tbody></table>
+    <table class="pidx reveal"><thead><tr><th>Type</th><th>Layout</th><th>Size</th></tr></thead><tbody>{{PLANIDX}}</tbody></table>
     <div class="note">Areas include balcony or private enclosed space where applicable; AC and RC ledges are excluded from the strata area. The lowest floor of each stack is the "p" variant with a private enclosed space. (L) marks the Luxury Collection in Blocks 5 and 7.</div>
     {{PLANS}}
   </div>
@@ -595,14 +595,11 @@ def _fig(lst, kicker):
         return ""
     return '<div class="plans reveal">%s</div>' % "".join('<figure class="plan"><img data-lb="assets/pages/%s.jpg" data-cap="%s" data-kicker="%s" src="assets/pages/%s.jpg" alt="%s" loading="lazy" decoding="async"><figcaption>%s</figcaption></figure>' % (f, esc(c), esc(kicker), f, esc(c), esc(c)) for f, c in lst)
 _pi = D.get("plan_index") or []
-_plan_idx = "".join('<tr><td>%s</td><td><b>%s</b></td><td>%s</td><td>%s</td></tr>' % (esc(t), esc(c), esc(sz), esc(w)) for t, c, sz, w in _pi)
+_plan_idx = "".join('<tr><td>%s</td><td><b>%s</b></td><td>%s</td></tr>' % (esc(t), esc(c), esc(sz)) for t, c, sz, w in _pi)
 _plans = _fig(D.get("plans"), "Floor plan, from the developer brochure")
 _maps = "".join('<img data-lb="assets/img/%s.jpg" data-cap="%s" src="assets/img/%s.jpg" alt="%s">' % (f, c, f, c) for f, c in (("schematic", "Schematic diagram"), ("siteplan-brochure", "Site plan")) if os.path.exists(os.path.join(HERE, "assets", "img", f + ".jpg")))
 _maps = ('<div class="maps reveal">%s</div>' % _maps) if _maps else ""
-_sm = D.get("stack_maps") or []
-if _sm:
-    _maps += ('<div class="eyebrow" style="margin-top:36px">Where each type sits, ERA stack placement 22 September 2026</div>'
-              '<div class="plans reveal">%s</div>' % "".join('<figure class="plan"><img data-lb="assets/img/%s.jpg" data-cap="%s" data-kicker="Stack placement" src="assets/img/%s.jpg" alt="%s" loading="lazy" decoding="async"><figcaption>%s</figcaption></figure>' % (f, esc(c), f, esc(c), esc(c)) for f, c in _sm))
+
 # elevation charts, stack by stack per block (developer set, 22 Sep 2026)
 _el = D.get("elevation") or []
 if _el:
