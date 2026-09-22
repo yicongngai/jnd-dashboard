@@ -1,0 +1,19 @@
+{
+  "geometryAssets": [
+    "assets/site-plan.jpg",
+    "assets/elevation-chart.jpg"
+  ],
+  "location": {
+    "center": [
+      103.7877306024889,
+      1.3279233979105471
+    ],
+    "source": "https://www.onemap.gov.sg/api/common/elastic/search?searchVal=Amberwood+At+Holland&returnGeom=Y&getAddrDetails=Y&pageNum=1",
+    "verifiedAt": "2026-09-22"
+  },
+  "developerDocument": {
+    "url": "https://www.simlian.com.sg/cms/wp-content/uploads/2026/09/Amberwood-At-Holland-eBrochure_compressed.pdf",
+    "page": "https://www.simlian.com.sg/property/amberwood-at-holland/",
+    "sha256": "e940401ab05b8ab68647c0dbfacf591152a3ea849b7f173b81a5cc2606ed9179"
+  }
+}

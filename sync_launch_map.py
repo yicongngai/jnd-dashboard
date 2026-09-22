@@ -74,7 +74,8 @@ class Assets(HTMLParser):
 def source_snapshot(folder, facts):
     config = read(folder/'map-source.json') if (folder/'map-source.json').exists() else {}
     parser = Assets()
-    parser.feed((folder/'index.html').read_text())
+    if (folder/'index.html').exists():
+        parser.feed((folder/'index.html').read_text())
     # Named geometry assets also catch replacements before an HTML caption changes.
     paths = parser.geometry | {p.relative_to(folder).as_posix() for p in (folder/'assets').rglob('*')
                                if p.is_file() and GEOMETRY.search(p.name)}
@@ -91,6 +92,8 @@ def source_snapshot(folder, facts):
     geometry_facts = {k: facts.get(k) for k in FIELDS if k in facts}
     geometry_facts['location'] = config.get('location')
     payload = {'facts': geometry_facts, 'assets': files, 'missingAssets': missing, 'sitePlans': sorted(parser.siteplans)}
+    if config.get('developerDocument'):
+        payload['developerDocument'] = config['developerDocument']
     return config, payload, digest(payload)
 
 
@@ -147,14 +150,41 @@ def validate_model(model, fingerprint, project):
         names.add(tower['name'])
 
 
-def compile_catalog(root, catalog, checked_at, resolver=locate):
+def check_developer_document(document):
+    """Check the public developer brochure; never accept changed plans automatically."""
+    url = document['url']
+    # A replacement brochure may have a new URL on the same developer page.
+    page = document.get('page')
+    if page:
+        with urlopen(page, timeout=20) as response:
+            html = response.read(2_000_000).decode('utf-8', errors='replace')
+        candidates = set(re.findall(r'https://www\.simlian\.com\.sg/[^\s\"<>]+Amberwood[^\s\"<>]*eBrochure[^\s\"<>]*\.pdf', html, re.I))
+        if candidates and candidates != {url}:
+            return 'changed'
+        if not candidates:
+            raise ValueError('Developer brochure link unavailable')
+    if urlsplit(url).hostname != 'www.simlian.com.sg' or urlsplit(url).scheme != 'https':
+        raise ValueError('Unapproved developer document host')
+    with urlopen(url, timeout=30) as response:
+        body = response.read(25_000_001)
+    if len(body) > 25_000_000 or not body.startswith(b'%PDF'):
+        raise ValueError('Developer response is not a supported PDF')
+    return 'unchanged' if hashlib.sha256(body).hexdigest() == document['sha256'] else 'changed'
+
+
+def compile_catalog(root, catalog, checked_at, resolver=locate, document_checker=None):
     catalog = copy.deepcopy(catalog)
     projects = catalog['projects']
     reports = []
-    for folder in sorted((root/'launch').iterdir()):
-        if not folder.is_dir() or not (folder/'launch.json').exists() or not (folder/'index.html').exists():
-            continue
-        facts = read(folder/'launch.json')
+    sources = [(f, False) for f in sorted((root/'launch').glob('*'))
+               if (f/'launch.json').exists() and (f/'index.html').exists()]
+    sources += [(f, True) for f in sorted((root/'sun-map/data/launch-sources').glob('*')) if (f/'source.json').exists()]
+    seen = set()
+    for folder, external in sources:
+        if folder.name in seen:
+            continue  # A published JND deck takes precedence over the developer snapshot.
+        seen.add(folder.name)
+        facts = read(folder/('source.json' if external else 'launch.json'))
         config, source, fingerprint = source_snapshot(folder, facts)
         matches = [p for p in projects if p['id'] == folder.name]
         if not matches:
@@ -178,7 +208,9 @@ def compile_catalog(root, catalog, checked_at, resolver=locate):
                 print(f'Location pending for {folder.name}: {type(error).__name__}')
             if location:
                 project.update(center=location['center'], coordinateSource=location['source'], coordinateDate=checked_at[:10])
-        url = 'https://jndtoolkit.com/launch/' + folder.name + '/'
+        source_label = facts.get('sourceLabel', 'Developer brochure') if external else 'JND Launches'
+        asset_base = 'https://jndtoolkit.com/' + folder.relative_to(root).as_posix() + '/'
+        url = facts['sourceUrl'] if external else asset_base
         project.update(name=facts['name'], address=facts.get('address', ''), top=facts.get('novp') or project.get('top', ''), source=url)
         try:
             revision = subprocess.check_output(['git', 'log', '-1', '--format=%cI', '--', str(folder.relative_to(root))], cwd=root, text=True, stderr=subprocess.DEVNULL).strip()
@@ -208,28 +240,48 @@ def compile_catalog(root, catalog, checked_at, resolver=locate):
             except ValueError as error:
                 status, reason = 'review-required', str(error) + '. Earlier geometry retained pending review.'
             else:
-                for k in ('towers', 'site', 'center', 'excludeExistingOsmIds'):
+                for k in ('towers', 'site', 'center', 'excludeExistingOsmIds', 'planImage', 'elevationImage', 'scaleNote', 'northClockwise', 'sourceHash', 'floorRange'):
                     if k in model:
                         project[k] = model[k]
-                project.update(asOf=model['reviewedAt'], modelNote=model['reviewNote'], planDataset='JND Launches site plan and building facts')
+                project.update(asOf=model['reviewedAt'], modelNote=model['reviewNote'], planDataset=source_label + ' site plan and building facts')
                 if source['missingAssets']:
                     status, reason = 'source-unavailable', 'A published geometry source is missing. Earlier checked model retained pending review.'
                 elif model['sourceFingerprint'] == fingerprint and has_plan:
                     # Prefer a site plan over a schematic for the direct source link.
                     plan = next((p for p in source['assets'] if re.search(r'site[\s_-]*plan', p, re.I)), next(iter(source['assets'])))
-                    project['planUrl'] = url + plan
+                    project['planUrl'] = asset_base + plan
                     status, reason = 'current', 'Model checked against the published site plan and building facts. Heights remain estimates.'
+                    if model.get('openQuestions'):
+                        status, reason = 'provisional', 'Layout reviewed; ' + ' '.join(model['openQuestions'])
                 else:
                     status, reason = 'review-required', 'Site plan or building facts changed. Earlier checked model retained pending review.'
-        report = {'id': project['id'], 'slug': folder.name, 'name': project['name'], 'url': url,
+        document = config.get('developerDocument')
+        if document:
+            # Preserve a live warning during an offline rebuild until a successful check clears it.
+            remote_state = previous.get('documentStatus', 'not-checked')
+            remote_checked = previous.get('documentCheckedAt', '')
+            if document_checker:
+                try:
+                    remote_state = document_checker(document)
+                except Exception as error:
+                    print(f'Developer check unavailable for {folder.name}: {type(error).__name__}')
+                    remote_state = 'unavailable'
+                remote_checked = checked_at
+            if remote_state == 'changed':
+                status, reason = 'review-required', 'Developer brochure changed. Earlier checked model retained until the new plans are reviewed.'
+            elif remote_state in ('unavailable', 'not-checked'):
+                status, reason = 'source-unavailable', 'Saved developer plans are modelled; the latest online brochure could not be verified.'
+        report = {'id': project['id'], 'slug': folder.name, 'name': project['name'], 'url': url, 'sourceLabel': source_label,
                   'status': status, 'message': reason, 'located': point(project.get('center')),
                   'sitePlanAvailable': has_plan, 'sourceFingerprint': fingerprint, 'sourceUpdatedAt': revision,
                   'modelAsOf': project.get('asOf', ''), 'modelSections': len(project.get('towers', [])),
-                  'geometrySources': [{'url': url+p, 'file': p, 'sha256': sha} for p, sha in source['assets'].items()],
+                  'geometrySources': [{'url': asset_base+p, 'file': p, 'sha256': sha} for p, sha in source['assets'].items()],
                   'missingAssets': source['missingAssets'], 'buildingFacts': source['facts']}
+        if document:
+            report.update(documentStatus=remote_state, documentCheckedAt=remote_checked, documentUrl=document['url'])
         project['launchSync'] = report
         reports.append(report)
-    catalog['launchSync'] = {'checkedAt': checked_at, 'source': 'Published JND Launches', 'count': len(reports)}
+    catalog['launchSync'] = {'checkedAt': checked_at, 'source': 'Published JND Launches and developer plans', 'count': len(reports)}
     return catalog, {'checkedAt': checked_at, 'projects': reports}
 
 
@@ -241,13 +293,14 @@ def main():
     root = args.root.resolve()
     path = root/'sun-map/data/future-projects.json'
     checked = datetime.now(timezone.utc).isoformat(timespec='seconds')
-    catalog, report = compile_catalog(root, read(path), checked, (lambda _: None) if args.offline else locate)
+    catalog, report = compile_catalog(root, read(path), checked, (lambda _: None) if args.offline else locate,
+                                     None if args.offline else check_developer_document)
     write(path, catalog)
     write(root/'sun-map/data/launch-updates.json', report)
     # Keep the embedded map cache key aligned without rewriting committed market data.
     page = root/'index-live-auto.html'
     if page.exists():
-        page.write_text(page.read_text().replace('embed=1&amp;v=25', 'embed=1&amp;v=26').replace('theme-os-toolkit.css?v=sun-25', 'theme-os-toolkit.css?v=sun-26'))
+        page.write_text(re.sub(r'(embed=1&amp;v=|theme-os-toolkit.css\?v=sun-)(25|26)\b', r'\g<1>27', page.read_text()))
     summary = f"JND Launches → sun map: {len(report['projects'])} published projects; " + str(sum(p['status'] != 'current' or not p['located'] for p in report['projects'])) + ' need model/source/location review.'
     print(summary)
     import os

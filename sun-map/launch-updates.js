@@ -2,8 +2,8 @@
 (async()=>{
  const checked=document.getElementById('checked'),container=document.getElementById('projects');
  const node=(tag,text,parent)=>{const e=document.createElement(tag);e.textContent=text;if(parent)parent.append(e);return e;};
- const link=(text,url,parent)=>{const a=node('a',text,parent);if(url.startsWith('https://jndtoolkit.com/launch/'))a.href=url;return a;};
- const labels={'current':'Model matches published sources','review-required':'Model review needed','awaiting-model':'Site plan released · Model pending','awaiting-site-plan':'Awaiting site plan','source-unavailable':'Source needs attention'};
+ const link=(text,url,parent)=>{const a=node('a',text,parent);if(/^https:\/\/(jndtoolkit\.com\/(launch|sun-map)\/|www\.simlian\.com\.sg\/)/.test(url))a.href=url;return a;};
+ const labels={'current':'Model matches published sources','provisional':'Layout checked · Height details pending','review-required':'Model review needed','awaiting-model':'Site plan released · Model pending','awaiting-site-plan':'Awaiting site plan','source-unavailable':'Source needs attention'};
  try{
   const response=await fetch('data/launch-updates.json',{cache:'no-cache'});if(!response.ok)throw Error('Unavailable');const data=await response.json();
   checked.textContent='Last checked: '+new Date(data.checkedAt).toLocaleString('en-SG',{timeZone:'Asia/Singapore',dateStyle:'medium',timeStyle:'short'})+' SGT · '+data.projects.length+' published launches connected.';
@@ -12,7 +12,8 @@
    node('h2',p.name,card);node('p',p.message,card);
    if(!p.located)node('p','Location verification pending. No map marker has been placed.',card);
    const facts=node('p',[p.buildingFacts.address,p.buildingFacts.towers].filter(Boolean).join(' · '),card);facts.className='facts';
-   link('Open latest launch slides ↗',p.url,card);
+   link('Open '+(p.sourceLabel||'JND Launches')+' ↗',p.url,card);
+   if(p.documentCheckedAt)node('small','Developer brochure checked: '+new Date(p.documentCheckedAt).toLocaleString('en-SG',{timeZone:'Asia/Singapore'})+' SGT',card);
    node('small','Published source: '+(p.sourceUpdatedAt?.slice(0,10)||'date unavailable')+' · Model: '+(p.modelAsOf||'not yet checked'),card);
    const details=node('details','',card);node('summary','Plans and source version',details);const list=node('ul','',details);
    for(const source of p.geometrySources){const li=node('li','',list);link(source.file+' ↗',source.url,li);node('small','SHA-256',li);node('code',source.sha256,li);}

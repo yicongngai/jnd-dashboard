@@ -69,6 +69,26 @@ last checked geometry even if a source changes. Do not use only generated
 catalogue edits for new JND models. Model acceptance certifies source comparison,
 not surveyed heights: the existing storeys × 3 m approximation remains.
 
+## Developer plans without a JND deck
+
+The reviewed Amberwood at Holland source lives in
+`sun-map/data/launch-sources/amberwood-at-holland/`. `source.json` holds public
+facts and the developer URL; `assets/` contains public brochure page extracts;
+`map-source.json` records the exact PDF SHA-256; `map-model.json` holds the review.
+Do not copy internal, unpublished marketing material into this public folder.
+
+On online builds, the compiler checks Sim Lian's brochure link and PDF bytes.
+A replacement URL or changed PDF flags the retained model for review. Network
+failure is visible as an unverified source and never erases existing geometry.
+Offline builds preserve the last check and warnings. A JND deck with the same
+slug takes precedence when one is published; its source version needs review.
+
+`openQuestions` on a reviewed model keeps its status **provisional**, even when
+the source fingerprint matches. Thomson currently uses this for its individual
+block height assignments: the published aggregate mix is 2 × 30 and 4 × 21
+storeys, but the developer's block-specific elevation schedule is still needed.
+Per-block `address` and `addressSource` are passed through to map selection.
+
 ## Checks
 
 `python3 -m unittest discover -s tests -p 'test_launch_map_sync.py'`

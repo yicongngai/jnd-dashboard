@@ -117,6 +117,61 @@ class LaunchSync(unittest.TestCase):
         self.save('map-source.json', {'geometryAssets':['../../private.jpg']})
         with self.assertRaises(ValueError): self.compile()
 
+    def test_provisional_height_allocation_is_never_certified_current(self):
+        model = self.model()
+        model['openQuestions'] = ['Block-specific heights await the elevation chart.']
+        self.save('map-model.json', model)
+        _, report = self.compile()
+        self.assertEqual(report['projects'][0]['status'], 'provisional')
+
+    def external(self):
+        model = self.model()
+        target = self.root/'sun-map/data/launch-sources/test-condo'
+        target.parent.mkdir(parents=True)
+        self.folder.rename(target)
+        self.folder = target
+        (target/'index.html').unlink()
+        (target/'launch.json').unlink()
+        (target/'assets/plan.jpg').rename(target/'assets/site-plan.jpg')
+        self.save('source.json', dict(self.facts, sourceLabel='Developer brochure', sourceUrl='https://www.simlian.com.sg/test.pdf'))
+        self.save('map-source.json', {'developerDocument': {'url':'https://www.simlian.com.sg/test.pdf','sha256':'a'*64}})
+        _,_,model['sourceFingerprint'] = sync.source_snapshot(target, self.facts)
+        self.save('map-model.json',model)
+        return model
+
+    def test_developer_source_without_jnd_slides_uses_checked_model(self):
+        self.external()
+        catalog, report = sync.compile_catalog(self.root, self.catalog, '2026-09-22', lambda _:None, lambda _:'unchanged')
+        p=report['projects'][0]
+        self.assertEqual(p['status'], 'current')
+        self.assertTrue(p['geometrySources'][0]['url'].startswith('https://jndtoolkit.com/sun-map/data/launch-sources/'))
+        self.assertEqual(len(catalog['projects'][0]['towers']), 1)
+
+    def test_changed_remote_brochure_retains_model_and_warning_offline(self):
+        model=self.external()
+        catalog, report = sync.compile_catalog(self.root, self.catalog, '2026-09-22', lambda _:None, lambda _:'changed')
+        again, last = self.compile(catalog)
+        self.assertEqual(last['projects'][0]['status'], 'review-required')
+        self.assertEqual(again['projects'][0]['towers'], model['towers'])
+
+    def test_remote_failure_retains_model_and_reports_unverified_source(self):
+        self.external()
+        def fail(_): raise TimeoutError()
+        catalog, report = sync.compile_catalog(self.root,self.catalog,'2026-09-22',lambda _:None,fail)
+        self.assertEqual(report['projects'][0]['status'], 'source-unavailable')
+        self.assertEqual(len(catalog['projects'][0]['towers']), 1)
+
+    def test_jnd_deck_takes_precedence_over_developer_snapshot(self):
+        self.external()
+        external=self.folder
+        self.folder=self.root/'launch/test-condo'
+        self.folder.mkdir(parents=True)
+        self.save('launch.json',self.facts)
+        (self.folder/'index.html').write_text('<p>Site plan pending</p>')
+        _,report=self.compile()
+        self.assertEqual(len(report['projects']),1)
+        self.assertEqual(report['projects'][0]['sourceLabel'],'JND Launches')
+
 
 if __name__ == '__main__':
     unittest.main()

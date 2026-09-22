@@ -1,0 +1,21 @@
+{
+  "name": "Amberwood at Holland",
+  "address": "30–44, 48, 50 & 52 Holland Link",
+  "towers": "Eight 6-storey blocks and three 4-storey blocks",
+  "storeys": {
+    "52": 4,
+    "50": 4,
+    "48": 4,
+    "38": 6,
+    "40": 6,
+    "42": 6,
+    "44": 6,
+    "36": 6,
+    "34": 6,
+    "32": 6,
+    "30": 6
+  },
+  "sourceLabel": "Sim Lian developer brochure",
+  "sourceUrl": "https://www.simlian.com.sg/cms/wp-content/uploads/2026/09/Amberwood-At-Holland-eBrochure_compressed.pdf",
+  "novp": "30 June 2030 (developer estimate)"
+}
