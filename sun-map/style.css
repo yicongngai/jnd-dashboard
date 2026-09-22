@@ -37,6 +37,19 @@
 #search:focus-within{border-color:#6E737D;box-shadow:0 0 0 3px #1B1D2212}
 #search #query:focus,#search #query:focus-visible,#search button:focus-visible{outline:none}
 #search button:focus-visible{box-shadow:inset 0 0 0 2px #6E737D}
+/* Suggestions float below the search pill without moving the map controls. */
+#location-search{position:relative;z-index:6}
+#results{position:absolute;top:calc(100% + 6px);left:0;right:0;max-height:280px;overflow-y:auto;overscroll-behavior:contain;margin:0;padding:6px;background:#fff;border:1px solid #E6E7E9;border-radius:16px;box-shadow:0 12px 30px #1B1D2220}
+#results button{border:0;border-radius:10px;margin:0;padding:11px 12px;font-size:14px;line-height:1.4;background:transparent}
+#results button:hover,#results button[aria-selected=true]{background:#F0F3F4;color:#1B1D22}
+#results button span,#results button small{display:block}
+#results button small{font-size:12px;color:#6E737D;margin-top:3px}
+#search-status:empty{display:none}
+#search-status.search-hint{position:absolute;top:calc(100% + 6px);left:0;right:0;margin:0;padding:13px;background:#fff;border:1px solid #E6E7E9;border-radius:14px;box-shadow:0 12px 30px #1B1D2215;font-size:13px;line-height:1.5;color:#6E737D}
+/* Indicate keyboard focus on the round thumb, never around the whole track. */
+#time:focus,#time:focus-visible{outline:none}
+#time:focus-visible:not([data-pointer-focus])::-webkit-slider-thumb{box-shadow:0 0 0 3px #6E737D,0 1px 4px #0003}
+#time:focus-visible:not([data-pointer-focus])::-moz-range-thumb{box-shadow:0 0 0 3px #6E737D}
 #building-address{font-weight:500;margin-top:0;color:#41454E}
 .sun-path-stop{font:500 11px Outfit,Arial,sans-serif;padding:4px 7px;background:#fffffff2;border:1px solid #DADDE1;border-radius:8px;box-shadow:0 2px 8px #1B1D2212;white-space:nowrap}
 .sun-path-stop:hover,.sun-path-stop[aria-pressed=true]{background:#1B1D22;color:white;border-color:#1B1D22}
