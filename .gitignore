@@ -99,3 +99,4 @@ launch/*/drops/
 launch/*/index.preview.html
 launch/*/launch.preview.json
 launch/*/preview.json
+launch/*/launch.preview.base.json
