@@ -1,6 +1,46 @@
 {
- "at": "2026-09-25T02:18:47.632740+08:00",
+ "at": "2026-09-26T00:48:56.818363+08:00",
  "items": [
+  {
+   "h": "Residential transactions with contracts dated Sept 8 to 25 [DONE DEALS]",
+   "src": "EdgeProp",
+   "day": "2026-09-25",
+   "date": "25 Sep",
+   "topic": "Resale market",
+   "url": "https://www.edgeprop.sg/property-news/residential-transactions-contracts-dated-sept-8-25-done-deals",
+   "post": null,
+   "link": "https://www.edgeprop.sg/property-news/residential-transactions-contracts-dated-sept-8-25-done-deals"
+  },
+  {
+   "h": "本地最大钻掘式跨岛线地铁隧道挖通",
+   "src": "ZB",
+   "day": "2026-09-25",
+   "date": "25 Sep",
+   "topic": "Transport & infrastructure",
+   "url": null,
+   "post": "https://telegram.me/ERAnewsroom/11287",
+   "link": "https://telegram.me/ERAnewsroom/11287"
+  },
+  {
+   "h": "Five-room flat at Pinnacle@Duxton sets record of $1.72mil; while Kallang-Whampoa five-room flat sets a town record of $1.59 mil",
+   "src": "EdgeProp",
+   "day": "2026-09-25",
+   "date": "25 Sep",
+   "topic": "HDB & upgraders",
+   "url": "https://www.edgeprop.sg/property-news/five-room-flat-sets-new-record-172-mil-pinnacleduxton-while-kallang-whampoa-town-sees-new-five-room",
+   "post": null,
+   "link": "https://www.edgeprop.sg/property-news/five-room-flat-sets-new-record-172-mil-pinnacleduxton-while-kallang-whampoa-town-sees-new-five-room"
+  },
+  {
+   "h": "Five-room flat at Pinnacle@Duxton sets record of $1.72mil; Kallang-Whampoa five-room flat sets town record of $1.59 mil",
+   "src": "EdgeProp",
+   "day": "2026-09-25",
+   "date": "25 Sep",
+   "topic": "HDB & upgraders",
+   "url": "https://www.edgeprop.sg/property-news/five-room-flat-sets-new-record-172-mil-pinnacleduxton-while-kallang-whampoa-town-sees-new-five-room",
+   "post": null,
+   "link": "https://www.edgeprop.sg/property-news/five-room-flat-sets-new-record-172-mil-pinnacleduxton-while-kallang-whampoa-town-sees-new-five-room"
+  },
   {
    "h": "Seven industrial units in Tagore and one Kovan HDB shop on the market for $21 mil",
    "src": "EdgeProp",
@@ -60,46 +100,6 @@
    "url": "https://www.edgeprop.sg/property-news/record-smashing-1701-mil-hdb-resale-how-pinnacleduxton-unit-defied-odds",
    "post": null,
    "link": "https://www.edgeprop.sg/property-news/record-smashing-1701-mil-hdb-resale-how-pinnacleduxton-unit-defied-odds"
-  },
-  {
-   "h": "Land planned for housing in Tengah converted to park use after consulting nature groups: HDB",
-   "src": "ST",
-   "day": "2026-09-23",
-   "date": "23 Sep",
-   "topic": "HDB & upgraders",
-   "url": null,
-   "post": "https://telegram.me/ERAnewsroom/11272",
-   "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQTFNPVHhjSkR4dmhIMldrcFNwX040SVRwQXF0R2djcmFBQmF6eFpMcHhFbHlsenRXeW12QlB5WUdTMVNDNUV5X1QwZVNobDd4VEY2NVJ0U1hBa2FwTEY0ZEdoQkV6ekhROXk5eTdWQ3U2Mm96TnF1N3FhMUxKU1RqZTR1TG9oUEhidUY3Y1MxQ1VudERpNEhSeXhFVmFRTGFoY3BMSW9aUXV0bm1vZUxhY05JMV9OUFp3MzZ5UkV4bnktb0xMbG1KWWFwb0VHdjhqMVVPcw?oc=5"
-  },
-  {
-   "h": "URA reviewing guidelines on floor space to give developers more building design flexibility",
-   "src": "ST",
-   "day": "2026-09-23",
-   "date": "23 Sep",
-   "topic": "New launches",
-   "url": null,
-   "post": "https://telegram.me/ERAnewsroom/11273",
-   "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQeDJfRFYxOHNpNjh6bDZrUGZla0RaM05qTVBJb1VxbVA4QjRzaVVBdHE1U1pDNkRaRzJzbmRvRjMxQ014RUhZNzZod2JyLVlHX3U1bFVHTmktWk40MW1saVpiNjRydVVJbXBUVURyb29tVUxnZGxTel9xSUFQN0M0eDR3dGdkcU5JWEZlOTljaXpRc2NYVlBsbUwzQmFiV1pIdFhQNTFGS1REWmNvMGV1dUc5b0s5ZlZRRldqMmJuTjlzV3ktZm8wN1hnOWxHTlpQ?oc=5"
-  },
-  {
-   "h": "S’pore firms, households equipped to weather financial shocks: MAS",
-   "src": "ST",
-   "day": "2026-09-23",
-   "date": "23 Sep",
-   "topic": "Macro & economy",
-   "url": null,
-   "post": "https://telegram.me/ERAnewsroom/11275",
-   "link": "https://telegram.me/ERAnewsroom/11275"
-  },
-  {
-   "h": "经济若严重衰退 1%贷款者或入不敷出",
-   "src": "ZB",
-   "day": "2026-09-23",
-   "date": "23 Sep",
-   "topic": "Rates & financing",
-   "url": null,
-   "post": "https://telegram.me/ERAnewsroom/11278",
-   "link": "https://telegram.me/ERAnewsroom/11278"
   }
  ]
 }
